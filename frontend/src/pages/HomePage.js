@@ -340,7 +340,7 @@ export default function HomePage() {
             <Button
               onClick={handleGenerate}
               disabled={loading || !selectedGrade || !selectedScenario || !selectedTheme}
-              className="w-full h-12 text-base"
+              className="w-full h-14 text-lg bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white shadow-lg"
               data-testid="generate-button"
             >
               {loading ? t.generating : t.generate}
