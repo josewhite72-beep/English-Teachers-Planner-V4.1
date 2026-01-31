@@ -234,11 +234,11 @@ export default function HomePage() {
           <CardContent className="space-y-6">
             {/* Grade Selector */}
             <div className="space-y-2">
-              <Label htmlFor="grade" className="text-base font-semibold">
+              <Label htmlFor="grade" className="text-base font-semibold dark:text-slate-200">
                 {t.grade} *
               </Label>
               <Select value={selectedGrade} onValueChange={setSelectedGrade}>
-                <SelectTrigger id="grade" data-testid="grade-selector" className="w-full">
+                <SelectTrigger id="grade" data-testid="grade-selector" className="w-full dark:bg-slate-700 dark:border-slate-600 dark:text-white">
                   <SelectValue placeholder={t.selectGrade} />
                 </SelectTrigger>
                 <SelectContent>
@@ -253,7 +253,7 @@ export default function HomePage() {
 
             {/* Scenario Selector */}
             <div className="space-y-2">
-              <Label htmlFor="scenario" className="text-base font-semibold">
+              <Label htmlFor="scenario" className="text-base font-semibold dark:text-slate-200">
                 {t.scenario} *
               </Label>
               <Select
@@ -261,7 +261,7 @@ export default function HomePage() {
                 onValueChange={setSelectedScenario}
                 disabled={!selectedGrade}
               >
-                <SelectTrigger id="scenario" data-testid="scenario-selector" className="w-full">
+                <SelectTrigger id="scenario" data-testid="scenario-selector" className="w-full dark:bg-slate-700 dark:border-slate-600 dark:text-white">
                   <SelectValue placeholder={t.selectScenario} />
                 </SelectTrigger>
                 <SelectContent>
@@ -276,7 +276,7 @@ export default function HomePage() {
 
             {/* Theme Selector */}
             <div className="space-y-2">
-              <Label htmlFor="theme" className="text-base font-semibold">
+              <Label htmlFor="theme" className="text-base font-semibold dark:text-slate-200">
                 {t.theme} *
               </Label>
               <Select
@@ -284,7 +284,7 @@ export default function HomePage() {
                 onValueChange={setSelectedTheme}
                 disabled={!selectedScenario}
               >
-                <SelectTrigger id="theme" data-testid="theme-selector" className="w-full">
+                <SelectTrigger id="theme" data-testid="theme-selector" className="w-full dark:bg-slate-700 dark:border-slate-600 dark:text-white">
                   <SelectValue placeholder={t.selectTheme} />
                 </SelectTrigger>
                 <SelectContent>
@@ -299,11 +299,11 @@ export default function HomePage() {
 
             {/* Plan Type */}
             <div className="space-y-2">
-              <Label htmlFor="plan-type" className="text-base font-semibold">
+              <Label htmlFor="plan-type" className="text-base font-semibold dark:text-slate-200">
                 {t.planType}
               </Label>
               <Select value={planType} onValueChange={setPlanType}>
-                <SelectTrigger id="plan-type" data-testid="plan-type-selector" className="w-full">
+                <SelectTrigger id="plan-type" data-testid="plan-type-selector" className="w-full dark:bg-slate-700 dark:border-slate-600 dark:text-white">
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
@@ -317,12 +317,12 @@ export default function HomePage() {
             {/* Project Selector */}
             {projects.length > 0 && (
               <div className="space-y-2">
-                <Label htmlFor="project" className="text-base font-semibold flex items-center gap-2">
+                <Label htmlFor="project" className="text-base font-semibold flex items-center gap-2 dark:text-slate-200">
                   <Sparkles className="h-4 w-4 text-accent" />
                   {t.project}
                 </Label>
                 <Select value={selectedProject || ''} onValueChange={setSelectedProject}>
-                  <SelectTrigger id="project" data-testid="project-selector" className="w-full">
+                  <SelectTrigger id="project" data-testid="project-selector" className="w-full dark:bg-slate-700 dark:border-slate-600 dark:text-white">
                     <SelectValue placeholder={t.selectProject} />
                   </SelectTrigger>
                   <SelectContent>
@@ -338,8 +338,8 @@ export default function HomePage() {
             )}
 
             {/* Official Format Toggle */}
-            <div className="flex items-center justify-between py-4 px-4 bg-slate-50 rounded-lg">
-              <Label htmlFor="official-format" className="text-base font-semibold cursor-pointer">
+            <div className="flex items-center justify-between py-4 px-4 bg-slate-50 dark:bg-slate-700 rounded-lg">
+              <Label htmlFor="official-format" className="text-base font-semibold cursor-pointer dark:text-slate-200">
                 {t.officialFormat}
               </Label>
               <Switch
