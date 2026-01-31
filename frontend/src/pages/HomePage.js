@@ -18,6 +18,8 @@ export default function HomePage() {
   const {
     language,
     setLanguage,
+    darkMode,
+    toggleDarkMode,
     selectedGrade,
     setSelectedGrade,
     selectedScenario,
