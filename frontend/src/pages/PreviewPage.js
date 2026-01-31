@@ -15,6 +15,30 @@ import { ArrowLeft, Download, FileText, Moon, Sun } from 'lucide-react';
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
+// Activity Editor component with local state
+const ActivityEditor = ({ value, onChange }) => {
+  const [localValue, setLocalValue] = React.useState(value || '');
+  
+  React.useEffect(() => {
+    setLocalValue(value || '');
+  }, [value]);
+  
+  const handleChange = (e) => {
+    const newValue = e.target.value;
+    setLocalValue(newValue);
+    onChange(newValue);
+  };
+  
+  return (
+    <Textarea
+      value={localValue}
+      onChange={handleChange}
+      className="text-sm dark:bg-slate-700 dark:border-slate-600 dark:text-white"
+      rows={2}
+    />
+  );
+};
+
 export default function PreviewPage() {
   const navigate = useNavigate();
   const { generatedPlanner, setGeneratedPlanner, language, darkMode, toggleDarkMode } = usePlanner();
