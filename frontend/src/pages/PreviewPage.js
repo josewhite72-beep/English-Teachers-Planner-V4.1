@@ -190,9 +190,9 @@ export default function PreviewPage() {
 
           {/* Theme Planner Tab */}
           <TabsContent value="theme" className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>{t.generalInfo}</CardTitle>
+            <Card className="border-teal-200 shadow-md">
+              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 border-b border-teal-100">
+                <CardTitle className="text-teal-900">{t.generalInfo}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
