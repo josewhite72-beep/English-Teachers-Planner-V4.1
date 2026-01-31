@@ -171,11 +171,19 @@ export default function PreviewPage() {
         </div>
 
         <Tabs defaultValue="theme" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-2 h-12">
-            <TabsTrigger value="theme" className="text-base" data-testid="theme-tab">
+          <TabsList className="grid w-full grid-cols-2 h-12 bg-teal-50 border border-teal-200">
+            <TabsTrigger 
+              value="theme" 
+              className="text-base data-[state=active]:bg-teal-600 data-[state=active]:text-white" 
+              data-testid="theme-tab"
+            >
               {t.themePlanner}
             </TabsTrigger>
-            <TabsTrigger value="lessons" className="text-base" data-testid="lessons-tab">
+            <TabsTrigger 
+              value="lessons" 
+              className="text-base data-[state=active]:bg-teal-600 data-[state=active]:text-white" 
+              data-testid="lessons-tab"
+            >
               {t.lessonPlanners}
             </TabsTrigger>
           </TabsList>
