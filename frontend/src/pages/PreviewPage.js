@@ -15,7 +15,7 @@ const API = `${BACKEND_URL}/api`;
 
 export default function PreviewPage() {
   const navigate = useNavigate();
-  const { generatedPlanner, language } = usePlanner();
+  const { generatedPlanner, language, darkMode, toggleDarkMode } = usePlanner();
   const [exporting, setExporting] = useState(false);
   const [selectedLesson, setSelectedLesson] = useState(0);
 
