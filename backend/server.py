@@ -360,20 +360,80 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
     return theme_planner
 
 def generate_basic_lesson_planners(scenario_data: dict, theme: str, plan_type: str) -> list:
-    """Generate basic lesson planner structures"""
+    """Generate basic lesson planner structures with curriculum info"""
     lessons = []
     skills = ['listening', 'reading', 'speaking', 'writing', 'mediation']
     standards = scenario_data.get('standards_and_learning_outcomes', {})
+    competences = scenario_data.get('communicative_competences', {})
+    
+    # Get vocabulary and grammar from competences
+    vocab_list = []
+    grammar_list = []
+    if competences.get('linguistic'):
+        ling = competences['linguistic']
+        if isinstance(ling.get('vocabulary'), list):
+            vocab_list = ling['vocabulary'][:10]  # First 10 vocab items
+        elif ling.get('vocabulary'):
+            vocab_list = [str(ling['vocabulary'])]
+            
+        if isinstance(ling.get('grammatical_features'), list):
+            grammar_list = ling['grammatical_features'][:5]
+        elif isinstance(ling.get('grammar'), list):
+            grammar_list = ling['grammar'][:5]
     
     for i, skill in enumerate(skills, 1):
-        # Get learning outcome
+        # Get learning outcome and standards
         learning_outcome = ""
+        specific_standard = ""
         if skill in standards:
             skill_data = standards[skill]
             if isinstance(skill_data, dict):
                 outcomes = skill_data.get('learning_outcomes', [])
                 if isinstance(outcomes, list) and outcomes:
                     learning_outcome = outcomes[0]
+                
+                # Get specific standard
+                specific_standard = skill_data.get('specific', skill_data.get('general', ''))
+        
+        # Generate basic activities based on curriculum content
+        warm_up_activities = [
+            f"Review {theme} vocabulary: {', '.join(vocab_list[:5]) if vocab_list else 'key terms'}",
+            f"Activate prior knowledge about {theme}",
+            "Engage students with visuals or realia related to the topic"
+        ]
+        
+        presentation_activities = [
+            f"Introduce {skill} focus using authentic materials",
+            f"Present key vocabulary: {', '.join(vocab_list[:5]) if vocab_list else 'topic-related words'}",
+            f"Model {skill} skill with clear examples"
+        ]
+        
+        if grammar_list:
+            presentation_activities.append(f"Introduce grammar: {', '.join(grammar_list[:2])}")
+        
+        preparation_activities = [
+            f"Guided {skill} practice with scaffolding",
+            "Work in pairs or small groups",
+            f"Practice using {theme} vocabulary in context"
+        ]
+        
+        performance_activities = [
+            f"Independent {skill} activity",
+            f"Students demonstrate {skill} skill with {theme} content",
+            "Provide opportunities for student production"
+        ]
+        
+        assessment_activities = [
+            f"Formative assessment of {skill} skill",
+            "Check understanding and provide feedback",
+            "Students self-assess their performance"
+        ]
+        
+        reflection_activities = [
+            f"Reflect on {skill} learning",
+            f"Discuss what was learned about {theme}",
+            "Set goals for improvement"
+        ]
         
         lesson = {
             "lesson_number": i,
@@ -382,38 +442,38 @@ def generate_basic_lesson_planners(scenario_data: dict, theme: str, plan_type: s
             "theme": theme,
             "date": "",
             "time": "45-60 minutes",
-            "specific_objective": "To be completed by teacher",
-            "learning_outcome": learning_outcome,
+            "specific_objective": specific_standard if specific_standard else f"Students will develop {skill} skills related to {theme}",
+            "learning_outcome": learning_outcome if learning_outcome else f"Students will be able to use {skill} to communicate about {theme}",
             "lesson_stages": [
                 {
                     "stage": "Warm-up / Pre-task",
-                    "activities": ["To be completed by teacher"]
+                    "activities": warm_up_activities
                 },
                 {
                     "stage": "Presentation",
-                    "activities": ["To be completed by teacher"]
+                    "activities": presentation_activities
                 },
                 {
                     "stage": "Preparation",
-                    "activities": ["To be completed by teacher"]
+                    "activities": preparation_activities
                 },
                 {
                     "stage": "Performance",
-                    "activities": ["To be completed by teacher"]
+                    "activities": performance_activities
                 },
                 {
                     "stage": "Assessment / Post-task",
-                    "activities": ["To be completed by teacher"]
+                    "activities": assessment_activities
                 },
                 {
                     "stage": "Reflection",
-                    "activities": ["To be completed by teacher"]
+                    "activities": reflection_activities
                 }
             ],
             "comments": {
-                "homework": "To be completed by teacher",
-                "formative_assessment": "To be completed by teacher",
-                "teacher_comments": "To be completed by teacher"
+                "homework": f"Practice {skill} skill with {theme} content at home. Review vocabulary and grammar.",
+                "formative_assessment": f"Observe student {skill} performance. Check comprehension and production of {theme} content.",
+                "teacher_comments": f"Note: This is a basic structure from curriculum. Complete with specific activities for {skill} and {theme}. Consider student level and needs."
             }
         }
         lessons.append(lesson)
