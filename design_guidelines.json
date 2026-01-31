@@ -1,0 +1,158 @@
+{
+  "identity": {
+    "name": "English Teachers Planner",
+    "persona": "The Organized Professional",
+    "tone": "Institutional, Supportive, Clear, Efficient",
+    "aesthetic": "Modern EdTech - Clean, Teal-focused, Paper-like surfaces"
+  },
+  "typography": {
+    "font_family": {
+      "headings": "Manrope, sans-serif",
+      "body": "Inter, sans-serif",
+      "mono": "JetBrains Mono, monospace"
+    },
+    "scale": {
+      "h1": "text-4xl font-bold tracking-tight text-slate-900",
+      "h2": "text-3xl font-semibold tracking-tight text-slate-800",
+      "h3": "text-2xl font-semibold text-teal-800",
+      "body": "text-base leading-relaxed text-slate-600",
+      "small": "text-sm font-medium text-slate-500"
+    },
+    "imports": [
+      "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;700;800&display=swap');"
+    ]
+  },
+  "colors": {
+    "palette": {
+      "primary": {
+        "DEFAULT": "#0F766E",
+        "foreground": "#FFFFFF",
+        "hover": "#115E59",
+        "description": "Teal 700 - Institutional Trust"
+      },
+      "secondary": {
+        "DEFAULT": "#0EA5E9",
+        "foreground": "#FFFFFF",
+        "hover": "#0284C7",
+        "description": "Sky 500 - Active States & Highlights"
+      },
+      "accent": {
+        "DEFAULT": "#F59E0B",
+        "foreground": "#FFFFFF",
+        "description": "Amber 500 - 21st Century Projects"
+      },
+      "background": {
+        "DEFAULT": "#F8FAFC",
+        "paper": "#FFFFFF",
+        "subtle": "#F1F5F9"
+      },
+      "text": {
+        "primary": "#0F172A",
+        "secondary": "#475569",
+        "muted": "#94A3B8"
+      },
+      "border": {
+        "DEFAULT": "#E2E8F0",
+        "focus": "#0F766E"
+      }
+    },
+    "css_vars": {
+      "--background": "210 40% 98%",
+      "--foreground": "222.2 84% 4.9%",
+      "--primary": "175 77% 26%",
+      "--primary-foreground": "210 40% 98%",
+      "--secondary": "199 89% 48%",
+      "--secondary-foreground": "210 40% 98%",
+      "--radius": "0.5rem"
+    }
+  },
+  "layout": {
+    "spacing": {
+      "container_padding": "p-6 md:p-12",
+      "section_gap": "gap-8",
+      "card_padding": "p-6"
+    },
+    "grids": {
+      "dashboard": "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6",
+      "form_row": "grid grid-cols-1 md:grid-cols-2 gap-4"
+    },
+    "containers": {
+      "main": "max-w-7xl mx-auto",
+      "document": "max-w-4xl mx-auto bg-white shadow-lg min-h-[800px] p-12 border border-slate-200"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "bg-teal-700 hover:bg-teal-800 text-white shadow-sm rounded-md px-6 py-2.5 font-medium transition-all",
+      "secondary": "bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:text-teal-700 rounded-md px-6 py-2.5 font-medium transition-all",
+      "ghost": "text-slate-600 hover:text-teal-700 hover:bg-teal-50 rounded-md px-4 py-2"
+    },
+    "cards": {
+      "base": "bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-shadow duration-200",
+      "interactive": "cursor-pointer hover:border-teal-500 hover:ring-1 hover:ring-teal-500 transition-all"
+    },
+    "inputs": {
+      "base": "flex h-10 w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-teal-600 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+    },
+    "badges": {
+      "grade": "bg-teal-100 text-teal-800 px-2.5 py-0.5 rounded-full text-xs font-semibold",
+      "scenario": "bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full text-xs font-semibold",
+      "theme": "bg-slate-100 text-slate-800 px-2.5 py-0.5 rounded-full text-xs font-semibold"
+    }
+  },
+  "visual_enhancers": {
+    "shadows": {
+      "soft": "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)",
+      "paper": "0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02)"
+    },
+    "borders": {
+      "subtle": "border border-slate-200",
+      "active": "border-teal-500"
+    },
+    "textures": {
+      "noise": "bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"
+    }
+  },
+  "image_urls": {
+    "hero_bg": {
+      "url": "https://images.unsplash.com/photo-1636772523547-5577d04e8dc1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxNzV8MHwxfHNlYXJjaHwxfHxwcmltYXJ5JTIwc2Nob29sJTIwdGVhY2hlciUyMGNsYXNzcm9vbSUyMGhhcHB5fGVufDB8fHx8MTc2OTg2NTQwMnww&ixlib=rb-4.1.0&q=85",
+      "description": "Bright, empty classroom background for login or hero sections",
+      "category": "background"
+    },
+    "planning_desk": {
+      "url": "https://images.unsplash.com/photo-1762318986860-a7b18dd0da02?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2OTV8MHwxfHNlYXJjaHwxfHxvcmdhbml6ZWQlMjBzY2hvb2wlMjBzdXBwbGllcyUyMGRlc2t8ZW58MHx8fHwxNzY5ODY1NDA0fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Organized desk with supplies, representing the planning process",
+      "category": "illustration"
+    },
+    "classroom_interaction": {
+      "url": "https://images.unsplash.com/photo-1588075592446-265fd1e6e76f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA0MTJ8MHwxfHNlYXJjaHwyfHxkaXZlcnNlJTIwZWxlbWVudGFyeSUyMHN0dWRlbnRzJTIwbGVhcm5pbmd8ZW58MHx8fHwxNzY5ODY1NDA4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Teacher reading to students, representing the 'Scenario' context",
+      "category": "context"
+    }
+  },
+  "instructions_to_main_agent": {
+    "general": "You are building a tool for teachers. It must be calm, clear, and error-proof. Avoid flashy animations. Focus on 'Click -> Result'.",
+    "theme_setup": "Update tailwind.config.js to use the Teal-700 as primary color. Ensure the font 'Manrope' is imported in index.css.",
+    "layout_strategy": "Use a 'Sidebar + Content' layout or a 'Centered Dashboard' layout. The 'Preview' page must look like a real piece of paper (white box on gray bg).",
+    "components": "Use Shadcn UI for all interactive elements. Customize the 'Select' and 'Card' components to match the Teal theme.",
+    "accessibility": "Ensure all text has high contrast (Teal-800 on White). Use aria-labels for all icon buttons.",
+    "testing": "Add data-testid to all selectors (e.g., 'grade-selector', 'scenario-selector') and the 'generate-btn'."
+  },
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) sparingly, mostly for sticky headers.",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯📚🎭🎬🎪🎉🎊🎁🎀🎂🍰🎈🎨🎰💰💵💳🏦💎🪙💸🤑📊📈📉💹🔢🏆🥇 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Main agent relies on these image URLs. Missing categories = main agent will use placeholder text which is FORBIDDEN",
+    "Prioritize using pre-existing components from src/components/ui when applicable",
+    "Components MUST use named exports (export const ComponentName = ...)",
+    "Pages MUST use default exports (export default function PageName() {...})",
+    "Use sonner for toasts"
+  ]
+}
