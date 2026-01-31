@@ -190,15 +190,45 @@ export default function PreviewPage() {
               >
                 {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </Button>
-              <Button
-                onClick={handleExportDocx}
-                disabled={exporting}
-                className="gap-2 bg-white text-teal-700 hover:bg-teal-50 dark:bg-slate-700 dark:text-teal-300 dark:hover:bg-slate-600"
-                data-testid="export-docx-button"
-              >
-                <FileText className="h-4 w-4" />
-                {t.exportDocx}
-              </Button>
+              
+              {editMode ? (
+                <>
+                  <Button
+                    onClick={handleSaveChanges}
+                    className="gap-2 bg-green-600 text-white hover:bg-green-700"
+                    data-testid="save-changes-button"
+                  >
+                    {t.save}
+                  </Button>
+                  <Button
+                    onClick={handleCancelEdit}
+                    variant="outline"
+                    className="gap-2 border-white text-white hover:bg-teal-600"
+                    data-testid="cancel-edit-button"
+                  >
+                    {t.cancel}
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button
+                    onClick={handleEditMode}
+                    className="gap-2 bg-amber-500 text-white hover:bg-amber-600"
+                    data-testid="edit-button"
+                  >
+                    {t.edit}
+                  </Button>
+                  <Button
+                    onClick={handleExportDocx}
+                    disabled={exporting}
+                    className="gap-2 bg-white text-teal-700 hover:bg-teal-50 dark:bg-slate-700 dark:text-teal-300 dark:hover:bg-slate-600"
+                    data-testid="export-docx-button"
+                  >
+                    <FileText className="h-4 w-4" />
+                    {t.exportDocx}
+                  </Button>
+                </>
+              )}
             </div>
           </div>
         </div>
