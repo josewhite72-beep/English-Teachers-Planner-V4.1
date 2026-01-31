@@ -117,15 +117,15 @@ export default function PreviewPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-slate-50 to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       {/* Header */}
-      <header className="bg-gradient-to-r from-teal-700 to-teal-600 border-b border-teal-800 sticky top-0 z-50 shadow-lg">
+      <header className="bg-gradient-to-r from-teal-700 to-teal-600 dark:from-teal-800 dark:to-teal-900 border-b border-teal-800 dark:border-teal-950 sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Button
               variant="ghost"
               onClick={() => navigate('/')}
-              className="gap-2 text-white hover:bg-teal-600 hover:text-white"
+              className="gap-2 text-white hover:bg-teal-600 dark:hover:bg-teal-800 hover:text-white"
               data-testid="back-button"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -133,9 +133,19 @@ export default function PreviewPage() {
             </Button>
             <div className="flex gap-2">
               <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleDarkMode}
+                data-testid="dark-mode-toggle"
+                className="gap-2 text-white hover:bg-teal-600 dark:hover:bg-teal-800 hover:text-white"
+                title={darkMode ? 'Modo Claro' : 'Modo Oscuro'}
+              >
+                {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              </Button>
+              <Button
                 onClick={handleExportDocx}
                 disabled={exporting}
-                className="gap-2 bg-white text-teal-700 hover:bg-teal-50"
+                className="gap-2 bg-white text-teal-700 hover:bg-teal-50 dark:bg-slate-700 dark:text-teal-300 dark:hover:bg-slate-600"
                 data-testid="export-docx-button"
               >
                 <FileText className="h-4 w-4" />
@@ -149,20 +159,20 @@ export default function PreviewPage() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-8">
         {/* Document Header */}
-        <div className="bg-white rounded-lg border border-teal-200 shadow-lg p-6 mb-6">
+        <div className="bg-white dark:bg-slate-800 rounded-lg border border-teal-200 dark:border-teal-800 shadow-lg p-6 mb-6">
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="text-3xl font-bold font-heading text-teal-900 mb-2">
+              <h1 className="text-3xl font-bold font-heading text-teal-900 dark:text-teal-100 mb-2">
                 Lesson Planner
               </h1>
               <div className="flex gap-2 flex-wrap">
-                <Badge className="bg-teal-600 text-white hover:bg-teal-700" data-testid="grade-badge">
+                <Badge className="bg-teal-600 text-white hover:bg-teal-700 dark:bg-teal-700 dark:hover:bg-teal-600" data-testid="grade-badge">
                   {gradeLabels[generatedPlanner.grade]}
                 </Badge>
-                <Badge className="bg-blue-600 text-white hover:bg-blue-700" data-testid="scenario-badge">
+                <Badge className="bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600" data-testid="scenario-badge">
                   {generatedPlanner.scenario}
                 </Badge>
-                <Badge className="bg-teal-100 text-teal-800 border border-teal-300" data-testid="theme-badge">
+                <Badge className="bg-teal-100 text-teal-800 border border-teal-300 dark:bg-teal-900 dark:text-teal-200 dark:border-teal-700" data-testid="theme-badge">
                   {generatedPlanner.theme}
                 </Badge>
               </div>
