@@ -1,0 +1,196 @@
+{
+  "projects_by_scenario": {
+    "Places I Can Go": {
+      "Community & Cultural": [
+        {
+          "id": "market_role_play",
+          "name": "Market role-play"
+        },
+        {
+          "id": "cultural_presentation",
+          "name": "Cultural presentation"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "recycling_plan",
+          "name": "Recycling plan"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "places_guide",
+          "name": "Places guide"
+        }
+      ]
+    },
+    "A Polite Request": {
+      "Community & Cultural": [
+        {
+          "id": "market_role_play",
+          "name": "Market role-play"
+        },
+        {
+          "id": "cultural_presentation",
+          "name": "Cultural presentation"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "recycling_plan",
+          "name": "Recycling plan"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "places_guide",
+          "name": "Places guide"
+        }
+      ]
+    },
+    "Discovering Our Classroom": {
+      "Community & Cultural": [
+        {
+          "id": "market_role_play",
+          "name": "Market role-play"
+        },
+        {
+          "id": "cultural_presentation",
+          "name": "Cultural presentation"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "recycling_plan",
+          "name": "Recycling plan"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "places_guide",
+          "name": "Places guide"
+        }
+      ]
+    },
+    "This Beautiful Day": {
+      "Community & Cultural": [
+        {
+          "id": "market_role_play",
+          "name": "Market role-play"
+        },
+        {
+          "id": "cultural_presentation",
+          "name": "Cultural presentation"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "recycling_plan",
+          "name": "Recycling plan"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "places_guide",
+          "name": "Places guide"
+        }
+      ]
+    },
+    "Let's Go Shopping!": {
+      "Community & Cultural": [
+        {
+          "id": "market_role_play",
+          "name": "Market role-play"
+        },
+        {
+          "id": "cultural_presentation",
+          "name": "Cultural presentation"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "recycling_plan",
+          "name": "Recycling plan"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "places_guide",
+          "name": "Places guide"
+        }
+      ]
+    },
+    "I Can Connect with Nature!": {
+      "Community & Cultural": [
+        {
+          "id": "market_role_play",
+          "name": "Market role-play"
+        },
+        {
+          "id": "cultural_presentation",
+          "name": "Cultural presentation"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "recycling_plan",
+          "name": "Recycling plan"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "places_guide",
+          "name": "Places guide"
+        }
+      ]
+    },
+    "It's Time to Eat.": {
+      "Community & Cultural": [
+        {
+          "id": "market_role_play",
+          "name": "Market role-play"
+        },
+        {
+          "id": "cultural_presentation",
+          "name": "Cultural presentation"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "recycling_plan",
+          "name": "Recycling plan"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "places_guide",
+          "name": "Places guide"
+        }
+      ]
+    },
+    "My Evening Routine": {
+      "Community & Cultural": [
+        {
+          "id": "market_role_play",
+          "name": "Market role-play"
+        },
+        {
+          "id": "cultural_presentation",
+          "name": "Cultural presentation"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "recycling_plan",
+          "name": "Recycling plan"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "places_guide",
+          "name": "Places guide"
+        }
+      ]
+    }
+  }
+}

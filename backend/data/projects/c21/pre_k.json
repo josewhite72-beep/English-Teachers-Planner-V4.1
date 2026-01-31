@@ -1,0 +1,180 @@
+{
+  "projects_by_scenario": {
+    "Meeting New Friends": {
+      "Community & Cultural": [
+        {
+          "id": "class_poster",
+          "name": "Class poster"
+        },
+        {
+          "id": "show_and_tell",
+          "name": "Show and tell"
+        }
+      ],
+      "School & Academic": [
+        {
+          "id": "sorting_activity",
+          "name": "Sorting activity"
+        },
+        {
+          "id": "class_routine_chart",
+          "name": "Class routine chart"
+        }
+      ]
+    },
+    "Exploring Our Classroom": {
+      "Community & Cultural": [
+        {
+          "id": "class_poster",
+          "name": "Class poster"
+        },
+        {
+          "id": "show_and_tell",
+          "name": "Show and tell"
+        }
+      ],
+      "School & Academic": [
+        {
+          "id": "sorting_activity",
+          "name": "Sorting activity"
+        },
+        {
+          "id": "class_routine_chart",
+          "name": "Class routine chart"
+        }
+      ]
+    },
+    "Me and My Family": {
+      "Community & Cultural": [
+        {
+          "id": "class_poster",
+          "name": "Class poster"
+        },
+        {
+          "id": "show_and_tell",
+          "name": "Show and tell"
+        }
+      ],
+      "School & Academic": [
+        {
+          "id": "sorting_activity",
+          "name": "Sorting activity"
+        },
+        {
+          "id": "class_routine_chart",
+          "name": "Class routine chart"
+        }
+      ]
+    },
+    "Let's Eat!": {
+      "Community & Cultural": [
+        {
+          "id": "class_poster",
+          "name": "Class poster"
+        },
+        {
+          "id": "show_and_tell",
+          "name": "Show and tell"
+        }
+      ],
+      "School & Academic": [
+        {
+          "id": "sorting_activity",
+          "name": "Sorting activity"
+        },
+        {
+          "id": "class_routine_chart",
+          "name": "Class routine chart"
+        }
+      ]
+    },
+    "Numbers Around Me": {
+      "Community & Cultural": [
+        {
+          "id": "class_poster",
+          "name": "Class poster"
+        },
+        {
+          "id": "show_and_tell",
+          "name": "Show and tell"
+        }
+      ],
+      "School & Academic": [
+        {
+          "id": "sorting_activity",
+          "name": "Sorting activity"
+        },
+        {
+          "id": "class_routine_chart",
+          "name": "Class routine chart"
+        }
+      ]
+    },
+    "Fun with Letters": {
+      "Community & Cultural": [
+        {
+          "id": "class_poster",
+          "name": "Class poster"
+        },
+        {
+          "id": "show_and_tell",
+          "name": "Show and tell"
+        }
+      ],
+      "School & Academic": [
+        {
+          "id": "sorting_activity",
+          "name": "Sorting activity"
+        },
+        {
+          "id": "class_routine_chart",
+          "name": "Class routine chart"
+        }
+      ]
+    },
+    "Inside My School!": {
+      "Community & Cultural": [
+        {
+          "id": "class_poster",
+          "name": "Class poster"
+        },
+        {
+          "id": "show_and_tell",
+          "name": "Show and tell"
+        }
+      ],
+      "School & Academic": [
+        {
+          "id": "sorting_activity",
+          "name": "Sorting activity"
+        },
+        {
+          "id": "class_routine_chart",
+          "name": "Class routine chart"
+        }
+      ]
+    },
+    "Panama's Plants and Animals": {
+      "Community & Cultural": [
+        {
+          "id": "class_poster",
+          "name": "Class poster"
+        },
+        {
+          "id": "show_and_tell",
+          "name": "Show and tell"
+        }
+      ],
+      "School & Academic": [
+        {
+          "id": "sorting_activity",
+          "name": "Sorting activity"
+        },
+        {
+          "id": "class_routine_chart",
+          "name": "Class routine chart"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "projects_by_scenario": {
+    "Our Community News": {
+      "Tourism & Local Promotion": [
+        {
+          "id": "canal_pre_guide",
+          "name": "Canal pre-guide"
+        },
+        {
+          "id": "transport_infographic",
+          "name": "Transport infographic"
+        }
+      ],
+      "Technological & Digital": [
+        {
+          "id": "career_presentation",
+          "name": "Career presentation"
+        },
+        {
+          "id": "ai_assisted_project",
+          "name": "AI-assisted project"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "ocean_awareness_campaign",
+          "name": "Ocean awareness campaign"
+        }
+      ]
+    },
+    "Keeping Our Communities Clean": {
+      "Tourism & Local Promotion": [
+        {
+          "id": "canal_pre_guide",
+          "name": "Canal pre-guide"
+        },
+        {
+          "id": "transport_infographic",
+          "name": "Transport infographic"
+        }
+      ],
+      "Technological & Digital": [
+        {
+          "id": "career_presentation",
+          "name": "Career presentation"
+        },
+        {
+          "id": "ai_assisted_project",
+          "name": "AI-assisted project"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "ocean_awareness_campaign",
+          "name": "Ocean awareness campaign"
+        }
+      ]
+    },
+    "Our Local Library": {
+      "Tourism & Local Promotion": [
+        {
+          "id": "canal_pre_guide",
+          "name": "Canal pre-guide"
+        },
+        {
+          "id": "transport_infographic",
+          "name": "Transport infographic"
+        }
+      ],
+      "Technological & Digital": [
+        {
+          "id": "career_presentation",
+          "name": "Career presentation"
+        },
+        {
+          "id": "ai_assisted_project",
+          "name": "AI-assisted project"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "ocean_awareness_campaign",
+          "name": "Ocean awareness campaign"
+        }
+      ]
+    },
+    "Our Classroom News": {
+      "Tourism & Local Promotion": [
+        {
+          "id": "canal_pre_guide",
+          "name": "Canal pre-guide"
+        },
+        {
+          "id": "transport_infographic",
+          "name": "Transport infographic"
+        }
+      ],
+      "Technological & Digital": [
+        {
+          "id": "career_presentation",
+          "name": "Career presentation"
+        },
+        {
+          "id": "ai_assisted_project",
+          "name": "AI-assisted project"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "ocean_awareness_campaign",
+          "name": "Ocean awareness campaign"
+        }
+      ]
+    },
+    "Our Amazing Community": {
+      "Tourism & Local Promotion": [
+        {
+          "id": "canal_pre_guide",
+          "name": "Canal pre-guide"
+        },
+        {
+          "id": "transport_infographic",
+          "name": "Transport infographic"
+        }
+      ],
+      "Technological & Digital": [
+        {
+          "id": "career_presentation",
+          "name": "Career presentation"
+        },
+        {
+          "id": "ai_assisted_project",
+          "name": "AI-assisted project"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "ocean_awareness_campaign",
+          "name": "Ocean awareness campaign"
+        }
+      ]
+    },
+    "Our Weather Report": {
+      "Tourism & Local Promotion": [
+        {
+          "id": "canal_pre_guide",
+          "name": "Canal pre-guide"
+        },
+        {
+          "id": "transport_infographic",
+          "name": "Transport infographic"
+        }
+      ],
+      "Technological & Digital": [
+        {
+          "id": "career_presentation",
+          "name": "Career presentation"
+        },
+        {
+          "id": "ai_assisted_project",
+          "name": "AI-assisted project"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "ocean_awareness_campaign",
+          "name": "Ocean awareness campaign"
+        }
+      ]
+    },
+    "Our Changing Forests": {
+      "Tourism & Local Promotion": [
+        {
+          "id": "canal_pre_guide",
+          "name": "Canal pre-guide"
+        },
+        {
+          "id": "transport_infographic",
+          "name": "Transport infographic"
+        }
+      ],
+      "Technological & Digital": [
+        {
+          "id": "career_presentation",
+          "name": "Career presentation"
+        },
+        {
+          "id": "ai_assisted_project",
+          "name": "AI-assisted project"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "ocean_awareness_campaign",
+          "name": "Ocean awareness campaign"
+        }
+      ]
+    },
+    "The Talents Around Us": {
+      "Tourism & Local Promotion": [
+        {
+          "id": "canal_pre_guide",
+          "name": "Canal pre-guide"
+        },
+        {
+          "id": "transport_infographic",
+          "name": "Transport infographic"
+        }
+      ],
+      "Technological & Digital": [
+        {
+          "id": "career_presentation",
+          "name": "Career presentation"
+        },
+        {
+          "id": "ai_assisted_project",
+          "name": "AI-assisted project"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "ocean_awareness_campaign",
+          "name": "Ocean awareness campaign"
+        }
+      ]
+    }
+  }
+}

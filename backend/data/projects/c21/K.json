@@ -1,0 +1,180 @@
+{
+  "projects_by_scenario": {
+    "It's a School Day!": {
+      "School & Academic": [
+        {
+          "id": "sequencing_chart",
+          "name": "Sequencing chart"
+        },
+        {
+          "id": "class_rules_poster",
+          "name": "Class rules poster"
+        }
+      ],
+      "Creative / Cultural": [
+        {
+          "id": "movement_routine",
+          "name": "Movement routine"
+        },
+        {
+          "id": "sound_collage",
+          "name": "Sound collage"
+        }
+      ]
+    },
+    "Our Routines": {
+      "School & Academic": [
+        {
+          "id": "sequencing_chart",
+          "name": "Sequencing chart"
+        },
+        {
+          "id": "class_rules_poster",
+          "name": "Class rules poster"
+        }
+      ],
+      "Creative / Cultural": [
+        {
+          "id": "movement_routine",
+          "name": "Movement routine"
+        },
+        {
+          "id": "sound_collage",
+          "name": "Sound collage"
+        }
+      ]
+    },
+    "Hold Up Ten Fingers!": {
+      "School & Academic": [
+        {
+          "id": "sequencing_chart",
+          "name": "Sequencing chart"
+        },
+        {
+          "id": "class_rules_poster",
+          "name": "Class rules poster"
+        }
+      ],
+      "Creative / Cultural": [
+        {
+          "id": "movement_routine",
+          "name": "Movement routine"
+        },
+        {
+          "id": "sound_collage",
+          "name": "Sound collage"
+        }
+      ]
+    },
+    "Where Is It?": {
+      "School & Academic": [
+        {
+          "id": "sequencing_chart",
+          "name": "Sequencing chart"
+        },
+        {
+          "id": "class_rules_poster",
+          "name": "Class rules poster"
+        }
+      ],
+      "Creative / Cultural": [
+        {
+          "id": "movement_routine",
+          "name": "Movement routine"
+        },
+        {
+          "id": "sound_collage",
+          "name": "Sound collage"
+        }
+      ]
+    },
+    "What's that Sound?": {
+      "School & Academic": [
+        {
+          "id": "sequencing_chart",
+          "name": "Sequencing chart"
+        },
+        {
+          "id": "class_rules_poster",
+          "name": "Class rules poster"
+        }
+      ],
+      "Creative / Cultural": [
+        {
+          "id": "movement_routine",
+          "name": "Movement routine"
+        },
+        {
+          "id": "sound_collage",
+          "name": "Sound collage"
+        }
+      ]
+    },
+    "Let's Dance!": {
+      "School & Academic": [
+        {
+          "id": "sequencing_chart",
+          "name": "Sequencing chart"
+        },
+        {
+          "id": "class_rules_poster",
+          "name": "Class rules poster"
+        }
+      ],
+      "Creative / Cultural": [
+        {
+          "id": "movement_routine",
+          "name": "Movement routine"
+        },
+        {
+          "id": "sound_collage",
+          "name": "Sound collage"
+        }
+      ]
+    },
+    "I'm Happy.": {
+      "School & Academic": [
+        {
+          "id": "sequencing_chart",
+          "name": "Sequencing chart"
+        },
+        {
+          "id": "class_rules_poster",
+          "name": "Class rules poster"
+        }
+      ],
+      "Creative / Cultural": [
+        {
+          "id": "movement_routine",
+          "name": "Movement routine"
+        },
+        {
+          "id": "sound_collage",
+          "name": "Sound collage"
+        }
+      ]
+    },
+    "I Like School!": {
+      "School & Academic": [
+        {
+          "id": "sequencing_chart",
+          "name": "Sequencing chart"
+        },
+        {
+          "id": "class_rules_poster",
+          "name": "Class rules poster"
+        }
+      ],
+      "Creative / Cultural": [
+        {
+          "id": "movement_routine",
+          "name": "Movement routine"
+        },
+        {
+          "id": "sound_collage",
+          "name": "Sound collage"
+        }
+      ]
+    }
+  }
+}

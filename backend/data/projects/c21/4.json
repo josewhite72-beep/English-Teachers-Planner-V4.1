@@ -1,0 +1,228 @@
+{
+  "projects_by_scenario": {
+    "A Walk in the Neighborhood": {
+      "School & Academic": [
+        {
+          "id": "instruction_manual",
+          "name": "Instruction manual"
+        },
+        {
+          "id": "process_poster",
+          "name": "Process poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "weather_report",
+          "name": "Weather report"
+        },
+        {
+          "id": "garden_log",
+          "name": "Garden log"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "beach_trip_guide",
+          "name": "Beach trip guide"
+        }
+      ]
+    },
+    "Helping in the Garden": {
+      "School & Academic": [
+        {
+          "id": "instruction_manual",
+          "name": "Instruction manual"
+        },
+        {
+          "id": "process_poster",
+          "name": "Process poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "weather_report",
+          "name": "Weather report"
+        },
+        {
+          "id": "garden_log",
+          "name": "Garden log"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "beach_trip_guide",
+          "name": "Beach trip guide"
+        }
+      ]
+    },
+    "Shopping at the Market": {
+      "School & Academic": [
+        {
+          "id": "instruction_manual",
+          "name": "Instruction manual"
+        },
+        {
+          "id": "process_poster",
+          "name": "Process poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "weather_report",
+          "name": "Weather report"
+        },
+        {
+          "id": "garden_log",
+          "name": "Garden log"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "beach_trip_guide",
+          "name": "Beach trip guide"
+        }
+      ]
+    },
+    "Visiting the Panama Canal": {
+      "School & Academic": [
+        {
+          "id": "instruction_manual",
+          "name": "Instruction manual"
+        },
+        {
+          "id": "process_poster",
+          "name": "Process poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "weather_report",
+          "name": "Weather report"
+        },
+        {
+          "id": "garden_log",
+          "name": "Garden log"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "beach_trip_guide",
+          "name": "Beach trip guide"
+        }
+      ]
+    },
+    "A Trip to the Beach": {
+      "School & Academic": [
+        {
+          "id": "instruction_manual",
+          "name": "Instruction manual"
+        },
+        {
+          "id": "process_poster",
+          "name": "Process poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "weather_report",
+          "name": "Weather report"
+        },
+        {
+          "id": "garden_log",
+          "name": "Garden log"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "beach_trip_guide",
+          "name": "Beach trip guide"
+        }
+      ]
+    },
+    "It's the Rainy Season": {
+      "School & Academic": [
+        {
+          "id": "instruction_manual",
+          "name": "Instruction manual"
+        },
+        {
+          "id": "process_poster",
+          "name": "Process poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "weather_report",
+          "name": "Weather report"
+        },
+        {
+          "id": "garden_log",
+          "name": "Garden log"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "beach_trip_guide",
+          "name": "Beach trip guide"
+        }
+      ]
+    },
+    "The Beautiful Mola": {
+      "School & Academic": [
+        {
+          "id": "instruction_manual",
+          "name": "Instruction manual"
+        },
+        {
+          "id": "process_poster",
+          "name": "Process poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "weather_report",
+          "name": "Weather report"
+        },
+        {
+          "id": "garden_log",
+          "name": "Garden log"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "beach_trip_guide",
+          "name": "Beach trip guide"
+        }
+      ]
+    },
+    "Our Traditional Style of Dress": {
+      "School & Academic": [
+        {
+          "id": "instruction_manual",
+          "name": "Instruction manual"
+        },
+        {
+          "id": "process_poster",
+          "name": "Process poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "weather_report",
+          "name": "Weather report"
+        },
+        {
+          "id": "garden_log",
+          "name": "Garden log"
+        }
+      ],
+      "Tourism & Local Promotion": [
+        {
+          "id": "beach_trip_guide",
+          "name": "Beach trip guide"
+        }
+      ]
+    }
+  }
+}
