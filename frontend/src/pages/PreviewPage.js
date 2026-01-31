@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
+import EditableTextarea from '@/components/EditableTextarea';
 import { ArrowLeft, Download, FileText, Moon, Sun } from 'lucide-react';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
