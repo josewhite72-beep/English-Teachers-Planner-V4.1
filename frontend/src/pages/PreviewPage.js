@@ -117,15 +117,15 @@ export default function PreviewPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-slate-50 to-blue-50">
       {/* Header */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
+      <header className="bg-gradient-to-r from-teal-700 to-teal-600 border-b border-teal-800 sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Button
               variant="ghost"
               onClick={() => navigate('/')}
-              className="gap-2"
+              className="gap-2 text-white hover:bg-teal-600 hover:text-white"
               data-testid="back-button"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -135,7 +135,7 @@ export default function PreviewPage() {
               <Button
                 onClick={handleExportDocx}
                 disabled={exporting}
-                className="gap-2"
+                className="gap-2 bg-white text-teal-700 hover:bg-teal-50"
                 data-testid="export-docx-button"
               >
                 <FileText className="h-4 w-4" />
