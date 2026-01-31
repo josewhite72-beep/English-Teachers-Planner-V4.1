@@ -97,6 +97,44 @@ def load_institutional_standards(grade: str) -> dict:
     with open(file_path, 'r', encoding='utf-8') as f:
         return json.load(f)
 
+def load_pregenerated_planner(grade: str, scenario: str, theme: str, plan_type: str, language: str) -> dict:
+    """Load a pregenerated planner from JSON file if it exists"""
+    # Extract scenario number from scenario string (e.g., "Scenario 1: All Week Long!" -> "1")
+    import re
+    scenario_match = re.search(r'Scenario (\d+)', scenario)
+    scenario_num = scenario_match.group(1) if scenario_match else "1"
+    
+    # Determine theme number based on the theme list for that scenario
+    # For now, we'll use a simple approach - if we can load the grade data, we can find the index
+    try:
+        grade_data = load_grade_data(grade)
+        scenario_data = None
+        if isinstance(grade_data, list):
+            scenario_data = next((s for s in grade_data if s.get('scenario', s.get('title', '')) == scenario), None)
+        elif isinstance(grade_data, dict) and 'scenarios' in grade_data:
+            scenario_data = next((s for s in grade_data['scenarios'] if s.get('scenario', s.get('title', '')) == scenario), None)
+        
+        if scenario_data:
+            themes = scenario_data.get('themes', [])
+            theme_num = str(themes.index(theme) + 1) if theme in themes else "1"
+        else:
+            theme_num = "1"
+    except:
+        theme_num = "1"
+    
+    # Build filename: {grade}_{scenario_num}_{theme_num}_{plan_type}_{language}.json
+    filename = f"{grade}_{scenario_num}_{theme_num}_{plan_type}_{language}.json"
+    file_path = GENERATED_PLANNERS_DIR / filename
+    
+    logger.info(f"Looking for pregenerated planner: {filename}")
+    
+    if file_path.exists():
+        logger.info(f"Found pregenerated planner: {filename}")
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    
+    return None
+
 # API Routes
 @api_router.get("/")
 async def root():
