@@ -172,16 +172,28 @@ export default function PreviewPage() {
 
   // Editable field component
   const EditableField = ({ value, onChange, multiline = false, placeholder = '' }) => {
+    const [localValue, setLocalValue] = React.useState(value || '');
+    
+    React.useEffect(() => {
+      setLocalValue(value || '');
+    }, [value]);
+    
+    const handleChange = (e) => {
+      const newValue = e.target.value;
+      setLocalValue(newValue);
+      onChange(newValue);
+    };
+    
     if (!editMode) {
-      return <span>{value || placeholder}</span>;
+      return <span className="text-slate-700 dark:text-slate-300">{value || placeholder}</span>;
     }
     
     if (multiline) {
       return (
         <Textarea
-          value={value || ''}
-          onChange={(e) => onChange(e.target.value)}
-          className="min-h-[80px] dark:bg-slate-700 dark:border-slate-600"
+          value={localValue}
+          onChange={handleChange}
+          className="min-h-[80px] dark:bg-slate-700 dark:border-slate-600 dark:text-white"
           placeholder={placeholder}
         />
       );
@@ -189,9 +201,9 @@ export default function PreviewPage() {
     
     return (
       <Input
-        value={value || ''}
-        onChange={(e) => onChange(e.target.value)}
-        className="dark:bg-slate-700 dark:border-slate-600"
+        value={localValue}
+        onChange={handleChange}
+        className="dark:bg-slate-700 dark:border-slate-600 dark:text-white"
         placeholder={placeholder}
       />
     );
