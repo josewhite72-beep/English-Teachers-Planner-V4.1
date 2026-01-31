@@ -28,6 +28,9 @@ export default function PreviewPage() {
       lessonPlanners: 'Lesson Planners',
       exportDocx: 'Exportar Word',
       exportPdf: 'Exportar PDF',
+      edit: 'Editar',
+      save: 'Guardar',
+      cancel: 'Cancelar',
       generalInfo: 'Información General',
       grade: 'Grado',
       cefrLevel: 'Nivel CEFR',
@@ -45,6 +48,10 @@ export default function PreviewPage() {
       speaking: 'Speaking',
       writing: 'Writing',
       mediation: 'Mediation',
+      materials: 'Materiales Requeridos',
+      homework: 'Tarea',
+      assessment: 'Evaluación',
+      teacherNotes: 'Notas del Docente',
     },
     en: {
       back: 'Back',
@@ -52,6 +59,9 @@ export default function PreviewPage() {
       lessonPlanners: 'Lesson Planners',
       exportDocx: 'Export Word',
       exportPdf: 'Export PDF',
+      edit: 'Edit',
+      save: 'Save',
+      cancel: 'Cancel',
       generalInfo: 'General Information',
       grade: 'Grade',
       cefrLevel: 'CEFR Level',
@@ -69,6 +79,10 @@ export default function PreviewPage() {
       speaking: 'Speaking',
       writing: 'Writing',
       mediation: 'Mediation',
+      materials: 'Required Materials',
+      homework: 'Homework',
+      assessment: 'Assessment',
+      teacherNotes: 'Teacher Notes',
     },
   };
 
@@ -79,7 +93,39 @@ export default function PreviewPage() {
     return null;
   }
 
-  const { theme_planner, lesson_planners } = generatedPlanner;
+  const { theme_planner, lesson_planners } = editMode && editedPlanner ? editedPlanner : generatedPlanner;
+
+  const handleEditMode = () => {
+    setEditMode(true);
+    setEditedPlanner(JSON.parse(JSON.stringify(generatedPlanner))); // Deep clone
+  };
+
+  const handleSaveChanges = () => {
+    setGeneratedPlanner(editedPlanner);
+    setEditMode(false);
+    toast.success(language === 'es' ? 'Cambios guardados' : 'Changes saved');
+  };
+
+  const handleCancelEdit = () => {
+    setEditMode(false);
+    setEditedPlanner(null);
+  };
+
+  const handleUpdateField = (path, value) => {
+    const newPlanner = { ...editedPlanner };
+    const keys = path.split('.');
+    let current = newPlanner;
+    
+    for (let i = 0; i < keys.length - 1; i++) {
+      if (current[keys[i]] === undefined) {
+        current[keys[i]] = {};
+      }
+      current = current[keys[i]];
+    }
+    
+    current[keys[keys.length - 1]] = value;
+    setEditedPlanner(newPlanner);
+  };
 
   const handleExportDocx = async () => {
     setExporting(true);
