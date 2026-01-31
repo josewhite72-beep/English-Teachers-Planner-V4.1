@@ -332,6 +332,23 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
             else:
                 objectives[skill] = ""
     
+    # Generate basic materials list from curriculum
+    materials = []
+    if competences.get('linguistic'):
+        ling = competences['linguistic']
+        if ling.get('vocabulary'):
+            materials.append(f"Flashcards or visuals for vocabulary: {', '.join(ling['vocabulary'][:5]) if isinstance(ling['vocabulary'], list) else 'topic vocabulary'}")
+        if ling.get('grammatical_features') or ling.get('grammar'):
+            materials.append("Grammar charts or reference materials")
+    
+    # Add standard materials
+    materials.extend([
+        "Whiteboard and markers",
+        "Student worksheets",
+        "Audio/video materials (if available)",
+        "Realia or authentic materials related to theme"
+    ])
+    
     theme_planner = {
         "general_information": {
             "teachers": "",
@@ -347,8 +364,8 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
         "communicative_competences": competences,
         "specific_objectives": objectives,
         "materials_and_strategies": {
-            "required_materials": ["To be completed by teacher"],
-            "differentiated_instruction": "To be completed by teacher"
+            "required_materials": materials,
+            "differentiated_instruction": "Adapt activities for different learning styles (visual, auditory, kinesthetic). Provide scaffolding for struggling learners and extension activities for advanced students. Use pair/group work for peer support."
         },
         "learning_sequence": {
             "project_title": project_data.get('name', '') if project_data else '',
