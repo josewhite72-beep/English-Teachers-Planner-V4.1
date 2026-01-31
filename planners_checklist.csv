@@ -1,0 +1,129 @@
+Grade,Scenario,Theme,Filename,Status
+pre_k,Meeting New Friends,Meeting My Friends,pre_k_S1_T1_standard_es.json,Pendiente
+pre_k,Meeting New Friends,Saying Please and Thank You,pre_k_S1_T2_standard_es.json,Pendiente
+pre_k,Exploring Our Classroom,Things in My Classroom,pre_k_S2_T1_standard_es.json,Pendiente
+pre_k,Exploring Our Classroom,Colors in My Classroom,pre_k_S2_T2_standard_es.json,Pendiente
+pre_k,Me and My Family,This Is Me!,pre_k_S3_T1_standard_es.json,Pendiente
+pre_k,Me and My Family,My Family,pre_k_S3_T2_standard_es.json,Pendiente
+pre_k,Let's Eat!,I Love Fruit!,pre_k_S4_T1_standard_es.json,Pendiente
+pre_k,Let's Eat!,I Eat Vegetables!,pre_k_S4_T2_standard_es.json,Pendiente
+pre_k,Numbers Around Me,Let's Count to Five!,pre_k_S5_T1_standard_es.json,Pendiente
+pre_k,Numbers Around Me,How Many?,pre_k_S5_T2_standard_es.json,Pendiente
+pre_k,Fun with Letters,The A-B-Cs,pre_k_S6_T1_standard_es.json,Pendiente
+pre_k,Fun with Letters,"Apple, Banana, Coconut",pre_k_S6_T2_standard_es.json,Pendiente
+pre_k,Inside My School!,My Teacher!,pre_k_S7_T1_standard_es.json,Pendiente
+pre_k,Inside My School!,Time for Recess!,pre_k_S7_T2_standard_es.json,Pendiente
+pre_k,Panama's Plants and Animals,It's a Plant.,pre_k_S8_T1_standard_es.json,Pendiente
+pre_k,Panama's Plants and Animals,It's an Animal.,pre_k_S8_T2_standard_es.json,Pendiente
+K,It's a School Day!,Let's Listen!,K_S1_T1_standard_es.json,Pendiente
+K,It's a School Day!,Stand Up!,K_S1_T2_standard_es.json,Pendiente
+K,Our Routines,"First, I Sit Down.",K_S2_T1_standard_es.json,Pendiente
+K,Our Routines,Pick It Up!,K_S2_T2_standard_es.json,Pendiente
+K,Hold Up Ten Fingers!,I Can Count!,K_S3_T1_standard_es.json,Pendiente
+K,Hold Up Ten Fingers!,All the Pencils!,K_S3_T2_standard_es.json,Pendiente
+K,Where Is It?,Where Is Your Book?,K_S4_T1_standard_es.json,Pendiente
+K,Where Is It?,Go to the Window.,K_S4_T2_standard_es.json,Pendiente
+K,What's that Sound?,The Cat Says 'Meow'.,K_S5_T1_standard_es.json,Pendiente
+K,What's that Sound?,That's a Rooster!,K_S5_T2_standard_es.json,Pendiente
+K,Let's Dance!,Move Around,K_S6_T1_standard_es.json,Pendiente
+K,Let's Dance!,"One Step In, Two Steps Out!",K_S6_T2_standard_es.json,Pendiente
+K,I'm Happy.,I'm Excited!,K_S7_T1_standard_es.json,Pendiente
+K,I'm Happy.,How Are You?,K_S7_T2_standard_es.json,Pendiente
+K,I Like School!,I Like Games!,K_S8_T1_standard_es.json,Pendiente
+K,I Like School!,I Like Math!,K_S8_T2_standard_es.json,Pendiente
+1,Scenario 1: All Week Long!,Today Is Tuesday!,1_S1_T1_standard_es.json,Pendiente
+1,Scenario 1: All Week Long!,It's the Weekend.,1_S1_T2_standard_es.json,Pendiente
+1,Scenario 2: Nice Weather Today!,It's Sunny!,1_S2_T1_standard_es.json,Pendiente
+1,Scenario 2: Nice Weather Today!,It's Raining.,1_S2_T2_standard_es.json,Pendiente
+1,Scenario 3: Colors in Our World,That's a Purple Flower.,1_S3_T1_standard_es.json,Pendiente
+1,Scenario 3: Colors in Our World,It's an Orange Cat.,1_S3_T2_standard_es.json,Pendiente
+1,Scenario 4: My Family and I,It's My Family!,1_S4_T1_standard_es.json,Pendiente
+1,Scenario 4: My Family and I,She Is My Mom!,1_S4_T2_standard_es.json,Pendiente
+1,Scenario 5: Colors of Things that Go,That's a Blue Bus.,1_S5_T1_standard_es.json,Pendiente
+1,Scenario 5: Colors of Things that Go,That's a Red Bike.,1_S5_T2_standard_es.json,Pendiente
+1,Scenario 6: Shapes Around Us,I See a Rectangle.,1_S6_T1_standard_es.json,Pendiente
+1,Scenario 6: Shapes Around Us,That Is a Circle.,1_S6_T2_standard_es.json,Pendiente
+1,Scenario 7: Shapes on Our Plates,It's a Square Cracker.,1_S7_T1_standard_es.json,Pendiente
+1,Scenario 7: Shapes on Our Plates,It's a Round Orange.,1_S7_T2_standard_es.json,Pendiente
+1,Scenario 8: It's Our Garden.,The Pink Flowers!,1_S8_T1_standard_es.json,Pendiente
+1,Scenario 8: It's Our Garden.,A Tall Tree!,1_S8_T2_standard_es.json,Pendiente
+2,School Days,Yesterday Was Wednesday.,2_S1_T1_standard_es.json,Pendiente
+2,School Days,Today Is Friday!,2_S1_T2_standard_es.json,Pendiente
+2,School Life Adventures,That's a Big Book!,2_S2_T1_standard_es.json,Pendiente
+2,School Life Adventures,"That's a Small, Brown Bag.",2_S2_T2_standard_es.json,Pendiente
+2,All About the Weather,A Perfect Day!,2_S3_T1_standard_es.json,Pendiente
+2,All About the Weather,Dress for the Weather.,2_S3_T2_standard_es.json,Pendiente
+2,All About My Body,Head to Toes!,2_S4_T1_standard_es.json,Pendiente
+2,All About My Body,Hats and Shoes!,2_S4_T2_standard_es.json,Pendiente
+2,Exploring My Community,It's the Park!,2_S5_T1_standard_es.json,Pendiente
+2,Exploring My Community,It's the Market!,2_S5_T2_standard_es.json,Pendiente
+2,Discovering Nature’s Wonders,It's the Rainforest.,2_S6_T1_standard_es.json,Pendiente
+2,Discovering Nature’s Wonders,"It's a Slow, Furry Sloth!",2_S6_T2_standard_es.json,Pendiente
+2,Fun Outdoors!,I Love to Run!,2_S7_T1_standard_es.json,Pendiente
+2,Fun Outdoors!,I Like to Swim.,2_S7_T2_standard_es.json,Pendiente
+2,It's Festival Season.,Look at the Fireworks!,2_S8_T1_standard_es.json,Pendiente
+2,It's Festival Season.,Food I Eat During a Celebration,2_S8_T2_standard_es.json,Pendiente
+3,Places I Can Go,I'm at School.,3_S1_T1_standard_es.json,Pendiente
+3,Places I Can Go,I'm at the Market.,3_S1_T2_standard_es.json,Pendiente
+3,A Polite Request,Can I Have a Pencil?,3_S2_T1_standard_es.json,Pendiente
+3,A Polite Request,"Sorry, I Can't Help You.",3_S2_T2_standard_es.json,Pendiente
+3,Discovering Our Classroom,What's in Your Bag?,3_S3_T1_standard_es.json,Pendiente
+3,Discovering Our Classroom,The Book Is on the Table.,3_S3_T2_standard_es.json,Pendiente
+3,This Beautiful Day,It's Sunny. I'm Happy!,3_S4_T1_standard_es.json,Pendiente
+3,This Beautiful Day,It's Raining! I Need an Umbrella.,3_S4_T2_standard_es.json,Pendiente
+3,Let's Go Shopping!,"One, Two, Three Bananas!",3_S5_T1_standard_es.json,Pendiente
+3,Let's Go Shopping!,I Want Five Pineapples.,3_S5_T2_standard_es.json,Pendiente
+3,I Can Connect with Nature!,I Can Relax and Listen.,3_S6_T1_standard_es.json,Pendiente
+3,I Can Connect with Nature!,I'm Outside. I'm Happy!,3_S6_T2_standard_es.json,Pendiente
+3,It's Time to Eat.,What's Your Favorite Food?,3_S7_T1_standard_es.json,Pendiente
+3,It's Time to Eat.,I Like Sancocho!,3_S7_T2_standard_es.json,Pendiente
+3,My Evening Routine,"First, I Brush My Teeth.",3_S8_T1_standard_es.json,Pendiente
+3,My Evening Routine,I'm Sleepy. It's Bedtime.,3_S8_T2_standard_es.json,Pendiente
+4,A Walk in the Neighborhood,This Is My Favorite.,4_S1_T1_standard_es.json,Pendiente
+4,A Walk in the Neighborhood,It's the Best!,4_S1_T2_standard_es.json,Pendiente
+4,Helping in the Garden,The Tomatoes Grow Quickly.,4_S2_T1_standard_es.json,Pendiente
+4,Helping in the Garden,These Plants Are from Panama.,4_S2_T2_standard_es.json,Pendiente
+4,Shopping at the Market,How Much Is the Pineapple?,4_S3_T1_standard_es.json,Pendiente
+4,Shopping at the Market,I Need Five Yucas.,4_S3_T2_standard_es.json,Pendiente
+4,Visiting the Panama Canal,The Vessels Are Big Because...,4_S4_T1_standard_es.json,Pendiente
+4,Visiting the Panama Canal,A Vessel Is Crossing!,4_S4_T2_standard_es.json,Pendiente
+4,A Trip to the Beach,Let's Pack for a Trip.,4_S5_T1_standard_es.json,Pendiente
+4,A Trip to the Beach,I Always Pack Lunch.,4_S5_T2_standard_es.json,Pendiente
+4,It's the Rainy Season,Where's the Puddle?,4_S6_T1_standard_es.json,Pendiente
+4,It's the Rainy Season,I Need an Umbrella.,4_S6_T2_standard_es.json,Pendiente
+4,The Beautiful Mola,A Mola Has Many Colors!,4_S7_T1_standard_es.json,Pendiente
+4,The Beautiful Mola,I Can Make a Mola.,4_S7_T2_standard_es.json,Pendiente
+4,Our Traditional Style of Dress,She Is Wearing a Pollera.,4_S8_T1_standard_es.json,Pendiente
+4,Our Traditional Style of Dress,Let's Dress for a Dance.,4_S8_T2_standard_es.json,Pendiente
+5,Following Instructions at School,"First, I Cut the Paper.",5_S1_T1_standard_es.json,Pendiente
+5,Following Instructions at School,Let's Make a Poster!,5_S1_T2_standard_es.json,Pendiente
+5,Taking Care of Our Class,We Are Sweeping the Floors.,5_S2_T1_standard_es.json,Pendiente
+5,Taking Care of Our Class,Let's Arrange the Chairs.,5_S2_T2_standard_es.json,Pendiente
+5,The Local Farm Stand,"I Need Two Papayas, Please.",5_S3_T1_standard_es.json,Pendiente
+5,The Local Farm Stand,How Much Are the Bananas?,5_S3_T2_standard_es.json,Pendiente
+5,Helping Around the House,I Wash the Dishes Every day.,5_S4_T1_standard_es.json,Pendiente
+5,Helping Around the House,We All Do Chores.,5_S4_T2_standard_es.json,Pendiente
+5,Time for Exercise,I Like Walking in the Afternoon.,5_S5_T1_standard_es.json,Pendiente
+5,Time for Exercise,We Can Swim.,5_S5_T2_standard_es.json,Pendiente
+5,Recycling for Our World,We Recycle Plastic Bottles Every Day.,5_S6_T1_standard_es.json,Pendiente
+5,Recycling for Our World,Composting Is Easy.,5_S6_T2_standard_es.json,Pendiente
+5,"Conservation Morning, Noon, and Night!",Let's Get Cool in the Shade.,5_S7_T1_standard_es.json,Pendiente
+5,"Conservation Morning, Noon, and Night!","Turn Off the Lights, Please.",5_S7_T2_standard_es.json,Pendiente
+5,Planning Meals for My Family,Fruits and Vegetables Are Good for You.,5_S8_T1_standard_es.json,Pendiente
+5,Planning Meals for My Family,Panama Has Delicious Food!,5_S8_T2_standard_es.json,Pendiente
+6,Our Community News,Reporting From the School!,6_S1_T1_standard_es.json,Pendiente
+6,Our Community News,Our Community Is Famous For...,6_S1_T2_standard_es.json,Pendiente
+6,Keeping Our Communities Clean,We Should Clean the Classroom on Friday.,6_S2_T1_standard_es.json,Pendiente
+6,Keeping Our Communities Clean,Who Will Bring the Cleaning Supplies?,6_S2_T2_standard_es.json,Pendiente
+6,Our Local Library,Let's Find a Book!,6_S3_T1_standard_es.json,Pendiente
+6,Our Local Library,How Do I Use the Library?,6_S3_T2_standard_es.json,Pendiente
+6,Our Classroom News,I Will Write the Article About Our School Trip.,6_S4_T1_standard_es.json,Pendiente
+6,Our Classroom News,We Need Pictures for the Classroom Newsletter.,6_S4_T2_standard_es.json,Pendiente
+6,Our Amazing Community,This Is My Amazing Community.,6_S5_T1_standard_es.json,Pendiente
+6,Our Amazing Community,This School Has Been Here a Long Time!,6_S5_T2_standard_es.json,Pendiente
+6,Our Weather Report,Today's Weather Will Be Sunny with Some Rain Later.,6_S6_T1_standard_es.json,Pendiente
+6,Our Weather Report,How Will the Weather Change Tomorrow?,6_S6_T2_standard_es.json,Pendiente
+6,Our Changing Forests,We Must Protect Our Trees.,6_S7_T1_standard_es.json,Pendiente
+6,Our Changing Forests,Recycling Helps Our Planet.,6_S7_T2_standard_es.json,Pendiente
+6,The Talents Around Us,Who Will Perform in the Fiestas Patrias Activities?,6_S8_T1_standard_es.json,Pendiente
+6,The Talents Around Us,I Will Play the Drums in the Parade.,6_S8_T2_standard_es.json,Pendiente
