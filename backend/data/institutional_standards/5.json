@@ -1,0 +1,45 @@
+{
+  "grade": "5",
+  "proficiency_level": "A1.3",
+  "institutional_standards_by_skill": {
+    "listening": "Students can show comprehension of general information, specific information, and instructions in short oral texts about daily events if spoken slowly and clearly. They can follow clear instructions in learning activities, identify specific information in announcements or recordings, comprehend the gist of short stories and news items, and demonstrate comprehension of the main points of extended discussions on familiar topics.",
+    "reading": "Students can extract general and specific information in simple texts on everyday familiar topics with or without visual support. They can show comprehension of written instructions for classroom activities, comprehend short narratives about familiar experiences, identify main ideas on familiar topics in simple paragraphs, and respond to texts with personal reflections.",
+    "speaking": "Students can exchange personal information, descriptions of basic things, simple questions and answers, and simple directions. They can talk about simple rules and laws, give simple directions within the school, talk about people or things using simple language, describe favorite hobbies or activities briefly, give a simple report based on a chart, describe preferences and experiences, and describe a family or school event they are looking forward to.",
+    "writing": "Students can create short, organized texts on familiar topics, incorporating revisions and feedback to improve clarity. They can write thank-you cards, create short descriptions of favorite characters from books, create basic informational leaflets for an event, develop short poems or rhymes, compose messages to invite peers to a performance or event, write short reports on classroom experiments or projects, write instructions for playing a simple classroom game, and write short personal narratives about weekend activities.",
+    "mediation": "Students can utilize simplified language, visual aids, and step-by-step explanations to help peers engage with tasks and information. They can contextualize simple school announcements, simplify textbook content for peers, explain simple written instructions to peers, assist peers in following multi-step school procedures, relay key points from the teacher’s lectures to absent students, and use visual aids to explain basic concepts."
+  },
+  "institutional_standards_by_scenario": {
+    "scenario_1": {
+      "title": "Following Instructions at School",
+      "standards": "Students follow clear instructions in learning activities to complete a task such as cutting paper or gluing it on a flowchart. They describe basic classroom rules related to school projects and write a simple thank-you card to a classmate or teacher for helping with a class project. They contextualize school announcements using gestures or visuals to highlight key details and simplify textbook content with basic words and visuals."
+    },
+    "scenario_2": {
+      "title": "Taking Care of Our Class",
+      "standards": "Students identify specific information in announcements about classroom tasks such as sweeping the floor or arranging desks. They give simple directions to find places in the school and create short descriptions of favorite characters involved in classroom tasks. They explain written instructions with simple steps and gestures and facilitate discussions by asking classmates questions."
+    },
+    "scenario_3": {
+      "title": "The Local Farm Stand",
+      "standards": "Students identify specific items and their prices from announcements in the market and talk about buying and selling things in familiar places. They create an informational leaflet describing farm stand items and prices for customers and assist peers in following multi-step school procedures by acting out steps."
+    },
+    "scenario_4": {
+      "title": "Helping Around the House",
+      "standards": "Students demonstrate comprehension of the main points of extended discussions about household chores and describe a favorite household chore or activity using simple sentences. They write a short poem or rhyme about household chores using simple vocabulary and repetition and simplify content on chores for their peers using simple words and pictures."
+    },
+    "scenario_5": {
+      "title": "Time for Exercise",
+      "standards": "Students comprehend the gist of short stories about exercise and talk about people using simple descriptions. They compose an invitation to a sports event and lead discussions about classroom topics by asking open-ended questions and prompting peers to elaborate."
+    },
+    "scenario_6": {
+      "title": "Recycling for Our World",
+      "standards": "Students demonstrate comprehension of the main points of extended discussions about recycling and give a simple report based on a chart using clear statements. They write a simple report on a project to describe the activity and its purpose and assist peers with recycling procedures by pointing to visuals."
+    },
+    "scenario_7": {
+      "title": "Conservation Morning, Noon, and Night!",
+      "standards": "Students comprehend the main idea from short announcements about conserving energy and describe preferences using simple language. They write simple instructions for a game and assist classmates in following conservation steps with visuals."
+    },
+    "scenario_8": {
+      "title": "Planning Meals for My Family",
+      "standards": "Students follow narratives related to types of food and describe a family event they are looking forward to. They write a short story about their weekend and use visual aids to explain basic concepts about food."
+    }
+  }
+}

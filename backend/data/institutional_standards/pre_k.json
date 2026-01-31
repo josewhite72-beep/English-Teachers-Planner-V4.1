@@ -1,0 +1,45 @@
+{
+  "grade": "Pre-K",
+  "proficiency_level": "Pre A1.1",
+  "institutional_standards_by_skill": {
+    "listening": "Students can recognize basic sounds, words, and phrases with the support of gestures, visual clues, and short spoken utterances. They can show understanding of the general meaning of stories when heard and supported with pictures.",
+    "reading": "Students can identify characters in a picture book. They can match pictures with simple written words with some help or guidance. They can participate in choral reading of familiar short stories with teacher support. They can identify environmental sounds and speech sounds.",
+    "speaking": "Students can name things in simple exchanges. They can use simple words and gestures to communicate. They can respond to basic greetings, answer simple questions about familiar stories, count to five with support, and name primary colors, classroom objects, family members, animals, and plants.",
+    "writing": "Students can communicate simple ideas through drawings and symbols. They can scribble to communicate a message. They can trace simple shapes and letters. They can draw a symbol or image as a response to a prompt or question.",
+    "mediation": "Students can use basic strategies to clarify meanings such as drawings, gestures, and body language. They can mimic simple actions shown in picture books. They can express feelings and basic needs using words and body language. They can use gestures and simple drawings to support understanding and facilitate communication with peers."
+  },
+  "institutional_standards_by_scenario": {
+    "scenario_1": {
+      "title": "Meeting New Friends",
+      "standards": "Students recognize that people are speaking in English. They respond to basic greetings and polite expressions like hello, goodbye, please, and thank you. They identify characters in picture books. They use simple words and gestures to introduce themselves or greet others. They scribble or draw to represent social interactions."
+    },
+    "scenario_2": {
+      "title": "Exploring Our Classroom",
+      "standards": "Students follow very simple classroom instructions after observing a model. They name classroom objects and primary colors. They participate in choral reading and respond to questions about classroom items. They trace shapes and draw objects. They use gestures or drawings to express basic classroom needs."
+    },
+    "scenario_3": {
+      "title": "Me and My Family",
+      "standards": "Students recognize family-related words when spoken. They identify and name family members in pictures or stories. They answer basic questions about family using words or gestures. They trace letters and draw simple family figures. They mimic family roles from picture books using body language."
+    },
+    "scenario_4": {
+      "title": "Let's Eat",
+      "standards": "Students follow simple instructions related to food. They name common fruits and vegetables. They express preferences using yes or no or facial expressions. They match food pictures to words. They draw and color favorite foods. They use gestures to show hunger or likes and dislikes."
+    },
+    "scenario_5": {
+      "title": "Numbers Around Me",
+      "standards": "Students recognize numbers one to five when heard. They count to five with support and answer how many questions for small quantities. They match pictures to number words. They trace numbers and draw objects to represent quantities. They use fingers or gestures to show numbers during group activities."
+    },
+    "scenario_6": {
+      "title": "Fun with Letters",
+      "standards": "Students recognize letters A, B, and C when heard. They join in choral reading of alphabet books. They name letters and connect them to familiar words like apple or banana. They trace letters and draw simple objects that begin with those letters. They use gestures or drawings to represent letter sounds."
+    },
+    "scenario_7": {
+      "title": "Inside My School",
+      "standards": "Students recognize daily classroom vocabulary. They name people in school like teacher or friend. They respond to greetings and answer simple questions like Who is this or Where is it. They scribble or draw classroom objects. They use gestures to act out classroom routines like sitting or raising a hand."
+    },
+    "scenario_8": {
+      "title": "Panama's Plants and Animals",
+      "standards": "Students recognize names of local plants and animals when spoken. They identify and name them in pictures or stories. They answer simple questions like What is this. They scribble or draw basic representations of nature. They mimic animal movements or plant actions to communicate ideas and show respect for Panama’s natural environment."
+    }
+  }
+}

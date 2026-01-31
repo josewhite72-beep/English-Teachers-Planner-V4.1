@@ -1,0 +1,245 @@
+{
+  "grade": "Grade 1",
+  "cefr_level": "Pre A1.3",
+  "institutional_general_standards": {
+    "listening": "Can identify sounds of familiar words and basic phrases spoken slowly and clearly.",
+    "reading": "Can recognize familiar words in simple texts.",
+    "speaking": "Can use basic language and formulaic expressions to describe things and answer questions.",
+    "writing": "Can write about oneself using simple words.",
+    "mediation": "Can use mediation strategies such as gestures and body language to express basic ideas."
+  },
+  "scenarios": [
+    {
+      "scenario_id": 1,
+      "scenario_name": "All Week Long!",
+      "standards": {
+        "listening": {
+          "receptive": "Recognize familiar words and basic phrases.",
+          "interactive": "Respond to simple conversations on familiar topics using gestures or pointing."
+        },
+        "reading": {
+          "skills": [
+            "Find familiar words in a text.",
+            "Identify one-step written directions with visual support."
+          ],
+          "phonemic_awareness": "Identify sounds of the letters of the alphabet with concrete or picture support."
+        },
+        "speaking": {
+          "productive": "Use basic words or phrases to identify time-related words.",
+          "interactive": "Exchange simple questions and answers about the current day."
+        },
+        "writing": {
+          "productive": "Write their own name and other very familiar words without assistance.",
+          "interactive": "Draw pictures related to a simple sentence they have written."
+        },
+        "mediation": {
+          "text": "Use pictures or objects to express ideas.",
+          "concept": "Use facial expressions and simple gestures to explain feelings or needs."
+        }
+      }
+    },
+    {
+      "scenario_id": 2,
+      "scenario_name": "Nice Weather Today!",
+      "standards": {
+        "listening": {
+          "receptive": "Follow very simple directions and instructions.",
+          "interactive": "Respond to simple conversations on familiar topics using gestures or pointing."
+        },
+        "reading": {
+          "skills": [
+            "Identify one-step written directions with visual support.",
+            "Match simple words to corresponding pictures."
+          ],
+          "phonemic_awareness": "Identify sounds of alphabet letters with picture or object support."
+        },
+        "speaking": {
+          "productive": "Use basic words or phrases to identify time words.",
+          "interactive": "Exchange simple questions and answers about the current day."
+        },
+        "writing": {
+          "productive": "Fill in a form with their name and age with adult help.",
+          "interactive": "Write simple phrases on a drawing or postcard, even with errors."
+        },
+        "mediation": {
+          "text": "Draw a single picture that represents a simple story or event.",
+          "communication": "Use gestures to show how to play a very simple game."
+        }
+      }
+    },
+    {
+      "scenario_id": 3,
+      "scenario_name": "Colors in Our World",
+      "standards": {
+        "listening": {
+          "receptive": "Identify the topic of a conversation involving familiar subjects.",
+          "interactive": "Respond to simple conversations using gestures or pointing."
+        },
+        "reading": {
+          "skills": [
+            "Identify pictures that show what happened in a simple story.",
+            "Identify simple words for very common symbols."
+          ],
+          "phonemic_awareness": "Identify initial sounds of alphabet letters in common words with visual support."
+        },
+        "speaking": {
+          "productive": "Name primary and secondary colors.",
+          "interactive": "Express likes or dislikes using simple words and pointing."
+        },
+        "writing": {
+          "productive": "Write numbers up to 10 with guidance.",
+          "interactive": "Write one-word answers to simple questions."
+        },
+        "mediation": {
+          "text": "Identify familiar words from a story by connecting them to prior knowledge.",
+          "concept": "Use a word and a gesture or drawing to describe a familiar object."
+        }
+      }
+    },
+    {
+      "scenario_id": 4,
+      "scenario_name": "My Family and I",
+      "standards": {
+        "listening": {
+          "receptive": "Show comprehension of basic greetings and leave-taking with gesture support.",
+          "interactive": "Answer simple questions about oneself using gestures or formulaic expressions."
+        },
+        "reading": {
+          "skills": [
+            "Recognize their own name and names of classmates or family members.",
+            "Point to simple words identifying objects or characters in a picture book."
+          ],
+          "phonemic_awareness": "Identify alphabet letter sounds with picture or object support."
+        },
+        "speaking": {
+          "productive": "Locate objects and people using words.",
+          "interactive": "Respond nonverbally to yes/no questions."
+        },
+        "writing": {
+          "productive": "Write their own name and other familiar words.",
+          "interactive": "Draw pictures related to a simple written sentence."
+        },
+        "mediation": {
+          "text": "Use pictures or objects to express ideas.",
+          "communication": "Use gestures and demonstrations to help classmates perform a simple task."
+        }
+      }
+    },
+    {
+      "scenario_id": 5,
+      "scenario_name": "Colors of Things that Go",
+      "standards": {
+        "listening": {
+          "receptive": "Catch the main idea of a short simple story with visual support.",
+          "interactive": "Identify objects in the environment in response to simple questions."
+        },
+        "reading": {
+          "skills": [
+            "Sequence pictures to show comprehension of a simple text.",
+            "Identify the main action in a simple storybook."
+          ],
+          "phonemic_awareness": "Identify alphabet letter sounds with visual support."
+        },
+        "speaking": {
+          "productive": "Name common objects and people.",
+          "interactive": "Participate in very simple classroom games using repeated lines."
+        },
+        "writing": {
+          "productive": "Fill in a form with name and age with adult help.",
+          "interactive": "Write very simple sentences with assistance."
+        },
+        "mediation": {
+          "text": "Draw a picture representing a simple story or event.",
+          "communication": "Lead a simple classroom activity using gestures and basic words."
+        }
+      }
+    },
+    {
+      "scenario_id": 6,
+      "scenario_name": "Shapes Around Us",
+      "standards": {
+        "listening": {
+          "receptive": "Recognize simple classroom instructions spoken slowly and clearly.",
+          "interactive": "Respond to simple conversations using gestures or pointing."
+        },
+        "reading": {
+          "skills": [
+            "Recognize familiar words in simple texts.",
+            "Match simple words to pictures."
+          ],
+          "phonemic_awareness": "Identify alphabet letter sounds with visual support."
+        },
+        "speaking": {
+          "productive": "Name common classroom objects and familiar people.",
+          "interactive": "Engage with very simple classroom commands."
+        },
+        "writing": {
+          "productive": "Write numbers up to ten with guidance.",
+          "interactive": "Write one-word answers to simple questions."
+        },
+        "mediation": {
+          "communication": "Use gestures to help classmates perform a simple task.",
+          "concept": "Use a word and a gesture or drawing to describe a familiar object."
+        }
+      }
+    },
+    {
+      "scenario_id": 7,
+      "scenario_name": "Shapes on Our Plates",
+      "standards": {
+        "listening": {
+          "receptive": "Recognize familiar words and basic phrases.",
+          "interactive": "Identify objects in the environment in response to simple questions."
+        },
+        "reading": {
+          "skills": [
+            "Recognize familiar words in simple texts.",
+            "Identify simple words for common symbols."
+          ],
+          "phonemic_awareness": "Identify alphabet letter sounds with visual or concrete support."
+        },
+        "speaking": {
+          "productive": "Name primary and secondary colors.",
+          "interactive": "Answer questions using simple words."
+        },
+        "writing": {
+          "productive": "Label common items using a model.",
+          "interactive": "Write simple phrases on drawings or postcards."
+        },
+        "mediation": {
+          "text": "Use pictures or objects to express ideas.",
+          "concept": "Use facial expressions and gestures to explain feelings or needs."
+        }
+      }
+    },
+    {
+      "scenario_id": 8,
+      "scenario_name": "It's Our Garden",
+      "standards": {
+        "listening": {
+          "receptive": "Catch the main idea of a short simple story with visual support.",
+          "interactive": "Respond to simple conversations using gestures or pointing."
+        },
+        "reading": {
+          "skills": [
+            "Match simple words to pictures.",
+            "Identify simple words for common symbols."
+          ],
+          "phonemic_awareness": "Identify alphabet letter sounds with visual support."
+        },
+        "speaking": {
+          "productive": "Name primary and secondary colors.",
+          "interactive": "Express likes or dislikes using simple words and pointing."
+        },
+        "writing": {
+          "productive": "Write simple greetings on cards.",
+          "interactive": "Write very simple sentences with assistance."
+        },
+        "mediation": {
+          "communication": "Use gestures to help classmates perform a simple task.",
+          "concept": "Use a word and a gesture or drawing to describe a familiar object."
+        }
+      }
+    }
+  ]
+}

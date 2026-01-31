@@ -1,0 +1,45 @@
+{
+  "grade": "2",
+  "proficiency_level": "Pre A1.4",
+  "institutional_standards_by_skill": {
+    "listening": "Students can follow the main plot of simple stories told with visual support. They can comprehend simple descriptions of people, places, and things around them. They can follow two-step spoken instructions related to classroom activities and respond in predictable patterns to simple questions about familiar topics.",
+    "reading": "Students can show comprehension of simple sentences and follow written instructions with visual aids. They can identify key words and phrases in texts and find specific information such as names, quantities, or dates. They can recognize all letters of the alphabet and connect them to their initial sounds.",
+    "speaking": "Students can identify common actions in daily routines and count aloud up to 50 with help. They can locate people, objects, and things around them and introduce themselves or family members using basic personal information. They can express basic needs, feelings, and preferences using simple phrases.",
+    "writing": "Students can write simple thank-you notes or greetings using picture cards and fill in blanks in sentences using a word bank. They can write short phrases or sentences about personal experiences with support. They can contribute a word to a class story and label drawings of basic objects.",
+    "mediation": "Students can summarize short stories using drawings or pictures and use visual information in texts to convey meaning. They can explain simple written instructions to peers using English or Spanish, describe everyday objects with visual support, and connect ideas from a text to personal experiences."
+  },
+  "institutional_standards_by_scenario": {
+    "scenario_1": {
+      "title": "School Days",
+      "standards": "Students follow the main plot of simple stories about days of the week with visual support. They identify common actions in daily routines and participate in question-and-answer exchanges about time. They write simple notes or captions about school days and summarize short stories using drawings."
+    },
+    "scenario_2": {
+      "title": "School Life Adventures",
+      "standards": "Students follow classroom commands and identify keywords in texts about school objects. They describe objects using adjectives and respond to questions about size, color, or location. They write polite thank-you notes and label classroom items with descriptive words."
+    },
+    "scenario_3": {
+      "title": "All About the Weather",
+      "standards": "Students comprehend descriptions of weather and participate in call-and-response songs. They count weather-related items up to 50 and describe simple pictures of weather conditions. They fill in blanks about weather using word banks and use visuals to explain weather-related vocabulary."
+    },
+    "scenario_4": {
+      "title": "All About My Body",
+      "standards": "Students follow two-step instructions about body movements and identify keywords related to body parts and clothing. They locate people or objects using descriptive language and write simple responses about what they wear. They interpret phrases from texts by pointing to visuals and describe clothing with support."
+    },
+    "scenario_5": {
+      "title": "Exploring My Community",
+      "standards": "Students comprehend descriptions of community places and answer simple questions about stories they hear. They introduce themselves and family members in relation to places like the park or market. They write simple sentences about community visits and connect story content to personal experiences."
+    },
+    "scenario_6": {
+      "title": "Discovering Nature’s Wonders",
+      "standards": "Students identify familiar vocabulary about animals and nature in context. They contribute to storytelling using visual prompts and relay short messages about habitats. They make lists of nature items and summarize animal stories using drawings or pictures."
+    },
+    "scenario_7": {
+      "title": "Fun Outdoors!",
+      "standards": "Students follow two-step instructions for outdoor games and retell simple messages to peers. They express preferences for activities like running or swimming and write simple responses to texts about sports. They summarize outdoor stories with drawings and connect class concepts to personal experiences."
+    },
+    "scenario_8": {
+      "title": "It's Festival Season",
+      "standards": "Students identify numbers and quantities in festival contexts and follow game directions. They express basic needs and feelings about celebrations and write short phrases about festival foods or activities. They use visual information to clarify meaning and explain simple instructions using pictures or gestures."
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "grade": "Kinder",
+  "proficiency_level": "Pre A1.2",
+  "institutional_standards_by_skill": {
+    "listening": "Students can recognize familiar spoken sounds, words, and phrases with the support of gestures, simple words, and phrases. They can follow very simple classroom instructions with visual cues and respond to basic oral requests or interactive games.",
+    "reading": "Students can recognize basic familiar words supported with illustrations or visual aids. They can identify characters in a picture book and match spoken words to their written form when supported with pictures. They can participate in choral reading and recognize familiar letters.",
+    "speaking": "Students can identify things using simple words during simple exchanges. They can name daily activities, count aloud up to ten with help, identify colors, or name things in pictures. They can express basic needs, likes, or dislikes using simple words, pointing, or gestures.",
+    "writing": "Students can communicate simple ideas by copying words and using drawings and symbols. They can practice tracing and copying letters of the alphabet. They can write simple words with model guidance and engage in labeling drawings or classroom objects.",
+    "mediation": "Students can use basic strategies for clarification and repetition to support understanding. They can identify objects in picture books using simple words, use gestures and drawings to link routines to classroom activities, or relay simple messages from the teacher to peers."
+  },
+  "institutional_standards_by_scenario": {
+    "scenario_1": {
+      "title": "It's a School Day!",
+      "standards": "Students follow very simple classroom instructions with visual cues. They engage in interactive games with instructions. They recognize basic familiar words with picture support. They use simple words to express basic needs and engage in question-and-answer exchanges. They trace letters and label objects. They identify objects in picture books using single words."
+    },
+    "scenario_2": {
+      "title": "Our Routines",
+      "standards": "Students show comprehension of basic classroom commands and respond to simple oral requests. They name daily activities using isolated words. They write simple words with model guidance. They use gestures and drawings to link daily routines to classroom activities. They engage in interactive labeling of routine-related items."
+    },
+    "scenario_3": {
+      "title": "Hold Up Ten Fingers!",
+      "standards": "Students show comprehension of basic counting commands and repeat simple rhymes and songs. They count aloud up to ten with help and respond to yes/no questions nonverbally. They write numbers and simple words with guidance. They use gestures and drawings to represent quantities and clarify understanding during counting."
+    },
+    "scenario_4": {
+      "title": "Where Is It?",
+      "standards": "Students follow simple location instructions with visual cues and respond during group story time. They identify primary and secondary colors and respond to commands. They label drawings of basic objects and their locations. They identify objects in picture books and confirm names using simple words."
+    },
+    "scenario_5": {
+      "title": "What's that Sound?",
+      "standards": "Students follow instructions with visual cues and respond to simple oral requests about sounds. They identify things in pictures using isolated words and mimic animal sounds. They write simple words with model guidance to label animals and sounds. They relay sound-related messages from teacher to peers."
+    },
+    "scenario_6": {
+      "title": "Let's Dance!",
+      "standards": "Students show comprehension of movement commands and repeat action rhymes and songs. They recite simple nursery rhymes and give basic movement commands. They label drawings of actions like jump or run. They use gestures and drawings to express and clarify movement instructions."
+    },
+    "scenario_7": {
+      "title": "I'm Happy",
+      "standards": "Students recognize basic greetings and respond to requests about feelings. They express likes, dislikes, and emotions using simple 'I'm...' statements and gestures. They trace and copy emotion-related words. They use gestures to relay messages about feelings or basic needs to peers."
+    },
+    "scenario_8": {
+      "title": "I Like School!",
+      "standards": "Students show comprehension of basic commands and engage in interactive games about preferences. They identify things in pictures and express likes or dislikes using simple words and pointing. They write simple preference-related words with model guidance. They identify objects in picture books and help peers understand preferences by connecting words to objects."
+    }
+  }
+}
