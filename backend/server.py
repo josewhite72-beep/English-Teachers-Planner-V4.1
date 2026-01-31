@@ -33,6 +33,7 @@ PROJECTS_OFFICIAL_DIR = DATA_DIR / 'projects' / 'official'
 PROJECTS_C21_DIR = DATA_DIR / 'projects' / 'c21'
 INSTITUTIONAL_STANDARDS_DIR = DATA_DIR / 'institutional_standards'
 SCOPE_SEQUENCE_FILE = DATA_DIR / 'scope_sequence.json'
+GENERATED_PLANNERS_DIR = DATA_DIR / 'generated_planners'
 
 # Create the main app without a prefix
 app = FastAPI()
