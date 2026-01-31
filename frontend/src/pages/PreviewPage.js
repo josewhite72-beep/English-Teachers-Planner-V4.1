@@ -103,29 +103,6 @@ export default function PreviewPage() {
 
   const t = translations[language];
 
-  if (!generatedPlanner) {
-    navigate('/');
-    return null;
-  }
-
-  const { theme_planner, lesson_planners } = editMode && editedPlanner ? editedPlanner : generatedPlanner;
-
-  const handleEditMode = () => {
-    setEditMode(true);
-    setEditedPlanner(JSON.parse(JSON.stringify(generatedPlanner))); // Deep clone
-  };
-
-  const handleSaveChanges = () => {
-    setGeneratedPlanner(editedPlanner);
-    setEditMode(false);
-    toast.success(language === 'es' ? 'Cambios guardados' : 'Changes saved');
-  };
-
-  const handleCancelEdit = () => {
-    setEditMode(false);
-    setEditedPlanner(null);
-  };
-
   const handleUpdateField = useCallback((path, value) => {
     setEditedPlanner(prevPlanner => {
       const newPlanner = JSON.parse(JSON.stringify(prevPlanner)); // Deep clone
@@ -155,6 +132,29 @@ export default function PreviewPage() {
       return newPlanner;
     });
   }, []);
+
+  if (!generatedPlanner) {
+    navigate('/');
+    return null;
+  }
+
+  const { theme_planner, lesson_planners } = editMode && editedPlanner ? editedPlanner : generatedPlanner;
+
+  const handleEditMode = () => {
+    setEditMode(true);
+    setEditedPlanner(JSON.parse(JSON.stringify(generatedPlanner))); // Deep clone
+  };
+
+  const handleSaveChanges = () => {
+    setGeneratedPlanner(editedPlanner);
+    setEditMode(false);
+    toast.success(language === 'es' ? 'Cambios guardados' : 'Changes saved');
+  };
+
+  const handleCancelEdit = () => {
+    setEditMode(false);
+    setEditedPlanner(null);
+  };
 
   const handleExportDocx = async () => {
     setExporting(true);
