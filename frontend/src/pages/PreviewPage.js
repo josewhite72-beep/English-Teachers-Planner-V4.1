@@ -465,32 +465,122 @@ export default function PreviewPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">
+                  {/* Specific Objective */}
+                  <div>
+                    <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Specific Objective</h4>
+                    <div className="text-slate-700 dark:text-slate-300">
+                      <EditableField
+                        value={lesson_planners[selectedLesson].specific_objective}
+                        onChange={(value) => handleUpdateField(`lesson_planners.${selectedLesson}.specific_objective`, value)}
+                        multiline
+                        placeholder="Enter specific objective..."
+                      />
+                    </div>
+                  </div>
+
                   {/* Learning Outcome */}
                   <div>
-                    <h4 className="font-semibold text-slate-800 mb-2">{t.learningOutcome}</h4>
-                    <p className="text-slate-700">{lesson_planners[selectedLesson].learning_outcome || 'To be completed'}</p>
+                    <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">{t.learningOutcome}</h4>
+                    <div className="text-slate-700 dark:text-slate-300">
+                      <EditableField
+                        value={lesson_planners[selectedLesson].learning_outcome}
+                        onChange={(value) => handleUpdateField(`lesson_planners.${selectedLesson}.learning_outcome`, value)}
+                        multiline
+                        placeholder="Enter learning outcome..."
+                      />
+                    </div>
                   </div>
 
                   <Separator />
 
                   {/* Lesson Stages */}
                   <div>
-                    <h4 className="font-semibold text-slate-800 mb-4">{t.lessonStages}</h4>
+                    <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-4">{t.lessonStages}</h4>
                     <div className="space-y-4">
                       {lesson_planners[selectedLesson].lesson_stages?.map((stage, idx) => (
-                        <div key={idx} className="border-l-4 border-secondary pl-4">
-                          <h5 className="font-semibold text-secondary mb-2">{stage.stage}</h5>
-                          {stage.activities && stage.activities.length > 0 ? (
-                            <ul className="list-disc list-inside text-sm text-slate-700 space-y-1">
-                              {stage.activities.map((activity, actIdx) => (
-                                <li key={actIdx}>{activity}</li>
+                        <div key={idx} className="border-l-4 border-secondary dark:border-teal-500 pl-4">
+                          <h5 className="font-semibold text-secondary dark:text-teal-400 mb-2">{stage.stage}</h5>
+                          {editMode ? (
+                            <div className="space-y-2">
+                              {stage.activities?.map((activity, actIdx) => (
+                                <Textarea
+                                  key={actIdx}
+                                  value={activity}
+                                  onChange={(e) => {
+                                    const newActivities = [...stage.activities];
+                                    newActivities[actIdx] = e.target.value;
+                                    handleUpdateField(`lesson_planners.${selectedLesson}.lesson_stages.${idx}.activities`, newActivities);
+                                  }}
+                                  className="text-sm dark:bg-slate-700 dark:border-slate-600"
+                                  rows={2}
+                                />
                               ))}
-                            </ul>
+                              <Button
+                                onClick={() => {
+                                  const newActivities = [...(stage.activities || []), ''];
+                                  handleUpdateField(`lesson_planners.${selectedLesson}.lesson_stages.${idx}.activities`, newActivities);
+                                }}
+                                variant="outline"
+                                size="sm"
+                                className="w-full"
+                              >
+                                + Add Activity
+                              </Button>
+                            </div>
                           ) : (
-                            <p className="text-sm text-slate-500 italic">To be completed</p>
+                            stage.activities && stage.activities.length > 0 ? (
+                              <ul className="list-disc list-inside text-sm text-slate-700 dark:text-slate-300 space-y-1">
+                                {stage.activities.map((activity, actIdx) => (
+                                  <li key={actIdx}>{activity}</li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <p className="text-sm text-slate-500 dark:text-slate-400 italic">To be completed</p>
+                            )
                           )}
                         </div>
                       ))}
+                    </div>
+                  </div>
+
+                  <Separator />
+
+                  {/* Comments Section */}
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">{t.homework}</h4>
+                      <div className="text-slate-700 dark:text-slate-300">
+                        <EditableField
+                          value={lesson_planners[selectedLesson].comments?.homework}
+                          onChange={(value) => handleUpdateField(`lesson_planners.${selectedLesson}.comments.homework`, value)}
+                          multiline
+                          placeholder="Enter homework..."
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">{t.assessment}</h4>
+                      <div className="text-slate-700 dark:text-slate-300">
+                        <EditableField
+                          value={lesson_planners[selectedLesson].comments?.formative_assessment}
+                          onChange={(value) => handleUpdateField(`lesson_planners.${selectedLesson}.comments.formative_assessment`, value)}
+                          multiline
+                          placeholder="Enter assessment strategies..."
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">{t.teacherNotes}</h4>
+                      <div className="text-slate-700 dark:text-slate-300">
+                        <EditableField
+                          value={lesson_planners[selectedLesson].comments?.teacher_comments}
+                          onChange={(value) => handleUpdateField(`lesson_planners.${selectedLesson}.comments.teacher_comments`, value)}
+                          multiline
+                          placeholder="Enter teacher notes..."
+                        />
+                      </div>
                     </div>
                   </div>
                 </CardContent>
