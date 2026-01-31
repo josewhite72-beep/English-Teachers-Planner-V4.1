@@ -149,20 +149,20 @@ export default function PreviewPage() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-6 py-8">
         {/* Document Header */}
-        <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-6 mb-6">
+        <div className="bg-white rounded-lg border border-teal-200 shadow-lg p-6 mb-6">
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="text-3xl font-bold font-heading text-slate-900 mb-2">
+              <h1 className="text-3xl font-bold font-heading text-teal-900 mb-2">
                 Lesson Planner
               </h1>
               <div className="flex gap-2 flex-wrap">
-                <Badge className="bg-teal-100 text-teal-800" data-testid="grade-badge">
+                <Badge className="bg-teal-600 text-white hover:bg-teal-700" data-testid="grade-badge">
                   {gradeLabels[generatedPlanner.grade]}
                 </Badge>
-                <Badge className="bg-blue-100 text-blue-800" data-testid="scenario-badge">
+                <Badge className="bg-blue-600 text-white hover:bg-blue-700" data-testid="scenario-badge">
                   {generatedPlanner.scenario}
                 </Badge>
-                <Badge className="bg-slate-100 text-slate-800" data-testid="theme-badge">
+                <Badge className="bg-teal-100 text-teal-800 border border-teal-300" data-testid="theme-badge">
                   {generatedPlanner.theme}
                 </Badge>
               </div>
