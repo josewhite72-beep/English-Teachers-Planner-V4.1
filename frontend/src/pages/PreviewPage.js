@@ -247,9 +247,9 @@ export default function PreviewPage() {
             </Card>
 
             {/* Communicative Competences */}
-            <Card>
-              <CardHeader>
-                <CardTitle>{t.competences}</CardTitle>
+            <Card className="border-teal-200 shadow-md">
+              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 border-b border-teal-100">
+                <CardTitle className="text-teal-900">{t.competences}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
