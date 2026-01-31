@@ -89,6 +89,7 @@ export default function HomePage() {
     if (selectedGrade) {
       loadScenarios(selectedGrade);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedGrade]);
 
   // Load themes when scenario changes
@@ -96,6 +97,7 @@ export default function HomePage() {
     if (selectedGrade && selectedScenario) {
       loadThemes(selectedGrade, selectedScenario);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedScenario]);
 
   // Load projects when scenario changes
@@ -103,6 +105,7 @@ export default function HomePage() {
     if (selectedGrade && selectedScenario) {
       loadProjects(selectedGrade, selectedScenario);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedScenario]);
 
   const loadScenarios = async (grade) => {
