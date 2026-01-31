@@ -240,8 +240,29 @@ async def get_c21_projects(grade: str, scenario: str):
 
 @api_router.post("/planner/generate")
 async def generate_planner(request: PlannerRequest):
-    """Generate a complete lesson planner (Theme + Lessons) with AI-generated content"""
+    """Generate a complete lesson planner (Theme + Lessons) - uses pregenerated JSON if available"""
     try:
+        # First, try to load pregenerated planner
+        pregenerated = load_pregenerated_planner(
+            request.grade, request.scenario, request.theme, 
+            request.plan_type, request.language
+        )
+        
+        if pregenerated:
+            logger.info("Using pregenerated planner from JSON file")
+            # Load project if specified
+            if request.project_id:
+                official_projects = load_projects_official(request.grade)
+                if 'projects_by_scenario' in official_projects:
+                    projects_list = official_projects['projects_by_scenario'].get(request.scenario, [])
+                    project_data = next((p for p in projects_list if p.get('id') == request.project_id), None)
+                    pregenerated['project'] = project_data
+            
+            return pregenerated
+        
+        # If no pregenerated planner, generate basic structure from curriculum
+        logger.info("No pregenerated planner found, generating basic structure from curriculum")
+        
         # Load grade data
         grade_data = load_grade_data(request.grade)
         
@@ -263,18 +284,7 @@ async def generate_planner(request: PlannerRequest):
                 projects_list = official_projects['projects_by_scenario'].get(request.scenario, [])
                 project_data = next((p for p in projects_list if p.get('id') == request.project_id), None)
         
-        # Generate planner with AI content
-        logger.info(f"Generating planner with AI for grade {request.grade}, scenario {request.scenario}")
-        
-        theme_planner = await generate_theme_planner_with_ai(
-            scenario_data, request.theme, request.grade, request.plan_type, 
-            request.language, project_data
-        )
-        
-        lesson_planners = await generate_lesson_planners_with_ai(
-            scenario_data, request.theme, request.plan_type, request.language, request.grade
-        )
-        
+        # Generate basic planner structure
         planner = {
             "grade": request.grade,
             "scenario": request.scenario,
@@ -282,8 +292,8 @@ async def generate_planner(request: PlannerRequest):
             "plan_type": request.plan_type,
             "official_format": request.official_format,
             "language": request.language,
-            "theme_planner": theme_planner,
-            "lesson_planners": lesson_planners,
+            "theme_planner": generate_basic_theme_planner(scenario_data, request.theme, request.grade, request.plan_type, project_data),
+            "lesson_planners": generate_basic_lesson_planners(scenario_data, request.theme, request.plan_type),
             "project": project_data
         }
         
@@ -292,6 +302,123 @@ async def generate_planner(request: PlannerRequest):
     except Exception as e:
         logger.error(f"Error generating planner: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+
+def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str, 
+                                 plan_type: str, project_data: dict = None) -> dict:
+    """Generate basic theme planner structure from curriculum data"""
+    # Get CEFR level from grade
+    cefr_levels = {
+        "pre_k": "Pre A1.1",
+        "K": "Pre A1.2",
+        "1": "A1.1",
+        "2": "A1.2",
+        "3": "A2.1",
+        "4": "A2.2",
+        "5": "B1.1",
+        "6": "B1.2"
+    }
+    
+    standards = scenario_data.get('standards_and_learning_outcomes', {})
+    competences = scenario_data.get('communicative_competences', {})
+    
+    # Generate basic objectives from standards
+    objectives = {}
+    for skill in ['listening', 'reading', 'speaking', 'writing', 'mediation']:
+        if skill in standards:
+            skill_data = standards[skill]
+            if isinstance(skill_data, dict):
+                general = skill_data.get('general', skill_data.get('receptive', skill_data.get('productive', '')))
+                objectives[skill] = general
+            else:
+                objectives[skill] = ""
+    
+    theme_planner = {
+        "general_information": {
+            "teachers": "",
+            "grade": grade,
+            "cefr_level": cefr_levels.get(grade, "A1"),
+            "trimester": "",
+            "weekly_hours": "",
+            "week_range": "",
+            "scenario": scenario_data.get('scenario', scenario_data.get('title', '')),
+            "theme": theme
+        },
+        "standards_and_learning_outcomes": standards,
+        "communicative_competences": competences,
+        "specific_objectives": objectives,
+        "materials_and_strategies": {
+            "required_materials": ["To be completed by teacher"],
+            "differentiated_instruction": "To be completed by teacher"
+        },
+        "learning_sequence": {
+            "project_title": project_data.get('name', '') if project_data else '',
+            "project_description": project_data.get('overview', '') if project_data else '',
+            "connection_to_theme": theme
+        }
+    }
+    
+    return theme_planner
+
+def generate_basic_lesson_planners(scenario_data: dict, theme: str, plan_type: str) -> list:
+    """Generate basic lesson planner structures"""
+    lessons = []
+    skills = ['listening', 'reading', 'speaking', 'writing', 'mediation']
+    standards = scenario_data.get('standards_and_learning_outcomes', {})
+    
+    for i, skill in enumerate(skills, 1):
+        # Get learning outcome
+        learning_outcome = ""
+        if skill in standards:
+            skill_data = standards[skill]
+            if isinstance(skill_data, dict):
+                outcomes = skill_data.get('learning_outcomes', [])
+                if isinstance(outcomes, list) and outcomes:
+                    learning_outcome = outcomes[0]
+        
+        lesson = {
+            "lesson_number": i,
+            "skill_focus": skill.capitalize(),
+            "scenario": scenario_data.get('scenario', scenario_data.get('title', '')),
+            "theme": theme,
+            "date": "",
+            "time": "45-60 minutes",
+            "specific_objective": "To be completed by teacher",
+            "learning_outcome": learning_outcome,
+            "lesson_stages": [
+                {
+                    "stage": "Warm-up / Pre-task",
+                    "activities": ["To be completed by teacher"]
+                },
+                {
+                    "stage": "Presentation",
+                    "activities": ["To be completed by teacher"]
+                },
+                {
+                    "stage": "Preparation",
+                    "activities": ["To be completed by teacher"]
+                },
+                {
+                    "stage": "Performance",
+                    "activities": ["To be completed by teacher"]
+                },
+                {
+                    "stage": "Assessment / Post-task",
+                    "activities": ["To be completed by teacher"]
+                },
+                {
+                    "stage": "Reflection",
+                    "activities": ["To be completed by teacher"]
+                }
+            ],
+            "comments": {
+                "homework": "To be completed by teacher",
+                "formative_assessment": "To be completed by teacher",
+                "teacher_comments": "To be completed by teacher"
+            }
+        }
+        lessons.append(lesson)
+    
+    return lessons
 
 async def generate_theme_planner_with_ai(scenario_data: dict, theme: str, grade: str, 
                                          plan_type: str, language: str, project_data: dict = None) -> dict:
