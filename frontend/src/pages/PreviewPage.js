@@ -217,9 +217,9 @@ export default function PreviewPage() {
             </Card>
 
             {/* Standards */}
-            <Card>
-              <CardHeader>
-                <CardTitle>{t.standards}</CardTitle>
+            <Card className="border-teal-200 shadow-md">
+              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 border-b border-teal-100">
+                <CardTitle className="text-teal-900">{t.standards}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
