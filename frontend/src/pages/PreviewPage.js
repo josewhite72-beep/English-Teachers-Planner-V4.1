@@ -257,16 +257,16 @@ export default function PreviewPage() {
             </Card>
 
             {/* Communicative Competences */}
-            <Card className="border-teal-200 shadow-md">
-              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 border-b border-teal-100">
-                <CardTitle className="text-teal-900">{t.competences}</CardTitle>
+            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
+              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
+                <CardTitle className="text-teal-900 dark:text-teal-100">{t.competences}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   {theme_planner?.communicative_competences?.linguistic && (
                     <div>
-                      <h4 className="font-semibold text-slate-800 mb-2">Linguistic Competence</h4>
-                      <div className="space-y-2 text-sm text-slate-700">
+                      <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Linguistic Competence</h4>
+                      <div className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
                         {theme_planner.communicative_competences.linguistic.grammatical_features && (
                           <div>
                             <strong>Grammar:</strong>{' '}
