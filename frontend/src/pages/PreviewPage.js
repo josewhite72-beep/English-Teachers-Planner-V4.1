@@ -132,16 +132,17 @@ export default function PreviewPage() {
   const handleExportDocx = async () => {
     setExporting(true);
     try {
+      const dataToExport = editMode && editedPlanner ? editedPlanner : generatedPlanner;
       const response = await axios.post(
         `${API}/planner/export/docx`,
-        generatedPlanner,
+        dataToExport,
         { responseType: 'blob' }
       );
 
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', `lesson_planner_${generatedPlanner.grade}_${generatedPlanner.scenario}.docx`);
+      link.setAttribute('download', `lesson_planner_${dataToExport.grade}_${dataToExport.scenario}.docx`);
       document.body.appendChild(link);
       link.click();
       link.remove();
@@ -153,6 +154,33 @@ export default function PreviewPage() {
     } finally {
       setExporting(false);
     }
+  };
+
+  // Editable field component
+  const EditableField = ({ value, onChange, multiline = false, placeholder = '' }) => {
+    if (!editMode) {
+      return <span>{value || placeholder}</span>;
+    }
+    
+    if (multiline) {
+      return (
+        <Textarea
+          value={value || ''}
+          onChange={(e) => onChange(e.target.value)}
+          className="min-h-[80px] dark:bg-slate-700 dark:border-slate-600"
+          placeholder={placeholder}
+        />
+      );
+    }
+    
+    return (
+      <Input
+        value={value || ''}
+        onChange={(e) => onChange(e.target.value)}
+        className="dark:bg-slate-700 dark:border-slate-600"
+        placeholder={placeholder}
+      />
+    );
   };
 
   const gradeLabels = {
