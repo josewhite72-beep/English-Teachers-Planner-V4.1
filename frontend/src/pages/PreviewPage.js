@@ -114,19 +114,33 @@ export default function PreviewPage() {
   };
 
   const handleUpdateField = (path, value) => {
-    const newPlanner = { ...editedPlanner };
-    const keys = path.split('.');
-    let current = newPlanner;
-    
-    for (let i = 0; i < keys.length - 1; i++) {
-      if (current[keys[i]] === undefined) {
-        current[keys[i]] = {};
+    setEditedPlanner(prevPlanner => {
+      const newPlanner = JSON.parse(JSON.stringify(prevPlanner)); // Deep clone
+      const keys = path.split('.');
+      let current = newPlanner;
+      
+      for (let i = 0; i < keys.length - 1; i++) {
+        const key = keys[i];
+        const nextKey = keys[i + 1];
+        
+        // Check if next key is a number (array index)
+        if (!isNaN(nextKey)) {
+          if (!Array.isArray(current[key])) {
+            current[key] = [];
+          }
+        } else {
+          if (current[key] === undefined) {
+            current[key] = {};
+          }
+        }
+        current = current[key];
       }
-      current = current[keys[i]];
-    }
-    
-    current[keys[keys.length - 1]] = value;
-    setEditedPlanner(newPlanner);
+      
+      const lastKey = keys[keys.length - 1];
+      current[lastKey] = value;
+      
+      return newPlanner;
+    });
   };
 
   const handleExportDocx = async () => {
