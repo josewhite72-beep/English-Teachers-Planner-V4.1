@@ -318,7 +318,11 @@ export default function PreviewPage() {
                   key={idx}
                   variant={selectedLesson === idx ? 'default' : 'outline'}
                   onClick={() => setSelectedLesson(idx)}
-                  className="whitespace-nowrap"
+                  className={`whitespace-nowrap ${
+                    selectedLesson === idx 
+                      ? 'bg-teal-600 hover:bg-teal-700 text-white' 
+                      : 'border-teal-300 text-teal-700 hover:bg-teal-50'
+                  }`}
                   data-testid={`lesson-${idx + 1}-button`}
                 >
                   {t.lesson} {lesson.lesson_number}: {lesson.skill_focus}
@@ -328,13 +332,13 @@ export default function PreviewPage() {
 
             {/* Selected Lesson */}
             {lesson_planners && lesson_planners[selectedLesson] && (
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3">
+              <Card className="border-teal-200 shadow-md">
+                <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 border-b border-teal-100">
+                  <CardTitle className="flex items-center gap-3 text-teal-900">
                     <span className="text-2xl">
                       {t.lesson} {lesson_planners[selectedLesson].lesson_number}
                     </span>
-                    <Badge className="bg-teal-100 text-teal-800">
+                    <Badge className="bg-teal-600 text-white">
                       {lesson_planners[selectedLesson].skill_focus}
                     </Badge>
                   </CardTitle>
