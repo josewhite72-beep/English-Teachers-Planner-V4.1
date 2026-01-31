@@ -125,7 +125,7 @@ export default function PreviewPage() {
     setEditedPlanner(null);
   };
 
-  const handleUpdateField = (path, value) => {
+  const handleUpdateField = useCallback((path, value) => {
     setEditedPlanner(prevPlanner => {
       const newPlanner = JSON.parse(JSON.stringify(prevPlanner)); // Deep clone
       const keys = path.split('.');
@@ -153,7 +153,7 @@ export default function PreviewPage() {
       
       return newPlanner;
     });
-  };
+  }, []);
 
   const handleExportDocx = async () => {
     setExporting(true);
