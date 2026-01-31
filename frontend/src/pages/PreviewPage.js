@@ -181,17 +181,17 @@ export default function PreviewPage() {
         </div>
 
         <Tabs defaultValue="theme" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-2 h-12 bg-teal-50 border border-teal-200">
+          <TabsList className="grid w-full grid-cols-2 h-12 bg-teal-50 dark:bg-slate-700 border border-teal-200 dark:border-slate-600">
             <TabsTrigger 
               value="theme" 
-              className="text-base data-[state=active]:bg-teal-600 data-[state=active]:text-white" 
+              className="text-base data-[state=active]:bg-teal-600 data-[state=active]:text-white dark:data-[state=active]:bg-teal-700" 
               data-testid="theme-tab"
             >
               {t.themePlanner}
             </TabsTrigger>
             <TabsTrigger 
               value="lessons" 
-              className="text-base data-[state=active]:bg-teal-600 data-[state=active]:text-white" 
+              className="text-base data-[state=active]:bg-teal-600 data-[state=active]:text-white dark:data-[state=active]:bg-teal-700" 
               data-testid="lessons-tab"
             >
               {t.lessonPlanners}
@@ -200,36 +200,36 @@ export default function PreviewPage() {
 
           {/* Theme Planner Tab */}
           <TabsContent value="theme" className="space-y-6">
-            <Card className="border-teal-200 shadow-md">
-              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 border-b border-teal-100">
-                <CardTitle className="text-teal-900">{t.generalInfo}</CardTitle>
+            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
+              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
+                <CardTitle className="text-teal-900 dark:text-teal-100">{t.generalInfo}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <p className="text-sm font-medium text-slate-500">{t.grade}</p>
-                    <p className="text-base text-slate-900">{gradeLabels[theme_planner?.general_information?.grade]}</p>
+                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{t.grade}</p>
+                    <p className="text-base text-slate-900 dark:text-slate-100">{gradeLabels[theme_planner?.general_information?.grade]}</p>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-slate-500">{t.cefrLevel}</p>
-                    <p className="text-base text-slate-900">{theme_planner?.general_information?.cefr_level}</p>
+                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{t.cefrLevel}</p>
+                    <p className="text-base text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.cefr_level}</p>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-slate-500">{t.scenario}</p>
-                    <p className="text-base text-slate-900">{theme_planner?.general_information?.scenario}</p>
+                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{t.scenario}</p>
+                    <p className="text-base text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.scenario}</p>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-slate-500">{t.theme}</p>
-                    <p className="text-base text-slate-900">{theme_planner?.general_information?.theme}</p>
+                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{t.theme}</p>
+                    <p className="text-base text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.theme}</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
             {/* Standards */}
-            <Card className="border-teal-200 shadow-md">
-              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 border-b border-teal-100">
-                <CardTitle className="text-teal-900">{t.standards}</CardTitle>
+            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
+              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
+                <CardTitle className="text-teal-900 dark:text-teal-100">{t.standards}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
