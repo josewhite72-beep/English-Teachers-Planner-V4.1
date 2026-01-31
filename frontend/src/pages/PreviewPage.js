@@ -183,19 +183,20 @@ export default function PreviewPage() {
     }
   };
 
-  // Editable field component with React.memo
-  const EditableField = React.memo(({ value, onChange, multiline = false, placeholder = '' }) => {
+  // Editable field component using EditableTextarea
+  const EditableField = ({ value, onChange, multiline = false, placeholder = '' }) => {
     if (!editMode) {
       return <span className="text-slate-700 dark:text-slate-300">{value || placeholder}</span>;
     }
     
     if (multiline) {
       return (
-        <Textarea
-          value={value || ''}
-          onChange={(e) => onChange(e.target.value)}
+        <EditableTextarea
+          value={value}
+          onChange={onChange}
           className="min-h-[80px] dark:bg-slate-700 dark:border-slate-600 dark:text-white"
           placeholder={placeholder}
+          rows={4}
         />
       );
     }
@@ -208,7 +209,7 @@ export default function PreviewPage() {
         placeholder={placeholder}
       />
     );
-  });
+  };
 
   const gradeLabels = {
     pre_k: 'Pre-K',
