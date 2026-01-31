@@ -16,17 +16,17 @@ import { ArrowLeft, Download, FileText, Moon, Sun } from 'lucide-react';
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
 
-// Activity Editor component with controlled input
-const ActivityEditor = React.memo(({ value, onChange }) => {
+// Activity Editor component using EditableTextarea
+const ActivityEditor = ({ value, onChange }) => {
   return (
-    <Textarea
+    <EditableTextarea
       value={value}
-      onChange={(e) => onChange(e.target.value)}
+      onChange={onChange}
       className="text-sm dark:bg-slate-700 dark:border-slate-600 dark:text-white"
       rows={2}
     />
   );
-});
+};
 
 export default function PreviewPage() {
   const navigate = useNavigate();
