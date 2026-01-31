@@ -15,9 +15,11 @@ const API = `${BACKEND_URL}/api`;
 
 export default function PreviewPage() {
   const navigate = useNavigate();
-  const { generatedPlanner, language, darkMode, toggleDarkMode } = usePlanner();
+  const { generatedPlanner, setGeneratedPlanner, language, darkMode, toggleDarkMode } = usePlanner();
   const [exporting, setExporting] = useState(false);
   const [selectedLesson, setSelectedLesson] = useState(0);
+  const [editMode, setEditMode] = useState(false);
+  const [editedPlanner, setEditedPlanner] = useState(null);
 
   const translations = {
     es: {
