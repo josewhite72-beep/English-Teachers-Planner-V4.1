@@ -529,26 +529,24 @@ export default function PreviewPage() {
                           {editMode ? (
                             <div className="space-y-2">
                               {stage.activities?.map((activity, actIdx) => (
-                                <Textarea
+                                <ActivityEditor
                                   key={actIdx}
                                   value={activity}
-                                  onChange={(e) => {
+                                  onChange={(value) => {
                                     const newActivities = [...stage.activities];
-                                    newActivities[actIdx] = e.target.value;
+                                    newActivities[actIdx] = value;
                                     handleUpdateField(`lesson_planners.${selectedLesson}.lesson_stages.${idx}.activities`, newActivities);
                                   }}
-                                  className="text-sm dark:bg-slate-700 dark:border-slate-600"
-                                  rows={2}
                                 />
                               ))}
                               <Button
                                 onClick={() => {
-                                  const newActivities = [...(stage.activities || []), ''];
+                                  const newActivities = [...(stage.activities || []), 'Nueva actividad'];
                                   handleUpdateField(`lesson_planners.${selectedLesson}.lesson_stages.${idx}.activities`, newActivities);
                                 }}
                                 variant="outline"
                                 size="sm"
-                                className="w-full"
+                                className="w-full dark:border-slate-600 dark:text-slate-300"
                               >
                                 + Add Activity
                               </Button>
