@@ -181,16 +181,16 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-slate-50 to-blue-50">
       {/* Header */}
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+      <header className="bg-gradient-to-r from-teal-700 to-teal-600 border-b border-teal-800 sticky top-0 z-50 shadow-lg">
+        <div className="max-w-7xl mx-auto px-6 py-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <BookOpen className="h-8 w-8 text-primary" />
+              <BookOpen className="h-9 w-9 text-white" />
               <div>
-                <h1 className="text-2xl font-bold font-heading text-slate-900">{t.title}</h1>
-                <p className="text-sm text-slate-600">{t.subtitle}</p>
+                <h1 className="text-2xl font-bold font-heading text-white">{t.title}</h1>
+                <p className="text-sm text-teal-100">{t.subtitle}</p>
               </div>
             </div>
             <Button
@@ -198,7 +198,7 @@ export default function HomePage() {
               size="sm"
               onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
               data-testid="language-toggle"
-              className="gap-2"
+              className="gap-2 text-white hover:bg-teal-600 hover:text-white"
             >
               <Globe className="h-4 w-4" />
               {language === 'es' ? 'EN' : 'ES'}
@@ -209,13 +209,13 @@ export default function HomePage() {
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
-        <Card className="border-slate-200 shadow-lg">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-2xl">
-              <FileText className="h-6 w-6 text-primary" />
+        <Card className="border-teal-200 shadow-xl bg-white">
+          <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 border-b border-teal-100">
+            <CardTitle className="flex items-center gap-2 text-2xl text-teal-900">
+              <FileText className="h-6 w-6 text-teal-700" />
               {t.title}
             </CardTitle>
-            <CardDescription>{t.subtitle}</CardDescription>
+            <CardDescription className="text-teal-700">{t.subtitle}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             {/* Grade Selector */}
