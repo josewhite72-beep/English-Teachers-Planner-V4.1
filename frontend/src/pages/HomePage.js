@@ -183,41 +183,53 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-slate-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-slate-50 to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
       {/* Header */}
-      <header className="bg-gradient-to-r from-teal-700 to-teal-600 border-b border-teal-800 sticky top-0 z-50 shadow-lg">
+      <header className="bg-gradient-to-r from-teal-700 to-teal-600 dark:from-teal-800 dark:to-teal-900 border-b border-teal-800 dark:border-teal-950 sticky top-0 z-50 shadow-lg">
         <div className="max-w-7xl mx-auto px-6 py-5">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
               <BookOpen className="h-9 w-9 text-white" />
               <div>
                 <h1 className="text-2xl font-bold font-heading text-white">{t.title}</h1>
-                <p className="text-sm text-teal-100">{t.subtitle}</p>
+                <p className="text-sm text-teal-100 dark:text-teal-200">{t.subtitle}</p>
               </div>
             </div>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
-              data-testid="language-toggle"
-              className="gap-2 text-white hover:bg-teal-600 hover:text-white"
-            >
-              <Globe className="h-4 w-4" />
-              {language === 'es' ? 'EN' : 'ES'}
-            </Button>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={toggleDarkMode}
+                data-testid="dark-mode-toggle"
+                className="gap-2 text-white hover:bg-teal-600 dark:hover:bg-teal-800 hover:text-white"
+                title={darkMode ? 'Modo Claro' : 'Modo Oscuro'}
+              >
+                {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setLanguage(language === 'es' ? 'en' : 'es')}
+                data-testid="language-toggle"
+                className="gap-2 text-white hover:bg-teal-600 dark:hover:bg-teal-800 hover:text-white"
+              >
+                <Globe className="h-4 w-4" />
+                {language === 'es' ? 'EN' : 'ES'}
+              </Button>
+            </div>
           </div>
         </div>
       </header>
 
       {/* Main Content */}
       <main className="max-w-4xl mx-auto px-6 py-12">
-        <Card className="border-teal-200 shadow-xl bg-white">
-          <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 border-b border-teal-100">
-            <CardTitle className="flex items-center gap-2 text-2xl text-teal-900">
-              <FileText className="h-6 w-6 text-teal-700" />
+        <Card className="border-teal-200 dark:border-teal-800 shadow-xl bg-white dark:bg-slate-800">
+          <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
+            <CardTitle className="flex items-center gap-2 text-2xl text-teal-900 dark:text-teal-100">
+              <FileText className="h-6 w-6 text-teal-700 dark:text-teal-400" />
               {t.title}
             </CardTitle>
-            <CardDescription className="text-teal-700">{t.subtitle}</CardDescription>
+            <CardDescription className="text-teal-700 dark:text-teal-300">{t.subtitle}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             {/* Grade Selector */}
