@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const PlannerContext = createContext();
 
@@ -12,6 +12,7 @@ export const usePlanner = () => {
 
 export const PlannerProvider = ({ children }) => {
   const [language, setLanguage] = useState('es');
+  const [darkMode, setDarkMode] = useState(false);
   const [selectedGrade, setSelectedGrade] = useState('');
   const [selectedScenario, setSelectedScenario] = useState('');
   const [selectedTheme, setSelectedTheme] = useState('');
@@ -22,9 +23,37 @@ export const PlannerProvider = ({ children }) => {
   const [scenarios, setScenarios] = useState([]);
   const [themes, setThemes] = useState([]);
 
+  // Load dark mode preference from localStorage
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem('darkMode');
+    if (savedDarkMode !== null) {
+      const isDark = savedDarkMode === 'true';
+      setDarkMode(isDark);
+      if (isDark) {
+        document.documentElement.classList.add('dark');
+      }
+    }
+  }, []);
+
+  // Toggle dark mode and save to localStorage
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => {
+      const newMode = !prev;
+      localStorage.setItem('darkMode', newMode.toString());
+      if (newMode) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+      return newMode;
+    });
+  };
+
   const value = {
     language,
     setLanguage,
+    darkMode,
+    toggleDarkMode,
     selectedGrade,
     setSelectedGrade,
     selectedScenario,
