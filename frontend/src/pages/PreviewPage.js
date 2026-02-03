@@ -393,13 +393,13 @@ export default function PreviewPage() {
               </CardContent>
             </Card>
 
-            {/* Official Project Section */}
+            {/* 21st Century Project Section */}
             {generatedPlanner?.project && (
               <Card className="border-amber-300 dark:border-amber-700 shadow-md dark:bg-slate-800 bg-amber-50">
                 <CardHeader className="bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/50 dark:to-orange-900/50 border-b border-amber-200 dark:border-amber-700">
                   <CardTitle className="text-amber-900 dark:text-amber-100 flex items-center gap-2">
                     <span className="text-2xl">🎯</span>
-                    {language === 'es' ? 'Proyecto Oficial (Lección 5 - Planificación Hacia Atrás)' : 'Official Project (Lesson 5 - Backward Planning)'}
+                    {language === 'es' ? 'Proyecto del Siglo XXI (Lección 5)' : '21st Century Project (Lesson 5)'}
                   </CardTitle>
                   <CardDescription className="text-amber-700 dark:text-amber-300">
                     {generatedPlanner.project.category}
