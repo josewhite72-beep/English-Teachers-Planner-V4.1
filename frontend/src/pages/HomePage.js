@@ -116,6 +116,8 @@ export default function HomePage() {
       setScenarios(response.data.scenarios || []);
       setSelectedScenario('');
       setSelectedTheme('');
+      setProjects([]);  // Reset projects when grade changes
+      setSelectedProject(null);
     } catch (error) {
       console.error('Error loading scenarios:', error);
       toast.error('Error loading scenarios');
