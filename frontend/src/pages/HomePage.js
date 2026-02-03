@@ -137,10 +137,13 @@ export default function HomePage() {
 
   const loadProjects = async (grade, scenario) => {
     try {
+      console.log('Loading projects for:', grade, scenario);
       const response = await axios.get(`${API}/projects/official/${grade}/${encodeURIComponent(scenario)}`);
+      console.log('Projects loaded:', response.data.projects);
       setProjects(response.data.projects || []);
     } catch (error) {
       console.error('Error loading projects:', error);
+      setProjects([]);
     }
   };
 
