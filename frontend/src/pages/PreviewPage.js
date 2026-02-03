@@ -336,54 +336,262 @@ export default function PreviewPage() {
 
           {/* Theme Planner Tab */}
           <TabsContent value="theme" className="space-y-6">
+            {/* SECTION 1: General Information */}
             <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
               <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
-                <CardTitle className="text-teal-900 dark:text-teal-100">{t.generalInfo}</CardTitle>
+                <CardTitle className="text-teal-900 dark:text-teal-100">1. {language === 'es' ? 'Información General' : 'General Information'}</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{t.grade}</p>
-                    <p className="text-base text-slate-900 dark:text-slate-100">{gradeLabels[theme_planner?.general_information?.grade]}</p>
+              <CardContent className="pt-4">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                  <div className="space-y-1">
+                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{language === 'es' ? 'Docente(s)' : 'Teacher(s)'}</p>
+                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.teachers || '_______________'}</p>
                   </div>
-                  <div>
-                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{t.cefrLevel}</p>
-                    <p className="text-base text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.cefr_level}</p>
+                  <div className="space-y-1">
+                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{language === 'es' ? 'Grado' : 'Grade Level'}</p>
+                    <p className="text-sm text-slate-900 dark:text-slate-100">{gradeLabels[theme_planner?.general_information?.grade] || generatedPlanner?.grade}</p>
                   </div>
-                  <div>
-                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{t.scenario}</p>
-                    <p className="text-base text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.scenario}</p>
+                  <div className="space-y-1">
+                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{language === 'es' ? 'Nivel CEFR' : 'CEFR Level'}</p>
+                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.cefr_level || '______'}</p>
                   </div>
-                  <div>
-                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">{t.theme}</p>
-                    <p className="text-base text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.theme}</p>
+                  <div className="space-y-1">
+                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{language === 'es' ? 'Trimestre' : 'Term/Trimester'}</p>
+                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.trimester || '______'}</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{language === 'es' ? 'Horas Semanales' : 'Weekly Hours'}</p>
+                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.weekly_hours || '______'}</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{language === 'es' ? 'Semanas (desde/hasta)' : 'Weeks (from/to)'}</p>
+                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.week_range || '______'}</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Scenario</p>
+                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.scenario || generatedPlanner?.scenario}</p>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Theme</p>
+                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.theme || generatedPlanner?.theme}</p>
                   </div>
                 </div>
               </CardContent>
             </Card>
 
-            {/* Specific Objectives (SMART) */}
+            {/* SECTION 2: Specific Standards and Learning Outcomes */}
             <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
               <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
-                <CardTitle className="text-teal-900 dark:text-teal-100">{t.objectives} (SMART)</CardTitle>
+                <CardTitle className="text-teal-900 dark:text-teal-100">2. {language === 'es' ? 'Estándares Específicos y Resultados de Aprendizaje' : 'Specific Standards and Learning Outcomes'}</CardTitle>
               </CardHeader>
-              <CardContent>
+              <CardContent className="pt-4">
                 <div className="space-y-4">
-                  {['listening', 'reading', 'speaking', 'writing', 'mediation'].map((skill) => {
-                    const objective = theme_planner?.specific_objectives?.[skill];
+                  {[
+                    { key: 'listening', label: language === 'es' ? 'Listening (Comprensión Auditiva)' : 'Listening (Auditory Comprehension)' },
+                    { key: 'reading', label: language === 'es' ? 'Reading (Comprensión Lectora)' : 'Reading (Reading Comprehension)' },
+                    { key: 'speaking', label: language === 'es' ? 'Speaking (Expresión Oral)' : 'Speaking (Oral Expression)' },
+                    { key: 'writing', label: language === 'es' ? 'Writing (Expresión Escrita)' : 'Writing (Written Expression)' },
+                    { key: 'mediation', label: 'Mediation' }
+                  ].map(({ key, label }) => {
+                    const skillData = theme_planner?.standards_and_learning_outcomes?.[key];
                     return (
-                      <div key={skill} className="border-l-4 border-teal-500 pl-4">
-                        <h4 className="font-semibold text-teal-800 dark:text-teal-300 capitalize mb-2">{t[skill]}</h4>
+                      <div key={key} className="border-l-4 border-teal-500 pl-4 py-2">
+                        <h4 className="font-semibold text-teal-800 dark:text-teal-300 mb-2">{label}</h4>
+                        {skillData && typeof skillData === 'object' ? (
+                          <div className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+                            {skillData.receptive && <p><strong>Receptive:</strong> {skillData.receptive}</p>}
+                            {skillData.interactive && <p><strong>Interactive:</strong> {skillData.interactive}</p>}
+                            {skillData.productive && <p><strong>Productive:</strong> {skillData.productive}</p>}
+                            {skillData.general && <p><strong>General:</strong> {skillData.general}</p>}
+                            {skillData.specific && Array.isArray(skillData.specific) && skillData.specific.map((s, i) => (
+                              <p key={i}><strong>Specific:</strong> {s}</p>
+                            ))}
+                            {skillData.reading1 && <p><strong>Reading:</strong> {skillData.reading1}</p>}
+                            {skillData.reading2 && <p><strong>Reading:</strong> {skillData.reading2}</p>}
+                            {skillData.phonemic_awareness && <p><strong>Phonemic Awareness:</strong> {skillData.phonemic_awareness}</p>}
+                            {skillData.listening1 && <p><strong>Listening:</strong> {skillData.listening1}</p>}
+                            {skillData.listening2 && <p><strong>Listening:</strong> {skillData.listening2}</p>}
+                            {skillData.speaking1 && <p><strong>Speaking:</strong> {skillData.speaking1}</p>}
+                            {skillData.speaking2 && <p><strong>Speaking:</strong> {skillData.speaking2}</p>}
+                            {skillData.writing1 && <p><strong>Writing:</strong> {skillData.writing1}</p>}
+                            {skillData.writing2 && <p><strong>Writing:</strong> {skillData.writing2}</p>}
+                            {skillData.mediation1 && <p><strong>Mediation:</strong> {skillData.mediation1}</p>}
+                            {skillData.mediation2 && <p><strong>Mediation:</strong> {skillData.mediation2}</p>}
+                            {skillData.text && <p><strong>Text:</strong> {skillData.text}</p>}
+                            {skillData.concept && <p><strong>Concept:</strong> {skillData.concept}</p>}
+                            {skillData.learning_outcomes && Array.isArray(skillData.learning_outcomes) && (
+                              <div className="mt-1">
+                                <strong>Learning Outcomes:</strong>
+                                <ul className="list-disc list-inside ml-2">
+                                  {skillData.learning_outcomes.map((lo, i) => (
+                                    <li key={i} className="text-xs">{lo}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <p className="text-sm text-slate-400 italic">{language === 'es' ? 'Por completar' : 'To be completed'}</p>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* SECTION 3: Communicative Competencies */}
+            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
+              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
+                <CardTitle className="text-teal-900 dark:text-teal-100">3. {language === 'es' ? 'Competencias Comunicativas' : 'Communicative Competencies'}</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4 space-y-4">
+                {/* Linguistic Competence */}
+                <div className="border-l-4 border-blue-500 pl-4">
+                  <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">
+                    {language === 'es' ? 'Competencia Lingüística (Aprender a Conocer)' : 'Linguistic Competence (Learning to Know)'}
+                  </h4>
+                  <div className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                    <div>
+                      <strong>{language === 'es' ? 'Estructuras Gramaticales:' : 'Grammar Structures:'}</strong>{' '}
+                      {theme_planner?.communicative_competences?.linguistic?.grammatical_features
+                        ? (Array.isArray(theme_planner.communicative_competences.linguistic.grammatical_features)
+                            ? theme_planner.communicative_competences.linguistic.grammatical_features.join(', ')
+                            : theme_planner.communicative_competences.linguistic.grammatical_features)
+                        : theme_planner?.communicative_competences?.linguistic?.grammar
+                          ? (Array.isArray(theme_planner.communicative_competences.linguistic.grammar)
+                              ? theme_planner.communicative_competences.linguistic.grammar.join(', ')
+                              : theme_planner.communicative_competences.linguistic.grammar)
+                          : '______'}
+                    </div>
+                    <div>
+                      <strong>{language === 'es' ? 'Vocabulario:' : 'Vocabulary:'}</strong>{' '}
+                      {theme_planner?.communicative_competences?.linguistic?.vocabulary
+                        ? (Array.isArray(theme_planner.communicative_competences.linguistic.vocabulary)
+                            ? theme_planner.communicative_competences.linguistic.vocabulary.join(', ')
+                            : theme_planner.communicative_competences.linguistic.vocabulary)
+                        : '______'}
+                    </div>
+                    <div>
+                      <strong>{language === 'es' ? 'Pronunciación y Conciencia Fonémica:' : 'Pronunciation and Phonemic Awareness:'}</strong>{' '}
+                      {theme_planner?.communicative_competences?.linguistic?.phonemic_awareness || theme_planner?.communicative_competences?.linguistic?.pronunciation || '______'}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Pragmatic Competence */}
+                <div className="border-l-4 border-green-500 pl-4">
+                  <h4 className="font-semibold text-green-800 dark:text-green-300 mb-2">
+                    {language === 'es' ? 'Competencia Pragmática (Aprender a Hacer)' : 'Pragmatic Competence (Learning to Do)'}
+                  </h4>
+                  <div className="text-sm text-slate-700 dark:text-slate-300">
+                    <strong>{language === 'es' ? 'Funciones Comunicativas y Marcadores del Discurso:' : 'Communicative Functions and Discourse Markers:'}</strong>{' '}
+                    {theme_planner?.communicative_competences?.pragmatic
+                      ? (Array.isArray(theme_planner.communicative_competences.pragmatic)
+                          ? theme_planner.communicative_competences.pragmatic.join(', ')
+                          : theme_planner.communicative_competences.pragmatic)
+                      : theme_planner?.communicative_competences?.pragmatic?.functions || '______'}
+                  </div>
+                </div>
+
+                {/* Sociolinguistic Competence */}
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h4 className="font-semibold text-purple-800 dark:text-purple-300 mb-2">
+                    {language === 'es' ? 'Competencia Sociolingüística (Aprender a Ser)' : 'Sociolinguistic Competence (Learning to Be)'}
+                  </h4>
+                  <div className="text-sm text-slate-700 dark:text-slate-300">
+                    <strong>{language === 'es' ? 'Interacciones Respetuosas y Participación Social:' : 'Respectful Interactions and Social Participation:'}</strong>{' '}
+                    {theme_planner?.communicative_competences?.sociolinguistic
+                      ? (Array.isArray(theme_planner.communicative_competences.sociolinguistic)
+                          ? theme_planner.communicative_competences.sociolinguistic.join(', ')
+                          : theme_planner.communicative_competences.sociolinguistic)
+                      : '______'}
+                  </div>
+                </div>
+
+                {/* 21st Century Skills Project */}
+                <div className="border-l-4 border-amber-500 pl-4">
+                  <h4 className="font-semibold text-amber-800 dark:text-amber-300 mb-2">
+                    {language === 'es' ? 'Proyecto del Siglo XXI' : '21st Century Skills Project'}
+                  </h4>
+                  {generatedPlanner?.project ? (
+                    <div className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                      <p><strong>{language === 'es' ? 'Nombre:' : 'Name:'}</strong> {generatedPlanner.project.name}</p>
+                      <p><strong>{language === 'es' ? 'Categoría:' : 'Category:'}</strong> {generatedPlanner.project.category}</p>
+                      <p><strong>{language === 'es' ? 'Descripción:' : 'Overview:'}</strong> {generatedPlanner.project.overview}</p>
+                      <p><strong>{language === 'es' ? 'Objetivo General:' : 'General Objective:'}</strong> {generatedPlanner.project.general_objective}</p>
+                      {generatedPlanner.project.specific_objectives && (
+                        <div>
+                          <strong>{language === 'es' ? 'Objetivos Específicos:' : 'Specific Objectives:'}</strong>
+                          <ul className="list-disc list-inside ml-2">
+                            {generatedPlanner.project.specific_objectives.map((obj, i) => (
+                              <li key={i}>{obj}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      {generatedPlanner.project.activities && (
+                        <div>
+                          <strong>{language === 'es' ? 'Actividades:' : 'Activities:'}</strong>
+                          <ul className="list-disc list-inside ml-2">
+                            {generatedPlanner.project.activities.map((act, i) => (
+                              <li key={i}>{act}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      {generatedPlanner.project.products_evidences && (
+                        <p><strong>{language === 'es' ? 'Productos/Evidencias:' : 'Products/Evidences:'}</strong> {generatedPlanner.project.products_evidences.join(', ')}</p>
+                      )}
+                      {generatedPlanner.project.rubric_criteria && (
+                        <div>
+                          <strong>{language === 'es' ? 'Criterios de Rúbrica:' : 'Rubric Criteria:'}</strong>
+                          <ul className="list-disc list-inside ml-2">
+                            {Object.entries(generatedPlanner.project.rubric_criteria).map(([k, v], i) => (
+                              <li key={i}><strong>{k}:</strong> {v}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+                      <p><strong>{language === 'es' ? 'Duración:' : 'Duration:'}</strong> {generatedPlanner.project.duration}</p>
+                      {generatedPlanner.project.skills_developed && (
+                        <p><strong>{language === 'es' ? 'Habilidades Desarrolladas:' : 'Skills Developed:'}</strong> {generatedPlanner.project.skills_developed.join(', ')}</p>
+                      )}
+                    </div>
+                  ) : (
+                    <p className="text-sm text-slate-400 italic">{language === 'es' ? 'No se ha seleccionado un proyecto' : 'No project selected'}</p>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* SECTION 4: Specific Objectives */}
+            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
+              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
+                <CardTitle className="text-teal-900 dark:text-teal-100">4. {language === 'es' ? 'Objetivos Específicos' : 'Specific Objectives'}</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <div className="space-y-3">
+                  {[
+                    { key: 'listening', label: language === 'es' ? 'Para Listening' : 'For Listening' },
+                    { key: 'reading', label: language === 'es' ? 'Para Reading' : 'For Reading' },
+                    { key: 'speaking', label: language === 'es' ? 'Para Speaking' : 'For Speaking' },
+                    { key: 'writing', label: language === 'es' ? 'Para Writing' : 'For Writing' },
+                    { key: 'mediation', label: language === 'es' ? 'Para Mediation' : 'For Mediation' }
+                  ].map(({ key, label }) => {
+                    const objective = theme_planner?.specific_objectives?.[key];
+                    return (
+                      <div key={key} className="border-l-4 border-teal-500 pl-4">
+                        <h4 className="font-semibold text-teal-800 dark:text-teal-300 text-sm">{label}</h4>
                         {editMode ? (
-                          <EditableField
+                          <EditableTextarea
                             value={objective || ''}
-                            onChange={(value) => handleUpdateField(`theme_planner.specific_objectives.${skill}`, value)}
-                            multiline
-                            placeholder={`Objetivo SMART para ${skill}...`}
+                            onChange={(value) => handleUpdateField(`theme_planner.specific_objectives.${key}`, value)}
+                            className="mt-1"
                           />
                         ) : (
                           <p className="text-sm text-slate-700 dark:text-slate-300">
-                            {objective || <span className="italic text-slate-400">Por completar</span>}
+                            {objective || <span className="italic text-slate-400">{language === 'es' ? 'Por completar' : 'To be completed'}</span>}
                           </p>
                         )}
                       </div>
@@ -393,163 +601,60 @@ export default function PreviewPage() {
               </CardContent>
             </Card>
 
-            {/* 21st Century Project Section */}
-            {generatedPlanner?.project && (
-              <Card className="border-amber-300 dark:border-amber-700 shadow-md dark:bg-slate-800 bg-amber-50">
-                <CardHeader className="bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/50 dark:to-orange-900/50 border-b border-amber-200 dark:border-amber-700">
-                  <CardTitle className="text-amber-900 dark:text-amber-100 flex items-center gap-2">
-                    <span className="text-2xl">🎯</span>
-                    {language === 'es' ? 'Proyecto del Siglo XXI (Lección 5)' : '21st Century Project (Lesson 5)'}
-                  </CardTitle>
-                  <CardDescription className="text-amber-700 dark:text-amber-300">
-                    {generatedPlanner.project.category}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4 pt-4">
-                  <div>
-                    <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-1">{language === 'es' ? 'Nombre del Proyecto' : 'Project Name'}</h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-lg font-medium">{generatedPlanner.project.name}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-1">{language === 'es' ? 'Descripción' : 'Overview'}</h4>
-                    <p className="text-slate-700 dark:text-slate-300">{generatedPlanner.project.overview}</p>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-1">{language === 'es' ? 'Objetivo General' : 'General Objective'}</h4>
-                    <p className="text-slate-700 dark:text-slate-300">{generatedPlanner.project.general_objective}</p>
-                  </div>
-                  
-                  {generatedPlanner.project.specific_objectives && (
-                    <div>
-                      <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">{language === 'es' ? 'Objetivos Específicos' : 'Specific Objectives'}</h4>
-                      <ul className="list-disc list-inside text-sm text-slate-700 dark:text-slate-300 space-y-1">
-                        {generatedPlanner.project.specific_objectives.map((obj, idx) => (
-                          <li key={idx}>{obj}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  
-                  {generatedPlanner.project.activities && (
-                    <div>
-                      <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">{language === 'es' ? 'Actividades del Proyecto' : 'Project Activities'}</h4>
-                      <ul className="list-disc list-inside text-sm text-slate-700 dark:text-slate-300 space-y-1">
-                        {generatedPlanner.project.activities.map((act, idx) => (
-                          <li key={idx}>{act}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                  
-                  {generatedPlanner.project.products_evidences && (
-                    <div>
-                      <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">{language === 'es' ? 'Productos / Evidencias' : 'Products / Evidences'}</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {generatedPlanner.project.products_evidences.map((prod, idx) => (
-                          <Badge key={idx} className="bg-amber-200 text-amber-800 dark:bg-amber-800 dark:text-amber-100">
-                            {prod}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  
-                  {generatedPlanner.project.rubric_criteria && (
-                    <div>
-                      <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">{language === 'es' ? 'Criterios de Rúbrica' : 'Rubric Criteria'}</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                        {Object.entries(generatedPlanner.project.rubric_criteria).map(([criterion, description], idx) => (
-                          <div key={idx} className="bg-white dark:bg-slate-700 p-2 rounded border border-amber-200 dark:border-amber-600">
-                            <span className="font-medium text-amber-700 dark:text-amber-300">{criterion}:</span>
-                            <span className="text-slate-600 dark:text-slate-300 ml-1">{description}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                  
-                  <div className="flex flex-wrap gap-4 pt-2">
-                    <div>
-                      <span className="font-semibold text-amber-800 dark:text-amber-200">{language === 'es' ? 'Duración: ' : 'Duration: '}</span>
-                      <span className="text-slate-700 dark:text-slate-300">{generatedPlanner.project.duration}</span>
-                    </div>
-                    {generatedPlanner.project.skills_developed && (
-                      <div>
-                        <span className="font-semibold text-amber-800 dark:text-amber-200">{language === 'es' ? 'Habilidades: ' : 'Skills: '}</span>
-                        <span className="text-slate-700 dark:text-slate-300">{generatedPlanner.project.skills_developed.join(', ')}</span>
-                      </div>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
-
-            {/* Standards */}
+            {/* SECTION 5: Teaching Materials and Strategies */}
             <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
               <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
-                <CardTitle className="text-teal-900 dark:text-teal-100">{t.standards}</CardTitle>
+                <CardTitle className="text-teal-900 dark:text-teal-100">5. {language === 'es' ? 'Materiales y Estrategias de Enseñanza' : 'Teaching Materials and Strategies'}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {['listening', 'reading', 'speaking', 'writing', 'mediation'].map((skill) => {
-                    const skillData = theme_planner?.standards_and_learning_outcomes?.[skill];
-                    if (!skillData) return null;
-                    
-                    return (
-                      <div key={skill} className="border-l-4 border-teal-500 pl-4">
-                        <h4 className="font-semibold text-teal-800 dark:text-teal-300 capitalize mb-2">{t[skill]}</h4>
-                        {typeof skillData === 'object' && (
-                          <div className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
-                            {/* Handle standard format: general, specific, learning_outcomes */}
-                            {skillData.general && <p><strong>General:</strong> {skillData.general}</p>}
-                            {skillData.specific && Array.isArray(skillData.specific) && skillData.specific.map((s, i) => (
-                              <p key={i}><strong>Specific:</strong> {s}</p>
-                            ))}
-                            {skillData.learning_outcomes && Array.isArray(skillData.learning_outcomes) && (
-                              <div>
-                                <strong>Learning Outcomes:</strong>
-                                <ul className="list-disc list-inside ml-2 mt-1">
-                                  {skillData.learning_outcomes.map((lo, i) => (
-                                    <li key={i} className="text-xs">{lo}</li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
-                            
-                            {/* Handle alternative format: receptive, interactive, productive */}
-                            {skillData.receptive && <p><strong>Receptive:</strong> {skillData.receptive}</p>}
-                            {skillData.interactive && <p><strong>Interactive:</strong> {skillData.interactive}</p>}
-                            {skillData.productive && <p><strong>Productive:</strong> {skillData.productive}</p>}
-                            
-                            {/* Handle reading-specific format: reading1, reading2, phonemic_awareness */}
-                            {skillData.reading1 && <p><strong>Reading:</strong> {skillData.reading1}</p>}
-                            {skillData.reading2 && <p><strong>Reading:</strong> {skillData.reading2}</p>}
-                            {skillData.phonemic_awareness && <p><strong>Phonemic Awareness:</strong> {skillData.phonemic_awareness}</p>}
-                            
-                            {/* Handle listening-specific format */}
-                            {skillData.listening1 && <p><strong>Listening:</strong> {skillData.listening1}</p>}
-                            {skillData.listening2 && <p><strong>Listening:</strong> {skillData.listening2}</p>}
-                            
-                            {/* Handle speaking-specific format */}
-                            {skillData.speaking1 && <p><strong>Speaking:</strong> {skillData.speaking1}</p>}
-                            {skillData.speaking2 && <p><strong>Speaking:</strong> {skillData.speaking2}</p>}
-                            
-                            {/* Handle writing-specific format */}
-                            {skillData.writing1 && <p><strong>Writing:</strong> {skillData.writing1}</p>}
-                            {skillData.writing2 && <p><strong>Writing:</strong> {skillData.writing2}</p>}
-                            
-                            {/* Handle mediation-specific format */}
-                            {skillData.mediation1 && <p><strong>Mediation:</strong> {skillData.mediation1}</p>}
-                            {skillData.mediation2 && <p><strong>Mediation:</strong> {skillData.mediation2}</p>}
-                            {skillData.text && <p><strong>Text:</strong> {skillData.text}</p>}
-                            {skillData.concept && <p><strong>Concept:</strong> {skillData.concept}</p>}
-                          </div>
-                        )}
+              <CardContent className="pt-4 space-y-4">
+                <div>
+                  <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">
+                    {language === 'es' ? 'Lista de Materiales Requeridos' : 'List of Required Materials'}
+                  </h4>
+                  {theme_planner?.materials_and_strategies?.required_materials && Array.isArray(theme_planner.materials_and_strategies.required_materials) ? (
+                    <ul className="list-disc list-inside text-sm text-slate-700 dark:text-slate-300 space-y-1">
+                      {theme_planner.materials_and_strategies.required_materials.map((mat, i) => (
+                        <li key={i}>{mat}</li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-sm text-slate-400 italic">{language === 'es' ? 'Por completar' : 'To be completed'}</p>
+                  )}
+                </div>
+                <Separator />
+                <div>
+                  <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">
+                    {language === 'es' ? 'Instrucción Diferenciada y Adaptaciones para Necesidades de Aprendizaje Diversas (DLN)' : 'Differentiated Instruction and Adaptations for Diverse Learning Needs (DLN)'}
+                  </h4>
+                  <p className="text-sm text-slate-700 dark:text-slate-300">
+                    {theme_planner?.materials_and_strategies?.differentiated_instruction || (language === 'es' ? 'Por completar' : 'To be completed')}
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* SECTION 6: Learning Sequence */}
+            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
+              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
+                <CardTitle className="text-teal-900 dark:text-teal-100">6. {language === 'es' ? 'Secuencia de Aprendizaje' : 'Learning Sequence'}</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-4">
+                <div className="space-y-3">
+                  {[
+                    { num: 1, skill: 'Listening', desc: language === 'es' ? 'Listening y Fundamentos del Lenguaje' : 'Listening and Language Foundations' },
+                    { num: 2, skill: 'Reading', desc: language === 'es' ? 'Reading y Comprensión de Conceptos/Ideas en Textos' : 'Reading and Understanding Concepts/Ideas in Texts' },
+                    { num: 3, skill: 'Speaking', desc: language === 'es' ? 'Tareas Productivas/Interactivas de Speaking' : 'Productive/Interactive Speaking Tasks' },
+                    { num: 4, skill: 'Writing', desc: language === 'es' ? 'Writing Productivo/Interactivo y Preparación del Proyecto' : 'Productive/Interactive Writing and Project Preparation' },
+                    { num: 5, skill: 'Mediation', desc: language === 'es' ? 'Completar el Proyecto del Siglo XXI con Énfasis en Mediation' : 'Completing the 21st Century Project with Emphasis on Mediation' }
+                  ].map(({ num, skill, desc }) => (
+                    <div key={num} className="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
+                      <Badge className="bg-teal-600 text-white shrink-0">{language === 'es' ? 'Lección' : 'Lesson'} {num}</Badge>
+                      <div>
+                        <p className="font-medium text-slate-900 dark:text-slate-100">{skill}</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">{desc}</p>
                       </div>
-                    );
-                  })}
+                    </div>
+                  ))}
                 </div>
               </CardContent>
             </Card>
