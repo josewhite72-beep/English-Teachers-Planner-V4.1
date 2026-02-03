@@ -203,7 +203,22 @@ async def get_official_projects(grade: str, scenario: str):
         projects_data = load_projects_official(grade)
         
         if 'projects_by_scenario' in projects_data:
+            # Try exact match first
             scenario_projects = projects_data['projects_by_scenario'].get(scenario, [])
+            
+            # If not found, try matching without "Scenario X:" prefix
+            if not scenario_projects:
+                import re
+                # Remove "Scenario X: " prefix if present
+                clean_scenario = re.sub(r'^Scenario \d+:\s*', '', scenario)
+                scenario_projects = projects_data['projects_by_scenario'].get(clean_scenario, [])
+                
+                # Also try partial matching
+                if not scenario_projects:
+                    for key in projects_data['projects_by_scenario'].keys():
+                        if clean_scenario in key or key in clean_scenario or key in scenario:
+                            scenario_projects = projects_data['projects_by_scenario'][key]
+                            break
         else:
             scenario_projects = []
             
