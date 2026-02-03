@@ -263,6 +263,20 @@ async def get_c21_projects(grade: str, scenario: str):
 async def generate_planner(request: PlannerRequest):
     """Generate a complete lesson planner (Theme + Lessons) - uses pregenerated JSON if available"""
     try:
+        # Load grade data for standards (always needed)
+        grade_data = load_grade_data(request.grade)
+        
+        # Find scenario data
+        scenario_data = None
+        if isinstance(grade_data, list):
+            scenario_data = next((s for s in grade_data if s.get('scenario', s.get('title', '')) == request.scenario), None)
+        elif isinstance(grade_data, dict) and 'scenarios' in grade_data:
+            scenario_data = next((s for s in grade_data['scenarios'] if s.get('scenario', s.get('title', '')) == request.scenario), None)
+        
+        # Extract standards and competences from curriculum
+        curriculum_standards = scenario_data.get('standards_and_learning_outcomes', {}) if scenario_data else {}
+        curriculum_competences = scenario_data.get('communicative_competences', {}) if scenario_data else {}
+        
         # First, try to load pregenerated planner
         pregenerated = load_pregenerated_planner(
             request.grade, request.scenario, request.theme, 
@@ -271,6 +285,13 @@ async def generate_planner(request: PlannerRequest):
         
         if pregenerated:
             logger.info("Using pregenerated planner from JSON file")
+            
+            # ALWAYS add standards and competences from curriculum data
+            if 'theme_planner' not in pregenerated:
+                pregenerated['theme_planner'] = {}
+            pregenerated['theme_planner']['standards_and_learning_outcomes'] = curriculum_standards
+            pregenerated['theme_planner']['communicative_competences'] = curriculum_competences
+            
             # Load project if specified
             if request.project_id:
                 official_projects = load_projects_official(request.grade)
@@ -283,16 +304,6 @@ async def generate_planner(request: PlannerRequest):
         # If no pregenerated planner, generate basic structure from curriculum
         logger.info("No pregenerated planner found, generating basic structure from curriculum")
         
-        # Load grade data
-        grade_data = load_grade_data(request.grade)
-        
-        # Find scenario
-        scenario_data = None
-        if isinstance(grade_data, list):
-            scenario_data = next((s for s in grade_data if s.get('scenario', s.get('title', '')) == request.scenario), None)
-        elif isinstance(grade_data, dict) and 'scenarios' in grade_data:
-            scenario_data = next((s for s in grade_data['scenarios'] if s.get('scenario', s.get('title', '')) == request.scenario), None)
-            
         if not scenario_data:
             raise HTTPException(status_code=404, detail="Scenario not found")
         
