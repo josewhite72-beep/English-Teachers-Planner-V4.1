@@ -639,20 +639,56 @@ export default function PreviewPage() {
                 <CardTitle className="text-teal-900 dark:text-teal-100">6. {language === 'es' ? 'Secuencia de Aprendizaje' : 'Learning Sequence'}</CardTitle>
               </CardHeader>
               <CardContent className="pt-4">
-                <div className="space-y-3">
+                <div className="space-y-4">
                   {[
-                    { num: 1, skill: 'Listening', desc: language === 'es' ? 'Listening y Fundamentos del Lenguaje' : 'Listening and Language Foundations' },
-                    { num: 2, skill: 'Reading', desc: language === 'es' ? 'Reading y Comprensión de Conceptos/Ideas en Textos' : 'Reading and Understanding Concepts/Ideas in Texts' },
-                    { num: 3, skill: 'Speaking', desc: language === 'es' ? 'Tareas Productivas/Interactivas de Speaking' : 'Productive/Interactive Speaking Tasks' },
-                    { num: 4, skill: 'Writing', desc: language === 'es' ? 'Writing Productivo/Interactivo y Preparación del Proyecto' : 'Productive/Interactive Writing and Project Preparation' },
-                    { num: 5, skill: 'Mediation', desc: language === 'es' ? 'Completar el Proyecto del Siglo XXI con Énfasis en Mediation' : 'Completing the 21st Century Project with Emphasis on Mediation' }
-                  ].map(({ num, skill, desc }) => (
-                    <div key={num} className="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-700/50 rounded-lg">
-                      <Badge className="bg-teal-600 text-white shrink-0">{language === 'es' ? 'Lección' : 'Lesson'} {num}</Badge>
-                      <div>
-                        <p className="font-medium text-slate-900 dark:text-slate-100">{skill}</p>
-                        <p className="text-sm text-slate-600 dark:text-slate-400">{desc}</p>
+                    { 
+                      num: 1, 
+                      skill: 'Listening', 
+                      title: language === 'es' ? 'Listening y Fundamentos del Lenguaje' : 'Listening and Language Foundations',
+                      desc: language === 'es' 
+                        ? 'Introducción al vocabulario clave y estructuras de lenguaje a través de actividades de comprensión auditiva. Los estudiantes desarrollan habilidades receptivas escuchando diálogos, canciones y presentaciones relacionadas con el tema.'
+                        : 'Introduction to key vocabulary and language structures through listening comprehension activities. Students develop receptive skills by listening to dialogues, songs, and presentations related to the theme.'
+                    },
+                    { 
+                      num: 2, 
+                      skill: 'Reading', 
+                      title: language === 'es' ? 'Reading y Comprensión de Conceptos/Ideas en Textos' : 'Reading and Understanding Concepts/Ideas in Texts',
+                      desc: language === 'es'
+                        ? 'Los estudiantes interactúan con textos escritos relacionados con el tema para desarrollar habilidades de comprensión lectora. Incluye identificación de palabras clave, comprensión de ideas principales y trabajo con textos ilustrados.'
+                        : 'Students interact with written texts related to the theme to develop reading comprehension skills. Includes identification of key words, understanding main ideas, and working with illustrated texts.'
+                    },
+                    { 
+                      num: 3, 
+                      skill: 'Speaking', 
+                      title: language === 'es' ? 'Tareas Productivas/Interactivas de Speaking' : 'Productive/Interactive Speaking Tasks',
+                      desc: language === 'es'
+                        ? 'Los estudiantes participan en actividades de producción oral estructuradas y semi-estructuradas. Incluye diálogos en parejas, descripciones orales, presentaciones breves y práctica de pronunciación relacionada con el tema.'
+                        : 'Students engage in structured and semi-structured oral production activities. Includes pair dialogues, oral descriptions, brief presentations, and pronunciation practice related to the theme.'
+                    },
+                    { 
+                      num: 4, 
+                      skill: 'Writing', 
+                      title: language === 'es' ? 'Writing Productivo/Interactivo y Preparación del Proyecto' : 'Productive/Interactive Writing and Project Preparation',
+                      desc: language === 'es'
+                        ? 'Los estudiantes practican la escritura de palabras, frases y oraciones relacionadas con el tema. Esta lección también sirve como preparación para el proyecto del Siglo XXI, incluyendo borradores y planificación.'
+                        : 'Students practice writing words, phrases, and sentences related to the theme. This lesson also serves as preparation for the 21st Century Project, including drafts and planning.'
+                    },
+                    { 
+                      num: 5, 
+                      skill: 'Mediation', 
+                      title: language === 'es' ? 'Completar el Proyecto del Siglo XXI con Énfasis en Mediation' : 'Completing the 21st Century Project with Emphasis on Mediation',
+                      desc: language === 'es'
+                        ? 'Los estudiantes completan su proyecto del Siglo XXI integrando todas las habilidades aprendidas (Listening, Reading, Speaking, Writing). Incluye trabajo colaborativo, presentaciones grupales, mediación entre compañeros, autoevaluación y reflexión sobre el aprendizaje.'
+                        : 'Students complete their 21st Century Project integrating all learned skills (Listening, Reading, Speaking, Writing). Includes collaborative work, group presentations, peer mediation, self-assessment, and reflection on learning.'
+                    }
+                  ].map(({ num, skill, title, desc }) => (
+                    <div key={num} className="border-l-4 border-teal-500 pl-4 py-3 bg-slate-50 dark:bg-slate-700/50 rounded-r-lg">
+                      <div className="flex items-center gap-3 mb-2">
+                        <Badge className="bg-teal-600 text-white">{language === 'es' ? 'Lección' : 'Lesson'} {num}</Badge>
+                        <span className="font-semibold text-teal-800 dark:text-teal-300">{skill}</span>
                       </div>
+                      <p className="font-medium text-slate-900 dark:text-slate-100 mb-1">{title}</p>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">{desc}</p>
                     </div>
                   ))}
                 </div>
