@@ -305,7 +305,7 @@ async def generate_planner(request: PlannerRequest):
 
 def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str, 
                                  plan_type: str, project_data: dict = None) -> dict:
-    """Generate basic theme planner structure from curriculum data"""
+    """Generate basic theme planner structure from curriculum data using Backward Planning approach"""
     # Get CEFR level from grade
     cefr_levels = {
         "pre_k": "Pre A1.1",
@@ -321,32 +321,60 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
     standards = scenario_data.get('standards_and_learning_outcomes', {})
     competences = scenario_data.get('communicative_competences', {})
     
-    # Generate basic objectives from standards
+    # Generate SMART objectives from standards for ALL 5 skills
     objectives = {}
     for skill in ['listening', 'reading', 'speaking', 'writing', 'mediation']:
-        if skill in standards:
-            skill_data = standards[skill]
-            if isinstance(skill_data, dict):
-                general = skill_data.get('general', skill_data.get('receptive', skill_data.get('productive', '')))
+        skill_data = standards.get(skill, {})
+        if isinstance(skill_data, dict):
+            # Build comprehensive objective from available data
+            general = skill_data.get('general', '')
+            specific = skill_data.get('specific', [])
+            learning_outcomes = skill_data.get('learning_outcomes', [])
+            
+            # Create SMART objective combining general standard and first learning outcome
+            if learning_outcomes and isinstance(learning_outcomes, list) and len(learning_outcomes) > 0:
+                objectives[skill] = f"{general} Específicamente: {learning_outcomes[0]}"
+            elif general:
                 objectives[skill] = general
+            elif specific and isinstance(specific, list) and len(specific) > 0:
+                objectives[skill] = specific[0] if isinstance(specific[0], str) else str(specific[0])
             else:
-                objectives[skill] = ""
+                # Fallback objective based on skill
+                skill_fallbacks = {
+                    'listening': f"Los estudiantes serán capaces de identificar y comprender vocabulario relacionado con {theme} cuando se presenta oralmente.",
+                    'reading': f"Los estudiantes leerán y reconocerán palabras clave relacionadas con {theme} en textos simples ilustrados.",
+                    'speaking': f"Los estudiantes expresarán oralmente ideas relacionadas con {theme} usando frases simples.",
+                    'writing': f"Los estudiantes escribirán palabras y frases simples relacionadas con {theme} con apoyo visual.",
+                    'mediation': f"Los estudiantes utilizarán gestos, imágenes y expresiones para comunicar información sobre {theme} a sus compañeros."
+                }
+                objectives[skill] = skill_fallbacks.get(skill, f"Desarrollar habilidades de {skill} relacionadas con {theme}.")
     
-    # Generate basic materials list from curriculum
+    # Generate comprehensive materials list from curriculum and project
     materials = []
     if competences.get('linguistic'):
         ling = competences['linguistic']
         if ling.get('vocabulary'):
-            materials.append(f"Flashcards or visuals for vocabulary: {', '.join(ling['vocabulary'][:5]) if isinstance(ling['vocabulary'], list) else 'topic vocabulary'}")
+            vocab_items = ling['vocabulary'][:8] if isinstance(ling['vocabulary'], list) else [ling['vocabulary']]
+            materials.append(f"Flashcards con vocabulario: {', '.join(str(v) for v in vocab_items)}")
         if ling.get('grammatical_features') or ling.get('grammar'):
-            materials.append("Grammar charts or reference materials")
+            grammar = ling.get('grammatical_features', ling.get('grammar', []))
+            if isinstance(grammar, list) and grammar:
+                materials.append(f"Materiales de gramática: {', '.join(str(g) for g in grammar[:3])}")
+    
+    # Add project-specific materials if available
+    if project_data and project_data.get('materials'):
+        proj_materials = project_data['materials']
+        if isinstance(proj_materials, list):
+            materials.extend(proj_materials[:5])
     
     # Add standard materials
     materials.extend([
-        "Whiteboard and markers",
-        "Student worksheets",
-        "Audio/video materials (if available)",
-        "Realia or authentic materials related to theme"
+        "Pizarra y marcadores",
+        "Hojas de trabajo para estudiantes",
+        "Materiales de audio/video relacionados al tema",
+        "Objetos reales o materiales auténticos del tema",
+        "Calendario o agenda visual",
+        "Rúbricas de evaluación"
     ])
     
     theme_planner = {
@@ -365,7 +393,7 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
         "specific_objectives": objectives,
         "materials_and_strategies": {
             "required_materials": materials,
-            "differentiated_instruction": "Adapt activities for different learning styles (visual, auditory, kinesthetic). Provide scaffolding for struggling learners and extension activities for advanced students. Use pair/group work for peer support."
+            "differentiated_instruction": "Adaptar actividades para diferentes estilos de aprendizaje (visual, auditivo, kinestésico). Proporcionar andamiaje para estudiantes con dificultades y actividades de extensión para estudiantes avanzados. Usar trabajo en parejas/grupos para apoyo entre compañeros. Considerar necesidades individuales y ritmos de aprendizaje."
         },
         "learning_sequence": {
             "project_title": project_data.get('name', '') if project_data else '',
@@ -894,7 +922,7 @@ def generate_lesson_stages(plan_type: str) -> list:
 
 @api_router.post("/planner/export/docx")
 async def export_to_docx(planner: dict):
-    """Export planner to DOCX format"""
+    """Export planner to DOCX format with Project section"""
     try:
         # Create a new Document
         doc = Document()
@@ -936,34 +964,175 @@ async def export_to_docx(planner: dict):
             info_table.rows[i].cells[0].text = label
             info_table.rows[i].cells[1].text = str(value)
         
+        # Specific Objectives Section
+        doc.add_heading('Specific Objectives (SMART)', 2)
+        objectives = planner.get('theme_planner', {}).get('specific_objectives', {})
+        for skill in ['listening', 'reading', 'speaking', 'writing', 'mediation']:
+            obj_text = objectives.get(skill, '')
+            if obj_text:
+                p = doc.add_paragraph()
+                p.add_run(f"{skill.capitalize()}: ").bold = True
+                p.add_run(str(obj_text))
+        
+        # Materials Section
+        doc.add_heading('Materials and Strategies', 2)
+        materials_data = planner.get('theme_planner', {}).get('materials_and_strategies', {})
+        materials_list = materials_data.get('required_materials', [])
+        if materials_list:
+            p = doc.add_paragraph()
+            p.add_run('Required Materials: ').bold = True
+            for mat in materials_list:
+                doc.add_paragraph(f"• {mat}", style='List Bullet')
+        
+        diff_instruction = materials_data.get('differentiated_instruction', '')
+        if diff_instruction:
+            p = doc.add_paragraph()
+            p.add_run('Differentiated Instruction: ').bold = True
+            p.add_run(str(diff_instruction))
+        
+        # PROJECT SECTION (NEW - Separate Section)
+        project_data = planner.get('project')
+        if project_data:
+            doc.add_page_break()
+            doc.add_heading('Official Project (Lesson 5 - Backward Planning)', 1)
+            
+            # Project name and category
+            p = doc.add_paragraph()
+            p.add_run('Project Name: ').bold = True
+            p.add_run(project_data.get('name', ''))
+            
+            p = doc.add_paragraph()
+            p.add_run('Category: ').bold = True
+            p.add_run(project_data.get('category', ''))
+            
+            # Overview
+            p = doc.add_paragraph()
+            p.add_run('Overview: ').bold = True
+            p.add_run(project_data.get('overview', ''))
+            
+            # General Objective
+            p = doc.add_paragraph()
+            p.add_run('General Objective: ').bold = True
+            p.add_run(project_data.get('general_objective', ''))
+            
+            # Specific Objectives
+            specific_objs = project_data.get('specific_objectives', [])
+            if specific_objs:
+                doc.add_heading('Specific Objectives', 3)
+                for obj in specific_objs:
+                    doc.add_paragraph(f"• {obj}", style='List Bullet')
+            
+            # Activities
+            activities = project_data.get('activities', [])
+            if activities:
+                doc.add_heading('Project Activities', 3)
+                for act in activities:
+                    doc.add_paragraph(f"• {act}", style='List Bullet')
+            
+            # Products/Evidences
+            products = project_data.get('products_evidences', [])
+            if products:
+                doc.add_heading('Products / Evidences', 3)
+                for prod in products:
+                    doc.add_paragraph(f"• {prod}", style='List Bullet')
+            
+            # Rubric Criteria
+            rubric = project_data.get('rubric_criteria', {})
+            if rubric:
+                doc.add_heading('Rubric Criteria', 3)
+                for criterion, description in rubric.items():
+                    p = doc.add_paragraph()
+                    p.add_run(f"{criterion}: ").bold = True
+                    p.add_run(str(description))
+            
+            # Duration and Materials
+            p = doc.add_paragraph()
+            p.add_run('Duration: ').bold = True
+            p.add_run(project_data.get('duration', ''))
+            
+            proj_materials = project_data.get('materials', [])
+            if proj_materials:
+                doc.add_heading('Project Materials', 3)
+                for mat in proj_materials:
+                    doc.add_paragraph(f"• {mat}", style='List Bullet')
+            
+            # Skills Developed
+            skills = project_data.get('skills_developed', [])
+            if skills:
+                p = doc.add_paragraph()
+                p.add_run('Skills Developed: ').bold = True
+                p.add_run(', '.join(skills))
+            
+            # Differentiation
+            differentiation = project_data.get('differentiation', '')
+            if differentiation:
+                p = doc.add_paragraph()
+                p.add_run('Differentiation: ').bold = True
+                p.add_run(str(differentiation))
+        
         # Lesson Planners Section
         doc.add_page_break()
-        doc.add_heading('Lesson Planners', 1)
+        doc.add_heading('Lesson Planners (Backward Planning Approach)', 1)
+        
+        # Add note about backward planning
+        note = doc.add_paragraph()
+        note.add_run('Note: ').bold = True
+        note.add_run('These lessons are designed using Backward Planning. Lesson 5 (Project/Mediation) is the culminating activity. Lessons 1-4 progressively build the skills needed for successful project completion.')
         
         for lesson in planner.get('lesson_planners', []):
             doc.add_heading(f"Lesson {lesson['lesson_number']}: {lesson['skill_focus']}", 2)
             
-            lesson_table = doc.add_table(rows=4, cols=2)
+            # Lesson info table
+            lesson_table = doc.add_table(rows=5, cols=2)
             lesson_table.style = 'Light Grid Accent 1'
             
             lesson_data = [
                 ('Scenario', lesson.get('scenario', '')),
                 ('Theme', lesson.get('theme', '')),
                 ('Skill Focus', lesson.get('skill_focus', '')),
-                ('Learning Outcome', lesson.get('learning_outcome', ''))
+                ('Time', lesson.get('time', '45-60 minutes')),
+                ('Specific Objective', lesson.get('specific_objective', ''))
             ]
             
             for i, (label, value) in enumerate(lesson_data):
                 lesson_table.rows[i].cells[0].text = label
                 lesson_table.rows[i].cells[1].text = str(value)
             
+            # Learning Outcome
+            learning_outcome = lesson.get('learning_outcome', '')
+            if learning_outcome:
+                p = doc.add_paragraph()
+                p.add_run('Learning Outcome: ').bold = True
+                p.add_run(str(learning_outcome))
+            
             # Lesson Stages
             doc.add_heading('Lesson Stages', 3)
             for stage in lesson.get('lesson_stages', []):
                 p = doc.add_paragraph()
-                p.add_run(stage['stage'] + ': ').bold = True
-                activities = ', '.join(stage.get('activities', [])) if stage.get('activities') else 'To be completed'
-                p.add_run(activities)
+                p.add_run(stage['stage'] + ':').bold = True
+                activities = stage.get('activities', [])
+                if activities:
+                    for act in activities:
+                        doc.add_paragraph(f"• {act}", style='List Bullet')
+                else:
+                    doc.add_paragraph("• To be completed", style='List Bullet')
+            
+            # Comments section
+            comments = lesson.get('comments', {})
+            if comments:
+                doc.add_heading('Additional Information', 3)
+                if comments.get('homework'):
+                    p = doc.add_paragraph()
+                    p.add_run('Homework: ').bold = True
+                    p.add_run(str(comments['homework']))
+                if comments.get('formative_assessment'):
+                    p = doc.add_paragraph()
+                    p.add_run('Formative Assessment: ').bold = True
+                    p.add_run(str(comments['formative_assessment']))
+                if comments.get('teacher_comments'):
+                    p = doc.add_paragraph()
+                    p.add_run('Teacher Notes: ').bold = True
+                    p.add_run(str(comments['teacher_comments']))
             
             doc.add_paragraph()  # Space between lessons
         
