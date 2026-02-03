@@ -319,11 +319,11 @@ export default function HomePage() {
               </Select>
             </div>
 
-            {/* Project Selector */}
-            {projects.length > 0 && (
+            {/* Project Selector - Always show when theme is selected */}
+            {selectedTheme && (
               <div className="space-y-2">
                 <Label htmlFor="project" className="text-base font-semibold flex items-center gap-2 dark:text-slate-200">
-                  <Sparkles className="h-4 w-4 text-accent" />
+                  <Sparkles className="h-4 w-4 text-amber-500" />
                   {t.project}
                 </Label>
                 <Select value={selectedProject || ''} onValueChange={setSelectedProject}>
@@ -331,12 +331,16 @@ export default function HomePage() {
                     <SelectValue placeholder={t.selectProject} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="none">None</SelectItem>
-                    {projects.map((project) => (
-                      <SelectItem key={project.id} value={project.id}>
-                        {project.name}
-                      </SelectItem>
-                    ))}
+                    <SelectItem value="none">{language === 'es' ? 'Ninguno' : 'None'}</SelectItem>
+                    {projects.length > 0 ? (
+                      projects.map((project) => (
+                        <SelectItem key={project.id} value={project.id}>
+                          {project.name}
+                        </SelectItem>
+                      ))
+                    ) : (
+                      <SelectItem value="loading" disabled>{language === 'es' ? 'Cargando proyectos...' : 'Loading projects...'}</SelectItem>
+                    )}
                   </SelectContent>
                 </Select>
               </div>
