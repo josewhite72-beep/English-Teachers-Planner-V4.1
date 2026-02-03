@@ -332,17 +332,18 @@ export default function HomePage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="none">{language === 'es' ? 'Ninguno' : 'None'}</SelectItem>
-                    {projects.length > 0 ? (
-                      projects.map((project) => (
-                        <SelectItem key={project.id} value={project.id}>
-                          {project.name}
-                        </SelectItem>
-                      ))
-                    ) : (
-                      <SelectItem value="loading" disabled>{language === 'es' ? 'Cargando proyectos...' : 'Loading projects...'}</SelectItem>
-                    )}
+                    {projects.map((project) => (
+                      <SelectItem key={project.id} value={project.id}>
+                        {project.name}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
+                {projects.length === 0 && (
+                  <p className="text-xs text-amber-600 dark:text-amber-400">
+                    {language === 'es' ? 'No hay proyectos disponibles para este scenario' : 'No projects available for this scenario'}
+                  </p>
+                )}
               </div>
             )}
 
