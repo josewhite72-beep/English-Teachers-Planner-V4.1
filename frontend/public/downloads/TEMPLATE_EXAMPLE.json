@@ -4,338 +4,364 @@
   "theme": "Today Is Tuesday!",
   "plan_type": "standard",
   "language": "es",
+  "backward_planning_note": "Este planeamiento utiliza el enfoque de planificación hacia atrás. El proyecto 'Days of the Week Calendar' de la Lección 5 es el punto de partida, y las Lecciones 1-4 construyen progresivamente las habilidades necesarias para completarlo exitosamente.",
   "theme_planner": {
     "specific_objectives": {
-      "listening": "Los estudiantes serán capaces de identificar y comprender los nombres de los días de la semana en inglés al escuchar conversaciones simples, con 80% de precisión, durante las actividades de clase.",
-      "reading": "Los estudiantes leerán y reconocerán palabras clave relacionadas con los días de la semana en textos cortos ilustrados, identificando al menos 5 días correctamente en una actividad de 10 minutos.",
-      "speaking": "Los estudiantes expresarán oralmente el día actual y responderán preguntas simples sobre días de la semana usando frases como 'Today is...' y 'Tomorrow is...', en conversaciones de clase de 5 minutos.",
-      "writing": "Los estudiantes escribirán los nombres de los días de la semana con apoyo visual, completando al menos 5 de 7 días correctamente en ejercicios escritos.",
-      "mediation": "Los estudiantes utilizarán gestos, imágenes y expresiones faciales para comunicar información sobre días de la semana a compañeros, facilitando la comprensión mutua en al menos 3 intercambios durante la clase."
+      "listening": "Los estudiantes serán capaces de identificar y comprender los nombres de los 7 días de la semana en inglés al escuchar conversaciones simples, con 80% de precisión, durante las actividades de clase, preparándolos para seguir instrucciones en la creación del calendario.",
+      "reading": "Los estudiantes leerán y reconocerán palabras escritas de los días de la semana en textos cortos ilustrados, identificando al menos 5 días correctamente, permitiéndoles etiquetar su calendario con precisión.",
+      "speaking": "Los estudiantes expresarán oralmente el día actual y responderán preguntas simples sobre días de la semana usando frases como 'Today is...' y 'Tomorrow is...', preparándolos para presentar su calendario a la clase.",
+      "writing": "Los estudiantes escribirán los nombres de los días de la semana con apoyo visual, completando al menos 5 de 7 días correctamente, para crear las etiquetas de su calendario personal.",
+      "mediation": "Los estudiantes crearán un calendario visual semanal integrando todas las habilidades: reconocer días al escuchar, leer etiquetas, presentar oralmente, escribir los días y ayudar a compañeros en el proceso, demostrando comprensión del proyecto integrador."
     },
     "materials_and_strategies": {
       "required_materials": [
         "Flashcards con los días de la semana (Monday-Sunday)",
         "Calendario grande para el aula",
+        "Plantillas de calendario en blanco para cada estudiante",
         "Hojas de trabajo con actividades de escritura",
         "Audio o video con la canción de los días de la semana",
         "Tarjetas con imágenes de actividades diarias",
-        "Pizarra o papelógrafo",
-        "Marcadores de colores",
-        "Stickers o sellos para premiar participación"
+        "Crayones y marcadores de colores",
+        "Stickers para decorar los calendarios",
+        "Pegamento y tijeras",
+        "Rúbrica de evaluación del proyecto"
       ],
-      "differentiated_instruction": "Para estudiantes con diferentes estilos de aprendizaje: Visual - usar flashcards coloridas y calendario ilustrado; Auditivo - repetir canciones y rimas; Kinestésico - actividades de movimiento y juegos. Para estudiantes con dificultades: proporcionar apoyo adicional con imágenes, trabajar en parejas, dar más tiempo. Para estudiantes avanzados: crear oraciones completas, enseñar días a compañeros, crear su propio calendario semanal."
+      "differentiated_instruction": "Para estudiantes con diferentes estilos de aprendizaje: Visual - usar flashcards coloridas, calendario ilustrado y videos; Auditivo - repetir canciones, rimas y chants de los días; Kinestésico - actividades de movimiento, juegos con tarjetas físicas, crear calendario con las manos. Para estudiantes con dificultades: proporcionar días pre-escritos para trazar, trabajar en parejas, dar más tiempo, usar colores diferentes para cada día. Para estudiantes avanzados: crear oraciones completas para cada día, agregar actividades extra al calendario, ayudar a compañeros como 'tutores'. Para ELL: usar imágenes de apoyo, permitir respuestas en español primero, emparejar con compañeros bilingües."
     }
   },
   "lesson_planners": [
     {
       "lesson_number": 1,
       "skill_focus": "Listening",
-      "specific_objective": "Los estudiantes identificarán y comprenderán los nombres de los 7 días de la semana al escucharlos en contextos de conversación simple, respondiendo correctamente a preguntas básicas.",
+      "connection_to_project": "Esta lección establece el vocabulario auditivo fundamental de los días de la semana que los estudiantes necesitarán reconocer cuando sigan instrucciones para crear su calendario en la Lección 5. Aprenderán a identificar los días al escucharlos, lo cual es esencial para entender las explicaciones del proyecto.",
+      "specific_objective": "Los estudiantes identificarán y comprenderán los nombres de los 7 días de la semana al escucharlos en contextos de conversación simple, respondiendo correctamente a preguntas básicas, como preparación para seguir instrucciones del proyecto del calendario.",
       "time": "45 minutos",
       "lesson_stages": [
         {
           "stage": "Warm-up / Pre-task",
           "activities": [
-            "Saludar a los estudiantes y preguntar: 'What day is today?' (¿Qué día es hoy?). Señalar el calendario.",
-            "Cantar o recitar una rima corta sobre los días de la semana para activar conocimientos previos.",
-            "Mostrar flashcards de los días uno por uno, diciendo cada nombre en voz alta mientras los estudiantes escuchan."
+            "Saludar a los estudiantes y preguntar: '¿Qué día es hoy?' (What day is today?). Señalar el calendario del aula.",
+            "Cantar o recitar una rima corta sobre los días de la semana para activar conocimientos previos: 'Days of the week, days of the week, there's Sunday and there's Monday...'",
+            "Mostrar flashcards de los días uno por uno, diciendo cada nombre en voz alta mientras los estudiantes escuchan. Conexión con proyecto: 'Estos días son los que vamos a poner en NUESTRO calendario.'",
+            "Juego rápido: El profesor dice un día y los estudiantes levantan la mano cuando lo reconocen."
           ]
         },
         {
           "stage": "Presentation",
           "activities": [
-            "Presentar los 7 días de la semana usando flashcards grandes. Decir cada día claramente: 'Monday, Tuesday, Wednesday...'",
-            "Colocar las flashcards en el calendario del aula en orden.",
-            "Reproducir un audio o video corto (2-3 minutos) de una canción de los días de la semana.",
-            "Repetir cada día con gestos (ejemplo: Monday = señalar el primer dedo, Tuesday = segundo dedo)."
+            "Presentar los 7 días de la semana usando flashcards grandes. Decir cada día claramente: 'Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday'. Repetir 3 veces.",
+            "Colocar las flashcards en el calendario del aula en orden, narrando: 'First Monday, then Tuesday, then Wednesday...'",
+            "Reproducir un audio o video corto (2-3 minutos) de una canción de los días de la semana. Los estudiantes solo escuchan la primera vez.",
+            "Repetir cada día con gestos: Monday = levantar 1 dedo, Tuesday = 2 dedos, etc. Explicar: 'Estos gestos nos ayudarán a recordar cuando hagamos nuestro calendario.'"
           ]
         },
         {
           "stage": "Preparation",
           "activities": [
-            "Práctica coral: Los estudiantes repiten cada día después del profesor: 'Monday!' (todos: 'Monday!').",
-            "Juego de escucha: El profesor dice un día y los estudiantes señalan la flashcard correcta en el calendario.",
-            "Actividad en parejas: Un estudiante dice un día, el otro señala y dice 'Yes!' o 'No!'."
+            "Práctica coral: Los estudiantes repiten cada día después del profesor: Profesor: 'Monday!' Todos: 'Monday!'",
+            "Juego de escucha 'Point to the day': El profesor dice un día y los estudiantes señalan la flashcard correcta en el calendario del aula.",
+            "Actividad en parejas: Un estudiante dice un día, el otro señala y dice 'Yes!' o 'No!' para confirmar.",
+            "Cantar la canción de los días juntos, siguiendo los gestos."
           ]
         },
         {
           "stage": "Performance",
           "activities": [
-            "Los estudiantes escuchan oraciones simples: 'Today is Monday. Tomorrow is Tuesday.' y señalan los días en su propio calendario pequeño.",
-            "Juego 'Listen and Jump': El profesor dice un día y los estudiantes saltan cuando escuchan el día correcto.",
-            "Los estudiantes trabajan individualmente escuchando el audio y marcando los días que escuchan en una hoja de trabajo."
+            "Los estudiantes escuchan oraciones simples: 'Today is Monday. Tomorrow is Tuesday.' y señalan los días en un calendario pequeño de práctica.",
+            "Juego 'Listen and Jump': El profesor dice un día al azar y los estudiantes saltan cuando escuchan un día específico (ej: 'Jump when you hear Monday!').",
+            "Los estudiantes trabajan individualmente escuchando el audio y marcando los días que escuchan en una hoja de trabajo.",
+            "Simulación del proyecto: El profesor dice 'Put Monday here' señalando el calendario. Los estudiantes practican seguir instrucciones auditivas."
           ]
         },
         {
           "stage": "Assessment / Post-task",
           "activities": [
             "Evaluación oral individual: Preguntar a cada estudiante 'What day is today?' y observar su respuesta.",
-            "Hoja de trabajo simple: Escuchar y marcar el día correcto entre 3 opciones.",
-            "Dar retroalimentación positiva: 'Great job!', 'Excellent listening!'"
+            "Hoja de trabajo simple: Escuchar y circular el día correcto entre 3 opciones (el profesor dice el día, el estudiante lo marca).",
+            "Dar retroalimentación positiva: 'Great job! Excellent listening! You will be ready for our calendar project!'"
           ]
         },
         {
           "stage": "Reflection",
           "activities": [
-            "Preguntar: '¿Qué días aprendimos hoy? Can you say one day in English?'",
-            "Los estudiantes comparten qué día les gustó más y por qué (pueden usar español).",
-            "Cantar la canción de los días una última vez todos juntos."
+            "Preguntar: '¿Qué días aprendimos hoy? Can you say one day in English?' Los estudiantes comparten.",
+            "Discutir: 'La próxima clase vamos a LEER estos días. Y al final de la semana, ¡vamos a hacer NUESTRO PROPIO CALENDARIO!'",
+            "Cantar la canción de los días una última vez todos juntos como cierre."
           ]
         }
       ],
       "comments": {
-        "homework": "Escuchar la canción de los días de la semana en casa con la familia (enviar link por WhatsApp). Practicar diciendo los días con un familiar.",
-        "formative_assessment": "Observar la participación durante las actividades coral y los juegos. Evaluar si los estudiantes pueden señalar los días correctamente cuando los escuchan.",
-        "teacher_comments": "Importante: Repetir mucho y usar gestos. Algunos estudiantes pueden confundir Tuesday/Thursday - enfatizar la diferencia. Mantener energía alta con canciones y movimiento."
+        "homework": "Escuchar la canción de los días de la semana en casa con la familia (enviar link por WhatsApp). Practicar diciendo los días con un familiar. Preguntar a un adulto: '¿Qué hacemos el Monday? ¿Y el Saturday?'",
+        "formative_assessment": "Observar la participación durante las actividades coral y los juegos. Evaluar si los estudiantes pueden señalar los días correctamente cuando los escuchan. Registrar cuántos días puede identificar cada estudiante al escucharlos.",
+        "teacher_comments": "Importante: Repetir mucho y usar gestos consistentes. Algunos estudiantes confunden Tuesday/Thursday - enfatizar la diferencia con gestos específicos. Esta lección es FUNDAMENTAL para el proyecto del calendario. Asegurar que todos reconozcan al menos 5 días al escucharlos."
       }
     },
     {
       "lesson_number": 2,
       "skill_focus": "Reading",
-      "specific_objective": "Los estudiantes leerán y reconocerán las palabras escritas de los días de la semana en textos cortos ilustrados, identificando al menos 5 de 7 días correctamente.",
+      "connection_to_project": "Esta lección desarrolla la habilidad de reconocer los días de la semana de forma ESCRITA, lo cual es esencial para que los estudiantes puedan leer las etiquetas de su calendario y verificar que están colocadas correctamente. Necesitan poder leer 'Monday', 'Tuesday', etc. para etiquetar su proyecto.",
+      "specific_objective": "Los estudiantes leerán y reconocerán las palabras escritas de los días de la semana en textos cortos ilustrados, identificando al menos 5 de 7 días correctamente, preparándolos para leer y colocar las etiquetas de su calendario.",
       "time": "45 minutos",
       "lesson_stages": [
         {
           "stage": "Warm-up / Pre-task",
           "activities": [
-            "Repasar los días de la semana oralmente con flashcards.",
-            "Juego rápido: Mostrar una flashcard y los estudiantes dicen el día.",
-            "Introducir que hoy van a 'leer' (read) los días."
+            "Repasar los días de la semana oralmente con flashcards de la Lección 1.",
+            "Juego rápido: Mostrar una flashcard con imagen y los estudiantes dicen el día.",
+            "Introducir que hoy van a 'LEER' (read) los días. Mostrar una tarjeta con 'MONDAY' escrito: '¿Pueden leer esto?'",
+            "Conexión con proyecto: 'En nuestro calendario, necesitamos LEER los días para ponerlos en el lugar correcto.'"
           ]
         },
         {
           "stage": "Presentation",
           "activities": [
-            "Mostrar flashcards con las palabras escritas de los días (MONDAY, TUESDAY, etc.).",
-            "Señalar cada letra mientras lee en voz alta: 'M-O-N-D-A-Y, Monday'.",
-            "Comparar palabras: Monday vs. Sunday (ambas terminan en -day).",
-            "Mostrar un calendario semanal escrito y leer cada día apuntando con el dedo."
+            "Mostrar flashcards con las palabras escritas de los días en letras grandes (MONDAY, TUESDAY, etc.).",
+            "Señalar cada letra mientras lee en voz alta: 'M-O-N-D-A-Y, Monday'. Repetir con cada día.",
+            "Comparar palabras: 'Monday y Sunday - ¿Qué tienen igual? ¡Las dos terminan en -day!'",
+            "Mostrar un calendario semanal escrito y leer cada día apuntando con el dedo: 'Este calendario es como el que USTEDES van a hacer.'"
           ]
         },
         {
           "stage": "Preparation",
           "activities": [
-            "Actividad de matching: Los estudiantes emparejan flashcards con palabras a las flashcards con imágenes.",
-            "Leer en coro: El profesor señala una palabra y todos leen juntos.",
-            "Juego 'Find the word': El profesor dice 'Find Monday!' y los estudiantes buscan la palabra en el aula (palabras pegadas en paredes)."
+            "Actividad de matching: Los estudiantes emparejan flashcards con palabras a las flashcards con imágenes de la Lección 1.",
+            "Leer en coro: El profesor señala una palabra y todos leen juntos: '¡Monday!'",
+            "Juego 'Find the word': El profesor dice 'Find Monday!' y los estudiantes buscan la palabra en tarjetas pegadas por el aula.",
+            "Trabajo en parejas: Un estudiante muestra una tarjeta escrita, el otro la lee."
           ]
         },
         {
           "stage": "Performance",
           "activities": [
             "Hoja de trabajo: Los estudiantes leen oraciones simples como 'Today is Monday' y dibujan el día.",
-            "Actividad en parejas: Un estudiante muestra una tarjeta con el día escrito, el otro la lee en voz alta.",
-            "Crear un mini-libro: Doblar papel en 7 secciones, escribir un día en cada una (copiar de modelo)."
+            "Actividad de lectura: Cada estudiante recibe tarjetas con los 7 días escritos y las ordena correctamente.",
+            "Crear mini-libro: Doblar papel en 7 secciones, copiar un día escrito en cada una (copiar del modelo en pizarra).",
+            "Práctica para el proyecto: Leer etiquetas de días y colocarlas en un calendario de práctica."
           ]
         },
         {
           "stage": "Assessment / Post-task",
           "activities": [
-            "Quiz de lectura: Mostrar 5 palabras y pedir que lean en voz alta.",
-            "Hoja de evaluación: Unir palabras con dibujos correspondientes.",
-            "Retroalimentación: Revisar juntos y celebrar aciertos."
+            "Quiz de lectura: Mostrar 5 palabras de días y pedir que lean en voz alta uno por uno.",
+            "Hoja de evaluación: Unir palabras escritas con los dibujos correspondientes de cada día.",
+            "Retroalimentación: Revisar juntos, celebrar aciertos: '¡Excelente! Ya pueden LEER los días para su calendario!'"
           ]
         },
         {
           "stage": "Reflection",
           "activities": [
-            "Preguntar: '¿Cuál día es más fácil de leer? ¿Cuál es más difícil?'",
-            "Los estudiantes muestran su mini-libro y leen su día favorito.",
-            "Guardar mini-libros para llevar a casa."
+            "Preguntar: '¿Cuál día es más fácil de leer? ¿Cuál es más difícil?' (Wednesday suele ser difícil)",
+            "Los estudiantes muestran su mini-libro y leen su día favorito a un compañero.",
+            "Conectar con proyecto: 'La próxima clase vamos a HABLAR sobre los días. Después vamos a ESCRIBIRLOS para nuestro calendario.'"
           ]
         }
       ],
       "comments": {
-        "homework": "Leer los días de la semana del mini-libro a un familiar. Buscar un calendario en casa y leer los días en inglés.",
-        "formative_assessment": "Observar si los estudiantes pueden reconocer y leer las palabras de forma independiente. Anotar qué días causan más dificultad.",
-        "teacher_comments": "Recordar que están en A1.1, no se espera lectura perfecta. Enfatizar reconocimiento de palabras completas más que deletreo. Usar muchas imágenes de apoyo."
+        "homework": "Leer los días de la semana del mini-libro a un familiar cada noche. Buscar un calendario en casa y señalar/leer los días en inglés. Traer recortes de días de la semana de revistas o periódicos si encuentran.",
+        "formative_assessment": "Observar si los estudiantes pueden reconocer y leer las palabras de forma independiente. Anotar qué días causan más dificultad en lectura (Wednesday, Thursday). Evaluar si pueden ordenar los días correctamente al leerlos.",
+        "teacher_comments": "Recordar que están en nivel A1.1 - no se espera lectura perfecta. Enfatizar reconocimiento de palabras completas más que deletreo. Usar muchas imágenes de apoyo. Los estudiantes necesitan poder LEER las etiquetas para su calendario del proyecto final."
       }
     },
     {
       "lesson_number": 3,
       "skill_focus": "Speaking",
-      "specific_objective": "Los estudiantes expresarán oralmente el día actual y responderán preguntas simples sobre días de la semana usando frases estructuradas como 'Today is...' y 'Tomorrow is...'",
+      "connection_to_project": "Esta lección desarrolla la capacidad de EXPRESAR oralmente los días de la semana, lo cual es esencial para la PRESENTACIÓN del calendario en la Lección 5. Los estudiantes necesitan poder decir frases como 'Today is Monday' cuando presenten su calendario a la clase.",
+      "specific_objective": "Los estudiantes expresarán oralmente el día actual y responderán preguntas simples sobre días de la semana usando frases estructuradas como 'Today is...' y 'Tomorrow is...', preparándolos para presentar su calendario a la clase.",
       "time": "45 minutos",
       "lesson_stages": [
         {
           "stage": "Warm-up / Pre-task",
           "activities": [
-            "Cantar la canción de los días de la semana todos juntos.",
+            "Cantar la canción de los días de la semana todos juntos como activación.",
             "Juego de pelota: Tirar una pelota suave y preguntar '¿Qué día es hoy?' El que atrapa responde en inglés.",
-            "Modelar la pronunciación de cada día enfatizando sonidos difíciles."
+            "Modelar la pronunciación de cada día enfatizando sonidos difíciles: 'Wed-nes-day' (3 sílabas, pero decimos 'Wenz-day').",
+            "Conexión: 'Cuando presenten su calendario, van a DECIR los días a sus compañeros. ¡Practiquemos!'"
           ]
         },
         {
           "stage": "Presentation",
           "activities": [
-            "Enseñar la estructura: 'Today is [Monday]'. Escribir en pizarra.",
-            "Modelar con el calendario: Señalar hoy y decir 'Today is Friday'.",
+            "Enseñar la estructura completa: 'Today is [Monday]'. Escribir en pizarra con espacio para el día.",
+            "Modelar con el calendario del aula: Señalar hoy y decir 'Today is [día actual]'.",
             "Enseñar 'Tomorrow is...': Señalar el siguiente día en el calendario.",
-            "Practicar las dos frases varias veces con gestos (señalar 'hoy' y 'mañana')."
+            "Practicar ambas frases con gestos: 'Today is...' (señalar abajo = ahora) 'Tomorrow is...' (señalar adelante = futuro).",
+            "Demostrar cómo presentar: 'Mi calendario dice: Monday, Tuesday, Wednesday... Today is [día]!'"
           ]
         },
         {
           "stage": "Preparation",
           "activities": [
             "Práctica guiada: El profesor pregunta 'What day is today?' y los estudiantes responden en coro.",
-            "Drill de sustitución: 'Today is Monday' → 'Today is Tuesday' → 'Today is Wednesday'.",
-            "Role-play en parejas: A pregunta 'What day is today?' B responde 'Today is...'."
+            "Drill de sustitución: 'Today is Monday' → 'Today is Tuesday' → 'Today is Wednesday' etc.",
+            "Role-play en parejas: Estudiante A pregunta 'What day is today?' Estudiante B responde 'Today is...'",
+            "Práctica de presentación: Cada pareja practica presentar un mini-calendario de cartón."
           ]
         },
         {
           "stage": "Performance",
           "activities": [
             "Actividad de entrevista: Los estudiantes circulan preguntando a 5 compañeros 'What day is today?' y escuchan las respuestas.",
-            "Mini-presentaciones: Cada estudiante viene al frente, señala el calendario y dice 'Today is [day]. Tomorrow is [day]'.",
-            "Juego de roles: Simular diferentes días de la semana y practicar las frases."
+            "Mini-presentaciones: Cada estudiante viene al frente, señala el calendario y dice 'Today is [day]. Tomorrow is [day].'",
+            "Simulación del proyecto: En grupos de 3, practican presentar un calendario: 'My calendar shows Monday, Tuesday, Wednesday...'",
+            "Juego 'Weather Reporter': Simular ser un reportero que dice el día: 'Good morning! Today is Monday!'"
           ]
         },
         {
           "stage": "Assessment / Post-task",
           "activities": [
-            "Evaluación individual oral: Cada estudiante responde a las preguntas del profesor.",
-            "Grabación opcional: Los estudiantes graban un video corto diciendo 'Today is...'.",
-            "Dar stickers o sellos por buen esfuerzo y pronunciación."
+            "Evaluación individual oral: Cada estudiante responde a las preguntas del profesor con su propio calendario de práctica.",
+            "Grabación opcional: Los estudiantes graban un video corto diciendo 'Today is... Tomorrow is...' (para portafolio).",
+            "Dar stickers o sellos por buen esfuerzo y pronunciación clara."
           ]
         },
         {
           "stage": "Reflection",
           "activities": [
-            "Preguntar: '¿Fue fácil o difícil decir los días en inglés?'",
-            "Los estudiantes practican decir su día favorito de la semana.",
-            "Celebrar: '¡Excelente trabajo hablando en inglés!'"
+            "Preguntar: '¿Fue fácil o difícil decir los días en inglés? ¿Cuál día es más difícil de pronunciar?'",
+            "Los estudiantes practican decir su día favorito de la semana y por qué les gusta.",
+            "Conectar: 'La próxima clase vamos a ESCRIBIR los días. ¡Después tendremos todo listo para hacer nuestro calendario!'"
           ]
         }
       ],
       "comments": {
-        "homework": "Practicar diciendo 'Today is...' cada mañana en casa durante una semana. Enseñar la frase a un familiar.",
-        "formative_assessment": "Evaluar fluidez y confianza al hablar. No penalizar errores de pronunciación menores. Observar participación y esfuerzo.",
-        "teacher_comments": "Crear ambiente de confianza. Algunos estudiantes son tímidos - permitirles practicar en grupos pequeños primero. Celebrar cada intento."
+        "homework": "Practicar diciendo 'Today is...' cada mañana en casa durante una semana. Enseñar la frase 'Today is [day]' a un familiar y reportar su reacción. Practicar la presentación frente a un espejo.",
+        "formative_assessment": "Evaluar fluidez y confianza al hablar. No penalizar errores de pronunciación menores si el mensaje es comprensible. Observar participación y esfuerzo. Evaluar si pueden usar 'Today is...' y 'Tomorrow is...' correctamente.",
+        "teacher_comments": "Crear ambiente de confianza para hablar. Algunos estudiantes son tímidos - permitirles practicar en grupos pequeños primero. Celebrar cada intento. Esta habilidad es CRÍTICA para la presentación del proyecto del calendario."
       }
     },
     {
       "lesson_number": 4,
       "skill_focus": "Writing",
-      "specific_objective": "Los estudiantes escribirán los nombres de los días de la semana con apoyo visual, completando al menos 5 de 7 días correctamente en ejercicios de escritura guiada.",
+      "connection_to_project": "Esta lección permite a los estudiantes ESCRIBIR los días de la semana, lo cual es el paso final antes de crear su calendario. Aprenderán a escribir las etiquetas que necesitan para su proyecto, creando borradores que pueden usar directamente en la Lección 5.",
+      "specific_objective": "Los estudiantes escribirán los nombres de los días de la semana con apoyo visual, completando al menos 5 de 7 días correctamente en ejercicios de escritura guiada, creando las etiquetas para su calendario del proyecto.",
       "time": "45 minutos",
       "lesson_stages": [
         {
           "stage": "Warm-up / Pre-task",
           "activities": [
-            "Repasar los días leyéndolos del calendario del aula.",
+            "Repasar los días leyéndolos del calendario del aula y diciendo cada uno en voz alta.",
             "Juego 'Spell it!': El profesor dice un día y deletrea la primera letra, los estudiantes completan.",
-            "Mostrar ejemplos de palabras escritas correctamente."
+            "Mostrar ejemplos de palabras escritas correctamente: 'Así es como se VEN los días escritos.'",
+            "Conexión directa: 'Hoy vamos a ESCRIBIR los días para crear las ETIQUETAS de su calendario. ¡Es el paso antes del proyecto!'"
           ]
         },
         {
           "stage": "Presentation",
           "activities": [
-            "Demostrar en la pizarra cómo escribir 'Monday' paso a paso, letra por letra.",
-            "Mostrar la importancia de la mayúscula al inicio de cada día.",
+            "Demostrar en la pizarra cómo escribir 'Monday' paso a paso, letra por letra: M-O-N-D-A-Y.",
+            "Enfatizar la importancia de la mayúscula al inicio: 'Los días de la semana SIEMPRE empiezan con mayúscula en inglés.'",
             "Proporcionar hojas con los días escritos en líneas punteadas para trazar.",
-            "Explicar que copiarán y practicarán escribir los días."
+            "Mostrar cómo se verán las etiquetas finales para el calendario: 'Estas son las etiquetas que ustedes van a crear.'"
           ]
         },
         {
           "stage": "Preparation",
           "activities": [
-            "Actividad de tracing: Los estudiantes trazan las palabras de los días en hojas preparadas.",
-            "Copiar palabras: Proporcionar modelo en la pizarra, estudiantes copian en sus cuadernos.",
-            "Práctica de escritura en aire: 'Escribir' con el dedo en el aire mientras deletrean."
+            "Actividad de tracing: Los estudiantes trazan las palabras de los días en hojas preparadas con líneas punteadas.",
+            "Copiar palabras: Proporcionar modelo en la pizarra, estudiantes copian en sus cuadernos una vez.",
+            "Práctica de escritura en aire: 'Escribir' con el dedo en el aire mientras deletrean cada día.",
+            "Trabajo en parejas: Un estudiante dice un día, el otro intenta escribirlo."
           ]
         },
         {
           "stage": "Performance",
           "activities": [
-            "Hoja de trabajo: Completar palabras con letras faltantes (M_nday, Tues_ay).",
-            "Escribir los días en un calendario en blanco (con modelo disponible).",
-            "Crear tarjetas: Los estudiantes escriben cada día en una tarjeta de color diferente.",
-            "Actividad creativa: Decorar las tarjetas con dibujos relacionados."
+            "Hoja de trabajo: Completar palabras con letras faltantes (M_nday, Tues_ay, Wedne_day).",
+            "CREAR ETIQUETAS PARA EL PROYECTO: Cada estudiante recibe 7 tarjetas en blanco y escribe un día en cada una.",
+            "Decorar las tarjetas/etiquetas con colores diferentes para cada día: 'Monday = azul, Tuesday = rojo...'",
+            "Verificar en parejas: Los compañeros revisan las etiquetas del otro para asegurar que estén correctas."
           ]
         },
         {
           "stage": "Assessment / Post-task",
           "activities": [
-            "Quiz de escritura: Dictar 5 días y los estudiantes escriben.",
-            "Revisar y corregir juntos, permitiendo autocorrección.",
-            "Exhibir trabajos bien hechos en el aula."
+            "Quiz de escritura: Dictar 5 días y los estudiantes escriben sin ver el modelo.",
+            "Revisar y corregir las etiquetas juntos, permitiendo autocorrección con modelo.",
+            "Guardar las etiquetas en sobres con nombres para usarlas en la Lección 5: 'Guarden bien sus etiquetas para mañana.'"
           ]
         },
         {
           "stage": "Reflection",
           "activities": [
-            "Preguntar: '¿Cuál día fue más fácil de escribir? ¿Cuál más difícil?'",
-            "Los estudiantes comparten sus tarjetas decoradas.",
-            "Guardar las tarjetas para juegos futuros."
+            "Preguntar: '¿Cuál día fue más fácil de escribir? ¿Cuál más difícil?' (Wednesday suele ser el más difícil)",
+            "Los estudiantes muestran sus etiquetas decoradas y las comparan con compañeros.",
+            "Anticipar el proyecto: '¡Mañana usaremos estas etiquetas para crear NUESTRO CALENDARIO! Ya tienen todo listo.'"
           ]
         }
       ],
       "comments": {
-        "homework": "Escribir los 7 días de la semana en el cuaderno 3 veces cada uno. Mostrar a un familiar.",
-        "formative_assessment": "Evaluar escritura correcta de al menos 5 días. Observar uso de mayúsculas. No penalizar ortografía menor si la palabra es reconocible.",
-        "teacher_comments": "Nivel A1.1 - enfocarse en intentos honestos más que perfección. Algunos días son largos (Wednesday) - ofrecer apoyo extra. Permitir uso de modelos."
+        "homework": "Practicar escribir los 7 días de la semana en el cuaderno 2 veces cada uno. Mostrar las etiquetas creadas a un familiar y explicar que son para el proyecto del calendario. Pensar qué actividades quieren dibujar en su calendario para cada día.",
+        "formative_assessment": "Evaluar escritura correcta de al menos 5 días en las etiquetas. Observar uso de mayúsculas. No penalizar ortografía menor si la palabra es reconocible. Las etiquetas deben estar legibles para usarse en el proyecto.",
+        "teacher_comments": "Esta es la lección PREPARATORIA FINAL antes del proyecto. Asegurar que TODOS los estudiantes tengan sus 7 etiquetas escritas y legibles. Tener etiquetas extra preparadas para estudiantes que necesiten apoyo adicional. Las etiquetas se usarán directamente en la Lección 5."
       }
     },
     {
       "lesson_number": 5,
       "skill_focus": "Mediation",
-      "specific_objective": "Los estudiantes utilizarán gestos, imágenes y expresiones faciales para comunicar información sobre días de la semana a compañeros que no hablan inglés, facilitando la comprensión mutua.",
-      "time": "45 minutos",
+      "project_name": "Days of the Week Calendar",
+      "connection_to_project": "Esta es la LECCIÓN CULMINANTE donde los estudiantes INTEGRAN todas las habilidades aprendidas: reconocen días al escuchar instrucciones, leen para verificar sus etiquetas, hablan para presentar su calendario, escriben para etiquetar actividades, y median ayudando a compañeros.",
+      "specific_objective": "Los estudiantes crearán un calendario visual semanal integrando las habilidades de listening (seguir instrucciones), reading (verificar etiquetas), speaking (presentar el calendario), writing (etiquetar actividades) y mediation (ayudar a compañeros), demostrando comprensión completa de los días de la semana.",
+      "time": "60-90 minutos (puede extenderse a 2 sesiones)",
       "lesson_stages": [
         {
           "stage": "Warm-up / Pre-task",
           "activities": [
-            "Explicar qué es 'mediation': ayudar a otros a entender sin traducir directamente.",
-            "Demostrar con gestos: Señalar el calendario, hacer mímica de actividades del día.",
-            "Juego de charadas rápido con días de la semana."
+            "Revisar TODAS las habilidades aprendidas: '¿Recuerdan qué aprendimos? Escuchar los días, leerlos, decirlos, escribirlos...'",
+            "Cantar la canción de los días de la semana una última vez como celebración.",
+            "Mostrar el proyecto terminado (ejemplo del profesor): 'Hoy USTEDES van a crear su PROPIO calendario como este.'",
+            "Distribuir las etiquetas que los estudiantes crearon en la Lección 4: '¿Tienen todas sus etiquetas? ¡Vamos a usarlas!'"
           ]
         },
         {
           "stage": "Presentation",
           "activities": [
-            "Modelar cómo usar gestos: 'Monday' (señalar 1 dedo), 'Weekend' (hacer gesto de descanso).",
-            "Mostrar imágenes de actividades típicas de cada día (school on Monday, church on Sunday).",
-            "Demostrar cómo ayudar a un compañero: usar dibujos + gestos + repetir.",
-            "Enfatizar que pueden usar español Y gestos para explicar."
+            "Explicar el proyecto paso a paso (los estudiantes ESCUCHAN instrucciones - Listening): 'Step 1: Take your calendar template...'",
+            "Mostrar la rúbrica de evaluación simplificada: 'Necesitan: 7 días correctos, 1 dibujo por día, presentar a la clase.'",
+            "Demostrar cómo pegar las etiquetas en orden: 'First Monday, then Tuesday...'",
+            "Explicar el trabajo colaborativo: 'Pueden ayudar a sus compañeros si tienen dificultad.'"
           ]
         },
         {
           "stage": "Preparation",
           "activities": [
-            "Práctica en parejas: Estudiante A explica un día usando solo gestos, B adivina.",
-            "Actividad de dibujo: Dibujar símbolos para cada día (Monday = mochila escolar).",
-            "Role-play: Simular que un compañero no entiende y deben ayudarlo con imágenes."
+            "Los estudiantes LEEN sus etiquetas para verificar que estén correctas antes de pegarlas (Reading).",
+            "Trabajo individual: Pegar las etiquetas de los días en la plantilla del calendario en orden correcto.",
+            "Si algún estudiante tiene etiquetas incorrectas, un compañero ayuda a corregir (Mediation).",
+            "Dibujar actividades para cada día: 'Monday = school, Saturday = play...' (Writing adicional)."
           ]
         },
         {
           "stage": "Performance",
           "activities": [
-            "Proyecto en grupos pequeños: Crear un póster visual de la semana con dibujos y palabras en inglés.",
-            "Actividad de mediación: Grupos presentan su póster a otro grupo que 'no habla inglés', usando solo gestos y dibujos.",
-            "Juego 'Help your friend': Un estudiante pregunta en español sobre un día, otro responde usando inglés + gestos."
+            "CREACIÓN DEL CALENDARIO: Los estudiantes completan sus calendarios pegando etiquetas y dibujando actividades.",
+            "Trabajo colaborativo: Estudiantes avanzados ayudan a compañeros que necesitan apoyo (Mediation).",
+            "PRESENTACIÓN ORAL (Speaking): Cada estudiante presenta su calendario: 'This is my calendar. Monday, Tuesday, Wednesday... On Monday I go to school. On Saturday I play.'",
+            "Los compañeros ESCUCHAN las presentaciones y hacen preguntas simples: 'What do you do on Sunday?'"
           ]
         },
         {
           "stage": "Assessment / Post-task",
           "activities": [
-            "Observar cómo los estudiantes usan recursos no verbales para comunicarse.",
-            "Evaluar pósters: ¿Son claros? ¿Ayudan a entender?",
-            "Retroalimentación grupal: Celebrar creatividad y esfuerzo."
+            "Evaluación del calendario usando rúbrica: ¿Tiene los 7 días? ¿Están en orden? ¿Tiene dibujos?",
+            "Auto-evaluación: Los estudiantes marcan una carita (😊😐☹️) para cada criterio.",
+            "Evaluación entre pares: Los compañeros dan un 'like' (👍) a los calendarios que les gustan.",
+            "Retroalimentación del profesor: Comentarios positivos sobre el trabajo de cada estudiante."
           ]
         },
         {
           "stage": "Reflection",
           "activities": [
-            "Preguntar: '¿Cómo pueden ayudar a alguien que no habla inglés a entender los días?'",
-            "Discutir la importancia de gestos, dibujos y paciencia.",
-            "Exhibir pósters en el aula."
+            "Reflexión grupal: '¿Qué aprendimos en estas 5 lecciones?' Los estudiantes comparten.",
+            "Preguntar: '¿Qué fue más difícil? ¿Qué fue más divertido?' Discusión abierta.",
+            "Celebración: '¡Felicitaciones! Ahora saben los días de la semana en inglés y tienen SU PROPIO calendario.'",
+            "Exhibir los calendarios en el aula o pasillo para que otros los vean."
           ]
         }
       ],
       "comments": {
-        "homework": "Enseñar a un familiar (que no hable inglés) los días de la semana usando gestos y dibujos. Reportar cómo fue la experiencia.",
-        "formative_assessment": "Evaluar creatividad en el uso de recursos no verbales. Observar colaboración y empatía al ayudar a compañeros.",
-        "teacher_comments": "Mediation es nueva para muchos estudiantes. Enfatizar que 'está bien usar español' para explicar conceptos. Fomentar uso de creatividad."
+        "homework": "Llevar el calendario a casa y presentarlo a la familia: 'This is Monday, Tuesday, Wednesday...' Usar el calendario cada día para decir 'Today is [day]'. Agregar más actividades al calendario durante la semana.",
+        "formative_assessment": "Evaluar integración de las 5 habilidades: 1) ¿Siguió instrucciones al escuchar? 2) ¿Verificó etiquetas leyéndolas? 3) ¿Presentó oralmente? 4) ¿Escribió correctamente? 5) ¿Ayudó/recibió ayuda de compañeros? Usar rúbrica con 4 niveles: Excelente, Bueno, En desarrollo, Necesita apoyo.",
+        "teacher_comments": "Esta lección es la CULMINACIÓN del enfoque de planificación hacia atrás. Todo lo aprendido en Lecciones 1-4 se INTEGRA aquí. Tener materiales extra preparados. Permitir tiempo suficiente para presentaciones - es importante que TODOS presenten. Los calendarios pueden exhibirse como evidencia de aprendizaje. Si el tiempo es limitado, dividir en 2 sesiones: Sesión 1 = crear, Sesión 2 = presentar."
       }
     }
   ]
