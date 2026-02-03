@@ -274,10 +274,9 @@ async def generate_planner(request: PlannerRequest):
             # Load project if specified
             if request.project_id:
                 official_projects = load_projects_official(request.grade)
-                if 'projects_by_scenario' in official_projects:
-                    projects_list = official_projects['projects_by_scenario'].get(request.scenario, [])
-                    project_data = next((p for p in projects_list if p.get('id') == request.project_id), None)
-                    pregenerated['project'] = project_data
+                projects_list = find_projects_for_scenario(official_projects, request.scenario)
+                project_data = next((p for p in projects_list if p.get('id') == request.project_id), None)
+                pregenerated['project'] = project_data
             
             return pregenerated
         
@@ -301,9 +300,8 @@ async def generate_planner(request: PlannerRequest):
         project_data = None
         if request.project_id:
             official_projects = load_projects_official(request.grade)
-            if 'projects_by_scenario' in official_projects:
-                projects_list = official_projects['projects_by_scenario'].get(request.scenario, [])
-                project_data = next((p for p in projects_list if p.get('id') == request.project_id), None)
+            projects_list = find_projects_for_scenario(official_projects, request.scenario)
+            project_data = next((p for p in projects_list if p.get('id') == request.project_id), None)
         
         # Generate basic planner structure
         planner = {
