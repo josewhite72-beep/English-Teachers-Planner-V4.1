@@ -502,6 +502,7 @@ export default function PreviewPage() {
                         <h4 className="font-semibold text-teal-800 dark:text-teal-300 capitalize mb-2">{t[skill]}</h4>
                         {typeof skillData === 'object' && (
                           <div className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                            {/* Handle standard format: general, specific, learning_outcomes */}
                             {skillData.general && <p><strong>General:</strong> {skillData.general}</p>}
                             {skillData.specific && Array.isArray(skillData.specific) && skillData.specific.map((s, i) => (
                               <p key={i}><strong>Specific:</strong> {s}</p>
@@ -510,12 +511,40 @@ export default function PreviewPage() {
                               <div>
                                 <strong>Learning Outcomes:</strong>
                                 <ul className="list-disc list-inside ml-2 mt-1">
-                                  {skillData.learning_outcomes.slice(0, 2).map((lo, i) => (
+                                  {skillData.learning_outcomes.map((lo, i) => (
                                     <li key={i} className="text-xs">{lo}</li>
                                   ))}
                                 </ul>
                               </div>
                             )}
+                            
+                            {/* Handle alternative format: receptive, interactive, productive */}
+                            {skillData.receptive && <p><strong>Receptive:</strong> {skillData.receptive}</p>}
+                            {skillData.interactive && <p><strong>Interactive:</strong> {skillData.interactive}</p>}
+                            {skillData.productive && <p><strong>Productive:</strong> {skillData.productive}</p>}
+                            
+                            {/* Handle reading-specific format: reading1, reading2, phonemic_awareness */}
+                            {skillData.reading1 && <p><strong>Reading:</strong> {skillData.reading1}</p>}
+                            {skillData.reading2 && <p><strong>Reading:</strong> {skillData.reading2}</p>}
+                            {skillData.phonemic_awareness && <p><strong>Phonemic Awareness:</strong> {skillData.phonemic_awareness}</p>}
+                            
+                            {/* Handle listening-specific format */}
+                            {skillData.listening1 && <p><strong>Listening:</strong> {skillData.listening1}</p>}
+                            {skillData.listening2 && <p><strong>Listening:</strong> {skillData.listening2}</p>}
+                            
+                            {/* Handle speaking-specific format */}
+                            {skillData.speaking1 && <p><strong>Speaking:</strong> {skillData.speaking1}</p>}
+                            {skillData.speaking2 && <p><strong>Speaking:</strong> {skillData.speaking2}</p>}
+                            
+                            {/* Handle writing-specific format */}
+                            {skillData.writing1 && <p><strong>Writing:</strong> {skillData.writing1}</p>}
+                            {skillData.writing2 && <p><strong>Writing:</strong> {skillData.writing2}</p>}
+                            
+                            {/* Handle mediation-specific format */}
+                            {skillData.mediation1 && <p><strong>Mediation:</strong> {skillData.mediation1}</p>}
+                            {skillData.mediation2 && <p><strong>Mediation:</strong> {skillData.mediation2}</p>}
+                            {skillData.text && <p><strong>Text:</strong> {skillData.text}</p>}
+                            {skillData.concept && <p><strong>Concept:</strong> {skillData.concept}</p>}
                           </div>
                         )}
                       </div>
