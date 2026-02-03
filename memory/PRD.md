@@ -3,22 +3,61 @@
 ## Problema Original
 Aplicación web para docentes de primaria en Panamá (Pre-K a Grado 6) que genera planeamientos de clases de inglés alineados al nuevo currículo oficial de MEDUCA.
 
-## Estructura del Currículo
-- 8 Scenarios por grado
-- 2 Themes por Scenario
-- 5 lecciones por Scenario (cada una enfocada en una habilidad)
-- 5 habilidades: Listening, Reading, Speaking, Writing, Mediation
-- 6 etapas pedagógicas: warm-up, presentation, preparation, performance, assessment, reflection
+## Estructura del Theme Planner (Formato MEDUCA)
 
-## Enfoque Pedagógico: Planificación Hacia Atrás (Backward Planning)
-La aplicación implementa el enfoque de planificación hacia atrás según directrices MEDUCA:
-- **Lección 5 (Mediation)**: Proyecto del Siglo XXI integrador - punto de partida
-- **Lección 4 (Writing)**: Borradores y escritura preparatoria
-- **Lección 3 (Speaking)**: Práctica oral
-- **Lección 2 (Reading)**: Comprensión lectora
-- **Lección 1 (Listening)**: Vocabulario fundamental
+El Theme Planner incluye 6 secciones principales:
 
-El proyecto del Siglo XXI debe estar **alineado con los Specific Standards y Learning Outcomes**.
+### 1. Información General
+- Docente(s), Grado, Nivel CEFR, Trimestre
+- Horas Semanales, Semanas (desde/hasta), Scenario, Theme
+
+### 2. Estándares Específicos y Resultados de Aprendizaje
+- Listening (Comprensión Auditiva)
+- Reading (Comprensión Lectora)
+- Speaking (Expresión Oral)
+- Writing (Expresión Escrita)
+- Mediation
+
+### 3. Competencias Comunicativas
+- **Competencia Lingüística (Aprender a Conocer)**: Estructuras Gramaticales, Vocabulario, Pronunciación
+- **Competencia Pragmática (Aprender a Hacer)**: Funciones Comunicativas y Marcadores del Discurso
+- **Competencia Sociolingüística (Aprender a Ser)**: Interacciones Respetuosas y Participación Social
+- **Proyecto del Siglo XXI**: Nombre, Categoría, Descripción, Objetivos, Actividades, Productos, Rúbrica
+
+### 4. Objetivos Específicos
+- Para Listening, Reading, Speaking, Writing, Mediation
+
+### 5. Materiales y Estrategias de Enseñanza
+- Lista de Materiales Requeridos
+- Instrucción Diferenciada y Adaptaciones para DLN
+
+### 6. Secuencia de Aprendizaje
+- Lección 1: Listening y Fundamentos del Lenguaje
+- Lección 2: Reading y Comprensión de Conceptos
+- Lección 3: Speaking - Tareas Productivas/Interactivas
+- Lección 4: Writing y Preparación del Proyecto
+- Lección 5: Completar el Proyecto del Siglo XXI con Énfasis en Mediation
+
+## Funcionalidades Implementadas ✅
+
+### MVP Completado
+- [x] Selección de Grado, Scenario, Theme
+- [x] Selección de Proyecto del Siglo XXI (3 proyectos por scenario)
+- [x] Theme Planner con las 6 secciones completas del formato MEDUCA
+- [x] Specific Standards para las 5 habilidades (todos los formatos de datos)
+- [x] Proyecto del Siglo XXI integrado en Competencias Comunicativas
+- [x] Objetivos SMART para 5 habilidades
+- [x] Vista previa completa del planeamiento
+- [x] Función de edición inline
+- [x] Exportación a Word (.docx) con todas las secciones
+- [x] Modo oscuro/claro
+- [x] Interfaz bilingüe (ES/EN)
+
+### Correcciones Implementadas (Feb 2025)
+- [x] Reading Standards ahora cargan correctamente para todos los grados
+- [x] Proyecto del Siglo XXI se muestra en preview y exporta a Word
+- [x] Soporte para múltiples formatos de datos JSON (receptive/productive, reading1/reading2, etc.)
+- [x] Theme Planner reestructurado con las 6 secciones oficiales
 
 ## Arquitectura Técnica
 ```
@@ -34,35 +73,12 @@ El proyecto del Siglo XXI debe estar **alineado con los Specific Standards y Lea
 │   ├── src/
 │   │   ├── pages/
 │   │   │   ├── HomePage.js
-│   │   │   └── PreviewPage.js
+│   │   │   └── PreviewPage.js (reestructurado)
 │   │   └── components/
 │   └── package.json
 └── memory/
     └── PRD.md
 ```
-
-## Funcionalidades Implementadas ✅
-
-### MVP Completado
-- [x] Selección de Grado, Scenario, Theme
-- [x] Selección de Proyecto del Siglo XXI (3 proyectos por scenario)
-- [x] Generación de planeamientos con datos curriculares
-- [x] **Specific Standards** mostrados para las 5 habilidades (General, Specific, Learning Outcomes)
-- [x] Objetivos SMART para 5 habilidades
-- [x] Vista previa completa del planeamiento
-- [x] Sección de Proyecto del Siglo XXI con todos los detalles (alineado a standards)
-- [x] Función de edición inline
-- [x] Exportación a Word (.docx) con sección del proyecto
-- [x] Modo oscuro/claro
-- [x] Interfaz bilingüe (ES/EN)
-- [x] Archivos de guía para generación offline
-
-### Correcciones Implementadas (Feb 2025)
-- [x] Secciones de reading y mediation ya no están vacías
-- [x] **Specific Standards** se muestran correctamente (General, Specific, Learning Outcomes)
-- [x] El proyecto seleccionado se muestra y exporta correctamente
-- [x] Enfoque de Backward Planning implementado
-- [x] Etiqueta corregida a "Proyecto del Siglo XXI"
 
 ## Tareas Pendientes
 
@@ -78,17 +94,10 @@ El proyecto del Siglo XXI debe estar **alineado con los Specific Standards y Lea
 
 ### P2 - Baja Prioridad
 - [ ] Estrategia de despliegue permanente (Vercel + Railway)
-- [ ] Asistencia para integrar nuevos JSONs de planes
-
-## URLs de Descarga (Archivos de Guía)
-- planners_master_list.csv - Lista de 128 planeamientos
-- planners_checklist.csv - Checklist de progreso
-- GUIA_GENERACION_PLANNERS.md - Guía con prompt para IA
-- TEMPLATE_EXAMPLE.json - Ejemplo completo de JSON
 
 ## API Endpoints
-- `POST /api/planner/generate` - Genera planeamiento (incluye standards del currículo)
-- `POST /api/planner/export/docx` - Exporta a Word
+- `POST /api/planner/generate` - Genera planeamiento con standards del currículo
+- `POST /api/planner/export/docx` - Exporta a Word con proyecto
 - `GET /api/projects/official/{grade}/{scenario}` - Obtiene proyectos del Siglo XXI
 - `GET /api/grades` - Lista de grados
 - `GET /api/scenarios/{grade}` - Scenarios por grado
@@ -96,7 +105,5 @@ El proyecto del Siglo XXI debe estar **alineado con los Specific Standards y Lea
 
 ## Notas Importantes
 - Los datos vienen de archivos JSON locales (no hay base de datos)
-- El usuario es sensible a costos - evitar soluciones con costos recurrentes
-- El usuario es no técnico - instrucciones deben ser simples
-- Idioma preferido: Español
-- Los Specific Standards SIEMPRE se cargan del currículo (grades/*.json)
+- Soporte para múltiples formatos de datos JSON según el grado
+- Idioma preferido del usuario: Español
