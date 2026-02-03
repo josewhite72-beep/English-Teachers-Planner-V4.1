@@ -658,68 +658,6 @@ export default function PreviewPage() {
                 </div>
               </CardContent>
             </Card>
-
-            {/* Communicative Competences */}
-            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
-              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
-                <CardTitle className="text-teal-900 dark:text-teal-100">{t.competences}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {theme_planner?.communicative_competences?.linguistic && (
-                    <div>
-                      <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Linguistic Competence</h4>
-                      <div className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
-                        {theme_planner.communicative_competences.linguistic.grammatical_features && (
-                          <div>
-                            <strong>Grammar:</strong>{' '}
-                            {Array.isArray(theme_planner.communicative_competences.linguistic.grammatical_features)
-                              ? theme_planner.communicative_competences.linguistic.grammatical_features.join(', ')
-                              : theme_planner.communicative_competences.linguistic.grammatical_features}
-                          </div>
-                        )}
-                        {theme_planner.communicative_competences.linguistic.grammar && (
-                          <div>
-                            <strong>Grammar:</strong>{' '}
-                            {Array.isArray(theme_planner.communicative_competences.linguistic.grammar)
-                              ? theme_planner.communicative_competences.linguistic.grammar.join(', ')
-                              : theme_planner.communicative_competences.linguistic.grammar}
-                          </div>
-                        )}
-                        {theme_planner.communicative_competences.linguistic.vocabulary && (
-                          <div>
-                            <strong>Vocabulary:</strong>{' '}
-                            {Array.isArray(theme_planner.communicative_competences.linguistic.vocabulary)
-                              ? theme_planner.communicative_competences.linguistic.vocabulary.join(', ')
-                              : theme_planner.communicative_competences.linguistic.vocabulary}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-                  {theme_planner?.communicative_competences?.pragmatic && (
-                    <div>
-                      <h4 className="font-semibold text-slate-800 mb-2">Pragmatic Competence</h4>
-                      <p className="text-sm text-slate-700">
-                        {Array.isArray(theme_planner.communicative_competences.pragmatic)
-                          ? theme_planner.communicative_competences.pragmatic.join(', ')
-                          : theme_planner.communicative_competences.pragmatic}
-                      </p>
-                    </div>
-                  )}
-                  {theme_planner?.communicative_competences?.sociolinguistic && (
-                    <div>
-                      <h4 className="font-semibold text-slate-800 mb-2">Sociolinguistic Competence</h4>
-                      <p className="text-sm text-slate-700">
-                        {Array.isArray(theme_planner.communicative_competences.sociolinguistic)
-                          ? theme_planner.communicative_competences.sociolinguistic.join(', ')
-                          : theme_planner.communicative_competences.sociolinguistic}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              </CardContent>
-            </Card>
           </TabsContent>
 
           {/* Lesson Planners Tab */}
