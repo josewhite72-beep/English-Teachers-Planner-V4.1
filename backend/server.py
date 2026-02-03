@@ -196,32 +196,38 @@ async def get_grade_content(grade: str):
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+def find_projects_for_scenario(projects_data: dict, scenario: str) -> list:
+    """Find projects matching a scenario, handling different naming conventions"""
+    import re
+    
+    if not projects_data or 'projects_by_scenario' not in projects_data:
+        return []
+    
+    projects_by_scenario = projects_data['projects_by_scenario']
+    
+    # Try exact match first
+    if scenario in projects_by_scenario:
+        return projects_by_scenario[scenario]
+    
+    # Remove "Scenario X: " prefix if present
+    clean_scenario = re.sub(r'^Scenario \d+:\s*', '', scenario)
+    
+    if clean_scenario in projects_by_scenario:
+        return projects_by_scenario[clean_scenario]
+    
+    # Try partial matching
+    for key in projects_by_scenario.keys():
+        if clean_scenario in key or key in clean_scenario or key in scenario:
+            return projects_by_scenario[key]
+    
+    return []
+
 @api_router.get("/projects/official/{grade}/{scenario}")
 async def get_official_projects(grade: str, scenario: str):
     """Get official projects for a grade and scenario"""
     try:
         projects_data = load_projects_official(grade)
-        
-        if 'projects_by_scenario' in projects_data:
-            # Try exact match first
-            scenario_projects = projects_data['projects_by_scenario'].get(scenario, [])
-            
-            # If not found, try matching without "Scenario X:" prefix
-            if not scenario_projects:
-                import re
-                # Remove "Scenario X: " prefix if present
-                clean_scenario = re.sub(r'^Scenario \d+:\s*', '', scenario)
-                scenario_projects = projects_data['projects_by_scenario'].get(clean_scenario, [])
-                
-                # Also try partial matching
-                if not scenario_projects:
-                    for key in projects_data['projects_by_scenario'].keys():
-                        if clean_scenario in key or key in clean_scenario or key in scenario:
-                            scenario_projects = projects_data['projects_by_scenario'][key]
-                            break
-        else:
-            scenario_projects = []
-            
+        scenario_projects = find_projects_for_scenario(projects_data, scenario)
         return {"projects": scenario_projects}
     except Exception as e:
         logger.error(f"Error loading official projects: {e}")
