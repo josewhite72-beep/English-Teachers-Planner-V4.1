@@ -419,7 +419,7 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
         "specific_objectives": objectives,
         "materials_and_strategies": {
             "required_materials": materials,
-            "differentiated_instruction": "Adaptar actividades para diferentes estilos de aprendizaje (visual, auditivo, kinestésico). Proporcionar andamiaje para estudiantes con dificultades y actividades de extensión para estudiantes avanzados. Usar trabajo en parejas/grupos para apoyo entre compañeros. Considerar necesidades individuales y ritmos de aprendizaje."
+            "differentiated_instruction": "Adapt activities for different learning styles (visual, auditory, kinesthetic). Provide scaffolding for struggling learners and extension activities for advanced students. Use pair/group work for peer support. Consider individual needs and learning paces. Offer multiple means of representation, expression, and engagement."
         },
         "learning_sequence": {
             "project_title": project_data.get('name', '') if project_data else '',
