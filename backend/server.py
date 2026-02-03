@@ -1020,11 +1020,11 @@ async def export_to_docx(planner: dict):
             p.add_run('Differentiated Instruction: ').bold = True
             p.add_run(str(diff_instruction))
         
-        # PROJECT SECTION (NEW - Separate Section)
+        # 21ST CENTURY PROJECT SECTION
         project_data = planner.get('project')
         if project_data:
             doc.add_page_break()
-            doc.add_heading('Official Project (Lesson 5 - Backward Planning)', 1)
+            doc.add_heading('21st Century Project (Lesson 5)', 1)
             
             # Project name and category
             p = doc.add_paragraph()
