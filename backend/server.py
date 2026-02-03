@@ -351,33 +351,32 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
     standards = scenario_data.get('standards_and_learning_outcomes', {})
     competences = scenario_data.get('communicative_competences', {})
     
-    # Generate SMART objectives from standards for ALL 5 skills
+    # Generate SMART objectives with specific metrics (Specific, Measurable, Achievable, Relevant, Time-bound)
     objectives = {}
+    smart_templates = {
+        'listening': "By the end of the lesson, students will be able to identify and understand at least 5 key vocabulary words related to {theme} when presented orally, achieving at least 80% accuracy according to a teacher observation checklist.",
+        'reading': "By the end of the lesson, students will be able to read and recognize at least 5 key words related to {theme} in simple illustrated texts, achieving at least 80% accuracy according to a reading comprehension rubric.",
+        'speaking': "By the end of the lesson, students will be able to orally express at least 3 complete sentences about {theme} using appropriate vocabulary and grammar structures, achieving at least 80% accuracy according to a speaking rubric.",
+        'writing': "By the end of the lesson, students will be able to write at least 3 simple sentences related to {theme} with visual support, achieving at least 80% accuracy according to a writing checklist.",
+        'mediation': "By the end of the lesson, students will be able to communicate key information about {theme} to peers using gestures, images, and expressions, demonstrating at least 80% comprehension according to peer feedback."
+    }
+    
     for skill in ['listening', 'reading', 'speaking', 'writing', 'mediation']:
         skill_data = standards.get(skill, {})
         if isinstance(skill_data, dict):
-            # Build comprehensive objective from available data
-            general = skill_data.get('general', '')
-            specific = skill_data.get('specific', [])
             learning_outcomes = skill_data.get('learning_outcomes', [])
+            general = skill_data.get('general', '')
             
-            # Create SMART objective combining general standard and first learning outcome
+            # Create SMART objective using template and adding learning outcome details
+            base_objective = smart_templates.get(skill, '').format(theme=theme)
             if learning_outcomes and isinstance(learning_outcomes, list) and len(learning_outcomes) > 0:
-                objectives[skill] = f"{general} Específicamente: {learning_outcomes[0]}"
-            elif general:
-                objectives[skill] = general
-            elif specific and isinstance(specific, list) and len(specific) > 0:
-                objectives[skill] = specific[0] if isinstance(specific[0], str) else str(specific[0])
+                # Add specific learning outcome detail
+                outcome_detail = learning_outcomes[0]
+                objectives[skill] = f"{base_objective} Specifically: {outcome_detail}"
             else:
-                # Fallback objective based on skill
-                skill_fallbacks = {
-                    'listening': f"Los estudiantes serán capaces de identificar y comprender vocabulario relacionado con {theme} cuando se presenta oralmente.",
-                    'reading': f"Los estudiantes leerán y reconocerán palabras clave relacionadas con {theme} en textos simples ilustrados.",
-                    'speaking': f"Los estudiantes expresarán oralmente ideas relacionadas con {theme} usando frases simples.",
-                    'writing': f"Los estudiantes escribirán palabras y frases simples relacionadas con {theme} con apoyo visual.",
-                    'mediation': f"Los estudiantes utilizarán gestos, imágenes y expresiones para comunicar información sobre {theme} a sus compañeros."
-                }
-                objectives[skill] = skill_fallbacks.get(skill, f"Desarrollar habilidades de {skill} relacionadas con {theme}.")
+                objectives[skill] = base_objective
+        else:
+            objectives[skill] = smart_templates.get(skill, '').format(theme=theme)
     
     # Generate comprehensive materials list from curriculum and project
     materials = []
