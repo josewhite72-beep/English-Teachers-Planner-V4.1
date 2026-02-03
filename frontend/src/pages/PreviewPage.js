@@ -362,6 +362,130 @@ export default function PreviewPage() {
               </CardContent>
             </Card>
 
+            {/* Specific Objectives (SMART) */}
+            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
+              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
+                <CardTitle className="text-teal-900 dark:text-teal-100">{t.objectives} (SMART)</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-4">
+                  {['listening', 'reading', 'speaking', 'writing', 'mediation'].map((skill) => {
+                    const objective = theme_planner?.specific_objectives?.[skill];
+                    return (
+                      <div key={skill} className="border-l-4 border-teal-500 pl-4">
+                        <h4 className="font-semibold text-teal-800 dark:text-teal-300 capitalize mb-2">{t[skill]}</h4>
+                        {editMode ? (
+                          <EditableField
+                            value={objective || ''}
+                            onChange={(value) => handleUpdateField(`theme_planner.specific_objectives.${skill}`, value)}
+                            multiline
+                            placeholder={`Objetivo SMART para ${skill}...`}
+                          />
+                        ) : (
+                          <p className="text-sm text-slate-700 dark:text-slate-300">
+                            {objective || <span className="italic text-slate-400">Por completar</span>}
+                          </p>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Official Project Section */}
+            {generatedPlanner?.project && (
+              <Card className="border-amber-300 dark:border-amber-700 shadow-md dark:bg-slate-800 bg-amber-50">
+                <CardHeader className="bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/50 dark:to-orange-900/50 border-b border-amber-200 dark:border-amber-700">
+                  <CardTitle className="text-amber-900 dark:text-amber-100 flex items-center gap-2">
+                    <span className="text-2xl">🎯</span>
+                    {language === 'es' ? 'Proyecto Oficial (Lección 5 - Planificación Hacia Atrás)' : 'Official Project (Lesson 5 - Backward Planning)'}
+                  </CardTitle>
+                  <CardDescription className="text-amber-700 dark:text-amber-300">
+                    {generatedPlanner.project.category}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4 pt-4">
+                  <div>
+                    <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-1">{language === 'es' ? 'Nombre del Proyecto' : 'Project Name'}</h4>
+                    <p className="text-slate-700 dark:text-slate-300 text-lg font-medium">{generatedPlanner.project.name}</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-1">{language === 'es' ? 'Descripción' : 'Overview'}</h4>
+                    <p className="text-slate-700 dark:text-slate-300">{generatedPlanner.project.overview}</p>
+                  </div>
+                  
+                  <div>
+                    <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-1">{language === 'es' ? 'Objetivo General' : 'General Objective'}</h4>
+                    <p className="text-slate-700 dark:text-slate-300">{generatedPlanner.project.general_objective}</p>
+                  </div>
+                  
+                  {generatedPlanner.project.specific_objectives && (
+                    <div>
+                      <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">{language === 'es' ? 'Objetivos Específicos' : 'Specific Objectives'}</h4>
+                      <ul className="list-disc list-inside text-sm text-slate-700 dark:text-slate-300 space-y-1">
+                        {generatedPlanner.project.specific_objectives.map((obj, idx) => (
+                          <li key={idx}>{obj}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {generatedPlanner.project.activities && (
+                    <div>
+                      <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">{language === 'es' ? 'Actividades del Proyecto' : 'Project Activities'}</h4>
+                      <ul className="list-disc list-inside text-sm text-slate-700 dark:text-slate-300 space-y-1">
+                        {generatedPlanner.project.activities.map((act, idx) => (
+                          <li key={idx}>{act}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+                  
+                  {generatedPlanner.project.products_evidences && (
+                    <div>
+                      <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">{language === 'es' ? 'Productos / Evidencias' : 'Products / Evidences'}</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {generatedPlanner.project.products_evidences.map((prod, idx) => (
+                          <Badge key={idx} className="bg-amber-200 text-amber-800 dark:bg-amber-800 dark:text-amber-100">
+                            {prod}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  
+                  {generatedPlanner.project.rubric_criteria && (
+                    <div>
+                      <h4 className="font-semibold text-amber-800 dark:text-amber-200 mb-2">{language === 'es' ? 'Criterios de Rúbrica' : 'Rubric Criteria'}</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        {Object.entries(generatedPlanner.project.rubric_criteria).map(([criterion, description], idx) => (
+                          <div key={idx} className="bg-white dark:bg-slate-700 p-2 rounded border border-amber-200 dark:border-amber-600">
+                            <span className="font-medium text-amber-700 dark:text-amber-300">{criterion}:</span>
+                            <span className="text-slate-600 dark:text-slate-300 ml-1">{description}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  
+                  <div className="flex flex-wrap gap-4 pt-2">
+                    <div>
+                      <span className="font-semibold text-amber-800 dark:text-amber-200">{language === 'es' ? 'Duración: ' : 'Duration: '}</span>
+                      <span className="text-slate-700 dark:text-slate-300">{generatedPlanner.project.duration}</span>
+                    </div>
+                    {generatedPlanner.project.skills_developed && (
+                      <div>
+                        <span className="font-semibold text-amber-800 dark:text-amber-200">{language === 'es' ? 'Habilidades: ' : 'Skills: '}</span>
+                        <span className="text-slate-700 dark:text-slate-300">{generatedPlanner.project.skills_developed.join(', ')}</span>
+                      </div>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+            )}
+
             {/* Standards */}
             <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
               <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
@@ -375,14 +499,23 @@ export default function PreviewPage() {
                     
                     return (
                       <div key={skill} className="border-l-4 border-teal-500 pl-4">
-                        <h4 className="font-semibold text-teal-800 capitalize mb-2">{t[skill]}</h4>
+                        <h4 className="font-semibold text-teal-800 dark:text-teal-300 capitalize mb-2">{t[skill]}</h4>
                         {typeof skillData === 'object' && (
-                          <div className="space-y-2 text-sm text-slate-700">
+                          <div className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
                             {skillData.general && <p><strong>General:</strong> {skillData.general}</p>}
-                            {skillData.specific && <p><strong>Specific:</strong> {skillData.specific}</p>}
-                            {skillData.receptive && <p><strong>Receptive:</strong> {skillData.receptive}</p>}
-                            {skillData.productive && <p><strong>Productive:</strong> {skillData.productive}</p>}
-                            {skillData.interactive && <p><strong>Interactive:</strong> {skillData.interactive}</p>}
+                            {skillData.specific && Array.isArray(skillData.specific) && skillData.specific.map((s, i) => (
+                              <p key={i}><strong>Specific:</strong> {s}</p>
+                            ))}
+                            {skillData.learning_outcomes && Array.isArray(skillData.learning_outcomes) && (
+                              <div>
+                                <strong>Learning Outcomes:</strong>
+                                <ul className="list-disc list-inside ml-2 mt-1">
+                                  {skillData.learning_outcomes.slice(0, 2).map((lo, i) => (
+                                    <li key={i} className="text-xs">{lo}</li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
                           </div>
                         )}
                       </div>
