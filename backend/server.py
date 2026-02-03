@@ -351,26 +351,23 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
     standards = scenario_data.get('standards_and_learning_outcomes', {})
     competences = scenario_data.get('communicative_competences', {})
     
-    # Generate SMART objectives with specific metrics (Specific, Measurable, Achievable, Relevant, Time-bound)
+    # Generate SMART objectives - format: "Students will be able to..."
     objectives = {}
     smart_templates = {
-        'listening': "By the end of the lesson, students will be able to identify and understand at least 5 key vocabulary words related to {theme} when presented orally, achieving at least 80% accuracy according to a teacher observation checklist.",
-        'reading': "By the end of the lesson, students will be able to read and recognize at least 5 key words related to {theme} in simple illustrated texts, achieving at least 80% accuracy according to a reading comprehension rubric.",
-        'speaking': "By the end of the lesson, students will be able to orally express at least 3 complete sentences about {theme} using appropriate vocabulary and grammar structures, achieving at least 80% accuracy according to a speaking rubric.",
-        'writing': "By the end of the lesson, students will be able to write at least 3 simple sentences related to {theme} with visual support, achieving at least 80% accuracy according to a writing checklist.",
-        'mediation': "By the end of the lesson, students will be able to communicate key information about {theme} to peers using gestures, images, and expressions, demonstrating at least 80% comprehension according to peer feedback."
+        'listening': "Students will be able to identify and understand at least 5 key vocabulary words related to {theme} when presented orally, achieving at least 80% accuracy according to a teacher observation checklist.",
+        'reading': "Students will be able to read and recognize at least 5 key words related to {theme} in simple illustrated texts, achieving at least 80% accuracy according to a reading comprehension rubric.",
+        'speaking': "Students will be able to orally express at least 3 complete sentences about {theme} using appropriate vocabulary and grammar structures, achieving at least 80% accuracy according to a speaking rubric.",
+        'writing': "Students will be able to write at least 3 simple sentences related to {theme} with visual support, achieving at least 80% accuracy according to a writing checklist.",
+        'mediation': "Students will be able to communicate key information about {theme} to peers using gestures, images, and expressions, demonstrating at least 80% comprehension according to peer feedback."
     }
     
     for skill in ['listening', 'reading', 'speaking', 'writing', 'mediation']:
         skill_data = standards.get(skill, {})
         if isinstance(skill_data, dict):
             learning_outcomes = skill_data.get('learning_outcomes', [])
-            general = skill_data.get('general', '')
             
-            # Create SMART objective using template and adding learning outcome details
             base_objective = smart_templates.get(skill, '').format(theme=theme)
             if learning_outcomes and isinstance(learning_outcomes, list) and len(learning_outcomes) > 0:
-                # Add specific learning outcome detail
                 outcome_detail = learning_outcomes[0]
                 objectives[skill] = f"{base_objective} Specifically: {outcome_detail}"
             else:
@@ -378,17 +375,17 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
         else:
             objectives[skill] = smart_templates.get(skill, '').format(theme=theme)
     
-    # Generate comprehensive materials list from curriculum and project
+    # Generate materials list in ENGLISH
     materials = []
     if competences.get('linguistic'):
         ling = competences['linguistic']
         if ling.get('vocabulary'):
             vocab_items = ling['vocabulary'][:8] if isinstance(ling['vocabulary'], list) else [ling['vocabulary']]
-            materials.append(f"Flashcards con vocabulario: {', '.join(str(v) for v in vocab_items)}")
+            materials.append(f"Vocabulary flashcards: {', '.join(str(v) for v in vocab_items)}")
         if ling.get('grammatical_features') or ling.get('grammar'):
             grammar = ling.get('grammatical_features', ling.get('grammar', []))
             if isinstance(grammar, list) and grammar:
-                materials.append(f"Materiales de gramática: {', '.join(str(g) for g in grammar[:3])}")
+                materials.append(f"Grammar materials: {', '.join(str(g) for g in grammar[:3])}")
     
     # Add project-specific materials if available
     if project_data and project_data.get('materials'):
@@ -396,14 +393,14 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
         if isinstance(proj_materials, list):
             materials.extend(proj_materials[:5])
     
-    # Add standard materials
+    # Add standard materials in ENGLISH
     materials.extend([
-        "Pizarra y marcadores",
-        "Hojas de trabajo para estudiantes",
-        "Materiales de audio/video relacionados al tema",
-        "Objetos reales o materiales auténticos del tema",
-        "Calendario o agenda visual",
-        "Rúbricas de evaluación"
+        "Whiteboard and markers",
+        "Student worksheets",
+        "Audio/video materials related to the theme",
+        "Realia or authentic materials related to the topic",
+        "Visual schedule or calendar",
+        "Assessment rubrics"
     ])
     
     theme_planner = {
