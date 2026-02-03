@@ -8,19 +8,21 @@ Generar planeamientos completos usando ChatGPT, Claude o Gemini gratis, siguiend
 
 ## 🔄 ¿Qué es la Planificación Hacia Atrás?
 
-La planificación hacia atrás comienza por el **final** (Lección 5 - Proyecto) y construye las lecciones anteriores para preparar al estudiante.
+La planificación hacia atrás comienza por el **final** (Lección 5 - Proyecto del Siglo XXI) y construye las lecciones anteriores para preparar al estudiante.
 
 ### Estructura de las 5 Lecciones:
 
 | Lección | Habilidad | Propósito |
 |---------|-----------|-----------|
-| **5** | **Mediation (PROYECTO)** | Proyecto integrador que requiere TODAS las habilidades |
+| **5** | **Mediation (PROYECTO DEL SIGLO XXI)** | Proyecto integrador que requiere TODAS las habilidades |
 | 4 | Writing | Refinamiento - borradores y producción escrita |
 | 3 | Speaking | Práctica interactiva - descripciones orales |
 | 2 | Reading | Desarrollo de conceptos - recopilación de información |
 | 1 | Listening | Habilidad fundamental - vocabulario clave |
 
-**IMPORTANTE:** Cada lección DEBE preparar explícitamente al estudiante para los requisitos del proyecto de la Lección 5.
+**IMPORTANTE:** 
+- Cada lección DEBE preparar explícitamente al estudiante para los requisitos del proyecto de la Lección 5.
+- El proyecto DEBE estar alineado con los **Specific Standards** y **Learning Outcomes** del currículo.
 
 ---
 
