@@ -1016,6 +1016,48 @@ async def export_to_docx(planner: dict):
             p.add_run('Differentiated Instruction: ').bold = True
             p.add_run(str(diff_instruction))
         
+        # LEARNING SEQUENCE SECTION
+        doc.add_heading('Learning Sequence', 2)
+        learning_sequence = [
+            {
+                'num': 1,
+                'skill': 'Listening',
+                'title': 'Listening and Language Foundations',
+                'desc': 'Introduction to key vocabulary and language structures through listening comprehension activities. Students develop receptive skills by listening to dialogues, songs, and presentations related to the theme.'
+            },
+            {
+                'num': 2,
+                'skill': 'Reading',
+                'title': 'Reading and Understanding Concepts/Ideas in Texts',
+                'desc': 'Students interact with written texts related to the theme to develop reading comprehension skills. Includes identification of key words, understanding main ideas, and working with illustrated texts.'
+            },
+            {
+                'num': 3,
+                'skill': 'Speaking',
+                'title': 'Productive/Interactive Speaking Tasks',
+                'desc': 'Students engage in structured and semi-structured oral production activities. Includes pair dialogues, oral descriptions, brief presentations, and pronunciation practice related to the theme.'
+            },
+            {
+                'num': 4,
+                'skill': 'Writing',
+                'title': 'Productive/Interactive Writing and Project Preparation',
+                'desc': 'Students practice writing words, phrases, and sentences related to the theme. This lesson also serves as preparation for the 21st Century Project, including drafts and planning.'
+            },
+            {
+                'num': 5,
+                'skill': 'Mediation',
+                'title': 'Completing the 21st Century Project with Emphasis on Mediation',
+                'desc': 'Students complete their 21st Century Project integrating all learned skills (Listening, Reading, Speaking, Writing). Includes collaborative work, group presentations, peer mediation, self-assessment, and reflection on learning.'
+            }
+        ]
+        
+        for lesson in learning_sequence:
+            p = doc.add_paragraph()
+            p.add_run(f"Lesson {lesson['num']} - {lesson['skill']}: ").bold = True
+            p.add_run(lesson['title'])
+            desc_p = doc.add_paragraph(lesson['desc'])
+            desc_p.style = 'List Bullet'
+        
         # 21ST CENTURY PROJECT SECTION
         project_data = planner.get('project')
         if project_data:
