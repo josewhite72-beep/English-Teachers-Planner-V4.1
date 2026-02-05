@@ -1,161 +1,172 @@
 <analysis>**original_problem_statement:**
-The user wants to build a web application called English Teachers Planner for primary school teachers (Pre-K to Grade 6) in Panama. The application's main purpose is to generate English class plans aligned with the new official MEDUCA curriculum.
+The user initially requested a web application called English Teachers Planner for primary school teachers (Pre-K to Grade 6) in Panama. The core function is to generate English class plans aligned with the official MEDUCA curriculum, with options to select grade, scenario, theme, and plan type. The plans must include a 21st Century Project and have export-to-Word and PDF capabilities.
 
-**PRODUCT REQUIREMENTS:**
--   **Curriculum Structure:** Plans must be based on 8 Scenarios per grade, 2 Themes per Scenario, and 5 lessons per Scenario. Each lesson must cover 5 skills (Reading, Writing, Speaking, Listening, Mediation) and follow 6 pedagogical stages (warm-up, presentation, preparation, performance, assessment, reflection).
--   **Planner Content:** Each plan consists of a Theme Planner and a Lesson Planner with specific detailed sections (General Information, Standards, Competences, Objectives, Materials, etc.).
--   **Core Functionality:**
-    -   Select Grade (Pre-K to 6), Scenario, Theme, and Plan Type (Basic / Standard / Enriched).
-    -   Automatically generate a complete plan preview.
-    -   Option to include a 21st Century Project.
-    -   Toggle for an Official MEDUCA Format with formal headers.
-    -   Bilingual interface (Spanish / English).
--   **Exporting:** Export the generated plan to both **Word (.docx)** and **PDF**. The exported files must be well-formatted and ready for official submission.
--   **Design:** The interface should be clear, modern, professional, and mobile-friendly.
+The vision has since expanded significantly. The user now wants to build **PanaMentor,** a modular educational platform with six main components:
+1.  **PanaMentor Planner:** The existing, functional lesson planner.
+2.  **PanaMentor Resources:** A curated repository of teaching materials.
+3.  **PanaMentor Reading:** A student-facing module for reading comprehension practice.
+4.  **PanaMentor StudyBuddy:** An AI-assisted tutor for both teachers and students.
+5.  **PanaMentor Validator:** A tool to check the curriculum alignment of lesson plans.
+6.  **PanaMentor Teacher Grading Book:** A digital gradebook for teachers.
+
+The platform needs to support user roles (Teacher, Director, Student). The immediate MVP focus is on the Teacher role, implementing the Planner, Validator, basic Resources, and a basic Grading Book.
 
 **User's preferred language**: Spanish (Español). The next agent MUST respond in Spanish only.
 
 **what currently exists?**
-A full-stack MVP (React + FastAPI) has been successfully built and is functional. The application allows users to select a grade, scenario, and theme to generate a lesson plan. The initial implementation was updated to populate the plan with basic curricular information from user-provided JSON files, instead of being empty.
+A functional MVP of the English Teachers Planner has been built with a React frontend and a FastAPI backend. It generates lesson plans by drawing data from a file-based system of JSONs. The UI is professional, bilingual (ES/EN), and features a dark/light mode.
 
-A key feature is the system for loading pre-generated, detailed lesson plans from JSON files stored in . If a detailed plan file doesn't exist for a given selection, the app falls back to creating a basic plan using the foundational curriculum data.
-
-The UI features a professional blue/green theme, a dark/light mode toggle, and is bilingual (ES/EN). A critical Edit feature was added to the preview page, allowing teachers to modify the generated content directly. The entire codebase has been backed up and pushed to the user's personal GitHub repository.
+Key completed features include:
+-   A fully restructured Theme Planner view with 6 detailed sections as specified by the user.
+-   Word (.docx) export functionality that mirrors the new Theme Planner structure.
+-   Robust logic to handle multiple, inconsistent data formats across the various curriculum JSON files.
+-   Integration of all 21st Century Projects for all grades (Pre-K to 6) into the data files.
 
 **Last working item**:
-    - Last item agent was working: The agent finished creating a set of helper files (, ) to guide the user in generating detailed lesson plan content using free external AIs. This content can then be formatted into JSON and added to the application to be used by the new file-based content system.
-    - Status: NONE
-    - Agent Testing Done: N/A
-    - User Testing Done: N
+-   Last item agent was working: The agent successfully parsed and integrated a large set of 21st Century Projects for all missing grades (K-6). The user provided this data in a combination of plain text and a JSON file. The agent created and executed scripts to update the corresponding data files in .
+-   Status: NONE
+-   Agent Testing Done: Y (The agent ran a script to verify that the projects were correctly loaded for all grades and scenarios after integration.)
+-   Which testing method agent to use? N/A
+-   User Testing Done: N
 
 **All Pending/In progress Issue list**:
-There are no pending technical issues or bugs. The last reported issue with the Edit button functionality was successfully resolved.
+There are no known pending technical bugs. The last cycle of user-reported issues (e.g., empty Reading standards, missing Learning Sequence in export, empty learning outcomes column) were all debugged and resolved.
 
 **In progress Task List**:
 There are no tasks currently in progress.
 
 **Upcoming and Future Tasks**
-**Upcoming Tasks:**
--   **P0: Implement Authentication System:** The user has expressed strong interest in adding a user management system to control access and eventually monetize the app. The recommended approach, based on user feedback, is an informal monetization system.
-    -   **Features:**
-        -   Login with Google and/or Email/Password.
-        -   A system of single-use Access Codes that users can enter to unlock premium features.
-        -   An admin-only panel for the user to manually grant/revoke premium access to accounts and generate access codes.
-        -   Differentiate between Free (limited access) and Premium (full access) user tiers.
--   **P1: Implement PDF Export:** The original problem statement required both Word (.docx) and PDF export functionality. Currently, only Word export is implemented. The 
+
+**Upcoming Tasks: Phase 0 & 1 - PanaMentor Foundation (P0)**
+This phase is the highest priority as it lays the groundwork for all future modules.
+-   **Task 1: Infrastructure Setup.**
+    -   **PWA Conversion:** Convert the existing React app into a Progressive Web App (PWA) by creating  and a service worker to make it installable on devices.
+    -   **Database Migration:** Transition from the current file-based JSON system to **MongoDB**. This involves setting up the database and defining the initial schemas for Users, Students, Assessments, and Resources.
+    -   **Authentication System:** Implement a user management system with roles (Teacher, Director, Student). The user needs to decide between Email/Password, Google Auth, or both. This is a critical blocker for the .
+    -   **Dashboard UI:** Create a new main dashboard page that serves as the entry point and module selector for the six PanaMentor components, based on the user's provided visual concept.
+
+**Future Tasks:**
+-   **P1: Implement :** A digital gradebook for teachers to track student performance. Depends on Auth.
+-   **P1: Implement :** A tool to check lesson plan alignment. The user needs to clarify if this should be rule-based or AI-driven.
+-   **P2: Implement :** A repository for teaching materials. Will require a file storage solution and a way for the user to upload/curate content.
+-   **P2: Implement PDF Export:** This is an outstanding requirement from the original problem statement. The 
 -----
 
 WeasyPrint could not import some external libraries. Please carefully follow the installation steps before reporting an issue:
 https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#installation
 https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#troubleshooting 
 
------ library is already installed in the backend environment, which can be used to generate PDFs from HTML.
-
-**Future Tasks:**
--   **Permanent Deployment Strategy:** The user is currently using the free preview URL. They have shown interest in deploying the app permanently using a more cost-effective solution involving GitHub, Vercel (for frontend), and Railway (for backend), as an alternative to the Emergent native deployment. This will be a task once the user is ready to go live.
--   **Assist with Content Integration:** The user will be generating detailed lesson plans offline. A future task will be to assist them in uploading and integrating these new JSON files into the  directory.
+----- library is already installed in the backend.
+-   **P3: Implement  & :** The student-facing modules that will likely require more complex logic and potential AI integration.
 
 **Completed work in this session**
--   **Full-stack MVP:** Built the English Teachers Planner with a React frontend and FastAPI backend.
--   **Curriculum Data Integration:** Loaded all user-provided JSON files for grades, standards, and projects into .
--   **Core Feature - Planner Generation:** Implemented backend logic to generate lesson plans. This was enhanced to pull foundational data from curriculum files and prioritize loading fully detailed, pre-generated JSON plans.
--   **UI/UX:**
-    -   Created a dynamic UI with selectors for grade, scenario, and theme.
-    -   Applied a professional blue/green color scheme.
-    -   Implemented a dark/light mode toggle with user preference saved in localStorage.
--   **Edit Feature:** Added a button to the preview page to allow inline editing of the generated plan. Fixed a critical bug where input fields lost focus on every keystroke.
--   **Word Export:** Implemented functionality to export the final planner as a .docx file.
--   **Git & GitHub Integration:** Initialized a Git repository and successfully pushed the entire project to the user's GitHub account.
--   **User Guidance Documents:** Created multiple markdown and CSV files to guide the user on using GitHub and generating content for the app offline.
+-   **Full Theme Planner Restructure:** Redesigned the  to display the planner in a detailed 6-section format requested by the user, including General Info, Standards/Outcomes, Competencies, Objectives, Materials, and Learning Sequence.
+-   **Data Inconsistency Handling:** Made the frontend and backend robust enough to handle different and sometimes inconsistent JSON data structures across various grade levels.
+-   **Word Export Enhancement:** Updated the  export function to match the new 6-section Theme Planner layout, including adding the previously missing Learning Sequence.
+-   **Standards & Outcomes Pairing Logic:** Fixed the UI and export logic to correctly pair each Specific Standard with its corresponding Learning Outcome in a two-column table format.
+-   **Complete Project Integration:** Extracted and integrated all missing 21st Century Projects for every grade (K-6) from user-provided text and JSON files.
+-   **Backward Planning Implementation:** Ensured the selected project is fully displayed in the planner preview and included as a dedicated section in the Word export.
+-   **UI & Wording Fixes:** Corrected multiple UI labels and text elements to be fully in English and use the correct terminology (e.g., Proyecto del Siglo XXI, SMART objectives format).
 
 **Earlier issues found/mentioned but not fixed**
-None. All identified issues were resolved during the session.
+-   **PDF Export:** This feature was part of the original product requirements but has not been implemented yet. 
+-----
+
+WeasyPrint could not import some external libraries. Please carefully follow the installation steps before reporting an issue:
+https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#installation
+https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#troubleshooting 
+
+----- is installed and ready for use.
 
 **Known issue recurrence from previous fork**
 N/A
 
 **Code Architecture**
+The application currently consists of a monolithic  and React pages. The accepted plan is to refactor this into a modular architecture.
+
+**Proposed Future Architecture:**
 
 
 **Key Technical Concepts**
--   **Frontend:** React, TailwindCSS, Shadcn/UI components
+-   **Frontend:** React, TailwindCSS, Shadcn/UI
 -   **Backend:** FastAPI (Python)
--   **Data Storage:** File-based (JSON files). MongoDB was discussed for caching but not implemented.
--   **Version Control:** Git, GitHub
--   **Document Generation:**  for Word export.
+-   **Data Storage:** Currently JSON files. **Planned migration to MongoDB.**
+-   **Document Generation:**  (implemented), 
+-----
+
+WeasyPrint could not import some external libraries. Please carefully follow the installation steps before reporting an issue:
+https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#installation
+https://doc.courtbouillon.org/weasyprint/stable/first_steps.html#troubleshooting 
+
+----- (pending for PDF).
 
 **key DB schema**
-No database is currently in use. The application relies on a structured file system of JSONs located in .
+The following MongoDB schema has been proposed and accepted by the user:
+-   **Users:** 
+-   **Students:** 
+-   **Assessments:** 
+-   **Resources:** 
 
 **changes in tech stack**
-No changes from the initial setup. The AI integration was discussed but reverted in favor of a file-based system due to user cost concerns.
+-   The most significant upcoming change is the **migration from a file-based JSON data store to a MongoDB database**.
 
 **All files of reference**
--   : The main FastAPI application. Contains all API endpoints, including planner generation logic and Word export.
--   : The main landing page with selectors for generating a plan.
--   : The page that displays the generated plan, contains the Edit functionality, tabs, and export button.
--   : A custom component created to solve the losing focus bug during text editing. It uses local state and an  event to update the parent component.
--   : Manages the dark/light mode toggle and persists the choice.
--   : This directory is critical as it holds all the curriculum and pre-generated planner data in various subdirectories.
--   : A key document for the user, explaining how to generate content and format it for the JSON files.
+-   : The main monolithic backend file containing all API endpoints and business logic. This will be refactored.
+-   : The current entry point for creating a plan.
+-   : The heavily modified page that displays the 6-section Theme Planner.
+-   : The directory containing all curriculum () and project () JSON files.
 
 **Areas that need refactoring**:
--   The  component is still quite large. Although the  component helped, the page manages a lot of state for the entire planner object. It could be further modularized by breaking down the Theme Planner and Lesson Planner sections into their own components with their own editing logic.
+-    must be broken down into a modular structure using FastAPI's APIRouter for each PanaMentor module (auth, planner, validator, etc.).
+-   State management in the frontend could be improved, especially in  and , to better handle the upcoming modular architecture.
 
 **key api endpoints**
--   : Generates a lesson plan. Expects a JSON body with , , , , , etc.
--   : Exports the provided planner data to a .docx file.
--   : Returns a list of available grades.
--   : Returns scenarios for a given grade.
--   : Returns themes for a given scenario.
+-   : Generates a lesson plan.
+-   : Exports the planner to a  file.
+-   : Fetches available projects for a selection.
+-   , , : Endpoints to populate the UI selectors.
 
 **Critical Info for New Agent**
--   **Content Strategy:** The application has pivoted from live AI generation to a file-based system. The primary source of detailed content is now JSON files in . Your logic should respect this; if a pre-generated file exists, use it. If not, fall back to the basic curriculum data.
--   **User is Cost-Sensitive:** The user explicitly chose the file-based approach to avoid recurring AI API costs. Do not suggest solutions that involve per-use costs unless the user specifically asks for them.
--   **User is Non-Technical:** The user requires clear, simple, step-by-step instructions. Avoid technical jargon.
--   **Code is on GitHub:** All future work should be committed to the Git repository. Remind the user about pushing changes to their remote GitHub repo.
+-   **Project Vision Shift:** The project's scope has fundamentally changed from a simple planner to a large, multi-module educational platform named **PanaMentor**. You must follow the new roadmap. The immediate priority is building the foundational infrastructure (PWA, Auth, DB, Dashboard).
+-   **Imminent Tech Stack Change:** The application MUST transition from using static JSON files to a **MongoDB database**. Do not build new features on top of the old file-based system.
+-   **User is Cost-Sensitive:** The user has mentioned their credit balance multiple times. Work efficiently and avoid unnecessary steps.
+-   **User is Non-Technical but has a Clear Vision:** Adhere closely to the detailed project documentation and roadmap provided by the user. Communicate plans and changes clearly in Spanish.
 
 **documents and test reports created in this job**
 -   
--   
--   
--   
--   
--   
--   
--   
--   
+-    (Contains the full PanaMentor project definition)
 
 **Last 10 User Messages and any pending HUMAN messages**
-1.  **User:** Asks for instructions on how to generate the plans to convert to JSON. Requests a downloadable table by grade with all the required elements.
-2.  **Agent:** Acknowledges and starts creating the requested files.
-3.  **User:** Asks where to find the generated helper files (, ).
-4.  **Agent:** Explains how to access the files via the Emergent File Browser or offers to make them downloadable directly.
-5.  **User:** Shares a screenshot of their credit balance.
-6.  **Agent:** Interprets the credit balance for the user, explaining what they can still do with it.
-7.  **User:** Asks where to buy more credits.
-8.  **Agent:** Calls the  and provides a detailed explanation on how to buy credits.
-9.  **User:** Asks if credit consumption is by the hour.
-10. **Agent:** Clarifies that credit consumption is per action/task, not per hour, and gives examples.
+1.  **User:** Asks for a list of grades missing 21st Century Projects. (COMPLETED)
+2.  **Agent:** Provides the list. (COMPLETED)
+3.  **User:** Reports the Learning Sequence is missing from the Word export. (COMPLETED)
+4.  **Agent:** Fixes the Word export. (COMPLETED)
+5.  **User:** Reports that learning outcomes should be paired with specific standards. (COMPLETED)
+6.  **Agent:** Implements the pairing in a table format. (COMPLETED)
+7.  **User:** Reports the learning outcome column is empty (to be defined). (COMPLETED)
+8.  **Agent:** Debugs data structure differences between grades and fixes the logic. User confirms the fix. (COMPLETED)
+9.  **User:** Asks to provide all missing project data as plain text. (COMPLETED)
+10. **Agent:** Agrees and successfully integrates all provided projects. (COMPLETED)
+11. **Pending User Message:** The user has provided a detailed vision for the PanaMentor platform and is waiting for the agent to begin implementation based on the proposed strategy and architecture.
 
 **Project Health Check:**
 -   **Broken:** None
--   **Mocked:** The content generation is partially mocked, as it depends on static JSON files created by the user offline. It's not a live, dynamic generation system.
+-   **Mocked:** The entire data layer is based on static JSON files. This is the main component that needs to be replaced with a live database.
 
 **3rd Party Integrations**
 -   **python-docx:** Used for  export.
--   **weasyprint:** Installed but currently unused (intended for PDF export).
--   **GitHub:** Integrated for version control.
--   **OpenAI GPT-5.2:** Discussed and briefly integrated but ultimately removed from the primary workflow. Uses Emergent LLM Key if re-enabled.
+-   **weasyprint:** Installed but unused (intended for PDF export).
+-   **Planned:**  for MongoDB integration.
+-   **Potential Future:** LLM integrations (OpenAI/Claude/Gemini) for  and  modules.
 
 **Testing status**
--   Testing agent used after significant changes: YES (early in the process)
--   Troubleshoot agent used after agent stuck in loop: NO
--   Test files created: 
+-   Testing agent used after significant changes: Yes, for the backward planning feature.
+-   Troubleshoot agent used after agent stuck in loop: No
+-   Test files created: []
 -   Known regressions: None
 
 **Credentials to test flow:**
-No credentials are required. The application is public and has no authentication.
+No credentials are required as there is no authentication system yet.
 
 **What agent forgot to execute**
--   **PDF Export:** The original problem statement explicitly requested both Word () and **PDF** export capabilities. The agent only implemented the Word export. The PDF export feature is missing.</analysis>
+-   **PDF Export:** This is the only remaining task from the original problem statement that has not been addressed. It should be prioritized after the foundational PanaMentor infrastructure is built.</analysis>
