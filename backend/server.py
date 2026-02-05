@@ -1008,38 +1008,27 @@ async def export_to_docx(planner: dict):
                 p = doc.add_paragraph()
                 p.add_run(f"\n{skill_labels.get(skill, skill.capitalize())}").bold = True
                 
-                # Collect standards
+                # Collect standards from 'specific' array or individual fields
                 standards_list = []
                 outcomes = skill_data.get('learning_outcomes', [])
                 
-                if skill_data.get('receptive'):
-                    standards_list.append(('Receptive', skill_data['receptive']))
-                if skill_data.get('interactive'):
-                    standards_list.append(('Interactive', skill_data['interactive']))
-                if skill_data.get('productive'):
-                    standards_list.append(('Productive', skill_data['productive']))
-                if skill_data.get('reading1'):
-                    standards_list.append(('Reading', skill_data['reading1']))
-                if skill_data.get('reading2'):
-                    standards_list.append(('Reading', skill_data['reading2']))
-                if skill_data.get('phonemic_awareness'):
-                    standards_list.append(('Phonemic Awareness', skill_data['phonemic_awareness']))
-                if skill_data.get('listening1'):
-                    standards_list.append(('Listening', skill_data['listening1']))
-                if skill_data.get('listening2'):
-                    standards_list.append(('Listening', skill_data['listening2']))
-                if skill_data.get('speaking1'):
-                    standards_list.append(('Speaking', skill_data['speaking1']))
-                if skill_data.get('speaking2'):
-                    standards_list.append(('Speaking', skill_data['speaking2']))
-                if skill_data.get('writing1'):
-                    standards_list.append(('Writing', skill_data['writing1']))
-                if skill_data.get('writing2'):
-                    standards_list.append(('Writing', skill_data['writing2']))
-                if skill_data.get('text'):
-                    standards_list.append(('Text', skill_data['text']))
-                if skill_data.get('concept'):
-                    standards_list.append(('Concept', skill_data['concept']))
+                # Check if 'specific' is an array (Grade 1 format)
+                if isinstance(skill_data.get('specific'), list):
+                    for i, s in enumerate(skill_data['specific']):
+                        standards_list.append((s, outcomes[i] if i < len(outcomes) else ''))
+                else:
+                    # Check individual fields (Grade 4 format)
+                    fields = [('receptive', 'Receptive'), ('interactive', 'Interactive'), 
+                             ('productive', 'Productive'), ('reading1', 'Reading'), 
+                             ('reading2', 'Reading'), ('phonemic_awareness', 'Phonemic Awareness'),
+                             ('listening1', 'Listening'), ('listening2', 'Listening'),
+                             ('speaking1', 'Speaking'), ('speaking2', 'Speaking'),
+                             ('writing1', 'Writing'), ('writing2', 'Writing'),
+                             ('text', 'Text'), ('concept', 'Concept')]
+                    for field, label in fields:
+                        if skill_data.get(field):
+                            idx = len(standards_list)
+                            standards_list.append((f"{label}: {skill_data[field]}", outcomes[idx] if idx < len(outcomes) else ''))
                 
                 # Create table for this skill
                 if standards_list:
@@ -1051,12 +1040,9 @@ async def export_to_docx(planner: dict):
                     table.rows[0].cells[1].text = 'Learning Outcome'
                     
                     # Data rows
-                    for idx, (std_type, std_text) in enumerate(standards_list):
-                        table.rows[idx + 1].cells[0].text = f"{std_type}: {std_text}"
-                        outcome_text = outcomes[idx] if idx < len(outcomes) else 'To be defined'
-                        if outcome_text and not outcome_text.lower().startswith('can '):
-                            outcome_text = f"Can {outcome_text}"
-                        table.rows[idx + 1].cells[1].text = outcome_text
+                    for idx, (std_text, outcome_text) in enumerate(standards_list):
+                        table.rows[idx + 1].cells[0].text = std_text
+                        table.rows[idx + 1].cells[1].text = outcome_text if outcome_text else 'To be defined'
                     
                     doc.add_paragraph()  # Space after table
         
