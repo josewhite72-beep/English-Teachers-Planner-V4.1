@@ -385,7 +385,7 @@ export default function PreviewPage() {
                 <CardTitle className="text-teal-900 dark:text-teal-100">2. {language === 'es' ? 'Estándares Específicos y Resultados de Aprendizaje' : 'Specific Standards and Learning Outcomes'}</CardTitle>
               </CardHeader>
               <CardContent className="pt-4">
-                <div className="space-y-4">
+                <div className="space-y-6">
                   {[
                     { key: 'listening', label: language === 'es' ? 'Listening (Comprensión Auditiva)' : 'Listening (Auditory Comprehension)' },
                     { key: 'reading', label: language === 'es' ? 'Reading (Comprensión Lectora)' : 'Reading (Reading Comprehension)' },
@@ -394,41 +394,66 @@ export default function PreviewPage() {
                     { key: 'mediation', label: 'Mediation' }
                   ].map(({ key, label }) => {
                     const skillData = theme_planner?.standards_and_learning_outcomes?.[key];
+                    
+                    // Extract standards and outcomes pairs
+                    const standardsOutcomes = [];
+                    if (skillData && typeof skillData === 'object') {
+                      const outcomes = skillData.learning_outcomes || [];
+                      
+                      // Collect all standards
+                      if (skillData.receptive) standardsOutcomes.push({ type: 'Receptive', standard: skillData.receptive, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.interactive) standardsOutcomes.push({ type: 'Interactive', standard: skillData.interactive, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.productive) standardsOutcomes.push({ type: 'Productive', standard: skillData.productive, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.reading1) standardsOutcomes.push({ type: 'Reading', standard: skillData.reading1, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.reading2) standardsOutcomes.push({ type: 'Reading', standard: skillData.reading2, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.phonemic_awareness) standardsOutcomes.push({ type: 'Phonemic Awareness', standard: skillData.phonemic_awareness, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.listening1) standardsOutcomes.push({ type: 'Listening', standard: skillData.listening1, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.listening2) standardsOutcomes.push({ type: 'Listening', standard: skillData.listening2, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.speaking1) standardsOutcomes.push({ type: 'Speaking', standard: skillData.speaking1, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.speaking2) standardsOutcomes.push({ type: 'Speaking', standard: skillData.speaking2, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.writing1) standardsOutcomes.push({ type: 'Writing', standard: skillData.writing1, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.writing2) standardsOutcomes.push({ type: 'Writing', standard: skillData.writing2, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.mediation1) standardsOutcomes.push({ type: 'Mediation', standard: skillData.mediation1, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.mediation2) standardsOutcomes.push({ type: 'Mediation', standard: skillData.mediation2, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.text) standardsOutcomes.push({ type: 'Text', standard: skillData.text, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.concept) standardsOutcomes.push({ type: 'Concept', standard: skillData.concept, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.general) standardsOutcomes.push({ type: 'General', standard: skillData.general, outcome: outcomes[standardsOutcomes.length] || '' });
+                      if (skillData.specific && Array.isArray(skillData.specific)) {
+                        skillData.specific.forEach((s, i) => {
+                          standardsOutcomes.push({ type: 'Specific', standard: s, outcome: outcomes[standardsOutcomes.length] || '' });
+                        });
+                      }
+                    }
+                    
                     return (
                       <div key={key} className="border-l-4 border-teal-500 pl-4 py-2">
-                        <h4 className="font-semibold text-teal-800 dark:text-teal-300 mb-2">{label}</h4>
-                        {skillData && typeof skillData === 'object' ? (
-                          <div className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
-                            {skillData.receptive && <p><strong>Receptive:</strong> {skillData.receptive}</p>}
-                            {skillData.interactive && <p><strong>Interactive:</strong> {skillData.interactive}</p>}
-                            {skillData.productive && <p><strong>Productive:</strong> {skillData.productive}</p>}
-                            {skillData.general && <p><strong>General:</strong> {skillData.general}</p>}
-                            {skillData.specific && Array.isArray(skillData.specific) && skillData.specific.map((s, i) => (
-                              <p key={i}><strong>Specific:</strong> {s}</p>
-                            ))}
-                            {skillData.reading1 && <p><strong>Reading:</strong> {skillData.reading1}</p>}
-                            {skillData.reading2 && <p><strong>Reading:</strong> {skillData.reading2}</p>}
-                            {skillData.phonemic_awareness && <p><strong>Phonemic Awareness:</strong> {skillData.phonemic_awareness}</p>}
-                            {skillData.listening1 && <p><strong>Listening:</strong> {skillData.listening1}</p>}
-                            {skillData.listening2 && <p><strong>Listening:</strong> {skillData.listening2}</p>}
-                            {skillData.speaking1 && <p><strong>Speaking:</strong> {skillData.speaking1}</p>}
-                            {skillData.speaking2 && <p><strong>Speaking:</strong> {skillData.speaking2}</p>}
-                            {skillData.writing1 && <p><strong>Writing:</strong> {skillData.writing1}</p>}
-                            {skillData.writing2 && <p><strong>Writing:</strong> {skillData.writing2}</p>}
-                            {skillData.mediation1 && <p><strong>Mediation:</strong> {skillData.mediation1}</p>}
-                            {skillData.mediation2 && <p><strong>Mediation:</strong> {skillData.mediation2}</p>}
-                            {skillData.text && <p><strong>Text:</strong> {skillData.text}</p>}
-                            {skillData.concept && <p><strong>Concept:</strong> {skillData.concept}</p>}
-                            {skillData.learning_outcomes && Array.isArray(skillData.learning_outcomes) && (
-                              <div className="mt-1">
-                                <strong>Learning Outcomes:</strong>
-                                <ul className="list-disc list-inside ml-2">
-                                  {skillData.learning_outcomes.map((lo, i) => (
-                                    <li key={i} className="text-xs">{lo}</li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
+                        <h4 className="font-semibold text-teal-800 dark:text-teal-300 mb-3">{label}</h4>
+                        {standardsOutcomes.length > 0 ? (
+                          <div className="overflow-x-auto">
+                            <table className="w-full text-sm border-collapse">
+                              <thead>
+                                <tr className="bg-teal-50 dark:bg-slate-700">
+                                  <th className="border border-teal-200 dark:border-slate-600 px-3 py-2 text-left font-semibold text-teal-800 dark:text-teal-200 w-1/2">Specific Standard</th>
+                                  <th className="border border-teal-200 dark:border-slate-600 px-3 py-2 text-left font-semibold text-teal-800 dark:text-teal-200 w-1/2">Learning Outcome</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {standardsOutcomes.map((item, idx) => (
+                                  <tr key={idx} className={idx % 2 === 0 ? 'bg-white dark:bg-slate-800' : 'bg-slate-50 dark:bg-slate-750'}>
+                                    <td className="border border-teal-200 dark:border-slate-600 px-3 py-2 text-slate-700 dark:text-slate-300">
+                                      <span className="font-medium text-teal-700 dark:text-teal-400">{item.type}:</span> {item.standard}
+                                    </td>
+                                    <td className="border border-teal-200 dark:border-slate-600 px-3 py-2 text-slate-700 dark:text-slate-300">
+                                      {item.outcome ? (
+                                        <span className="text-green-700 dark:text-green-400">Can {item.outcome.toLowerCase().startsWith('can ') ? item.outcome.substring(4) : item.outcome}</span>
+                                      ) : (
+                                        <span className="italic text-slate-400">To be defined</span>
+                                      )}
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
                           </div>
                         ) : (
                           <p className="text-sm text-slate-400 italic">{language === 'es' ? 'Por completar' : 'To be completed'}</p>
