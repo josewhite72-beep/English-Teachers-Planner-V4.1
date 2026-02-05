@@ -395,32 +395,31 @@ export default function PreviewPage() {
                   ].map(({ key, label }) => {
                     const skillData = theme_planner?.standards_and_learning_outcomes?.[key];
                     
-                    // Extract standards and outcomes pairs
-                    const standardsOutcomes = [];
+                    // Extract standards from 'specific' array or individual fields
+                    const standards = [];
+                    const outcomes = skillData?.learning_outcomes || [];
+                    
                     if (skillData && typeof skillData === 'object') {
-                      const outcomes = skillData.learning_outcomes || [];
-                      
-                      // Collect all standards
-                      if (skillData.receptive) standardsOutcomes.push({ type: 'Receptive', standard: skillData.receptive, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.interactive) standardsOutcomes.push({ type: 'Interactive', standard: skillData.interactive, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.productive) standardsOutcomes.push({ type: 'Productive', standard: skillData.productive, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.reading1) standardsOutcomes.push({ type: 'Reading', standard: skillData.reading1, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.reading2) standardsOutcomes.push({ type: 'Reading', standard: skillData.reading2, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.phonemic_awareness) standardsOutcomes.push({ type: 'Phonemic Awareness', standard: skillData.phonemic_awareness, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.listening1) standardsOutcomes.push({ type: 'Listening', standard: skillData.listening1, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.listening2) standardsOutcomes.push({ type: 'Listening', standard: skillData.listening2, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.speaking1) standardsOutcomes.push({ type: 'Speaking', standard: skillData.speaking1, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.speaking2) standardsOutcomes.push({ type: 'Speaking', standard: skillData.speaking2, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.writing1) standardsOutcomes.push({ type: 'Writing', standard: skillData.writing1, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.writing2) standardsOutcomes.push({ type: 'Writing', standard: skillData.writing2, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.mediation1) standardsOutcomes.push({ type: 'Mediation', standard: skillData.mediation1, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.mediation2) standardsOutcomes.push({ type: 'Mediation', standard: skillData.mediation2, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.text) standardsOutcomes.push({ type: 'Text', standard: skillData.text, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.concept) standardsOutcomes.push({ type: 'Concept', standard: skillData.concept, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.general) standardsOutcomes.push({ type: 'General', standard: skillData.general, outcome: outcomes[standardsOutcomes.length] || '' });
-                      if (skillData.specific && Array.isArray(skillData.specific)) {
+                      // Check if 'specific' is an array (Grade 1 format)
+                      if (Array.isArray(skillData.specific)) {
                         skillData.specific.forEach((s, i) => {
-                          standardsOutcomes.push({ type: 'Specific', standard: s, outcome: outcomes[standardsOutcomes.length] || '' });
+                          standards.push({ standard: s, outcome: outcomes[i] || '' });
+                        });
+                      } else {
+                        // Check individual fields (Grade 4 format)
+                        const fields = ['receptive', 'interactive', 'productive', 'reading1', 'reading2', 
+                                       'phonemic_awareness', 'listening1', 'listening2', 'speaking1', 
+                                       'speaking2', 'writing1', 'writing2', 'mediation1', 'mediation2', 
+                                       'text', 'concept'];
+                        fields.forEach((field) => {
+                          if (skillData[field]) {
+                            const fieldLabel = field.replace(/[0-9]/g, '').replace(/_/g, ' ');
+                            const capitalLabel = fieldLabel.charAt(0).toUpperCase() + fieldLabel.slice(1);
+                            standards.push({ 
+                              standard: `${capitalLabel}: ${skillData[field]}`, 
+                              outcome: outcomes[standards.length] || '' 
+                            });
+                          }
                         });
                       }
                     }
@@ -428,7 +427,7 @@ export default function PreviewPage() {
                     return (
                       <div key={key} className="border-l-4 border-teal-500 pl-4 py-2">
                         <h4 className="font-semibold text-teal-800 dark:text-teal-300 mb-3">{label}</h4>
-                        {standardsOutcomes.length > 0 ? (
+                        {standards.length > 0 ? (
                           <div className="overflow-x-auto">
                             <table className="w-full text-sm border-collapse">
                               <thead>
@@ -438,14 +437,14 @@ export default function PreviewPage() {
                                 </tr>
                               </thead>
                               <tbody>
-                                {standardsOutcomes.map((item, idx) => (
+                                {standards.map((item, idx) => (
                                   <tr key={idx} className={idx % 2 === 0 ? 'bg-white dark:bg-slate-800' : 'bg-slate-50 dark:bg-slate-750'}>
                                     <td className="border border-teal-200 dark:border-slate-600 px-3 py-2 text-slate-700 dark:text-slate-300">
-                                      <span className="font-medium text-teal-700 dark:text-teal-400">{item.type}:</span> {item.standard}
+                                      {item.standard}
                                     </td>
                                     <td className="border border-teal-200 dark:border-slate-600 px-3 py-2 text-slate-700 dark:text-slate-300">
                                       {item.outcome ? (
-                                        <span className="text-green-700 dark:text-green-400">Can {item.outcome.toLowerCase().startsWith('can ') ? item.outcome.substring(4) : item.outcome}</span>
+                                        <span className="text-green-700 dark:text-green-400">{item.outcome}</span>
                                       ) : (
                                         <span className="italic text-slate-400">To be defined</span>
                                       )}
