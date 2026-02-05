@@ -990,6 +990,76 @@ async def export_to_docx(planner: dict):
             info_table.rows[i].cells[0].text = label
             info_table.rows[i].cells[1].text = str(value)
         
+        # Standards and Learning Outcomes Section
+        doc.add_heading('Specific Standards and Learning Outcomes', 2)
+        standards_data = planner.get('theme_planner', {}).get('standards_and_learning_outcomes', {})
+        
+        for skill in ['listening', 'reading', 'speaking', 'writing', 'mediation']:
+            skill_data = standards_data.get(skill, {})
+            if skill_data and isinstance(skill_data, dict):
+                skill_labels = {
+                    'listening': 'Listening (Auditory Comprehension)',
+                    'reading': 'Reading (Reading Comprehension)',
+                    'speaking': 'Speaking (Oral Expression)',
+                    'writing': 'Writing (Written Expression)',
+                    'mediation': 'Mediation'
+                }
+                
+                p = doc.add_paragraph()
+                p.add_run(f"\n{skill_labels.get(skill, skill.capitalize())}").bold = True
+                
+                # Collect standards
+                standards_list = []
+                outcomes = skill_data.get('learning_outcomes', [])
+                
+                if skill_data.get('receptive'):
+                    standards_list.append(('Receptive', skill_data['receptive']))
+                if skill_data.get('interactive'):
+                    standards_list.append(('Interactive', skill_data['interactive']))
+                if skill_data.get('productive'):
+                    standards_list.append(('Productive', skill_data['productive']))
+                if skill_data.get('reading1'):
+                    standards_list.append(('Reading', skill_data['reading1']))
+                if skill_data.get('reading2'):
+                    standards_list.append(('Reading', skill_data['reading2']))
+                if skill_data.get('phonemic_awareness'):
+                    standards_list.append(('Phonemic Awareness', skill_data['phonemic_awareness']))
+                if skill_data.get('listening1'):
+                    standards_list.append(('Listening', skill_data['listening1']))
+                if skill_data.get('listening2'):
+                    standards_list.append(('Listening', skill_data['listening2']))
+                if skill_data.get('speaking1'):
+                    standards_list.append(('Speaking', skill_data['speaking1']))
+                if skill_data.get('speaking2'):
+                    standards_list.append(('Speaking', skill_data['speaking2']))
+                if skill_data.get('writing1'):
+                    standards_list.append(('Writing', skill_data['writing1']))
+                if skill_data.get('writing2'):
+                    standards_list.append(('Writing', skill_data['writing2']))
+                if skill_data.get('text'):
+                    standards_list.append(('Text', skill_data['text']))
+                if skill_data.get('concept'):
+                    standards_list.append(('Concept', skill_data['concept']))
+                
+                # Create table for this skill
+                if standards_list:
+                    table = doc.add_table(rows=len(standards_list) + 1, cols=2)
+                    table.style = 'Light Grid Accent 1'
+                    
+                    # Header row
+                    table.rows[0].cells[0].text = 'Specific Standard'
+                    table.rows[0].cells[1].text = 'Learning Outcome'
+                    
+                    # Data rows
+                    for idx, (std_type, std_text) in enumerate(standards_list):
+                        table.rows[idx + 1].cells[0].text = f"{std_type}: {std_text}"
+                        outcome_text = outcomes[idx] if idx < len(outcomes) else 'To be defined'
+                        if outcome_text and not outcome_text.lower().startswith('can '):
+                            outcome_text = f"Can {outcome_text}"
+                        table.rows[idx + 1].cells[1].text = outcome_text
+                    
+                    doc.add_paragraph()  # Space after table
+        
         # Specific Objectives Section
         doc.add_heading('Specific Objectives (SMART)', 2)
         objectives = planner.get('theme_planner', {}).get('specific_objectives', {})
