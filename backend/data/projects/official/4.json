@@ -799,6 +799,158 @@
         ],
         "differentiation": "Provide story templates; allow dictation; offer collaborative writing."
       }
+    ],
+    "Shopping at the Market": [
+      {
+        "id": "grade4_scenario_market_project1",
+        "category": "Meal Planning",
+        "name": "Healthy Meal Plan",
+        "overview": "Students create a meal plan for their family using countable and uncountable nouns with quantifiers.",
+        "general_objective": "Plan meals using appropriate food vocabulary.",
+        "skills_developed": [
+          "Food Vocabulary",
+          "Meal Planning",
+          "Quantifiers"
+        ]
+      },
+      {
+        "id": "grade4_scenario_market_project2",
+        "category": "Digital Publishing",
+        "name": "Digital Recipe Book",
+        "overview": "Students collaborate to create a digital recipe book featuring healthy meals.",
+        "general_objective": "Create digital content about recipes.",
+        "skills_developed": [
+          "Digital Literacy",
+          "Collaboration",
+          "Recipe Writing"
+        ]
+      },
+      {
+        "id": "grade4_scenario_market_project3",
+        "category": "Nutrition Education",
+        "name": "Nutrition Poster",
+        "overview": "Students design a nutrition poster highlighting the benefits of different foods.",
+        "general_objective": "Communicate nutrition information visually.",
+        "skills_developed": [
+          "Poster Design",
+          "Nutrition Vocabulary",
+          "Visual Communication"
+        ]
+      }
+    ],
+    "It's the Rainy Season": [
+      {
+        "id": "grade4_rainy_project1",
+        "category": "Weather Reporting",
+        "name": "Weather Report Role-Play",
+        "overview": "Students act out a weather report and describe what they need and wear.",
+        "general_objective": "Describe weather and appropriate clothing.",
+        "skills_developed": [
+          "Weather Vocabulary",
+          "Role-Play",
+          "Speaking"
+        ]
+      },
+      {
+        "id": "grade4_rainy_project2",
+        "category": "Journaling",
+        "name": "Rainy Day Journal",
+        "overview": "Students describe the activities they do during rainy days.",
+        "general_objective": "Write about daily activities related to weather.",
+        "skills_developed": [
+          "Journaling",
+          "Activity Description",
+          "Writing"
+        ]
+      },
+      {
+        "id": "grade4_rainy_project3",
+        "category": "Digital Mapping",
+        "name": "Digital Weather Map",
+        "overview": "Students create or use a digital weather map, labeling locations and describing rainy weather.",
+        "general_objective": "Use technology to represent weather information.",
+        "skills_developed": [
+          "Digital Mapping",
+          "Weather Vocabulary",
+          "Technology"
+        ]
+      }
+    ],
+    "Our Traditional Style of Dress": [
+      {
+        "id": "grade4_dress_project1",
+        "category": "Art & Cultural Design",
+        "name": "Mola Design Project",
+        "overview": "Students design a mola, describing the steps and choosing the colors.",
+        "general_objective": "Create and describe traditional Panamanian art.",
+        "skills_developed": [
+          "Art Design",
+          "Cultural Awareness",
+          "Description"
+        ]
+      },
+      {
+        "id": "grade4_dress_project2",
+        "category": "Digital Exhibition",
+        "name": "Virtual Mola Exhibit",
+        "overview": "Students create a virtual exhibit of their mola designs.",
+        "general_objective": "Present cultural art digitally.",
+        "skills_developed": [
+          "Digital Exhibition",
+          "Presentation",
+          "Cultural Pride"
+        ]
+      },
+      {
+        "id": "grade4_dress_project3",
+        "category": "Video Instruction",
+        "name": "Mola Design Video",
+        "overview": "Students film a video tutorial showing how to create a mola.",
+        "general_objective": "Create instructional content about traditional art.",
+        "skills_developed": [
+          "Video Creation",
+          "Instructions",
+          "Speaking"
+        ]
+      }
+    ],
+    "Visiting the Panama Canal": [
+      {
+        "id": "grade4_canal_project1",
+        "category": "Geography & Tourism",
+        "name": "Panama Canal Tour Guide",
+        "overview": "Students create a tour guide presentation about the Panama Canal.",
+        "general_objective": "Describe an important landmark using descriptive language.",
+        "skills_developed": [
+          "Geography",
+          "Presentation",
+          "Description"
+        ]
+      },
+      {
+        "id": "grade4_canal_project2",
+        "category": "History",
+        "name": "Canal History Timeline",
+        "overview": "Students create a timeline of important events in the Panama Canal's history.",
+        "general_objective": "Organize historical information chronologically.",
+        "skills_developed": [
+          "History",
+          "Timeline Creation",
+          "Research"
+        ]
+      },
+      {
+        "id": "grade4_canal_project3",
+        "category": "Digital Media",
+        "name": "Canal Video Documentary",
+        "overview": "Students create a short video documentary about the Panama Canal.",
+        "general_objective": "Create multimedia content about a national landmark.",
+        "skills_developed": [
+          "Video Production",
+          "Research",
+          "Narration"
+        ]
+      }
     ]
   }
 }
