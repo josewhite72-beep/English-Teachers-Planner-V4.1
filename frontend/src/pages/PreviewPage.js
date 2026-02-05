@@ -138,7 +138,9 @@ export default function PreviewPage() {
     return null;
   }
 
-  const { theme_planner, lesson_planners } = editMode && editedPlanner ? editedPlanner : generatedPlanner;
+  const plannerData = editMode && editedPlanner ? editedPlanner : generatedPlanner;
+  const theme_planner = plannerData?.theme_planner || {};
+  const lesson_planners = plannerData?.lesson_planners || [];
 
   const handleEditMode = () => {
     setEditMode(true);
