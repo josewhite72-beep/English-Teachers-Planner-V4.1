@@ -397,29 +397,43 @@ export default function PreviewPage() {
                   ].map(({ key, label }) => {
                     const skillData = theme_planner?.standards_and_learning_outcomes?.[key];
                     
-                    // Extract standards from 'specific' array or individual fields
+                    // Build standards array from different data formats
                     const standards = [];
                     const outcomes = skillData?.learning_outcomes || [];
                     
                     if (skillData && typeof skillData === 'object') {
-                      // Check if 'specific' is an array (Grade 1 format)
+                      // Format 1: 'specific' array (Grade 1)
                       if (Array.isArray(skillData.specific)) {
                         skillData.specific.forEach((s, i) => {
                           standards.push({ standard: s, outcome: outcomes[i] || '' });
                         });
-                      } else {
-                        // Check individual fields (Grade 4 format)
-                        const fields = ['receptive', 'interactive', 'productive', 'reading1', 'reading2', 
-                                       'phonemic_awareness', 'listening1', 'listening2', 'speaking1', 
-                                       'speaking2', 'writing1', 'writing2', 'mediation1', 'mediation2', 
-                                       'text', 'concept'];
-                        fields.forEach((field) => {
+                      } 
+                      // Format 2: Direct fields (Grade 2, 4)
+                      else {
+                        const fieldMappings = [
+                          ['receptive', 'Receptive'],
+                          ['interactive', 'Interactive'],
+                          ['productive', 'Productive'],
+                          ['reading1', 'Reading'],
+                          ['reading2', 'Reading'],
+                          ['phonemic_awareness', 'Phonemic Awareness'],
+                          ['listening1', 'Listening'],
+                          ['listening2', 'Listening'],
+                          ['speaking1', 'Speaking'],
+                          ['speaking2', 'Speaking'],
+                          ['writing1', 'Writing'],
+                          ['writing2', 'Writing'],
+                          ['mediation1', 'Mediation'],
+                          ['mediation2', 'Mediation'],
+                          ['text', 'Text'],
+                          ['concept', 'Concept']
+                        ];
+                        
+                        fieldMappings.forEach(([field, fieldLabel]) => {
                           if (skillData[field]) {
-                            const fieldLabel = field.replace(/[0-9]/g, '').replace(/_/g, ' ');
-                            const capitalLabel = fieldLabel.charAt(0).toUpperCase() + fieldLabel.slice(1);
                             standards.push({ 
-                              standard: `${capitalLabel}: ${skillData[field]}`, 
-                              outcome: outcomes[standards.length] || '' 
+                              standard: `${fieldLabel}: ${skillData[field]}`, 
+                              outcome: outcomes[standards.length] || skillData[field]
                             });
                           }
                         });
