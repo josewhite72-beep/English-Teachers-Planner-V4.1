@@ -186,6 +186,7 @@ Web application called "English Teachers Planner" for primary school teachers (P
 - **Backend:** 22/22 tests passing (100%)
 - **Frontend:** All UI flows verified
 - **Test Reports:** `/app/test_reports/iteration_3.json`
+- **Last Fix:** February 6, 2025 - Fixed Learning Outcomes in Word export and Lesson Planner SMART objectives
 
 ---
 
