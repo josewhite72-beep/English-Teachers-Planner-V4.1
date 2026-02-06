@@ -507,7 +507,7 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
     
     return theme_planner
 
-def generate_basic_lesson_planners(scenario_data: dict, theme: str, plan_type: str) -> list:
+def generate_basic_lesson_planners(scenario_data: dict, theme: str, plan_type: str, smart_objectives: dict = None) -> list:
     """Generate basic lesson planner structures with curriculum info"""
     lessons = []
     skills = ['listening', 'reading', 'speaking', 'writing', 'mediation']
