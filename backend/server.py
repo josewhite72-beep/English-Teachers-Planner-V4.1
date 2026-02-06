@@ -298,6 +298,27 @@ async def generate_planner(request: PlannerRequest):
             pregenerated['theme_planner']['standards_and_learning_outcomes'] = curriculum_standards
             pregenerated['theme_planner']['communicative_competences'] = curriculum_competences
             
+            # Update general_information with user-provided MEDUCA fields
+            if 'general_information' not in pregenerated['theme_planner']:
+                pregenerated['theme_planner']['general_information'] = {}
+            
+            pregenerated['theme_planner']['general_information']['teachers'] = request.teacher_name or pregenerated['theme_planner']['general_information'].get('teachers', '')
+            pregenerated['theme_planner']['general_information']['trimester'] = request.trimester or pregenerated['theme_planner']['general_information'].get('trimester', '')
+            pregenerated['theme_planner']['general_information']['weekly_hours'] = request.weekly_hours or pregenerated['theme_planner']['general_information'].get('weekly_hours', '')
+            
+            # Build week_range
+            if request.week_from and request.week_to:
+                pregenerated['theme_planner']['general_information']['week_range'] = f"From week {request.week_from} to week {request.week_to}"
+            elif request.week_from:
+                pregenerated['theme_planner']['general_information']['week_range'] = f"Week {request.week_from}"
+            
+            # Add MEDUCA fields to root level for export
+            pregenerated['teacher_name'] = request.teacher_name
+            pregenerated['trimester'] = request.trimester
+            pregenerated['weekly_hours'] = request.weekly_hours
+            pregenerated['week_from'] = request.week_from
+            pregenerated['week_to'] = request.week_to
+            
             # Load project if specified
             if request.project_id:
                 official_projects = load_projects_official(request.grade)
