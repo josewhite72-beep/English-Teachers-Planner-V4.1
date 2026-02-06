@@ -342,6 +342,102 @@ export default function HomePage() {
               </Select>
             </div>
 
+            {/* Teacher Information Section - MEDUCA Official Format */}
+            <div className="space-y-4 p-4 bg-blue-50 dark:bg-slate-700 rounded-lg border border-blue-200 dark:border-slate-600">
+              <div className="flex items-center gap-2">
+                <User className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                <Label className="text-base font-semibold text-blue-800 dark:text-blue-300">
+                  {t.teacherInfo}
+                </Label>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Teacher Name */}
+                <div className="space-y-2">
+                  <Label htmlFor="teacher-name" className="text-sm dark:text-slate-300">
+                    {t.teacherName}
+                  </Label>
+                  <Input
+                    id="teacher-name"
+                    data-testid="teacher-name-input"
+                    value={teacherName}
+                    onChange={(e) => setTeacherName(e.target.value)}
+                    placeholder={t.teacherPlaceholder}
+                    className="dark:bg-slate-600 dark:border-slate-500 dark:text-white"
+                  />
+                </div>
+
+                {/* Trimester */}
+                <div className="space-y-2">
+                  <Label htmlFor="trimester" className="text-sm dark:text-slate-300">
+                    {t.trimester}
+                  </Label>
+                  <Select value={trimester} onValueChange={setTrimester}>
+                    <SelectTrigger id="trimester" data-testid="trimester-selector" className="w-full dark:bg-slate-600 dark:border-slate-500 dark:text-white">
+                      <SelectValue placeholder={t.selectTrimester} />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="1">1</SelectItem>
+                      <SelectItem value="2">2</SelectItem>
+                      <SelectItem value="3">3</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                {/* Weekly Hours */}
+                <div className="space-y-2">
+                  <Label htmlFor="weekly-hours" className="text-sm dark:text-slate-300 flex items-center gap-1">
+                    <Clock className="h-4 w-4" />
+                    {t.weeklyHours}
+                  </Label>
+                  <Input
+                    id="weekly-hours"
+                    data-testid="weekly-hours-input"
+                    type="number"
+                    min="1"
+                    max="10"
+                    value={weeklyHours}
+                    onChange={(e) => setWeeklyHours(e.target.value)}
+                    placeholder={t.weeklyHoursPlaceholder}
+                    className="dark:bg-slate-600 dark:border-slate-500 dark:text-white"
+                  />
+                </div>
+
+                {/* Week Range */}
+                <div className="space-y-2">
+                  <Label className="text-sm dark:text-slate-300 flex items-center gap-1">
+                    <Calendar className="h-4 w-4" />
+                    {t.weekRange}
+                  </Label>
+                  <div className="flex items-center gap-2">
+                    <Input
+                      id="week-from"
+                      data-testid="week-from-input"
+                      type="number"
+                      min="1"
+                      max="52"
+                      value={weekFrom}
+                      onChange={(e) => setWeekFrom(e.target.value)}
+                      placeholder={t.weekFrom}
+                      className="w-20 dark:bg-slate-600 dark:border-slate-500 dark:text-white"
+                    />
+                    <span className="text-slate-500 dark:text-slate-400">→</span>
+                    <Input
+                      id="week-to"
+                      data-testid="week-to-input"
+                      type="number"
+                      min="1"
+                      max="52"
+                      value={weekTo}
+                      onChange={(e) => setWeekTo(e.target.value)}
+                      placeholder={t.weekTo}
+                      className="w-20 dark:bg-slate-600 dark:border-slate-500 dark:text-white"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Plan Type */}
             <div className="space-y-2">
               <Label htmlFor="plan-type" className="text-base font-semibold dark:text-slate-200">
