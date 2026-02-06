@@ -22,6 +22,13 @@ export const PlannerProvider = ({ children }) => {
   const [generatedPlanner, setGeneratedPlanner] = useState(null);
   const [scenarios, setScenarios] = useState([]);
   const [themes, setThemes] = useState([]);
+  
+  // New MEDUCA official format fields
+  const [teacherName, setTeacherName] = useState('');
+  const [trimester, setTrimester] = useState('');
+  const [weeklyHours, setWeeklyHours] = useState('');
+  const [weekFrom, setWeekFrom] = useState('');
+  const [weekTo, setWeekTo] = useState('');
 
   // Load dark mode preference from localStorage
   useEffect(() => {
@@ -72,6 +79,17 @@ export const PlannerProvider = ({ children }) => {
     setScenarios,
     themes,
     setThemes,
+    // New MEDUCA official format fields
+    teacherName,
+    setTeacherName,
+    trimester,
+    setTrimester,
+    weeklyHours,
+    setWeeklyHours,
+    weekFrom,
+    setWeekFrom,
+    weekTo,
+    setWeekTo,
   };
 
   return (
