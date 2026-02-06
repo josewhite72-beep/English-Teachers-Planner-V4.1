@@ -74,6 +74,17 @@ export default function HomePage() {
       officialFormat: 'Formato Oficial MEDUCA',
       generate: 'Generar Planeamiento',
       generating: 'Generando...',
+      // New MEDUCA fields
+      teacherInfo: 'Información del Docente (Opcional)',
+      teacherName: 'Nombre del Docente',
+      teacherPlaceholder: 'Ej: Prof. María García',
+      trimester: 'Trimestre',
+      selectTrimester: 'Selecciona trimestre',
+      weeklyHours: 'Horas Semanales',
+      weeklyHoursPlaceholder: 'Ej: 3',
+      weekRange: 'Semanas',
+      weekFrom: 'Desde',
+      weekTo: 'Hasta',
     },
     en: {
       title: 'English Teachers Planner',
@@ -93,6 +104,17 @@ export default function HomePage() {
       officialFormat: 'Official MEDUCA Format',
       generate: 'Generate Planner',
       generating: 'Generating...',
+      // New MEDUCA fields
+      teacherInfo: 'Teacher Information (Optional)',
+      teacherName: 'Teacher Name',
+      teacherPlaceholder: 'E.g.: Prof. María García',
+      trimester: 'Trimester',
+      selectTrimester: 'Select trimester',
+      weeklyHours: 'Weekly Hours',
+      weeklyHoursPlaceholder: 'E.g.: 3',
+      weekRange: 'Weeks',
+      weekFrom: 'From',
+      weekTo: 'To',
     },
   };
 
