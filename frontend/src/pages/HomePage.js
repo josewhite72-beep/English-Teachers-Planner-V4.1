@@ -8,7 +8,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
-import { BookOpen, FileText, Globe, Sparkles, Moon, Sun } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { BookOpen, FileText, Globe, Sparkles, Moon, Sun, User, Calendar, Clock } from 'lucide-react';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
