@@ -699,34 +699,35 @@ export default function PreviewPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    {[
-                      { num: 1, skill: 'Listening', title: 'Listening and Language Foundations' },
-                      { num: 2, skill: 'Reading', title: 'Reading and Understanding Concepts/Ideas in Texts' },
-                      { num: 3, skill: 'Speaking', title: 'Productive/Interactive Speaking Tasks' },
-                      { num: 4, skill: 'Writing', title: 'Productive/Interactive Writing and Project Preparation' },
-                      { num: 5, skill: 'Mediation', title: 'Completing the 21st Century Project with Emphasis on Mediation' }
-                    ].map(({ num, skill, title }) => (
-                      <tr key={num} className="border-b border-dashed border-slate-300 dark:border-slate-600 last:border-b-0">
-                        <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold align-top">
-                          Lesson {num}
-                        </td>
-                        <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600">
-                          <p className="font-medium text-slate-800 dark:text-slate-200">{skill}: {title}</p>
-                        </td>
-                        <td className="p-3 text-center">
-                          <EditableField
-                            value={theme_planner?.learning_sequence?.lesson_dates?.[num - 1] || ''}
-                            onChange={(v) => {
-                              const dates = [...(theme_planner?.learning_sequence?.lesson_dates || ['', '', '', '', ''])];
-                              dates[num - 1] = v;
-                              handleUpdateField('theme_planner.learning_sequence.lesson_dates', dates);
-                            }}
-                            placeholder="______"
-                            className="text-center"
-                          />
-                        </td>
-                      </tr>
-                    ))}
+                    {lesson_planners?.map((lesson, idx) => {
+                      // Get the specific objective as the learning sequence description
+                      const sequenceDescription = lesson.specific_objective || 
+                        `${lesson.skill_focus}: Focus on ${lesson.skill_focus?.toLowerCase()} skills related to ${general_info.theme}`;
+                      
+                      return (
+                        <tr key={idx} className="border-b border-dashed border-slate-300 dark:border-slate-600 last:border-b-0">
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold align-top">
+                            Lesson {lesson.lesson_number}
+                          </td>
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600">
+                            <p className="font-medium text-blue-800 dark:text-blue-300 mb-1">{lesson.skill_focus}</p>
+                            <p className="text-slate-700 dark:text-slate-300 text-sm">{sequenceDescription}</p>
+                          </td>
+                          <td className="p-3 text-center">
+                            <EditableField
+                              value={theme_planner?.learning_sequence?.lesson_dates?.[idx] || ''}
+                              onChange={(v) => {
+                                const dates = [...(theme_planner?.learning_sequence?.lesson_dates || ['', '', '', '', ''])];
+                                dates[idx] = v;
+                                handleUpdateField('theme_planner.learning_sequence.lesson_dates', dates);
+                              }}
+                              placeholder="______"
+                              className="text-center"
+                            />
+                          </td>
+                        </tr>
+                      );
+                    })}
                   </tbody>
                 </table>
               </CardContent>
