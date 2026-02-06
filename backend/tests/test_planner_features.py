@@ -318,3 +318,202 @@ class TestAPIEndpoints:
 
 if __name__ == "__main__":
     pytest.main([__file__, "-v"])
+
+
+class TestMEDUCAFormatFields:
+    """Test new MEDUCA format fields: teacher_name, trimester, weekly_hours, week_from, week_to"""
+    
+    def test_generate_with_meduca_fields(self):
+        """Verify planner generation accepts and returns MEDUCA fields"""
+        response = requests.post(f"{BASE_URL}/api/planner/generate", json={
+            "grade": "1",
+            "scenario": "Scenario 1: All Week Long!",
+            "theme": "Days of the Week",
+            "plan_type": "standard",
+            "official_format": True,
+            "project_id": None,
+            "language": "es",
+            "teacher_name": "Prof. María García",
+            "trimester": "2",
+            "weekly_hours": "3",
+            "week_from": "5",
+            "week_to": "8"
+        })
+        
+        assert response.status_code == 200
+        data = response.json()
+        
+        # Check general_information contains MEDUCA fields
+        general_info = data.get('theme_planner', {}).get('general_information', {})
+        assert general_info.get('teachers') == "Prof. María García", f"Expected teacher name, got: {general_info.get('teachers')}"
+        assert general_info.get('trimester') == "2", f"Expected trimester 2, got: {general_info.get('trimester')}"
+        assert general_info.get('weekly_hours') == "3", f"Expected weekly_hours 3, got: {general_info.get('weekly_hours')}"
+        assert "5" in general_info.get('week_range', ''), f"Expected week_from 5 in week_range, got: {general_info.get('week_range')}"
+        assert "8" in general_info.get('week_range', ''), f"Expected week_to 8 in week_range, got: {general_info.get('week_range')}"
+    
+    def test_generate_without_meduca_fields(self):
+        """Verify planner generation works without MEDUCA fields (optional)"""
+        response = requests.post(f"{BASE_URL}/api/planner/generate", json={
+            "grade": "1",
+            "scenario": "Scenario 1: All Week Long!",
+            "theme": "Days of the Week",
+            "plan_type": "standard",
+            "language": "es"
+        })
+        
+        assert response.status_code == 200
+        data = response.json()
+        
+        # Should still have general_information structure
+        general_info = data.get('theme_planner', {}).get('general_information', {})
+        assert 'grade' in general_info
+        assert 'cefr_level' in general_info
+    
+    def test_docx_export_with_meduca_fields(self):
+        """Verify DOCX export includes MEDUCA fields in General Information section"""
+        planner_data = {
+            "grade": "1",
+            "scenario": "Scenario 1: All Week Long!",
+            "theme": "Days of the Week",
+            "plan_type": "standard",
+            "theme_planner": {
+                "general_information": {
+                    "teachers": "Prof. María García",
+                    "grade": "1",
+                    "cefr_level": "A1.1",
+                    "trimester": "2",
+                    "weekly_hours": "3",
+                    "week_range": "From week 5 to week 8",
+                    "scenario": "Scenario 1: All Week Long!",
+                    "theme": "Days of the Week"
+                },
+                "standards_and_learning_outcomes": {},
+                "communicative_competences": {},
+                "specific_objectives": {},
+                "materials_and_strategies": {}
+            },
+            "lesson_planners": [],
+            "project": None
+        }
+        
+        response = requests.post(
+            f"{BASE_URL}/api/planner/export/docx",
+            json=planner_data
+        )
+        
+        assert response.status_code == 200
+        assert response.headers.get('content-type') == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        assert len(response.content) > 1000, "DOCX file is too small"
+
+
+class TestThemePlannerSections:
+    """Test Theme Planner sections according to MEDUCA format"""
+    
+    def test_theme_planner_has_all_sections(self):
+        """Verify theme planner has all 6 required sections"""
+        response = requests.post(f"{BASE_URL}/api/planner/generate", json={
+            "grade": "1",
+            "scenario": "Scenario 1: All Week Long!",
+            "theme": "Days of the Week",
+            "plan_type": "standard",
+            "language": "es"
+        })
+        
+        assert response.status_code == 200
+        data = response.json()
+        theme_planner = data.get('theme_planner', {})
+        
+        # Section 1: General Information
+        assert 'general_information' in theme_planner, "Missing Section 1: General Information"
+        
+        # Section 2: Standards and Learning Outcomes
+        assert 'standards_and_learning_outcomes' in theme_planner, "Missing Section 2: Standards and Learning Outcomes"
+        
+        # Section 3: Communicative Competences
+        assert 'communicative_competences' in theme_planner, "Missing Section 3: Communicative Competences"
+        
+        # Section 4: Specific Objectives
+        assert 'specific_objectives' in theme_planner, "Missing Section 4: Specific Objectives"
+        
+        # Section 5: Materials and Strategies
+        assert 'materials_and_strategies' in theme_planner, "Missing Section 5: Materials and Strategies"
+        
+        # Section 6: Learning Sequence
+        assert 'learning_sequence' in theme_planner, "Missing Section 6: Learning Sequence"
+    
+    def test_standards_has_5_skills(self):
+        """Verify standards section has all 5 skills"""
+        response = requests.post(f"{BASE_URL}/api/planner/generate", json={
+            "grade": "1",
+            "scenario": "Scenario 1: All Week Long!",
+            "theme": "Days of the Week",
+            "plan_type": "standard",
+            "language": "es"
+        })
+        
+        data = response.json()
+        standards = data.get('theme_planner', {}).get('standards_and_learning_outcomes', {})
+        
+        required_skills = ['listening', 'reading', 'speaking', 'writing', 'mediation']
+        for skill in required_skills:
+            assert skill in standards, f"Missing skill in standards: {skill}"
+    
+    def test_communicative_competences_structure(self):
+        """Verify communicative competences has 3 columns: linguistic, pragmatic, sociolinguistic"""
+        response = requests.post(f"{BASE_URL}/api/planner/generate", json={
+            "grade": "1",
+            "scenario": "Scenario 1: All Week Long!",
+            "theme": "Days of the Week",
+            "plan_type": "standard",
+            "language": "es"
+        })
+        
+        data = response.json()
+        competences = data.get('theme_planner', {}).get('communicative_competences', {})
+        
+        assert 'linguistic' in competences, "Missing linguistic competence"
+        assert 'pragmatic' in competences, "Missing pragmatic competence"
+        assert 'sociolinguistic' in competences, "Missing sociolinguistic competence"
+
+
+class TestLessonPlannerMEDUCAFormat:
+    """Test Lesson Planner MEDUCA format with 6 stages"""
+    
+    def test_lesson_has_6_stages(self):
+        """Verify each lesson has 6 action-oriented approach stages"""
+        response = requests.post(f"{BASE_URL}/api/planner/generate", json={
+            "grade": "1",
+            "scenario": "Scenario 1: All Week Long!",
+            "theme": "Days of the Week",
+            "plan_type": "standard",
+            "language": "es"
+        })
+        
+        assert response.status_code == 200
+        data = response.json()
+        lessons = data.get('lesson_planners', [])
+        
+        assert len(lessons) == 5, f"Expected 5 lessons, got {len(lessons)}"
+        
+        for lesson in lessons:
+            stages = lesson.get('lesson_stages', [])
+            assert len(stages) == 6, f"Lesson {lesson.get('lesson_number')} should have 6 stages, got {len(stages)}"
+    
+    def test_lesson_has_comments_section(self):
+        """Verify each lesson has comments section with homework, formative assessment, teacher comments"""
+        response = requests.post(f"{BASE_URL}/api/planner/generate", json={
+            "grade": "1",
+            "scenario": "Scenario 1: All Week Long!",
+            "theme": "Days of the Week",
+            "plan_type": "standard",
+            "language": "es"
+        })
+        
+        data = response.json()
+        lessons = data.get('lesson_planners', [])
+        
+        for lesson in lessons:
+            comments = lesson.get('comments', {})
+            assert 'homework' in comments, f"Lesson {lesson.get('lesson_number')} missing homework in comments"
+            assert 'formative_assessment' in comments, f"Lesson {lesson.get('lesson_number')} missing formative_assessment"
+            assert 'teacher_comments' in comments, f"Lesson {lesson.get('lesson_number')} missing teacher_comments"
