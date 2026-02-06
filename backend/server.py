@@ -57,6 +57,12 @@ class PlannerRequest(BaseModel):
     official_format: bool = False
     project_id: Optional[str] = None
     language: str = "es"
+    # New MEDUCA official format fields
+    teacher_name: Optional[str] = ""
+    trimester: Optional[str] = ""
+    weekly_hours: Optional[str] = ""
+    week_from: Optional[str] = ""
+    week_to: Optional[str] = ""
     
 class InstitutionalData(BaseModel):
     school_name: str = ""
