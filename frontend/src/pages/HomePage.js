@@ -37,6 +37,17 @@ export default function HomePage() {
     setScenarios,
     themes,
     setThemes,
+    // New MEDUCA fields
+    teacherName,
+    setTeacherName,
+    trimester,
+    setTrimester,
+    weeklyHours,
+    setWeeklyHours,
+    weekFrom,
+    setWeekFrom,
+    weekTo,
+    setWeekTo,
   } = usePlanner();
 
   const [grades] = useState(['pre_k', 'K', '1', '2', '3', '4', '5', '6']);
