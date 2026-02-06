@@ -435,17 +435,29 @@ export default function PreviewPage() {
                       let outcomes = [];
                       
                       if (skillData && typeof skillData === 'object') {
+                        // First try to get learning_outcomes array (Grade 1+ format)
                         outcomes = skillData.learning_outcomes || [];
                         
+                        // Get standards - check both formats
                         if (Array.isArray(skillData.specific)) {
+                          // Grade 1+ format: specific is an array
                           standards = skillData.specific;
                         } else {
-                          const fields = ['receptive', 'interactive', 'productive', 'reading1', 'reading2', 
-                                         'phonemic_awareness', 'listening1', 'listening2', 'speaking1', 
-                                         'speaking2', 'writing1', 'writing2', 'text', 'concept'];
+                          // K/Pre-K format: individual fields like receptive, interactive, etc.
+                          const fields = ['receptive', 'interactive', 'productive', 'reading', 'reading1', 'reading2', 
+                                         'phonemic_awareness', 'listening', 'listening1', 'listening2', 'speaking', 'speaking1', 
+                                         'speaking2', 'writing', 'writing1', 'writing2', 'text', 'concept', 'general'];
                           fields.forEach(field => {
-                            if (skillData[field]) standards.push(skillData[field]);
+                            if (skillData[field] && typeof skillData[field] === 'string') {
+                              standards.push(skillData[field]);
+                            }
                           });
+                        }
+                        
+                        // If no learning_outcomes found, use standards as outcomes (for K/Pre-K)
+                        // This is because in K/Pre-K format, the standards ARE the outcomes
+                        if (outcomes.length === 0 && standards.length > 0) {
+                          outcomes = standards.map(s => `Students will be able to: ${s}`);
                         }
                       }
                       
