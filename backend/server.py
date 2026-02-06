@@ -346,7 +346,7 @@ async def generate_planner(request: PlannerRequest):
         raise HTTPException(status_code=500, detail=str(e))
 
 def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str, 
-                                 plan_type: str, project_data: dict = None) -> dict:
+                                 plan_type: str, project_data: dict = None, request: PlannerRequest = None) -> dict:
     """Generate basic theme planner structure from curriculum data using Backward Planning approach"""
     # Get CEFR level from grade
     cefr_levels = {
@@ -415,14 +415,22 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
         "Assessment rubrics"
     ])
     
+    # Build week_range from request if available
+    week_range = ""
+    if request:
+        if request.week_from and request.week_to:
+            week_range = f"From week {request.week_from} to week {request.week_to}"
+        elif request.week_from:
+            week_range = f"Week {request.week_from}"
+    
     theme_planner = {
         "general_information": {
-            "teachers": "",
+            "teachers": request.teacher_name if request else "",
             "grade": grade,
             "cefr_level": cefr_levels.get(grade, "A1"),
-            "trimester": "",
-            "weekly_hours": "",
-            "week_range": "",
+            "trimester": request.trimester if request else "",
+            "weekly_hours": request.weekly_hours if request else "",
+            "week_range": week_range,
             "scenario": scenario_data.get('scenario', scenario_data.get('title', '')),
             "theme": theme
         },
@@ -436,7 +444,9 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
         "learning_sequence": {
             "project_title": project_data.get('name', '') if project_data else '',
             "project_description": project_data.get('overview', '') if project_data else '',
-            "connection_to_theme": theme
+            "connection_to_theme": theme,
+            # Add lesson dates for each of the 5 lessons
+            "lesson_dates": ["", "", "", "", ""]
         }
     }
     
