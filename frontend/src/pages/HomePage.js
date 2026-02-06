@@ -197,6 +197,12 @@ export default function HomePage() {
         official_format: officialFormat,
         project_id: selectedProject,
         language: language,
+        // New MEDUCA fields
+        teacher_name: teacherName,
+        trimester: trimester,
+        weekly_hours: weeklyHours,
+        week_from: weekFrom,
+        week_to: weekTo,
       });
 
       setGeneratedPlanner(response.data);
