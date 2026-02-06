@@ -1164,18 +1164,29 @@ async def export_to_docx(planner: dict):
         for idx, (label, key) in enumerate(skills_list, 1):
             skill_data = standards_data.get(key, {})
             standards = []
-            outcomes = skill_data.get('learning_outcomes', []) if isinstance(skill_data, dict) else []
+            outcomes = []
             
             if isinstance(skill_data, dict):
+                # Get learning_outcomes if present (Grade 1+ format)
+                outcomes = skill_data.get('learning_outcomes', [])
+                
+                # Get standards - check both formats
                 if isinstance(skill_data.get('specific'), list):
+                    # Grade 1+ format
                     standards = skill_data['specific']
                 else:
-                    fields = ['receptive', 'interactive', 'productive', 'reading1', 'reading2', 
-                             'phonemic_awareness', 'listening1', 'listening2', 'speaking1', 
-                             'speaking2', 'writing1', 'writing2', 'text', 'concept']
+                    # K/Pre-K format: individual fields
+                    fields = ['receptive', 'interactive', 'productive', 'reading', 'reading1', 'reading2', 
+                             'phonemic_awareness', 'listening', 'listening1', 'listening2', 'speaking', 'speaking1', 
+                             'speaking2', 'writing', 'writing1', 'writing2', 'text', 'concept', 'general']
                     for field in fields:
-                        if skill_data.get(field):
-                            standards.append(skill_data[field])
+                        val = skill_data.get(field)
+                        if val and isinstance(val, str):
+                            standards.append(val)
+                
+                # If no learning_outcomes, generate from standards (K/Pre-K format)
+                if not outcomes and standards:
+                    outcomes = [f"Students will be able to: {s}" for s in standards]
             
             std_table.cell(idx, 0).text = label
             std_table.cell(idx, 0).paragraphs[0].runs[0].bold = True
