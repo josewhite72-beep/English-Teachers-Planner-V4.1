@@ -386,14 +386,13 @@ async def generate_planner(request: PlannerRequest):
             projects_list = find_projects_for_scenario(official_projects, request.scenario)
             project_data = next((p for p in projects_list if p.get('id') == request.project_id), None)
         
-        # Generate basic planner structure
-            # Generate theme planner first to get SMART objectives
-            theme_planner = generate_basic_theme_planner(scenario_data, request.theme, request.grade, request.plan_type, project_data, request)
-            
-            # Get SMART objectives from theme planner
-            smart_objectives = theme_planner.get('specific_objectives', {})
-            
-            planner = {
+        # Generate theme planner first to get SMART objectives
+        theme_planner = generate_basic_theme_planner(scenario_data, request.theme, request.grade, request.plan_type, project_data, request)
+        
+        # Get SMART objectives from theme planner
+        smart_objectives = theme_planner.get('specific_objectives', {})
+        
+        planner = {
             "grade": request.grade,
             "scenario": request.scenario,
             "theme": request.theme,
