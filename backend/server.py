@@ -328,7 +328,13 @@ async def generate_planner(request: PlannerRequest):
             "plan_type": request.plan_type,
             "official_format": request.official_format,
             "language": request.language,
-            "theme_planner": generate_basic_theme_planner(scenario_data, request.theme, request.grade, request.plan_type, project_data),
+            # Pass MEDUCA fields
+            "teacher_name": request.teacher_name,
+            "trimester": request.trimester,
+            "weekly_hours": request.weekly_hours,
+            "week_from": request.week_from,
+            "week_to": request.week_to,
+            "theme_planner": generate_basic_theme_planner(scenario_data, request.theme, request.grade, request.plan_type, project_data, request),
             "lesson_planners": generate_basic_lesson_planners(scenario_data, request.theme, request.plan_type),
             "project": project_data
         }
