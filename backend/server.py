@@ -360,6 +360,17 @@ async def generate_planner(request: PlannerRequest):
                 project_data = next((p for p in projects_list if p.get('id') == request.project_id), None)
                 pregenerated['project'] = project_data
             
+            # IMPORTANT: Update lesson_planners specific_objectives to use SMART objectives from theme_planner
+            smart_objectives = pregenerated.get('theme_planner', {}).get('specific_objectives', {})
+            skills_map = {1: 'listening', 2: 'reading', 3: 'speaking', 4: 'writing', 5: 'mediation'}
+            
+            if 'lesson_planners' in pregenerated and smart_objectives:
+                for lesson in pregenerated['lesson_planners']:
+                    lesson_num = lesson.get('lesson_number', 0)
+                    skill_key = skills_map.get(lesson_num, '').lower()
+                    if skill_key and skill_key in smart_objectives:
+                        lesson['specific_objective'] = smart_objectives[skill_key]
+            
             return pregenerated
         
         # If no pregenerated planner, generate basic structure from curriculum
