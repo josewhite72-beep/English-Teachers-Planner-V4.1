@@ -292,25 +292,59 @@ async def generate_planner(request: PlannerRequest):
         if pregenerated:
             logger.info("Using pregenerated planner from JSON file")
             
+            # Get CEFR level from grade
+            cefr_levels = {
+                "pre_k": "Pre A1.1",
+                "K": "Pre A1.2",
+                "1": "A1.1",
+                "2": "A1.2",
+                "3": "A2.1",
+                "4": "A2.2",
+                "5": "B1.1",
+                "6": "B1.2"
+            }
+            
             # ALWAYS add standards and competences from curriculum data
             if 'theme_planner' not in pregenerated:
                 pregenerated['theme_planner'] = {}
             pregenerated['theme_planner']['standards_and_learning_outcomes'] = curriculum_standards
             pregenerated['theme_planner']['communicative_competences'] = curriculum_competences
             
-            # Update general_information with user-provided MEDUCA fields
+            # Update general_information with ALL required MEDUCA fields
             if 'general_information' not in pregenerated['theme_planner']:
                 pregenerated['theme_planner']['general_information'] = {}
             
-            pregenerated['theme_planner']['general_information']['teachers'] = request.teacher_name or pregenerated['theme_planner']['general_information'].get('teachers', '')
-            pregenerated['theme_planner']['general_information']['trimester'] = request.trimester or pregenerated['theme_planner']['general_information'].get('trimester', '')
-            pregenerated['theme_planner']['general_information']['weekly_hours'] = request.weekly_hours or pregenerated['theme_planner']['general_information'].get('weekly_hours', '')
+            gen_info = pregenerated['theme_planner']['general_information']
+            gen_info['teachers'] = request.teacher_name or gen_info.get('teachers', '')
+            gen_info['grade'] = request.grade
+            gen_info['cefr_level'] = cefr_levels.get(request.grade, "A1")
+            gen_info['trimester'] = request.trimester or gen_info.get('trimester', '')
+            gen_info['weekly_hours'] = request.weekly_hours or gen_info.get('weekly_hours', '')
+            gen_info['scenario'] = request.scenario
+            gen_info['theme'] = request.theme
             
             # Build week_range
             if request.week_from and request.week_to:
-                pregenerated['theme_planner']['general_information']['week_range'] = f"From week {request.week_from} to week {request.week_to}"
+                gen_info['week_range'] = f"From week {request.week_from} to week {request.week_to}"
             elif request.week_from:
-                pregenerated['theme_planner']['general_information']['week_range'] = f"Week {request.week_from}"
+                gen_info['week_range'] = f"Week {request.week_from}"
+            else:
+                gen_info['week_range'] = gen_info.get('week_range', '')
+            
+            # Add learning_sequence section if not present
+            if 'learning_sequence' not in pregenerated['theme_planner']:
+                project_data = None
+                if request.project_id:
+                    official_projects = load_projects_official(request.grade)
+                    projects_list = find_projects_for_scenario(official_projects, request.scenario)
+                    project_data = next((p for p in projects_list if p.get('id') == request.project_id), None)
+                
+                pregenerated['theme_planner']['learning_sequence'] = {
+                    "project_title": project_data.get('name', '') if project_data else '',
+                    "project_description": project_data.get('overview', '') if project_data else '',
+                    "connection_to_theme": request.theme,
+                    "lesson_dates": ["", "", "", "", ""]
+                }
             
             # Add MEDUCA fields to root level for export
             pregenerated['teacher_name'] = request.teacher_name
