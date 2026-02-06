@@ -1,32 +1,19 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { toast } from 'sonner';
 import { usePlanner } from '@/context/PlannerContext';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import EditableTextarea from '@/components/EditableTextarea';
-import { ArrowLeft, Download, FileText, Moon, Sun } from 'lucide-react';
+import { ArrowLeft, FileText, Moon, Sun, Printer } from 'lucide-react';
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 const API = `${BACKEND_URL}/api`;
-
-// Activity Editor component using EditableTextarea
-const ActivityEditor = ({ value, onChange }) => {
-  return (
-    <EditableTextarea
-      value={value}
-      onChange={onChange}
-      className="text-sm dark:bg-slate-700 dark:border-slate-600 dark:text-white"
-      rows={2}
-    />
-  );
-};
 
 export default function PreviewPage() {
   const navigate = useNavigate();
@@ -42,62 +29,20 @@ export default function PreviewPage() {
       themePlanner: 'Theme Planner',
       lessonPlanners: 'Lesson Planners',
       exportDocx: 'Exportar Word',
-      exportPdf: 'Exportar PDF',
       edit: 'Editar',
       save: 'Guardar',
       cancel: 'Cancelar',
-      generalInfo: 'Información General',
-      grade: 'Grado',
-      cefrLevel: 'Nivel CEFR',
-      scenario: 'Scenario',
-      theme: 'Theme',
-      standards: 'Estándares y Resultados de Aprendizaje',
-      competences: 'Competencias Comunicativas',
-      objectives: 'Objetivos Específicos',
-      lesson: 'Lección',
-      skillFocus: 'Habilidad',
-      learningOutcome: 'Resultado de Aprendizaje',
-      lessonStages: 'Etapas de la Lección',
-      listening: 'Listening',
-      reading: 'Reading',
-      speaking: 'Speaking',
-      writing: 'Writing',
-      mediation: 'Mediation',
-      materials: 'Materiales Requeridos',
-      homework: 'Tarea',
-      assessment: 'Evaluación',
-      teacherNotes: 'Notas del Docente',
+      lesson: 'Lesson',
     },
     en: {
       back: 'Back',
       themePlanner: 'Theme Planner',
       lessonPlanners: 'Lesson Planners',
       exportDocx: 'Export Word',
-      exportPdf: 'Export PDF',
       edit: 'Edit',
       save: 'Save',
       cancel: 'Cancel',
-      generalInfo: 'General Information',
-      grade: 'Grade',
-      cefrLevel: 'CEFR Level',
-      scenario: 'Scenario',
-      theme: 'Theme',
-      standards: 'Standards and Learning Outcomes',
-      competences: 'Communicative Competences',
-      objectives: 'Specific Objectives',
       lesson: 'Lesson',
-      skillFocus: 'Skill Focus',
-      learningOutcome: 'Learning Outcome',
-      lessonStages: 'Lesson Stages',
-      listening: 'Listening',
-      reading: 'Reading',
-      speaking: 'Speaking',
-      writing: 'Writing',
-      mediation: 'Mediation',
-      materials: 'Required Materials',
-      homework: 'Homework',
-      assessment: 'Assessment',
-      teacherNotes: 'Teacher Notes',
     },
   };
 
@@ -105,7 +50,7 @@ export default function PreviewPage() {
 
   const handleUpdateField = useCallback((path, value) => {
     setEditedPlanner(prevPlanner => {
-      const newPlanner = JSON.parse(JSON.stringify(prevPlanner)); // Deep clone
+      const newPlanner = JSON.parse(JSON.stringify(prevPlanner));
       const keys = path.split('.');
       let current = newPlanner;
       
@@ -113,7 +58,6 @@ export default function PreviewPage() {
         const key = keys[i];
         const nextKey = keys[i + 1];
         
-        // Check if next key is a number (array index)
         if (!isNaN(nextKey)) {
           if (!Array.isArray(current[key])) {
             current[key] = [];
@@ -141,10 +85,11 @@ export default function PreviewPage() {
   const plannerData = editMode && editedPlanner ? editedPlanner : generatedPlanner;
   const theme_planner = plannerData?.theme_planner || {};
   const lesson_planners = plannerData?.lesson_planners || [];
+  const general_info = theme_planner?.general_information || {};
 
   const handleEditMode = () => {
     setEditMode(true);
-    setEditedPlanner(JSON.parse(JSON.stringify(generatedPlanner))); // Deep clone
+    setEditedPlanner(JSON.parse(JSON.stringify(generatedPlanner)));
   };
 
   const handleSaveChanges = () => {
@@ -185,10 +130,10 @@ export default function PreviewPage() {
     }
   };
 
-  // Editable field component using EditableTextarea
-  const EditableField = ({ value, onChange, multiline = false, placeholder = '' }) => {
+  // Editable field component
+  const EditableField = ({ value, onChange, multiline = false, placeholder = '', className = '' }) => {
     if (!editMode) {
-      return <span className="text-slate-700 dark:text-slate-300">{value || placeholder}</span>;
+      return <span className={`text-slate-700 dark:text-slate-300 ${className}`}>{value || placeholder || '______'}</span>;
     }
     
     if (multiline) {
@@ -196,9 +141,9 @@ export default function PreviewPage() {
         <EditableTextarea
           value={value}
           onChange={onChange}
-          className="min-h-[80px] dark:bg-slate-700 dark:border-slate-600 dark:text-white"
+          className={`min-h-[60px] dark:bg-slate-700 dark:border-slate-600 dark:text-white ${className}`}
           placeholder={placeholder}
-          rows={4}
+          rows={3}
         />
       );
     }
@@ -207,7 +152,7 @@ export default function PreviewPage() {
       <Input
         value={value || ''}
         onChange={(e) => onChange(e.target.value)}
-        className="dark:bg-slate-700 dark:border-slate-600 dark:text-white"
+        className={`dark:bg-slate-700 dark:border-slate-600 dark:text-white ${className}`}
         placeholder={placeholder}
       />
     );
@@ -224,16 +169,27 @@ export default function PreviewPage() {
     6: 'Grade 6',
   };
 
+  // Get scenario and theme numbers
+  const getScenarioNumber = () => {
+    const match = generatedPlanner.scenario?.match(/Scenario (\d+)/);
+    return match ? match[1] : '___';
+  };
+
+  const getThemeNumber = () => {
+    // This would need to be passed from the backend ideally
+    return '___';
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-teal-50 via-slate-50 to-blue-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+    <div className={`min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 ${darkMode ? 'dark' : ''}`}>
       {/* Header */}
-      <header className="bg-gradient-to-r from-teal-700 to-teal-600 dark:from-teal-800 dark:to-teal-900 border-b border-teal-800 dark:border-teal-950 sticky top-0 z-50 shadow-lg">
+      <header className="bg-gradient-to-r from-blue-800 to-blue-700 dark:from-blue-900 dark:to-blue-800 border-b border-blue-900 sticky top-0 z-50 shadow-lg print:hidden">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Button
               variant="ghost"
               onClick={() => navigate('/')}
-              className="gap-2 text-white hover:bg-teal-600 dark:hover:bg-teal-800 hover:text-white"
+              className="gap-2 text-white hover:bg-blue-600"
               data-testid="back-button"
             >
               <ArrowLeft className="h-4 w-4" />
@@ -245,8 +201,7 @@ export default function PreviewPage() {
                 size="sm"
                 onClick={toggleDarkMode}
                 data-testid="dark-mode-toggle"
-                className="gap-2 text-white hover:bg-teal-600 dark:hover:bg-teal-800 hover:text-white"
-                title={darkMode ? 'Modo Claro' : 'Modo Oscuro'}
+                className="gap-2 text-white hover:bg-blue-600"
               >
                 {darkMode ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
               </Button>
@@ -263,7 +218,7 @@ export default function PreviewPage() {
                   <Button
                     onClick={handleCancelEdit}
                     variant="outline"
-                    className="gap-2 border-white text-white hover:bg-teal-600"
+                    className="gap-2 border-white text-white hover:bg-blue-600"
                     data-testid="cancel-edit-button"
                   >
                     {t.cancel}
@@ -281,7 +236,7 @@ export default function PreviewPage() {
                   <Button
                     onClick={handleExportDocx}
                     disabled={exporting}
-                    className="gap-2 bg-white text-teal-700 hover:bg-teal-50 dark:bg-slate-700 dark:text-teal-300 dark:hover:bg-slate-600"
+                    className="gap-2 bg-white text-blue-700 hover:bg-blue-50"
                     data-testid="export-docx-button"
                   >
                     <FileText className="h-4 w-4" />
@@ -295,451 +250,483 @@ export default function PreviewPage() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-6 py-8">
-        {/* Document Header */}
-        <div className="bg-white dark:bg-slate-800 rounded-lg border border-teal-200 dark:border-teal-800 shadow-lg p-6 mb-6">
-          <div className="flex items-start justify-between">
-            <div>
-              <h1 className="text-3xl font-bold font-heading text-teal-900 dark:text-teal-100 mb-2">
-                Lesson Planner
-              </h1>
-              <div className="flex gap-2 flex-wrap">
-                <Badge className="bg-teal-600 text-white hover:bg-teal-700 dark:bg-teal-700 dark:hover:bg-teal-600" data-testid="grade-badge">
-                  {gradeLabels[generatedPlanner.grade]}
-                </Badge>
-                <Badge className="bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600" data-testid="scenario-badge">
-                  {generatedPlanner.scenario}
-                </Badge>
-                <Badge className="bg-teal-100 text-teal-800 border border-teal-300 dark:bg-teal-900 dark:text-teal-200 dark:border-teal-700" data-testid="theme-badge">
-                  {generatedPlanner.theme}
-                </Badge>
-              </div>
+      <main className="max-w-5xl mx-auto px-4 py-6">
+        {/* MEDUCA Header */}
+        <div className="text-center mb-6 print:mb-4">
+          <div className="flex justify-center items-center gap-4 mb-2">
+            <div className="text-xs text-slate-600 dark:text-slate-400">
+              <p className="font-semibold">GOBIERNO NACIONAL</p>
+              <p>• CON PASO FIRME •</p>
+            </div>
+            <div className="h-8 w-px bg-slate-300 dark:bg-slate-600"></div>
+            <div className="text-xs text-slate-600 dark:text-slate-400 text-left">
+              <p className="font-bold text-blue-800 dark:text-blue-400">MINISTERIO DE EDUCACIÓN</p>
+              <p>Dirección Nacional de Currículo de</p>
+              <p>Lengua Extranjera</p>
             </div>
           </div>
         </div>
 
-        <Tabs defaultValue="theme" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-2 h-12 bg-teal-50 dark:bg-slate-700 border border-teal-200 dark:border-slate-600">
+        <Tabs defaultValue="theme" className="space-y-4">
+          <TabsList className="grid w-full grid-cols-2 h-12 bg-blue-50 dark:bg-slate-700 border border-blue-200 dark:border-slate-600 print:hidden">
             <TabsTrigger 
               value="theme" 
-              className="text-base data-[state=active]:bg-teal-600 data-[state=active]:text-white dark:data-[state=active]:bg-teal-700" 
+              className="text-base data-[state=active]:bg-blue-700 data-[state=active]:text-white" 
               data-testid="theme-tab"
             >
               {t.themePlanner}
             </TabsTrigger>
             <TabsTrigger 
               value="lessons" 
-              className="text-base data-[state=active]:bg-teal-600 data-[state=active]:text-white dark:data-[state=active]:bg-teal-700" 
+              className="text-base data-[state=active]:bg-blue-700 data-[state=active]:text-white" 
               data-testid="lessons-tab"
             >
               {t.lessonPlanners}
             </TabsTrigger>
           </TabsList>
 
-          {/* Theme Planner Tab */}
-          <TabsContent value="theme" className="space-y-6">
+          {/* ============================================ */}
+          {/* THEME PLANNER TAB - MEDUCA OFFICIAL FORMAT */}
+          {/* ============================================ */}
+          <TabsContent value="theme" className="space-y-4">
+            {/* Document Title */}
+            <div className="bg-white dark:bg-slate-800 rounded-lg border-2 border-blue-800 dark:border-blue-600 px-6 py-3 text-center">
+              <h1 className="text-xl font-bold text-blue-800 dark:text-blue-300">
+                Theme Planner # {getScenarioNumber()} – Overview
+              </h1>
+            </div>
+
             {/* SECTION 1: General Information */}
-            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
-              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
-                <CardTitle className="text-teal-900 dark:text-teal-100">1. {language === 'es' ? 'Información General' : 'General Information'}</CardTitle>
+            <Card className="border border-slate-300 dark:border-slate-600 shadow-sm">
+              <CardHeader className="py-3 bg-white dark:bg-slate-800">
+                <CardTitle className="text-base font-bold text-slate-800 dark:text-slate-200">
+                  1. General Information:
+                </CardTitle>
               </CardHeader>
-              <CardContent className="pt-4">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="space-y-1">
-                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{language === 'es' ? 'Docente(s)' : 'Teacher(s)'}</p>
-                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.teachers || '_______________'}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{language === 'es' ? 'Grado' : 'Grade Level'}</p>
-                    <p className="text-sm text-slate-900 dark:text-slate-100">{gradeLabels[theme_planner?.general_information?.grade] || generatedPlanner?.grade}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{language === 'es' ? 'Nivel CEFR' : 'CEFR Level'}</p>
-                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.cefr_level || '______'}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{language === 'es' ? 'Trimestre' : 'Term/Trimester'}</p>
-                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.trimester || '______'}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{language === 'es' ? 'Horas Semanales' : 'Weekly Hours'}</p>
-                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.weekly_hours || '______'}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{language === 'es' ? 'Semanas (desde/hasta)' : 'Weeks (from/to)'}</p>
-                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.week_range || '______'}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Scenario</p>
-                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.scenario || generatedPlanner?.scenario}</p>
-                  </div>
-                  <div className="space-y-1">
-                    <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Theme</p>
-                    <p className="text-sm text-slate-900 dark:text-slate-100">{theme_planner?.general_information?.theme || generatedPlanner?.theme}</p>
-                  </div>
-                </div>
+              <CardContent className="p-0">
+                <table className="w-full text-sm border-collapse">
+                  <tbody>
+                    <tr className="border-b border-dashed border-slate-300 dark:border-slate-600">
+                      <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold w-1/4">
+                        1. Teacher(s):
+                      </td>
+                      <td className="p-3" colSpan="3">
+                        <EditableField
+                          value={general_info.teachers}
+                          onChange={(v) => handleUpdateField('theme_planner.general_information.teachers', v)}
+                          placeholder="_______________"
+                        />
+                      </td>
+                    </tr>
+                    <tr className="border-b border-dashed border-slate-300 dark:border-slate-600">
+                      <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold">
+                        2. Grade:
+                      </td>
+                      <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600">
+                        {gradeLabels[general_info.grade] || general_info.grade}
+                      </td>
+                      <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold">
+                        3. CEFR Level:
+                      </td>
+                      <td className="p-3">
+                        {general_info.cefr_level || '______'}
+                      </td>
+                    </tr>
+                    <tr className="border-b border-dashed border-slate-300 dark:border-slate-600">
+                      <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold">
+                        4. Trimester:
+                      </td>
+                      <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600">
+                        <EditableField
+                          value={general_info.trimester}
+                          onChange={(v) => handleUpdateField('theme_planner.general_information.trimester', v)}
+                          placeholder="______"
+                        />
+                      </td>
+                      <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold">
+                        5. Weekly Hour(s):
+                      </td>
+                      <td className="p-3">
+                        <EditableField
+                          value={general_info.weekly_hours}
+                          onChange={(v) => handleUpdateField('theme_planner.general_information.weekly_hours', v)}
+                          placeholder="______"
+                        />
+                      </td>
+                    </tr>
+                    <tr className="border-b border-dashed border-slate-300 dark:border-slate-600">
+                      <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold">
+                        6. Week(s):
+                      </td>
+                      <td className="p-3" colSpan="3">
+                        <span>From week </span>
+                        <EditableField
+                          value={general_info.week_range?.replace('From week ', '').split(' to week ')[0] || ''}
+                          onChange={(v) => {
+                            const toWeek = general_info.week_range?.split(' to week ')[1] || '';
+                            handleUpdateField('theme_planner.general_information.week_range', `From week ${v} to week ${toWeek}`);
+                          }}
+                          placeholder="____"
+                          className="inline w-16"
+                        />
+                        <span> to week </span>
+                        <EditableField
+                          value={general_info.week_range?.split(' to week ')[1] || ''}
+                          onChange={(v) => {
+                            const fromWeek = general_info.week_range?.replace('From week ', '').split(' to week ')[0] || '';
+                            handleUpdateField('theme_planner.general_information.week_range', `From week ${fromWeek} to week ${v}`);
+                          }}
+                          placeholder="____"
+                          className="inline w-16"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold">
+                        7. Scenario __:
+                      </td>
+                      <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600">
+                        {general_info.scenario}
+                      </td>
+                      <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold">
+                        8. Theme __:
+                      </td>
+                      <td className="p-3">
+                        {general_info.theme}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </CardContent>
             </Card>
 
             {/* SECTION 2: Specific Standards and Learning Outcomes */}
-            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
-              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
-                <CardTitle className="text-teal-900 dark:text-teal-100">2. {language === 'es' ? 'Estándares Específicos y Resultados de Aprendizaje' : 'Specific Standards and Learning Outcomes'}</CardTitle>
+            <Card className="border border-slate-300 dark:border-slate-600 shadow-sm">
+              <CardHeader className="py-3 bg-white dark:bg-slate-800">
+                <CardTitle className="text-base font-bold text-slate-800 dark:text-slate-200">
+                  2. Specific Standards and Learning Outcomes:
+                </CardTitle>
               </CardHeader>
-              <CardContent className="pt-4">
-                <div className="space-y-6">
-                  {[
-                    { key: 'listening', label: language === 'es' ? 'Listening (Comprensión Auditiva)' : 'Listening (Auditory Comprehension)' },
-                    { key: 'reading', label: language === 'es' ? 'Reading (Comprensión Lectora)' : 'Reading (Reading Comprehension)' },
-                    { key: 'speaking', label: language === 'es' ? 'Speaking (Expresión Oral)' : 'Speaking (Oral Expression)' },
-                    { key: 'writing', label: language === 'es' ? 'Writing (Expresión Escrita)' : 'Writing (Written Expression)' },
-                    { key: 'mediation', label: 'Mediation' }
-                  ].map(({ key, label }) => {
-                    const skillData = theme_planner?.standards_and_learning_outcomes?.[key];
-                    
-                    // Build standards array from different data formats
-                    const standards = [];
-                    const outcomes = skillData?.learning_outcomes || [];
-                    
-                    if (skillData && typeof skillData === 'object') {
-                      // Format 1: 'specific' array (Grade 1)
-                      if (Array.isArray(skillData.specific)) {
-                        skillData.specific.forEach((s, i) => {
-                          standards.push({ standard: s, outcome: outcomes[i] || '' });
-                        });
-                      } 
-                      // Format 2: Direct fields (Grade 2, 4)
-                      else {
-                        const fieldMappings = [
-                          ['receptive', 'Receptive'],
-                          ['interactive', 'Interactive'],
-                          ['productive', 'Productive'],
-                          ['reading1', 'Reading'],
-                          ['reading2', 'Reading'],
-                          ['phonemic_awareness', 'Phonemic Awareness'],
-                          ['listening1', 'Listening'],
-                          ['listening2', 'Listening'],
-                          ['speaking1', 'Speaking'],
-                          ['speaking2', 'Speaking'],
-                          ['writing1', 'Writing'],
-                          ['writing2', 'Writing'],
-                          ['mediation1', 'Mediation'],
-                          ['mediation2', 'Mediation'],
-                          ['text', 'Text'],
-                          ['concept', 'Concept']
-                        ];
+              <CardContent className="p-0">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="border-b border-dashed border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700">
+                      <th className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 text-left font-semibold w-24">
+                        Skills:
+                      </th>
+                      <th className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 text-left font-semibold">
+                        Specific Standards:
+                      </th>
+                      <th className="p-3 text-left font-semibold">
+                        Learning Outcomes:
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { key: 'listening', label: '1. Listening:' },
+                      { key: 'reading', label: '2. Reading:' },
+                      { key: 'speaking', label: '3. Speaking:' },
+                      { key: 'writing', label: '4. Writing:' },
+                      { key: 'mediation', label: '5. Mediation:' }
+                    ].map(({ key, label }) => {
+                      const skillData = theme_planner?.standards_and_learning_outcomes?.[key];
+                      let standards = [];
+                      let outcomes = [];
+                      
+                      if (skillData && typeof skillData === 'object') {
+                        outcomes = skillData.learning_outcomes || [];
                         
-                        fieldMappings.forEach(([field, fieldLabel]) => {
-                          if (skillData[field]) {
-                            standards.push({ 
-                              standard: `${fieldLabel}: ${skillData[field]}`, 
-                              outcome: outcomes[standards.length] || skillData[field]
-                            });
-                          }
-                        });
+                        if (Array.isArray(skillData.specific)) {
+                          standards = skillData.specific;
+                        } else {
+                          const fields = ['receptive', 'interactive', 'productive', 'reading1', 'reading2', 
+                                         'phonemic_awareness', 'listening1', 'listening2', 'speaking1', 
+                                         'speaking2', 'writing1', 'writing2', 'text', 'concept'];
+                          fields.forEach(field => {
+                            if (skillData[field]) standards.push(skillData[field]);
+                          });
+                        }
                       }
-                    }
-                    
-                    return (
-                      <div key={key} className="border-l-4 border-teal-500 pl-4 py-2">
-                        <h4 className="font-semibold text-teal-800 dark:text-teal-300 mb-3">{label}</h4>
-                        {standards.length > 0 ? (
-                          <div className="overflow-x-auto">
-                            <table className="w-full text-sm border-collapse">
-                              <thead>
-                                <tr className="bg-teal-50 dark:bg-slate-700">
-                                  <th className="border border-teal-200 dark:border-slate-600 px-3 py-2 text-left font-semibold text-teal-800 dark:text-teal-200 w-1/2">Specific Standard</th>
-                                  <th className="border border-teal-200 dark:border-slate-600 px-3 py-2 text-left font-semibold text-teal-800 dark:text-teal-200 w-1/2">Learning Outcome</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                {standards.map((item, idx) => (
-                                  <tr key={idx} className={idx % 2 === 0 ? 'bg-white dark:bg-slate-800' : 'bg-slate-50 dark:bg-slate-750'}>
-                                    <td className="border border-teal-200 dark:border-slate-600 px-3 py-2 text-slate-700 dark:text-slate-300">
-                                      {item.standard}
-                                    </td>
-                                    <td className="border border-teal-200 dark:border-slate-600 px-3 py-2 text-slate-700 dark:text-slate-300">
-                                      {item.outcome ? (
-                                        <span className="text-green-700 dark:text-green-400">{item.outcome}</span>
-                                      ) : (
-                                        <span className="italic text-slate-400">To be defined</span>
-                                      )}
-                                    </td>
-                                  </tr>
+                      
+                      return (
+                        <tr key={key} className="border-b border-dashed border-slate-300 dark:border-slate-600">
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold align-top">
+                            {label}
+                          </td>
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 align-top">
+                            {standards.length > 0 ? (
+                              <ul className="list-disc list-inside space-y-1">
+                                {standards.map((s, i) => (
+                                  <li key={i} className="text-slate-700 dark:text-slate-300">{s}</li>
                                 ))}
-                              </tbody>
-                            </table>
-                          </div>
-                        ) : (
-                          <p className="text-sm text-slate-400 italic">{language === 'es' ? 'Por completar' : 'To be completed'}</p>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
+                              </ul>
+                            ) : (
+                              <span className="text-slate-400 italic">To be defined</span>
+                            )}
+                          </td>
+                          <td className="p-3 align-top">
+                            {outcomes.length > 0 ? (
+                              <ul className="list-disc list-inside space-y-1">
+                                {outcomes.map((o, i) => (
+                                  <li key={i} className="text-slate-700 dark:text-slate-300">{o}</li>
+                                ))}
+                              </ul>
+                            ) : (
+                              <span className="text-slate-400 italic">To be defined</span>
+                            )}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
               </CardContent>
             </Card>
 
-            {/* SECTION 3: Communicative Competencies */}
-            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
-              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
-                <CardTitle className="text-teal-900 dark:text-teal-100">3. {language === 'es' ? 'Competencias Comunicativas' : 'Communicative Competencies'}</CardTitle>
+            {/* SECTION 3: Communicative Competences - 3 Column Layout */}
+            <Card className="border border-slate-300 dark:border-slate-600 shadow-sm">
+              <CardHeader className="py-3 bg-white dark:bg-slate-800">
+                <CardTitle className="text-base font-bold text-slate-800 dark:text-slate-200">
+                  3. Communicative Competences
+                </CardTitle>
               </CardHeader>
-              <CardContent className="pt-4 space-y-4">
-                {/* Linguistic Competence */}
-                <div className="border-l-4 border-blue-500 pl-4">
-                  <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">
-                    {language === 'es' ? 'Competencia Lingüística (Aprender a Conocer)' : 'Linguistic Competence (Learning to Know)'}
-                  </h4>
-                  <div className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
-                    <div>
-                      <strong>{language === 'es' ? 'Estructuras Gramaticales:' : 'Grammar Structures:'}</strong>{' '}
-                      {theme_planner?.communicative_competences?.linguistic?.grammatical_features
-                        ? (Array.isArray(theme_planner.communicative_competences.linguistic.grammatical_features)
-                            ? theme_planner.communicative_competences.linguistic.grammatical_features.join(', ')
-                            : theme_planner.communicative_competences.linguistic.grammatical_features)
-                        : theme_planner?.communicative_competences?.linguistic?.grammar
-                          ? (Array.isArray(theme_planner.communicative_competences.linguistic.grammar)
-                              ? theme_planner.communicative_competences.linguistic.grammar.join(', ')
-                              : theme_planner.communicative_competences.linguistic.grammar)
-                          : '______'}
-                    </div>
-                    <div>
-                      <strong>{language === 'es' ? 'Vocabulario:' : 'Vocabulary:'}</strong>{' '}
-                      {theme_planner?.communicative_competences?.linguistic?.vocabulary
-                        ? (Array.isArray(theme_planner.communicative_competences.linguistic.vocabulary)
-                            ? theme_planner.communicative_competences.linguistic.vocabulary.join(', ')
-                            : theme_planner.communicative_competences.linguistic.vocabulary)
-                        : '______'}
-                    </div>
-                    <div>
-                      <strong>{language === 'es' ? 'Pronunciación y Conciencia Fonémica:' : 'Pronunciation and Phonemic Awareness:'}</strong>{' '}
-                      {theme_planner?.communicative_competences?.linguistic?.phonemic_awareness || theme_planner?.communicative_competences?.linguistic?.pronunciation || '______'}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Pragmatic Competence */}
-                <div className="border-l-4 border-green-500 pl-4">
-                  <h4 className="font-semibold text-green-800 dark:text-green-300 mb-2">
-                    {language === 'es' ? 'Competencia Pragmática (Aprender a Hacer)' : 'Pragmatic Competence (Learning to Do)'}
-                  </h4>
-                  <div className="text-sm text-slate-700 dark:text-slate-300">
-                    <strong>{language === 'es' ? 'Funciones Comunicativas y Marcadores del Discurso:' : 'Communicative Functions and Discourse Markers:'}</strong>{' '}
-                    {theme_planner?.communicative_competences?.pragmatic
-                      ? (Array.isArray(theme_planner.communicative_competences.pragmatic)
-                          ? theme_planner.communicative_competences.pragmatic.join(', ')
-                          : theme_planner.communicative_competences.pragmatic)
-                      : theme_planner?.communicative_competences?.pragmatic?.functions || '______'}
-                  </div>
-                </div>
-
-                {/* Sociolinguistic Competence */}
-                <div className="border-l-4 border-purple-500 pl-4">
-                  <h4 className="font-semibold text-purple-800 dark:text-purple-300 mb-2">
-                    {language === 'es' ? 'Competencia Sociolingüística (Aprender a Ser)' : 'Sociolinguistic Competence (Learning to Be)'}
-                  </h4>
-                  <div className="text-sm text-slate-700 dark:text-slate-300">
-                    <strong>{language === 'es' ? 'Interacciones Respetuosas y Participación Social:' : 'Respectful Interactions and Social Participation:'}</strong>{' '}
-                    {theme_planner?.communicative_competences?.sociolinguistic
-                      ? (Array.isArray(theme_planner.communicative_competences.sociolinguistic)
-                          ? theme_planner.communicative_competences.sociolinguistic.join(', ')
-                          : theme_planner.communicative_competences.sociolinguistic)
-                      : '______'}
-                  </div>
-                </div>
-
-                {/* 21st Century Skills Project */}
-                <div className="border-l-4 border-amber-500 pl-4">
-                  <h4 className="font-semibold text-amber-800 dark:text-amber-300 mb-2">
-                    {language === 'es' ? 'Proyecto del Siglo XXI' : '21st Century Skills Project'}
-                  </h4>
+              <CardContent className="p-0">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="border-b border-dashed border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700">
+                      <th className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 text-center font-semibold w-1/3">
+                        Linguistic Competence<br/><span className="font-normal">(Learn to Know)</span>
+                      </th>
+                      <th className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 text-center font-semibold w-1/3">
+                        Pragmatic Competence<br/><span className="font-normal">(Learn to Do)</span>
+                      </th>
+                      <th className="p-3 text-center font-semibold w-1/3">
+                        Sociolinguistic Competence<br/><span className="font-normal">(Learn to Be)</span>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {/* Grammatical Features Row */}
+                    <tr className="border-b border-dashed border-slate-300 dark:border-slate-600">
+                      <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 align-top" rowSpan="3">
+                        <div className="space-y-4">
+                          <div>
+                            <p className="font-semibold mb-1">• Grammatical Features:</p>
+                            <p className="text-slate-700 dark:text-slate-300 pl-4">
+                              {(() => {
+                                const ling = theme_planner?.communicative_competences?.linguistic;
+                                const grammar = ling?.grammatical_features || ling?.grammar;
+                                if (Array.isArray(grammar)) return grammar.join(', ');
+                                return grammar || '______';
+                              })()}
+                            </p>
+                          </div>
+                          <div>
+                            <p className="font-semibold mb-1">• Vocabulary:</p>
+                            <p className="text-slate-700 dark:text-slate-300 pl-4">
+                              {(() => {
+                                const vocab = theme_planner?.communicative_competences?.linguistic?.vocabulary;
+                                if (Array.isArray(vocab)) return vocab.slice(0, 10).join(', ');
+                                return vocab || '______';
+                              })()}
+                            </p>
+                          </div>
+                          <div>
+                            <p className="font-semibold mb-1">• Pronunciation & Phonemic Awareness:</p>
+                            <p className="text-slate-700 dark:text-slate-300 pl-4">
+                              {theme_planner?.communicative_competences?.linguistic?.phonemic_awareness || 
+                               theme_planner?.communicative_competences?.linguistic?.pronunciation || '______'}
+                            </p>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 align-top" rowSpan="3">
+                        <p className="text-slate-700 dark:text-slate-300">
+                          {(() => {
+                            const prag = theme_planner?.communicative_competences?.pragmatic;
+                            if (Array.isArray(prag)) return prag.join(', ');
+                            if (typeof prag === 'object') return prag.functions || JSON.stringify(prag);
+                            return prag || '______';
+                          })()}
+                        </p>
+                      </td>
+                      <td className="p-3 align-top" rowSpan="3">
+                        <p className="text-slate-700 dark:text-slate-300">
+                          {(() => {
+                            const socio = theme_planner?.communicative_competences?.sociolinguistic;
+                            if (Array.isArray(socio)) return socio.join(', ');
+                            return socio || '______';
+                          })()}
+                        </p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                
+                {/* 21st Century Project Row */}
+                <div className="border-t border-dashed border-slate-300 dark:border-slate-600 p-3">
+                  <p className="font-semibold mb-2">21st-Century Skills Project</p>
                   {generatedPlanner?.project ? (
-                    <div className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
-                      <p><strong>{language === 'es' ? 'Nombre:' : 'Name:'}</strong> {generatedPlanner.project.name}</p>
-                      <p><strong>{language === 'es' ? 'Categoría:' : 'Category:'}</strong> {generatedPlanner.project.category}</p>
-                      <p><strong>{language === 'es' ? 'Descripción:' : 'Overview:'}</strong> {generatedPlanner.project.overview}</p>
-                      <p><strong>{language === 'es' ? 'Objetivo General:' : 'General Objective:'}</strong> {generatedPlanner.project.general_objective}</p>
-                      {generatedPlanner.project.specific_objectives && (
-                        <div>
-                          <strong>{language === 'es' ? 'Objetivos Específicos:' : 'Specific Objectives:'}</strong>
-                          <ul className="list-disc list-inside ml-2">
-                            {generatedPlanner.project.specific_objectives.map((obj, i) => (
-                              <li key={i}>{obj}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                      {generatedPlanner.project.activities && (
-                        <div>
-                          <strong>{language === 'es' ? 'Actividades:' : 'Activities:'}</strong>
-                          <ul className="list-disc list-inside ml-2">
-                            {generatedPlanner.project.activities.map((act, i) => (
-                              <li key={i}>{act}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                      {generatedPlanner.project.products_evidences && (
-                        <p><strong>{language === 'es' ? 'Productos/Evidencias:' : 'Products/Evidences:'}</strong> {generatedPlanner.project.products_evidences.join(', ')}</p>
-                      )}
-                      {generatedPlanner.project.rubric_criteria && (
-                        <div>
-                          <strong>{language === 'es' ? 'Criterios de Rúbrica:' : 'Rubric Criteria:'}</strong>
-                          <ul className="list-disc list-inside ml-2">
-                            {Object.entries(generatedPlanner.project.rubric_criteria).map(([k, v], i) => (
-                              <li key={i}><strong>{k}:</strong> {v}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
-                      <p><strong>{language === 'es' ? 'Duración:' : 'Duration:'}</strong> {generatedPlanner.project.duration}</p>
-                      {generatedPlanner.project.skills_developed && (
-                        <p><strong>{language === 'es' ? 'Habilidades Desarrolladas:' : 'Skills Developed:'}</strong> {generatedPlanner.project.skills_developed.join(', ')}</p>
-                      )}
+                    <div className="pl-4 space-y-1 text-sm text-slate-700 dark:text-slate-300">
+                      <p><strong>Name:</strong> {generatedPlanner.project.name}</p>
+                      <p><strong>Category:</strong> {generatedPlanner.project.category}</p>
+                      <p><strong>Overview:</strong> {generatedPlanner.project.overview}</p>
                     </div>
                   ) : (
-                    <p className="text-sm text-slate-400 italic">{language === 'es' ? 'No se ha seleccionado un proyecto' : 'No project selected'}</p>
+                    <p className="text-slate-400 italic pl-4">No project selected</p>
                   )}
                 </div>
               </CardContent>
             </Card>
 
             {/* SECTION 4: Specific Objectives */}
-            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
-              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
-                <CardTitle className="text-teal-900 dark:text-teal-100">4. {language === 'es' ? 'Objetivos Específicos' : 'Specific Objectives'}</CardTitle>
+            <Card className="border border-slate-300 dark:border-slate-600 shadow-sm">
+              <CardHeader className="py-3 bg-white dark:bg-slate-800">
+                <CardTitle className="text-base font-bold text-slate-800 dark:text-slate-200">
+                  4. Specific Objectives
+                </CardTitle>
               </CardHeader>
-              <CardContent className="pt-4">
-                <div className="space-y-3">
-                  {[
-                    { key: 'listening', label: language === 'es' ? 'Para Listening' : 'For Listening' },
-                    { key: 'reading', label: language === 'es' ? 'Para Reading' : 'For Reading' },
-                    { key: 'speaking', label: language === 'es' ? 'Para Speaking' : 'For Speaking' },
-                    { key: 'writing', label: language === 'es' ? 'Para Writing' : 'For Writing' },
-                    { key: 'mediation', label: language === 'es' ? 'Para Mediation' : 'For Mediation' }
-                  ].map(({ key, label }) => {
-                    const objective = theme_planner?.specific_objectives?.[key];
-                    return (
-                      <div key={key} className="border-l-4 border-teal-500 pl-4">
-                        <h4 className="font-semibold text-teal-800 dark:text-teal-300 text-sm">{label}</h4>
-                        {editMode ? (
-                          <EditableTextarea
-                            value={objective || ''}
-                            onChange={(value) => handleUpdateField(`theme_planner.specific_objectives.${key}`, value)}
-                            className="mt-1"
-                          />
-                        ) : (
-                          <p className="text-sm text-slate-700 dark:text-slate-300">
-                            {objective || <span className="italic text-slate-400">{language === 'es' ? 'Por completar' : 'To be completed'}</span>}
-                          </p>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
+              <CardContent className="p-0">
+                <table className="w-full text-sm border-collapse">
+                  <tbody>
+                    {['Listening', 'Reading', 'Speaking', 'Writing', 'Mediation'].map((skill) => {
+                      const key = skill.toLowerCase();
+                      const objective = theme_planner?.specific_objectives?.[key];
+                      return (
+                        <tr key={key} className="border-b border-dashed border-slate-300 dark:border-slate-600 last:border-b-0">
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold w-24 align-top">
+                            {skill}
+                          </td>
+                          <td className="p-3 align-top">
+                            {editMode ? (
+                              <EditableTextarea
+                                value={objective || ''}
+                                onChange={(value) => handleUpdateField(`theme_planner.specific_objectives.${key}`, value)}
+                                className="w-full"
+                                rows={2}
+                              />
+                            ) : (
+                              <span className="text-slate-700 dark:text-slate-300">
+                                {objective || <span className="italic text-slate-400">To be completed</span>}
+                              </span>
+                            )}
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
               </CardContent>
             </Card>
 
-            {/* SECTION 5: Teaching Materials and Strategies */}
-            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
-              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
-                <CardTitle className="text-teal-900 dark:text-teal-100">5. {language === 'es' ? 'Materiales y Estrategias de Enseñanza' : 'Teaching Materials and Strategies'}</CardTitle>
+            {/* SECTION 5: Materials and Teaching Strategies */}
+            <Card className="border border-slate-300 dark:border-slate-600 shadow-sm">
+              <CardHeader className="py-3 bg-white dark:bg-slate-800">
+                <CardTitle className="text-base font-bold text-slate-800 dark:text-slate-200">
+                  5. Materials and Teaching Strategies
+                </CardTitle>
               </CardHeader>
-              <CardContent className="pt-4 space-y-4">
-                <div>
-                  <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">
-                    {language === 'es' ? 'Lista de Materiales Requeridos' : 'List of Required Materials'}
-                  </h4>
-                  {theme_planner?.materials_and_strategies?.required_materials && Array.isArray(theme_planner.materials_and_strategies.required_materials) ? (
-                    <ul className="list-disc list-inside text-sm text-slate-700 dark:text-slate-300 space-y-1">
-                      {theme_planner.materials_and_strategies.required_materials.map((mat, i) => (
-                        <li key={i}>{mat}</li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-sm text-slate-400 italic">{language === 'es' ? 'Por completar' : 'To be completed'}</p>
-                  )}
-                </div>
-                <Separator />
-                <div>
-                  <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">
-                    {language === 'es' ? 'Instrucción Diferenciada y Adaptaciones para Necesidades de Aprendizaje Diversas (DLN)' : 'Differentiated Instruction and Adaptations for Diverse Learning Needs (DLN)'}
-                  </h4>
-                  <p className="text-sm text-slate-700 dark:text-slate-300">
-                    {theme_planner?.materials_and_strategies?.differentiated_instruction || (language === 'es' ? 'Por completar' : 'To be completed')}
-                  </p>
-                </div>
+              <CardContent className="p-0">
+                <table className="w-full text-sm border-collapse">
+                  <tbody>
+                    <tr className="border-b border-dashed border-slate-300 dark:border-slate-600">
+                      <td className="p-3 font-semibold align-top">
+                        Materials
+                      </td>
+                      <td className="p-3">
+                        {theme_planner?.materials_and_strategies?.required_materials?.length > 0 ? (
+                          <ul className="list-disc list-inside space-y-1">
+                            {theme_planner.materials_and_strategies.required_materials.map((mat, i) => (
+                              <li key={i} className="text-slate-700 dark:text-slate-300">{mat}</li>
+                            ))}
+                          </ul>
+                        ) : (
+                          <span className="text-slate-400 italic">To be completed</span>
+                        )}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="p-3 font-semibold align-top">
+                        Differentiated Instruction and<br/>
+                        Accommodations for Students with<br/>
+                        Diverse Learning Needs (DLN)
+                      </td>
+                      <td className="p-3">
+                        <span className="text-slate-700 dark:text-slate-300">
+                          {theme_planner?.materials_and_strategies?.differentiated_instruction || 
+                           <span className="italic text-slate-400">To be completed</span>}
+                        </span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </CardContent>
             </Card>
 
             {/* SECTION 6: Learning Sequence */}
-            <Card className="border-teal-200 dark:border-teal-800 shadow-md dark:bg-slate-800">
-              <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 dark:from-slate-700 dark:to-slate-800 border-b border-teal-100 dark:border-slate-700">
-                <CardTitle className="text-teal-900 dark:text-teal-100">6. {language === 'es' ? 'Secuencia de Aprendizaje' : 'Learning Sequence'}</CardTitle>
+            <Card className="border border-slate-300 dark:border-slate-600 shadow-sm">
+              <CardHeader className="py-3 bg-white dark:bg-slate-800">
+                <CardTitle className="text-base font-bold text-slate-800 dark:text-slate-200">
+                  6. Learning Sequence
+                </CardTitle>
               </CardHeader>
-              <CardContent className="pt-4">
-                <div className="space-y-4">
-                  {[
-                    { 
-                      num: 1, 
-                      skill: 'Listening', 
-                      title: language === 'es' ? 'Listening y Fundamentos del Lenguaje' : 'Listening and Language Foundations',
-                      desc: language === 'es' 
-                        ? 'Introducción al vocabulario clave y estructuras de lenguaje a través de actividades de comprensión auditiva. Los estudiantes desarrollan habilidades receptivas escuchando diálogos, canciones y presentaciones relacionadas con el tema.'
-                        : 'Introduction to key vocabulary and language structures through listening comprehension activities. Students develop receptive skills by listening to dialogues, songs, and presentations related to the theme.'
-                    },
-                    { 
-                      num: 2, 
-                      skill: 'Reading', 
-                      title: language === 'es' ? 'Reading y Comprensión de Conceptos/Ideas en Textos' : 'Reading and Understanding Concepts/Ideas in Texts',
-                      desc: language === 'es'
-                        ? 'Los estudiantes interactúan con textos escritos relacionados con el tema para desarrollar habilidades de comprensión lectora. Incluye identificación de palabras clave, comprensión de ideas principales y trabajo con textos ilustrados.'
-                        : 'Students interact with written texts related to the theme to develop reading comprehension skills. Includes identification of key words, understanding main ideas, and working with illustrated texts.'
-                    },
-                    { 
-                      num: 3, 
-                      skill: 'Speaking', 
-                      title: language === 'es' ? 'Tareas Productivas/Interactivas de Speaking' : 'Productive/Interactive Speaking Tasks',
-                      desc: language === 'es'
-                        ? 'Los estudiantes participan en actividades de producción oral estructuradas y semi-estructuradas. Incluye diálogos en parejas, descripciones orales, presentaciones breves y práctica de pronunciación relacionada con el tema.'
-                        : 'Students engage in structured and semi-structured oral production activities. Includes pair dialogues, oral descriptions, brief presentations, and pronunciation practice related to the theme.'
-                    },
-                    { 
-                      num: 4, 
-                      skill: 'Writing', 
-                      title: language === 'es' ? 'Writing Productivo/Interactivo y Preparación del Proyecto' : 'Productive/Interactive Writing and Project Preparation',
-                      desc: language === 'es'
-                        ? 'Los estudiantes practican la escritura de palabras, frases y oraciones relacionadas con el tema. Esta lección también sirve como preparación para el proyecto del Siglo XXI, incluyendo borradores y planificación.'
-                        : 'Students practice writing words, phrases, and sentences related to the theme. This lesson also serves as preparation for the 21st Century Project, including drafts and planning.'
-                    },
-                    { 
-                      num: 5, 
-                      skill: 'Mediation', 
-                      title: language === 'es' ? 'Completar el Proyecto del Siglo XXI con Énfasis en Mediation' : 'Completing the 21st Century Project with Emphasis on Mediation',
-                      desc: language === 'es'
-                        ? 'Los estudiantes completan su proyecto del Siglo XXI integrando todas las habilidades aprendidas (Listening, Reading, Speaking, Writing). Incluye trabajo colaborativo, presentaciones grupales, mediación entre compañeros, autoevaluación y reflexión sobre el aprendizaje.'
-                        : 'Students complete their 21st Century Project integrating all learned skills (Listening, Reading, Speaking, Writing). Includes collaborative work, group presentations, peer mediation, self-assessment, and reflection on learning.'
-                    }
-                  ].map(({ num, skill, title, desc }) => (
-                    <div key={num} className="border-l-4 border-teal-500 pl-4 py-3 bg-slate-50 dark:bg-slate-700/50 rounded-r-lg">
-                      <div className="flex items-center gap-3 mb-2">
-                        <Badge className="bg-teal-600 text-white">{language === 'es' ? 'Lección' : 'Lesson'} {num}</Badge>
-                        <span className="font-semibold text-teal-800 dark:text-teal-300">{skill}</span>
-                      </div>
-                      <p className="font-medium text-slate-900 dark:text-slate-100 mb-1">{title}</p>
-                      <p className="text-sm text-slate-600 dark:text-slate-400">{desc}</p>
-                    </div>
-                  ))}
-                </div>
+              <CardContent className="p-0">
+                <table className="w-full text-sm border-collapse">
+                  <thead>
+                    <tr className="border-b border-dashed border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700">
+                      <th className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 text-left font-semibold w-24">
+                        Lesson
+                      </th>
+                      <th className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 text-center font-semibold">
+                        Learning Sequence
+                      </th>
+                      <th className="p-3 text-center font-semibold w-32">
+                        Date
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { num: 1, skill: 'Listening', title: 'Listening and Language Foundations' },
+                      { num: 2, skill: 'Reading', title: 'Reading and Understanding Concepts/Ideas in Texts' },
+                      { num: 3, skill: 'Speaking', title: 'Productive/Interactive Speaking Tasks' },
+                      { num: 4, skill: 'Writing', title: 'Productive/Interactive Writing and Project Preparation' },
+                      { num: 5, skill: 'Mediation', title: 'Completing the 21st Century Project with Emphasis on Mediation' }
+                    ].map(({ num, skill, title }) => (
+                      <tr key={num} className="border-b border-dashed border-slate-300 dark:border-slate-600 last:border-b-0">
+                        <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold align-top">
+                          Lesson {num}
+                        </td>
+                        <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600">
+                          <p className="font-medium text-slate-800 dark:text-slate-200">{skill}: {title}</p>
+                        </td>
+                        <td className="p-3 text-center">
+                          <EditableField
+                            value={theme_planner?.learning_sequence?.lesson_dates?.[num - 1] || ''}
+                            onChange={(v) => {
+                              const dates = [...(theme_planner?.learning_sequence?.lesson_dates || ['', '', '', '', ''])];
+                              dates[num - 1] = v;
+                              handleUpdateField('theme_planner.learning_sequence.lesson_dates', dates);
+                            }}
+                            placeholder="______"
+                            className="text-center"
+                          />
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </CardContent>
             </Card>
           </TabsContent>
 
-          {/* Lesson Planners Tab */}
-          <TabsContent value="lessons" className="space-y-6">
+          {/* ============================================ */}
+          {/* LESSON PLANNERS TAB - MEDUCA OFFICIAL FORMAT */}
+          {/* ============================================ */}
+          <TabsContent value="lessons" className="space-y-4">
             {/* Lesson Navigation */}
-            <div className="flex gap-2 overflow-x-auto pb-2">
+            <div className="flex gap-2 overflow-x-auto pb-2 print:hidden">
               {lesson_planners?.map((lesson, idx) => (
                 <Button
                   key={idx}
@@ -747,8 +734,8 @@ export default function PreviewPage() {
                   onClick={() => setSelectedLesson(idx)}
                   className={`whitespace-nowrap ${
                     selectedLesson === idx 
-                      ? 'bg-teal-600 hover:bg-teal-700 text-white' 
-                      : 'border-teal-300 text-teal-700 hover:bg-teal-50'
+                      ? 'bg-blue-700 hover:bg-blue-800 text-white' 
+                      : 'border-blue-300 text-blue-700 hover:bg-blue-50'
                   }`}
                   data-testid={`lesson-${idx + 1}-button`}
                 >
@@ -757,141 +744,265 @@ export default function PreviewPage() {
               ))}
             </div>
 
-            {/* Selected Lesson */}
+            {/* Selected Lesson - MEDUCA Format */}
             {lesson_planners && lesson_planners[selectedLesson] && (
-              <Card className="border-teal-200 shadow-md">
-                <CardHeader className="bg-gradient-to-r from-teal-50 to-blue-50 border-b border-teal-100">
-                  <CardTitle className="flex items-center gap-3 text-teal-900">
-                    <span className="text-2xl">
-                      {t.lesson} {lesson_planners[selectedLesson].lesson_number}
-                    </span>
-                    <Badge className="bg-teal-600 text-white">
-                      {lesson_planners[selectedLesson].skill_focus}
-                    </Badge>
-                  </CardTitle>
-                  <CardDescription>
-                    {lesson_planners[selectedLesson].scenario} - {lesson_planners[selectedLesson].theme}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  {/* Specific Objective */}
-                  <div>
-                    <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">Specific Objective</h4>
-                    <div className="text-slate-700 dark:text-slate-300">
-                      <EditableField
-                        value={lesson_planners[selectedLesson].specific_objective}
-                        onChange={(value) => handleUpdateField(`lesson_planners.${selectedLesson}.specific_objective`, value)}
-                        multiline
-                        placeholder="Enter specific objective..."
-                      />
+              <div className="space-y-4">
+                {/* Lesson Title */}
+                <div className="bg-white dark:bg-slate-800 rounded-lg border-2 border-blue-800 dark:border-blue-600 px-6 py-3 text-center">
+                  <h1 className="text-xl font-bold text-blue-800 dark:text-blue-300">
+                    Lesson Planner – Theme # {getScenarioNumber()} – Lesson # {lesson_planners[selectedLesson].lesson_number}
+                  </h1>
+                </div>
+
+                {/* Instructions */}
+                <p className="text-sm text-slate-600 dark:text-slate-400 italic">
+                  Instructions: Complete this planner five times per theme, once per lesson (Lesson 1, Lesson 2, Lesson 3, Lesson 4, and Lesson 5).
+                </p>
+
+                {/* Lesson Header Info */}
+                <Card className="border border-slate-300 dark:border-slate-600 shadow-sm">
+                  <CardContent className="p-0">
+                    <div className="p-3 border-b border-dashed border-slate-300 dark:border-slate-600">
+                      <span className="font-semibold">Lesson # </span>
+                      <span>{lesson_planners[selectedLesson].lesson_number}</span>
+                      <span className="ml-8 font-semibold">Skills focus for this lesson: </span>
+                      <span>{lesson_planners[selectedLesson].skill_focus}</span>
                     </div>
-                  </div>
-
-                  {/* Learning Outcome */}
-                  <div>
-                    <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">{t.learningOutcome}</h4>
-                    <div className="text-slate-700 dark:text-slate-300">
-                      <EditableField
-                        value={lesson_planners[selectedLesson].learning_outcome}
-                        onChange={(value) => handleUpdateField(`lesson_planners.${selectedLesson}.learning_outcome`, value)}
-                        multiline
-                        placeholder="Enter learning outcome..."
-                      />
-                    </div>
-                  </div>
-
-                  <Separator />
-
-                  {/* Lesson Stages */}
-                  <div>
-                    <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-4">{t.lessonStages}</h4>
-                    <div className="space-y-4">
-                      {lesson_planners[selectedLesson].lesson_stages?.map((stage, idx) => (
-                        <div key={idx} className="border-l-4 border-secondary dark:border-teal-500 pl-4">
-                          <h5 className="font-semibold text-secondary dark:text-teal-400 mb-2">{stage.stage}</h5>
-                          {editMode ? (
-                            <div className="space-y-2">
-                              {stage.activities?.map((activity, actIdx) => (
-                                <ActivityEditor
-                                  key={actIdx}
-                                  value={activity}
-                                  onChange={(value) => {
-                                    const newActivities = [...stage.activities];
-                                    newActivities[actIdx] = value;
-                                    handleUpdateField(`lesson_planners.${selectedLesson}.lesson_stages.${idx}.activities`, newActivities);
-                                  }}
-                                />
-                              ))}
-                              <Button
-                                onClick={() => {
-                                  const newActivities = [...(stage.activities || []), 'Nueva actividad'];
-                                  handleUpdateField(`lesson_planners.${selectedLesson}.lesson_stages.${idx}.activities`, newActivities);
-                                }}
-                                variant="outline"
-                                size="sm"
-                                className="w-full dark:border-slate-600 dark:text-slate-300"
-                              >
-                                + Add Activity
-                              </Button>
-                            </div>
-                          ) : (
-                            stage.activities && stage.activities.length > 0 ? (
-                              <ul className="list-disc list-inside text-sm text-slate-700 dark:text-slate-300 space-y-1">
-                                {stage.activities.map((activity, actIdx) => (
-                                  <li key={actIdx}>{activity}</li>
-                                ))}
-                              </ul>
+                    
+                    <table className="w-full text-sm border-collapse">
+                      <tbody>
+                        <tr className="border-b border-dashed border-slate-300 dark:border-slate-600">
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold w-1/4">
+                            Grade:
+                          </td>
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600">
+                            {gradeLabels[generatedPlanner.grade]}
+                          </td>
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold">
+                            Scenario __:
+                          </td>
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600">
+                            {lesson_planners[selectedLesson].scenario}
+                          </td>
+                          <td className="p-3 font-semibold">
+                            Theme __:
+                          </td>
+                          <td className="p-3">
+                            {lesson_planners[selectedLesson].theme}
+                          </td>
+                        </tr>
+                        <tr className="border-b border-dashed border-slate-300 dark:border-slate-600">
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold">
+                            Date(s):
+                          </td>
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600" colSpan="2">
+                            <EditableField
+                              value={lesson_planners[selectedLesson].date}
+                              onChange={(v) => handleUpdateField(`lesson_planners.${selectedLesson}.date`, v)}
+                              placeholder="______"
+                            />
+                          </td>
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold">
+                            Learning Sequence time:
+                          </td>
+                          <td className="p-3" colSpan="2">
+                            <EditableField
+                              value={lesson_planners[selectedLesson].time}
+                              onChange={(v) => handleUpdateField(`lesson_planners.${selectedLesson}.time`, v)}
+                              placeholder="45-60 minutes"
+                            />
+                          </td>
+                        </tr>
+                        <tr className="border-b border-dashed border-slate-300 dark:border-slate-600">
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold align-top">
+                            Specific Objective:
+                          </td>
+                          <td className="p-3" colSpan="5">
+                            {editMode ? (
+                              <EditableTextarea
+                                value={lesson_planners[selectedLesson].specific_objective}
+                                onChange={(v) => handleUpdateField(`lesson_planners.${selectedLesson}.specific_objective`, v)}
+                                rows={2}
+                              />
                             ) : (
-                              <p className="text-sm text-slate-500 dark:text-slate-400 italic">To be completed</p>
-                            )
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                              <span className="text-slate-700 dark:text-slate-300">
+                                {lesson_planners[selectedLesson].specific_objective || '______'}
+                              </span>
+                            )}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold align-top">
+                            Learning Outcome:
+                          </td>
+                          <td className="p-3" colSpan="5">
+                            {editMode ? (
+                              <EditableTextarea
+                                value={lesson_planners[selectedLesson].learning_outcome}
+                                onChange={(v) => handleUpdateField(`lesson_planners.${selectedLesson}.learning_outcome`, v)}
+                                rows={2}
+                              />
+                            ) : (
+                              <span className="text-slate-700 dark:text-slate-300">
+                                {lesson_planners[selectedLesson].learning_outcome || '______'}
+                              </span>
+                            )}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </CardContent>
+                </Card>
 
-                  <Separator />
+                {/* Six Action-oriented Approach Lesson Stages */}
+                <Card className="border border-slate-300 dark:border-slate-600 shadow-sm">
+                  <CardContent className="p-0">
+                    <table className="w-full text-sm border-collapse">
+                      <thead>
+                        <tr className="border-b border-dashed border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700">
+                          <th className="p-3 text-center font-semibold" colSpan="2">
+                            The Six Action-oriented Approach Lesson Stages
+                          </th>
+                          <th className="p-3 text-center font-semibold w-32">
+                            Estimated<br/>Date and Time
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {[
+                          { stage: 'Stage 1 - Warm-up / Pre-task (Engagement, Modeling and Clarification):' },
+                          { stage: 'Stage 2 - Presentation:' },
+                          { stage: 'Stage 3 - Preparation:' },
+                          { stage: 'Stage 4 - Performance:' },
+                          { stage: 'Stage 5 - Assessment / Post-task:' },
+                          { stage: 'Stage 6 - Reflection:' }
+                        ].map((item, stageIdx) => {
+                          const stageData = lesson_planners[selectedLesson].lesson_stages?.[stageIdx];
+                          return (
+                            <tr key={stageIdx} className="border-b border-dashed border-slate-300 dark:border-slate-600 last:border-b-0">
+                              <td className="p-3 align-top" colSpan="2">
+                                <p className="font-semibold text-blue-800 dark:text-blue-300 mb-2">{item.stage}</p>
+                                {editMode ? (
+                                  <div className="space-y-2 pl-4">
+                                    {stageData?.activities?.map((activity, actIdx) => (
+                                      <EditableTextarea
+                                        key={actIdx}
+                                        value={activity}
+                                        onChange={(value) => {
+                                          const newActivities = [...(stageData?.activities || [])];
+                                          newActivities[actIdx] = value;
+                                          handleUpdateField(`lesson_planners.${selectedLesson}.lesson_stages.${stageIdx}.activities`, newActivities);
+                                        }}
+                                        rows={1}
+                                        className="text-sm"
+                                      />
+                                    ))}
+                                    <Button
+                                      onClick={() => {
+                                        const newActivities = [...(stageData?.activities || []), 'New activity'];
+                                        handleUpdateField(`lesson_planners.${selectedLesson}.lesson_stages.${stageIdx}.activities`, newActivities);
+                                      }}
+                                      variant="outline"
+                                      size="sm"
+                                      className="text-xs"
+                                    >
+                                      + Add Activity
+                                    </Button>
+                                  </div>
+                                ) : (
+                                  <ul className="list-disc list-inside pl-4 space-y-1">
+                                    {stageData?.activities?.map((activity, actIdx) => (
+                                      <li key={actIdx} className="text-slate-700 dark:text-slate-300">{activity}</li>
+                                    ))}
+                                    {(!stageData?.activities || stageData.activities.length === 0) && (
+                                      <li className="text-slate-400 italic">To be completed</li>
+                                    )}
+                                  </ul>
+                                )}
+                              </td>
+                              <td className="p-3 text-center align-top">
+                                <EditableField
+                                  value={stageData?.estimated_time || ''}
+                                  onChange={(v) => handleUpdateField(`lesson_planners.${selectedLesson}.lesson_stages.${stageIdx}.estimated_time`, v)}
+                                  placeholder="______"
+                                  className="text-center text-xs"
+                                />
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </CardContent>
+                </Card>
 
-                  {/* Comments Section */}
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">{t.homework}</h4>
-                      <div className="text-slate-700 dark:text-slate-300">
-                        <EditableField
-                          value={lesson_planners[selectedLesson].comments?.homework}
-                          onChange={(value) => handleUpdateField(`lesson_planners.${selectedLesson}.comments.homework`, value)}
-                          multiline
-                          placeholder="Enter homework..."
-                        />
-                      </div>
+                {/* Comments and Observations */}
+                <Card className="border border-slate-300 dark:border-slate-600 shadow-sm">
+                  <CardContent className="p-0">
+                    <div className="p-3 border-b border-dashed border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-700 text-center font-semibold">
+                      Comments and Observations
                     </div>
-
-                    <div>
-                      <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">{t.assessment}</h4>
-                      <div className="text-slate-700 dark:text-slate-300">
-                        <EditableField
-                          value={lesson_planners[selectedLesson].comments?.formative_assessment}
-                          onChange={(value) => handleUpdateField(`lesson_planners.${selectedLesson}.comments.formative_assessment`, value)}
-                          multiline
-                          placeholder="Enter assessment strategies..."
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold text-slate-800 dark:text-slate-200 mb-2">{t.teacherNotes}</h4>
-                      <div className="text-slate-700 dark:text-slate-300">
-                        <EditableField
-                          value={lesson_planners[selectedLesson].comments?.teacher_comments}
-                          onChange={(value) => handleUpdateField(`lesson_planners.${selectedLesson}.comments.teacher_comments`, value)}
-                          multiline
-                          placeholder="Enter teacher notes..."
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                    <table className="w-full text-sm border-collapse">
+                      <tbody>
+                        <tr className="border-b border-dashed border-slate-300 dark:border-slate-600">
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold w-48 align-top">
+                            Homework:
+                          </td>
+                          <td className="p-3">
+                            {editMode ? (
+                              <EditableTextarea
+                                value={lesson_planners[selectedLesson].comments?.homework || ''}
+                                onChange={(v) => handleUpdateField(`lesson_planners.${selectedLesson}.comments.homework`, v)}
+                                rows={2}
+                              />
+                            ) : (
+                              <span className="text-slate-700 dark:text-slate-300">
+                                {lesson_planners[selectedLesson].comments?.homework || '______'}
+                              </span>
+                            )}
+                          </td>
+                        </tr>
+                        <tr className="border-b border-dashed border-slate-300 dark:border-slate-600">
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold align-top">
+                            Formative Assessment of Learning:
+                          </td>
+                          <td className="p-3">
+                            {editMode ? (
+                              <EditableTextarea
+                                value={lesson_planners[selectedLesson].comments?.formative_assessment || ''}
+                                onChange={(v) => handleUpdateField(`lesson_planners.${selectedLesson}.comments.formative_assessment`, v)}
+                                rows={2}
+                              />
+                            ) : (
+                              <span className="text-slate-700 dark:text-slate-300">
+                                {lesson_planners[selectedLesson].comments?.formative_assessment || '______'}
+                              </span>
+                            )}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td className="p-3 border-r border-dashed border-slate-300 dark:border-slate-600 font-semibold align-top">
+                            Teacher's Comments/Observations:
+                          </td>
+                          <td className="p-3">
+                            {editMode ? (
+                              <EditableTextarea
+                                value={lesson_planners[selectedLesson].comments?.teacher_comments || ''}
+                                onChange={(v) => handleUpdateField(`lesson_planners.${selectedLesson}.comments.teacher_comments`, v)}
+                                rows={2}
+                              />
+                            ) : (
+                              <span className="text-slate-700 dark:text-slate-300">
+                                {lesson_planners[selectedLesson].comments?.teacher_comments || '______'}
+                              </span>
+                            )}
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </CardContent>
+                </Card>
+              </div>
             )}
           </TabsContent>
         </Tabs>
