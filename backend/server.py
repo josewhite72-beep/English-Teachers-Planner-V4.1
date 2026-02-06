@@ -583,6 +583,11 @@ def generate_basic_lesson_planners(scenario_data: dict, theme: str, plan_type: s
             "Set goals for improvement"
         ]
         
+        # Get SMART objective from theme planner if available
+        smart_objective = ""
+        if smart_objectives and skill in smart_objectives:
+            smart_objective = smart_objectives[skill]
+        
         lesson = {
             "lesson_number": i,
             "skill_focus": skill.capitalize(),
@@ -590,7 +595,7 @@ def generate_basic_lesson_planners(scenario_data: dict, theme: str, plan_type: s
             "theme": theme,
             "date": "",
             "time": "45-60 minutes",
-            "specific_objective": specific_standard if specific_standard else f"Students will develop {skill} skills related to {theme}",
+            "specific_objective": smart_objective if smart_objective else (specific_standard if specific_standard else f"Students will develop {skill} skills related to {theme}"),
             "learning_outcome": learning_outcome if learning_outcome else f"Students will be able to use {skill} to communicate about {theme}",
             "lesson_stages": [
                 {
