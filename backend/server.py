@@ -376,7 +376,13 @@ async def generate_planner(request: PlannerRequest):
             project_data = next((p for p in projects_list if p.get('id') == request.project_id), None)
         
         # Generate basic planner structure
-        planner = {
+            # Generate theme planner first to get SMART objectives
+            theme_planner = generate_basic_theme_planner(scenario_data, request.theme, request.grade, request.plan_type, project_data, request)
+            
+            # Get SMART objectives from theme planner
+            smart_objectives = theme_planner.get('specific_objectives', {})
+            
+            planner = {
             "grade": request.grade,
             "scenario": request.scenario,
             "theme": request.theme,
@@ -389,8 +395,8 @@ async def generate_planner(request: PlannerRequest):
             "weekly_hours": request.weekly_hours,
             "week_from": request.week_from,
             "week_to": request.week_to,
-            "theme_planner": generate_basic_theme_planner(scenario_data, request.theme, request.grade, request.plan_type, project_data, request),
-            "lesson_planners": generate_basic_lesson_planners(scenario_data, request.theme, request.plan_type),
+            "theme_planner": theme_planner,
+            "lesson_planners": generate_basic_lesson_planners(scenario_data, request.theme, request.plan_type, smart_objectives),
             "project": project_data
         }
         
