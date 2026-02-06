@@ -1304,7 +1304,10 @@ async def export_to_docx(planner: dict):
         # ========================================
         doc.add_paragraph().add_run("6. Learning Sequence").bold = True
         
-        seq_table = doc.add_table(rows=6, cols=3)
+        lesson_planners = planner.get('lesson_planners', [])
+        num_lessons = len(lesson_planners) if lesson_planners else 5
+        
+        seq_table = doc.add_table(rows=num_lessons + 1, cols=3)
         seq_table.style = 'Table Grid'
         
         # Header
@@ -1315,21 +1318,18 @@ async def export_to_docx(planner: dict):
             cell.paragraphs[0].runs[0].bold = True
             cell.paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.CENTER
         
-        lesson_sequence = [
-            ('Lesson 1', 'Listening: Listening and Language Foundations'),
-            ('Lesson 2', 'Reading: Reading and Understanding Concepts/Ideas in Texts'),
-            ('Lesson 3', 'Speaking: Productive/Interactive Speaking Tasks'),
-            ('Lesson 4', 'Writing: Productive/Interactive Writing and Project Preparation'),
-            ('Lesson 5', 'Mediation: Completing the 21st Century Project with Emphasis on Mediation')
-        ]
-        
         lesson_dates = theme_planner.get('learning_sequence', {}).get('lesson_dates', ['', '', '', '', ''])
         
-        for idx, (lesson_num, description) in enumerate(lesson_sequence, 1):
-            seq_table.cell(idx, 0).text = lesson_num
-            seq_table.cell(idx, 0).paragraphs[0].runs[0].bold = True
-            seq_table.cell(idx, 1).text = description
-            seq_table.cell(idx, 2).text = lesson_dates[idx - 1] if idx <= len(lesson_dates) else '______'
+        # Use specific objectives from lesson planners as the learning sequence description
+        for idx, lesson in enumerate(lesson_planners):
+            skill = lesson.get('skill_focus', '')
+            # Use the specific objective as the learning sequence description
+            description = f"{skill}: {lesson.get('specific_objective', 'To be defined')}"
+            
+            seq_table.cell(idx + 1, 0).text = f"Lesson {lesson.get('lesson_number', idx + 1)}"
+            seq_table.cell(idx + 1, 0).paragraphs[0].runs[0].bold = True
+            seq_table.cell(idx + 1, 1).text = description
+            seq_table.cell(idx + 1, 2).text = lesson_dates[idx] if idx < len(lesson_dates) else '______'
         
         # ========================================
         # LESSON PLANNERS - Page break and new section
