@@ -7,168 +7,156 @@
     "Our Community News": [
       {
         "id": "grade6_scenario1_project1",
-        "category": "Digital Journalism",
-        "name": "School News Broadcast",
-        "overview": "Students create a short video news broadcast reporting school or community events.",
-        "general_objective": "Develop reporting and oral presentation skills.",
+        "category": "Journalism & Reporting",
+        "name": "Community News Report",
+        "overview": "Students create a short newspaper or digital newsletter about a community event, using the past simple tense and expressing likes/dislikes.",
+        "general_objective": "Develop journalistic writing skills and community awareness.",
         "specific_objectives": [
-          "Write short news scripts",
-          "Report events using past tense",
-          "Present information clearly",
-          "Collaborate in media production"
-        ],
-        "institutional_standards": ["CE.ING.6.1.1", "CE.ING.6.3.1"],
-        "duration": "3-4 class periods",
-        "materials": ["Recording device", "Script templates", "Editing tools"],
-        "technology_integration": "Use video recording and editing software.",
-        "skills_developed": ["Communication", "Collaboration", "Media Literacy"]
+          "Report on community events accurately",
+          "Use past simple tense correctly",
+          "Express personal opinions appropriately"
+        ]
+      },
+      {
+        "id": "grade6_scenario1_project2",
+        "category": "Cultural Arts",
+        "name": "Community Traditions Mural",
+        "overview": "Students design a mural showcasing local traditions like Carnivals or Fiestas Patrias, adding captions with descriptive adjectives and past tense.",
+        "general_objective": "Develop cultural appreciation and descriptive language skills.",
+        "specific_objectives": [
+          "Research local traditions",
+          "Use descriptive adjectives correctly",
+          "Apply past tense in captions"
+        ]
+      },
+      {
+        "id": "grade6_scenario1_project3",
+        "category": "Media Production",
+        "name": "Local Voices Podcast",
+        "overview": "Students record a podcast describing local events and interviewing classmates, using past tense and likes/dislikes.",
+        "general_objective": "Develop audio production and interview skills.",
+        "specific_objectives": [
+          "Plan podcast content",
+          "Use past tense accurately",
+          "Edit and produce audio content"
+        ]
       }
     ],
 
     "Keeping Our Communities Clean": [
       {
         "id": "grade6_scenario2_project1",
-        "category": "Environmental Campaign",
-        "name": "Community Awareness Campaign",
-        "overview": "Students design a campaign promoting environmental responsibility.",
-        "general_objective": "Develop persuasive communication and civic awareness.",
+        "category": "Environmental Planning",
+        "name": "Community Clean-Up Plan",
+        "overview": "Students use imperatives and modals to create a step-by-step digital plan outlining tasks and suggestions for cleaning their classroom.",
+        "general_objective": "Develop environmental planning and instructional design skills.",
         "specific_objectives": [
-          "Design persuasive posters or presentations",
-          "Use modal verbs for advice",
-          "Explain environmental problems and solutions",
-          "Work collaboratively"
-        ],
-        "institutional_standards": ["CE.ING.6.2.1", "CE.ING.6.3.2"],
-        "duration": "2-3 class periods",
-        "materials": ["Poster materials", "Research sources", "Digital tools"],
-        "technology_integration": "Use digital design platforms.",
-        "skills_developed": ["Civic Responsibility", "Creativity", "Critical Thinking"]
+          "Use imperatives correctly",
+          "Apply modal verbs for suggestions",
+          "Design step-by-step instructions"
+        ]
+      },
+      {
+        "id": "grade6_scenario2_project2",
+        "category": "Promotional Design",
+        "name": "School Clean-Up Day Poster",
+        "overview": "Students design posters promoting a school clean-up day, using future tense and time prepositions.",
+        "general_objective": "Develop promotional design and future tense application.",
+        "specific_objectives": [
+          "Use future tense accurately",
+          "Apply time prepositions correctly",
+          "Create persuasive visual messages"
+        ]
+      },
+      {
+        "id": "grade6_scenario2_project3",
+        "category": "Instructional Media",
+        "name": "Instructional Clean-Up Video",
+        "overview": "Students create an instructional video demonstrating cleaning tasks, using imperatives.",
+        "general_objective": "Develop video production and clear instruction skills.",
+        "specific_objectives": [
+          "Use imperative language effectively",
+          "Demonstrate tasks clearly",
+          "Produce instructional video"
+        ]
       }
     ],
 
     "Our Local Library": [
       {
         "id": "grade6_scenario3_project1",
-        "category": "Research Project",
-        "name": "Library Research Presentation",
-        "overview": "Students research a topic and present findings in a structured oral presentation.",
-        "general_objective": "Develop research and presentation skills.",
+        "category": "Instructional Media",
+        "name": "Library Instructional Video",
+        "overview": "Students create a video tutorial demonstrating how to use the library, practicing modal verbs and imperative forms.",
+        "general_objective": "Develop instructional video creation skills.",
         "specific_objectives": [
-          "Extract key information from texts",
-          "Summarize main ideas",
-          "Organize information logically",
-          "Present findings confidently"
-        ],
-        "institutional_standards": ["CE.ING.6.1.2", "CE.ING.6.3.3"],
-        "duration": "3-4 class periods",
-        "materials": ["Library resources", "Presentation templates"],
-        "technology_integration": "Use presentation software.",
-        "skills_developed": ["Information Literacy", "Public Speaking", "Organization"]
+          "Use modal verbs appropriately",
+          "Apply imperative forms correctly",
+          "Create clear tutorial content"
+        ]
+      },
+      {
+        "id": "grade6_scenario3_project2",
+        "category": "Digital Mapping",
+        "name": "Digital Library Map",
+        "overview": "Students design a digital map of the library, labeling sections with determiners like many, all, most.",
+        "general_objective": "Develop digital mapping and determiner usage skills.",
+        "specific_objectives": [
+          "Use determiners correctly",
+          "Label library sections accurately",
+          "Design digital map"
+        ]
+      },
+      {
+        "id": "grade6_scenario3_project3",
+        "category": "Research Skills",
+        "name": "Research Report",
+        "overview": "Students write a research report on a book they found in the library, using past tense and research vocabulary.",
+        "general_objective": "Develop research writing skills.",
+        "specific_objectives": [
+          "Write organized research report",
+          "Use past tense accurately",
+          "Apply research vocabulary"
+        ]
       }
     ],
 
     "Our Classroom News": [
       {
         "id": "grade6_scenario4_project1",
-        "category": "Newsletter Production",
+        "category": "Digital Journalism",
         "name": "Digital Classroom Newsletter",
-        "overview": "Students collaborate to create a digital classroom newsletter.",
-        "general_objective": "Develop collaborative writing and editing skills.",
+        "overview": "Students create a digital newsletter about class events, practicing the future tense and sequencing words.",
+        "general_objective": "Develop digital journalism skills.",
         "specific_objectives": [
-          "Write short informative articles",
-          "Edit written work collaboratively",
-          "Use appropriate grammar structures",
-          "Publish digital content"
-        ],
-        "institutional_standards": ["CE.ING.6.2.2", "CE.ING.6.4.1"],
-        "duration": "3 class periods",
-        "materials": ["Digital publishing tools", "Writing guides"],
-        "technology_integration": "Use newsletter design platforms.",
-        "skills_developed": ["Collaboration", "Digital Literacy", "Writing Skills"]
-      }
-    ],
-
-    "Our Amazing Community": [
+          "Use future tense correctly",
+          "Apply sequencing words",
+          "Design digital newsletter"
+        ]
+      },
       {
-        "id": "grade6_scenario5_project1",
-        "category": "Cultural Presentation",
-        "name": "Community Heritage Presentation",
-        "overview": "Students create a presentation about important cultural or historical aspects of their community.",
-        "general_objective": "Develop cultural awareness and presentation skills.",
+        "id": "grade6_scenario4_project2",
+        "category": "Event Planning",
+        "name": "Class Event Plan",
+        "overview": "Students collaborate to plan an upcoming class event, using present and future tenses.",
+        "general_objective": "Develop collaborative planning skills.",
         "specific_objectives": [
-          "Describe community features",
-          "Use descriptive language",
-          "Organize structured presentation",
-          "Speak confidently to audience"
-        ],
-        "institutional_standards": ["CE.ING.6.2.3", "CE.ING.6.3.4"],
-        "duration": "2-3 class periods",
-        "materials": ["Presentation tools", "Research materials"],
-        "technology_integration": "Use slideshow or video tools.",
-        "skills_developed": ["Cultural Awareness", "Communication", "Research Skills"]
-      }
-    ],
-
-    "Our Weather Report": [
+          "Use present tense appropriately",
+          "Apply future tense correctly",
+          "Create structured event plan"
+        ]
+      },
       {
-        "id": "grade6_scenario6_project1",
-        "category": "Data & Reporting",
-        "name": "Weather Forecast Project",
-        "overview": "Students prepare and present a weather forecast using charts and data.",
-        "general_objective": "Develop data interpretation and reporting skills.",
+        "id": "grade6_scenario4_project3",
+        "category": "Creative Writing",
+        "name": "Script for School Play",
+        "overview": "Students write and perform a short script about a class event, using the future and past tense.",
+        "general_objective": "Develop script writing skills.",
         "specific_objectives": [
-          "Interpret weather charts",
-          "Use future forms correctly",
-          "Present data clearly",
-          "Use visual aids effectively"
-        ],
-        "institutional_standards": ["CE.ING.6.1.3", "CE.ING.6.4.2"],
-        "duration": "2-3 class periods",
-        "materials": ["Weather data", "Charts", "Presentation tools"],
-        "technology_integration": "Use digital charts and presentation apps.",
-        "skills_developed": ["Data Interpretation", "Public Speaking", "Digital Skills"]
-      }
-    ],
-
-    "Our Changing Forests": [
-      {
-        "id": "grade6_scenario7_project1",
-        "category": "Environmental Research",
-        "name": "Forest Conservation Proposal",
-        "overview": "Students research environmental issues and propose solutions.",
-        "general_objective": "Develop environmental research and problem-solving skills.",
-        "specific_objectives": [
-          "Identify environmental problems",
-          "Propose practical solutions",
-          "Use persuasive language",
-          "Present research findings"
-        ],
-        "institutional_standards": ["CE.ING.6.2.4", "CE.ING.6.3.5"],
-        "duration": "3-4 class periods",
-        "materials": ["Research articles", "Presentation materials"],
-        "technology_integration": "Use research and presentation tools.",
-        "skills_developed": ["Critical Thinking", "Problem Solving", "Civic Awareness"]
-      }
-    ],
-
-    "The Talents Around Us": [
-      {
-        "id": "grade6_scenario8_project1",
-        "category": "Talent Showcase",
-        "name": "Talent Showcase Event",
-        "overview": "Students organize and present a class talent showcase.",
-        "general_objective": "Develop leadership and presentation skills.",
-        "specific_objectives": [
-          "Introduce performers",
-          "Organize event structure",
-          "Use descriptive language",
-          "Speak confidently in public"
-        ],
-        "institutional_standards": ["CE.ING.6.1.4", "CE.ING.6.3.6"],
-        "duration": "2-3 class periods",
-        "materials": ["Event planning sheets", "Stage setup materials"],
-        "technology_integration": "Record performances digitally.",
-        "skills_developed": ["Leadership", "Communication", "Collaboration"]
+          "Write coherent script",
+          "Differentiate past and future tense",
+          "Perform confidently"
+        ]
       }
     ]
 
