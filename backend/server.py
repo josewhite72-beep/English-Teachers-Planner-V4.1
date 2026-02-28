@@ -532,6 +532,61 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
     
     return theme_planner
 
+
+def convert_to_can_do_format(text: str, skill: str, theme: str) -> str:
+    """Convert learning outcome text to CEFR Can-Do Statement format.
+    
+    Rules:
+    1. Must begin with "Can + base verb"
+    2. No measurable time indicators
+    3. No performance percentages
+    4. Student-centered and skill-based
+    """
+    import re
+    
+    # Remove percentages and time indicators
+    text = re.sub(r'with \d+% accuracy', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'achieving at least \d+% accuracy', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'by the end of the lesson', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'within \d+ minutes', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'according to [^.]+\.?', '', text, flags=re.IGNORECASE)
+    
+    # Remove teacher-centered phrasing
+    text = re.sub(r'Students will be able to', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'The student will', '', text, flags=re.IGNORECASE)
+    text = re.sub(r'Learners will', '', text, flags=re.IGNORECASE)
+    
+    # Clean up the text
+    text = text.strip()
+    text = re.sub(r'\s+', ' ', text)  # Remove multiple spaces
+    text = re.sub(r'^\s*,\s*', '', text)  # Remove leading comma
+    text = re.sub(r'\s*,\s*$', '', text)  # Remove trailing comma
+    
+    # If text is empty or too short, use default template
+    if len(text) < 10:
+        default_templates = {
+            'listening': f"Can identify key vocabulary related to {theme}.",
+            'reading': f"Can read and understand simple texts about {theme}.",
+            'speaking': f"Can express ideas about {theme}.",
+            'writing': f"Can write simple sentences about {theme}.",
+            'mediation': f"Can convey information about {theme} to peers."
+        }
+        return default_templates.get(skill, f"Can demonstrate {skill} skills related to {theme}.")
+    
+    # Ensure it starts with "Can"
+    if not text.lower().startswith('can '):
+        # Try to extract the verb and convert to Can + verb
+        text = f"Can {text[0].lower()}{text[1:]}"
+    
+    # Ensure first letter of "Can" is capitalized
+    text = text[0].upper() + text[1:]
+    
+    # Ensure it ends with a period
+    if not text.endswith('.'):
+        text += '.'
+    
+    return text
+
 def generate_basic_lesson_planners(scenario_data: dict, theme: str, plan_type: str, smart_objectives: dict = None) -> list:
     """Generate basic lesson planner structures with curriculum info"""
     lessons = []
