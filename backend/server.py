@@ -539,6 +539,15 @@ def generate_basic_lesson_planners(scenario_data: dict, theme: str, plan_type: s
     standards = scenario_data.get('standards_and_learning_outcomes', {})
     competences = scenario_data.get('communicative_competences', {})
     
+    # CEFR Can-Do Statement templates for Learning Outcomes
+    cefr_can_do_templates = {
+        'listening': "Can identify key vocabulary and understand simple instructions related to {theme}.",
+        'reading': "Can recognize and read simple words and short texts about {theme}.",
+        'speaking': "Can express simple ideas and respond to questions about {theme}.",
+        'writing': "Can write simple words and short sentences about {theme}.",
+        'mediation': "Can convey basic information about {theme} using gestures and visual aids."
+    }
+    
     # Get vocabulary and grammar from competences
     vocab_list = []
     grammar_list = []
@@ -555,18 +564,26 @@ def generate_basic_lesson_planners(scenario_data: dict, theme: str, plan_type: s
             grammar_list = ling['grammar'][:5]
     
     for i, skill in enumerate(skills, 1):
-        # Get learning outcome and standards
-        learning_outcome = ""
+        # Get learning outcome and standards from curriculum data
+        curriculum_outcome = ""
         specific_standard = ""
         if skill in standards:
             skill_data = standards[skill]
             if isinstance(skill_data, dict):
                 outcomes = skill_data.get('learning_outcomes', [])
                 if isinstance(outcomes, list) and outcomes:
-                    learning_outcome = outcomes[0]
+                    curriculum_outcome = outcomes[0]
                 
                 # Get specific standard
                 specific_standard = skill_data.get('specific', skill_data.get('general', ''))
+        
+        # Convert curriculum outcome to Can-Do format if it exists, otherwise use template
+        if curriculum_outcome:
+            # Convert to Can-Do format: "Can + verb..."
+            learning_outcome = convert_to_can_do_format(curriculum_outcome, skill, theme)
+        else:
+            # Use default Can-Do template
+            learning_outcome = cefr_can_do_templates.get(skill, '').format(theme=theme)
         
         # Generate basic activities based on curriculum content
         warm_up_activities = [
