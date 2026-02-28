@@ -455,9 +455,24 @@ export default function PreviewPage() {
                         }
                         
                         // If no learning_outcomes found, use standards as outcomes (for K/Pre-K)
-                        // This is because in K/Pre-K format, the standards ARE the outcomes
+                        // Convert to CEFR Can-Do format: "Can + verb"
                         if (outcomes.length === 0 && standards.length > 0) {
-                          outcomes = standards.map(s => `Students will be able to: ${s}`);
+                          outcomes = standards.map(s => {
+                            // Convert to Can-Do format
+                            let canDo = s.trim();
+                            // Remove any existing "Students will be able to" phrasing
+                            canDo = canDo.replace(/^Students will be able to\s*/i, '');
+                            canDo = canDo.replace(/^The student will\s*/i, '');
+                            canDo = canDo.replace(/^Learners will\s*/i, '');
+                            // Ensure it starts with "Can"
+                            if (!canDo.toLowerCase().startsWith('can ')) {
+                              canDo = `Can ${canDo.charAt(0).toLowerCase()}${canDo.slice(1)}`;
+                            }
+                            // Ensure first letter is capitalized and ends with period
+                            canDo = canDo.charAt(0).toUpperCase() + canDo.slice(1);
+                            if (!canDo.endsWith('.')) canDo += '.';
+                            return canDo;
+                          });
                         }
                       }
                       
