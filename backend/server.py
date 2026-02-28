@@ -444,6 +444,15 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
         'mediation': "Students will be able to communicate key information about {theme} to peers using gestures, images, and expressions, demonstrating at least 80% comprehension according to peer feedback."
     }
     
+    # Generate CEFR Can-Do Learning Outcomes - format: "Can + base verb"
+    cefr_can_do_templates = {
+        'listening': "Can identify key vocabulary and understand simple instructions related to {theme}.",
+        'reading': "Can recognize and read simple words and short texts about {theme}.",
+        'speaking': "Can express simple ideas and respond to questions about {theme}.",
+        'writing': "Can write simple words and short sentences about {theme}.",
+        'mediation': "Can convey basic information about {theme} using gestures and visual aids."
+    }
+    
     for skill in ['listening', 'reading', 'speaking', 'writing', 'mediation']:
         skill_data = standards.get(skill, {})
         if isinstance(skill_data, dict):
