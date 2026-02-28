@@ -1264,9 +1264,9 @@ async def export_to_docx(planner: dict):
                         if val and isinstance(val, str):
                             standards.append(val)
                 
-                # If no learning_outcomes, generate from standards (K/Pre-K format)
+                # If no learning_outcomes, generate from standards in Can-Do format (K/Pre-K format)
                 if not outcomes and standards:
-                    outcomes = [f"Students will be able to: {s}" for s in standards]
+                    outcomes = [convert_to_can_do_format(s, key, theme_planner.get('general_information', {}).get('theme', '')) for s in standards]
             
             std_table.cell(idx, 0).text = label
             std_table.cell(idx, 0).paragraphs[0].runs[0].bold = True
