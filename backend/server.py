@@ -693,7 +693,7 @@ def generate_basic_lesson_planners(scenario_data: dict, theme: str, plan_type: s
             "date": "",
             "time": "45-60 minutes",
             "specific_objective": smart_objective if smart_objective else (specific_standard if specific_standard else f"Students will develop {skill} skills related to {theme}"),
-            "learning_outcome": learning_outcome if learning_outcome else f"Students will be able to use {skill} to communicate about {theme}",
+            "learning_outcome": learning_outcome,  # Already in Can-Do format from convert_to_can_do_format()
             "lesson_stages": [
                 {
                     "stage": "Warm-up / Pre-task",
