@@ -428,7 +428,13 @@ def generate_basic_theme_planner(scenario_data: dict, theme: str, grade: str,
         "3": "A2.1",
         "4": "A2.2",
         "5": "B1.1",
-        "6": "B1.2"
+        "6": "B1.2",
+        "7": "B1.1",
+        "8": "B1.2",
+        "9": "B2.1",
+        "10": "B2.1",
+        "11": "B2.2",
+        "12": "B2.2"
     }
     
     standards = scenario_data.get('standards_and_learning_outcomes', {})
