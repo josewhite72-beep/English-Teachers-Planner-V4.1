@@ -160,9 +160,9 @@ async def get_scenarios(grade: str):
         
         # Check if data is array or object with scenarios
         if isinstance(data, list):
-            scenarios = [s.get('scenario', s.get('title', '')) for s in data]
+            scenarios = [s.get('scenario', s.get('title', s.get('scenario_name', ''))) for s in data]
         elif isinstance(data, dict) and 'scenarios' in data:
-            scenarios = [s.get('scenario', s.get('title', '')) for s in data['scenarios']]
+            scenarios = [s.get('scenario', s.get('title', s.get('scenario_name', ''))) for s in data['scenarios']]
         else:
             scenarios = []
             
