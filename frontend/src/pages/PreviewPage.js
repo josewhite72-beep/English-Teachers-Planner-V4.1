@@ -561,6 +561,11 @@ export default function PreviewPage() {
                               {(() => {
                                 const vocab = theme_planner?.communicative_competences?.linguistic?.vocabulary;
                                 if (Array.isArray(vocab)) return vocab.slice(0, 10).join(', ');
+                                if (typeof vocab === 'object' && vocab !== null) {
+                                  // Handle object format: {nouns: [...], verbs: [...], ...}
+                                  const allWords = Object.values(vocab).flat().slice(0, 10);
+                                  return allWords.join(', ');
+                                }
                                 return vocab || '______';
                               })()}
                             </p>
