@@ -622,6 +622,13 @@ def generate_basic_lesson_planners(scenario_data: dict, theme: str, plan_type: s
         ling = competences['linguistic']
         if isinstance(ling.get('vocabulary'), list):
             vocab_list = ling['vocabulary'][:10]  # First 10 vocab items
+        elif isinstance(ling.get('vocabulary'), dict):
+            # Handle object format: {nouns: [...], verbs: [...], ...}
+            all_words = []
+            for category_words in ling['vocabulary'].values():
+                if isinstance(category_words, list):
+                    all_words.extend(category_words)
+            vocab_list = all_words[:10]
         elif ling.get('vocabulary'):
             vocab_list = [str(ling['vocabulary'])]
             
