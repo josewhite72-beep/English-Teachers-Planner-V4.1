@@ -1281,13 +1281,16 @@ async def export_to_docx(planner: dict):
             outcomes = []
             
             if isinstance(skill_data, dict):
-                # Get learning_outcomes if present (Grade 1+ format)
+                # Get learning_outcomes if present
                 outcomes = skill_data.get('learning_outcomes', [])
                 
-                # Get standards - check both formats
+                # Get standards - check multiple formats
                 if isinstance(skill_data.get('specific'), list):
-                    # Grade 1+ format
+                    # Grade 1-6, 10-12 format
                     standards = skill_data['specific']
+                elif isinstance(skill_data.get('specific_standards'), list):
+                    # Grade 7-9 format
+                    standards = skill_data['specific_standards']
                 else:
                     # K/Pre-K format: individual fields
                     fields = ['receptive', 'interactive', 'productive', 'reading', 'reading1', 'reading2', 
