@@ -444,10 +444,13 @@ export default function PreviewPage() {
                         // First try to get learning_outcomes array (Grade 1+ format)
                         outcomes = skillData.learning_outcomes || [];
                         
-                        // Get standards - check both formats
+                        // Get standards - check multiple formats
                         if (Array.isArray(skillData.specific)) {
-                          // Grade 1+ format: specific is an array
+                          // Grade 1-6, 10-12 format: specific is an array
                           standards = skillData.specific;
+                        } else if (Array.isArray(skillData.specific_standards)) {
+                          // Grade 7-9 format: specific_standards is an array
+                          standards = skillData.specific_standards;
                         } else {
                           // K/Pre-K format: individual fields like receptive, interactive, etc.
                           const fields = ['receptive', 'interactive', 'productive', 'reading', 'reading1', 'reading2', 
