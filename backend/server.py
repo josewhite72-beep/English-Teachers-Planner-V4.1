@@ -149,7 +149,7 @@ async def root():
 @api_router.get("/grades")
 async def get_grades():
     """Get list of available grades"""
-    grades = ["pre_k", "K", "1", "2", "3", "4", "5", "6"]
+    grades = ["pre_k", "K", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
     return {"grades": grades}
 
 @api_router.get("/grades/{grade}/scenarios")
