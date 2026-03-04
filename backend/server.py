@@ -301,7 +301,13 @@ async def generate_planner(request: PlannerRequest):
                 "3": "A2.1",
                 "4": "A2.2",
                 "5": "B1.1",
-                "6": "B1.2"
+                "6": "B1.2",
+                "7": "B1.1",
+                "8": "B1.2",
+                "9": "B2.1",
+                "10": "B2.1",
+                "11": "B2.2",
+                "12": "B2.2"
             }
             
             # ALWAYS add standards and competences from curriculum data
