@@ -1,0 +1,1412 @@
+{
+  "grade": "8",
+  "proficiency_level": "A2.3",
+  "description": "High Beginner - A2.3",
+  "scenarios": [
+    {
+      "scenario": "Cultural Connections",
+      "themes": [
+        "I Celebrate This Tradition Because...",
+        "In This Region, They Have a Custom Of..."
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can analyze simple information and questions about familiar topics when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Show recognition of specific details when listening to explanations",
+            "Interactive: Contribute to simple discussions on a variety of issues"
+          ],
+          "learning_outcomes": [
+            "Can follow audio narratives about Panamanian cultural events and show recognition by answering questions about key details",
+            "Can contribute to simple discussions about celebrations and customs in their community by sharing personal experiences and responding to peers' questions",
+            "Can follow a short story about a cultural tradition and recall main details"
+          ]
+        },
+        "reading": {
+          "general_standard": "Can analyze a variety of short texts.",
+          "specific_standards": [
+            "Reading: Comprehend descriptions in simple texts",
+            "Reading: Summarize the main points of various non-fiction texts",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by pronouncing the irregular present verbs ending in third person singular '-s', '-es', and '-ies'"
+          ],
+          "learning_outcomes": [
+            "Can comprehend descriptions in simple texts about cultural traditions",
+            "Can summarize the main points of texts about national festivals by using text features like headings and captions",
+            "Can accurately pronounce irregular present tense verbs ending in the third-person singular '-s', '-es', and '-ies' by producing the correct sounds /s/, /z/, and /ɪz/ in words related to cultural traditions"
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can engage in simple discussions by asking and responding to questions, exchanging information, and providing brief explanations about familiar topics.",
+          "specific_standards": [
+            "Productive: Present on a personally significant topic",
+            "Interactive: Engage in discussions about various real-world topics, asking and responding to questions"
+          ],
+          "learning_outcomes": [
+            "Can present about a personally significant tradition",
+            "Can engage in discussions about cultural traditions by asking and responding to questions and using follow-up prompts",
+            "Can ask and respond to questions about regional festivals by providing relevant details"
+          ]
+        },
+        "writing": {
+          "general_standard": "Can collaboratively create short texts, such as diary entries, creative pieces, and class reports, demonstrating growing coherence.",
+          "specific_standards": [
+            "Productive: Write a diary entry about a significant event",
+            "Interactive: Respond to peer writing"
+          ],
+          "learning_outcomes": [
+            "Can write a diary entry describing a cultural event in a coherent and organized manner",
+            "Can respond with simple feedback to peer writing about a cultural event",
+            "Can write a short paragraph sharing feelings about a cultural celebration"
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can mediate peer understanding by summarizing information, interpreting visuals, and explaining ideas with examples.",
+          "specific_standards": [
+            "Text: Simplify complex text for peers",
+            "Text: Mediate everyday instructions to peers"
+          ],
+          "learning_outcomes": [
+            "Can simplify for peers a complex text about cultural traditions by using visual aids and encouraging questions",
+            "Can mediate for peers instructions related to cultural events by miming actions",
+            "Can simplify cultural descriptions in texts, using gestures and simple language"
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Present simple and past simple for describing traditions and historical facts",
+            "Gerund after prepositions",
+            "Present perfect"
+          ],
+          "vocabulary": {
+            "nouns": [
+              "tradition",
+              "custom",
+              "independence",
+              "cuisine",
+              "parade",
+              "celebration",
+              "mask",
+              "dance",
+              "festival",
+              "heritage",
+              "belief",
+              "ritual",
+              "ceremony",
+              "fireworks",
+              "symbol",
+              "ancestry"
+            ],
+            "verbs": [
+              "celebrate",
+              "dance",
+              "gather",
+              "enjoy",
+              "march",
+              "observe"
+            ],
+            "adjectives": [
+              "traditional",
+              "cultural",
+              "national",
+              "festive",
+              "united"
+            ],
+            "conditionals": [
+              "if",
+              "when"
+            ],
+            "demonstratives": [
+              "this",
+              "these"
+            ],
+            "sequencers": [
+              "first",
+              "next",
+              "finally"
+            ],
+            "adverbs": [
+              "traditionally",
+              "together"
+            ]
+          },
+          "pronunciation": "Practice pronunciation of word stress. Phonemic awareness: Pronunciation of irregular present tense verbs ending in third-person singular '-s', '-es', and '-ies', focusing on the correct sounds /s/, /z/, and /ɪz/"
+        },
+        "pragmatic": {
+          "functions": "Describing celebrations and responding to questions. Expressing preferences.",
+          "examples": [
+            "They decorate their homes with the national flag and participate in the parades.",
+            "What traditions are important in your community?",
+            "My favorite tradition is the parade because..."
+          ]
+        },
+        "sociolinguistic": "Engage in class discussions about regional and cultural celebrations, responding to questions about traditions."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade8_scenario1_project1",
+            "name": "Cultural Scrapbook",
+            "category": "Cultural Documentation",
+            "overview": "Students create a scrapbook showcasing their favorite local or national cultural traditions using present simple and past simple tense.",
+            "skills": [
+              "Cultural Exploration: Describing traditions and customs from the past and present",
+              "Communication: Talking about culture and traditions using descriptive language and everyday expressions"
+            ],
+            "technology": [
+              "Scrapbook creation tools",
+              "Virtual museum design software",
+              "Video recording tools for interviews"
+            ]
+          },
+          {
+            "id": "grade8_scenario1_project2",
+            "name": "Heritage Museum Tour",
+            "category": "Cultural Preservation",
+            "overview": "Students design a museum tour to explore Panama's local cultural traditions using gerunds after prepositions.",
+            "skills": [
+              "Cultural Exploration: Describing traditions and customs from the past and present",
+              "Communication: Talking about culture and traditions using descriptive language and everyday expressions"
+            ],
+            "technology": [
+              "Scrapbook creation tools",
+              "Virtual museum design software",
+              "Video recording tools for interviews"
+            ]
+          },
+          {
+            "id": "grade8_scenario1_project3",
+            "name": "Tradition Video Interviews",
+            "category": "Oral History",
+            "overview": "Students record interviews with family members about a cultural celebration using simple past tense and gerunds.",
+            "skills": [
+              "Cultural Exploration: Describing traditions and customs from the past and present",
+              "Communication: Talking about culture and traditions using descriptive language and everyday expressions"
+            ],
+            "technology": [
+              "Scrapbook creation tools",
+              "Virtual museum design software",
+              "Video recording tools for interviews"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "The Power of Education",
+      "themes": [
+        "This Trimester, I Am Learning About...",
+        "Next Trimester, I Plan to Learn..."
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can analyze simple information and questions about familiar topics when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Infer implicit information when listening to current events",
+            "Interactive: Contribute to simple discussions on a variety of issues"
+          ],
+          "learning_outcomes": [
+            "Can infer simple implicit information from spoken narratives about education-related activities by responding to guiding questions",
+            "Can follow and contribute to simple class discussions about education topics, showing comprehension of details",
+            "Can listen for specific details in conversations about future studies"
+          ]
+        },
+        "reading": {
+          "general_standard": "Can analyze a variety of short texts.",
+          "specific_standards": [
+            "Reading: Analyze the structure of various texts",
+            "Reading: Develop arguments based on one or more texts studied",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by practicing minimal pair sounds"
+          ],
+          "learning_outcomes": [
+            "Can analyze the structure of short educational texts",
+            "Can develop arguments based on reading about educational themes",
+            "Can produce and differentiate between minimal pair sounds, accurately identifying and pronouncing distinct phonemes"
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can engage in simple discussions by asking and responding to questions, exchanging information, and providing brief explanations about familiar topics.",
+          "specific_standards": [
+            "Productive: Describe a personal challenge and resolution",
+            "Interactive: Engage in discussions about academic and future professional interests"
+          ],
+          "learning_outcomes": [
+            "Can describe a personal academic challenge and resolution",
+            "Can engage in discussions about academic interests by asking and responding to questions",
+            "Can ask and answer questions about personal learning goals to express preferences and improvement areas"
+          ]
+        },
+        "writing": {
+          "general_standard": "Can collaboratively create short texts, such as diary entries, creative pieces, and class reports, demonstrating growing coherence.",
+          "specific_standards": [
+            "Productive: Write a short report on a class activity",
+            "Interactive: Edit classmates' narratives for clarity and coherence"
+          ],
+          "learning_outcomes": [
+            "Can write a short report on a class learning activity",
+            "Can write a summary of the main points learned in a history lesson",
+            "Can edit a peer's short narrative for clarity"
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can mediate peer understanding by summarizing information, interpreting visuals, and explaining ideas with examples.",
+          "specific_standards": [
+            "Text: Summarize audio and video content for study notes",
+            "Communication: Facilitate a discussion on team roles in group work"
+          ],
+          "learning_outcomes": [
+            "Can summarize key points from an educational video for study notes, using simple visuals and keywords",
+            "Can facilitate a discussion about team roles, using gestures and keywords",
+            "Can summarize audio content for study notes, using gestures to illustrate main ideas"
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Present continuous for ongoing actions",
+            "Gerunds after prepositions",
+            "Modals for ability and desires"
+          ],
+          "vocabulary": {
+            "nouns": [
+              "education",
+              "skills",
+              "knowledge",
+              "career goals",
+              "subject",
+              "course",
+              "university",
+              "scholarship",
+              "trimester",
+              "history",
+              "classmate",
+              "schedule"
+            ],
+            "verbs": [
+              "learn",
+              "study",
+              "develop",
+              "grow",
+              "achieve"
+            ],
+            "adjectives": [
+              "educational",
+              "critical",
+              "academic",
+              "motivated",
+              "ambitious",
+              "curious"
+            ],
+            "adverbs": [
+              "actively",
+              "well"
+            ]
+          },
+          "pronunciation": "Practice stress patterns in modals and continuous forms. Phonemic Awareness: Practice production and sound discrimination in minimal pair sounds of familiar words"
+        },
+        "pragmatic": {
+          "functions": "Discussing goals and asking about progress. Offering encouragement.",
+          "examples": [
+            "I want to improve my math skills.",
+            "How are you doing in science?",
+            "You should keep practicing to get better."
+          ]
+        },
+        "sociolinguistic": "Engage in discussions about personal and learning goals and offer relevant suggestions for improvement, respecting others opinions or thoughts."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade8_scenario2_project1",
+            "name": "Educational Presentation",
+            "category": "Academic Reflection",
+            "overview": "Students create a presentation on the importance of education using present continuous to describe ongoing learning and modals to express future goals.",
+            "skills": [
+              "Educational Reflection: Describing ongoing learning and suggestions for improvement",
+              "Creative thinking: Describing personal and learning goals using creative tools and ideas"
+            ],
+            "technology": [
+              "Podcast platforms",
+              "Vision board tools",
+              "Video editing software for vlogs"
+            ]
+          },
+          {
+            "id": "grade8_scenario2_project2",
+            "name": "Learning Vision Board",
+            "category": "Goal Setting",
+            "overview": "Students create a vision board for their personal and learning goals using present continuous tense and modals of ability and desire.",
+            "skills": [
+              "Educational Reflection: Describing ongoing learning and suggestions for improvement",
+              "Creative thinking: Describing personal and learning goals using creative tools and ideas"
+            ],
+            "technology": [
+              "Podcast platforms",
+              "Vision board tools",
+              "Video editing software for vlogs"
+            ]
+          },
+          {
+            "id": "grade8_scenario2_project3",
+            "name": "Educational Group Report",
+            "category": "Collaborative Learning",
+            "overview": "Students create a group report sharing their current learning experiences and future educational goals using gerunds after prepositions.",
+            "skills": [
+              "Educational Reflection: Describing ongoing learning and suggestions for improvement",
+              "Creative thinking: Describing personal and learning goals using creative tools and ideas"
+            ],
+            "technology": [
+              "Podcast platforms",
+              "Vision board tools",
+              "Video editing software for vlogs"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "My Favorite Book/Movie",
+      "themes": [
+        "My Favorite Movie Is... Because...",
+        "I Liked Your Presentation Because..."
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can analyze simple information and questions about familiar topics when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Follow audio narratives",
+            "Interactive: Respond to questions in class discussions"
+          ],
+          "learning_outcomes": [
+            "Can follow audio narratives by responding to questions in discussions about movies and books",
+            "Can identify key points shared by classmates when listening to explanations or participating in discussions",
+            "Can answer simple questions about favorite genres after listening to peers"
+          ]
+        },
+        "reading": {
+          "general_standard": "Can analyze a variety of short texts.",
+          "specific_standards": [
+            "Reading: Interpret characters' motives in short stories",
+            "Reading: Identify the main ideas of persuasive texts and their arguments",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by practicing minimal pair sounds"
+          ],
+          "learning_outcomes": [
+            "Can interpret characters' motives in short story descriptions by answering questions about key decisions and actions",
+            "Can identify the main ideas of persuasive texts about books or movies",
+            "Can accurately identify and produce sounds in minimal pairs"
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can engage in simple discussions by asking and responding to questions, exchanging information, and providing brief explanations about familiar topics.",
+          "specific_standards": [
+            "Productive: Give a brief overview of a favorite book or movie",
+            "Interactive: Participate in class discussions, sharing reviews of various types of content"
+          ],
+          "learning_outcomes": [
+            "Can give a brief overview of a favorite movie in class discussions",
+            "Can participate in class discussions by asking and answering questions about favorite books",
+            "Can share opinions in group discussions about favorite books"
+          ]
+        },
+        "writing": {
+          "general_standard": "Can collaboratively create short texts, such as diary entries, creative pieces, and class reports, demonstrating growing coherence.",
+          "specific_standards": [
+            "Productive: Compose short pieces of creative writing",
+            "Interactive: Provide feedback on short texts during a peer review session"
+          ],
+          "learning_outcomes": [
+            "Can compose a short, creative piece inspired by a favorite book using simple details to describe key elements",
+            "Can provide feedback on a peer's description of a movie",
+            "Can compose a simple review, sharing why a book or movie is enjoyable"
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can mediate peer understanding by summarizing information, interpreting visuals, and explaining ideas with examples.",
+          "specific_standards": [
+            "Communication: Mediate between peers in conflict",
+            "Communication: Clarify misunderstood social cues in peer interactions"
+          ],
+          "learning_outcomes": [
+            "Can mediate a simple disagreement between peers about a favorite movie using gestures",
+            "Can clarify misunderstood social cues using facial expressions and gestures to show understanding",
+            "Can mediate discussions about movie genres using gestures to emphasize different preferences"
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Present simple for expressing opinions",
+            "Past simple for describing plot and actions",
+            "Conjunctions for explanations (because, so, but)"
+          ],
+          "vocabulary": {
+            "nouns": [
+              "book",
+              "movie",
+              "character",
+              "plot",
+              "genre",
+              "adventure",
+              "mystery",
+              "science fiction",
+              "fantasy",
+              "review",
+              "opinion",
+              "recommendation"
+            ],
+            "verbs": [
+              "like",
+              "enjoy",
+              "recommend",
+              "describe",
+              "explain",
+              "watch",
+              "read"
+            ],
+            "adjectives": [
+              "interesting",
+              "exciting",
+              "boring",
+              "amazing",
+              "creative",
+              "entertaining",
+              "educational"
+            ],
+            "phrases": [
+              "My favorite is...",
+              "I recommend...",
+              "It's about..."
+            ]
+          },
+          "pronunciation": "Practice production and sound discrimination in minimal pair sounds. Focus on distinguishing between /ʊ/ in 'full' and /uː/ in 'fool'"
+        },
+        "pragmatic": {
+          "functions": "Expressing opinions and giving reasons. Asking for recommendations. Responding to feedback.",
+          "examples": [
+            "My favorite movie is about space exploration.",
+            "I recommend this book because it's exciting.",
+            "What book do you recommend?"
+          ]
+        },
+        "sociolinguistic": "Participate in peer discussions about entertainment preferences, respecting different opinions and offering constructive feedback."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade8_scenario3_project1",
+            "name": "Book/Movie Review Blog",
+            "category": "Digital Writing",
+            "overview": "Students create a blog reviewing their favorite books or movies using present simple and past simple tenses to describe and explain their preferences.",
+            "skills": [
+              "Critical Thinking: Analyzing and evaluating entertainment content",
+              "Communication: Expressing and justifying opinions clearly"
+            ],
+            "technology": [
+              "Blog platforms",
+              "Video review software",
+              "Digital presentation tools"
+            ]
+          },
+          {
+            "id": "grade8_scenario3_project2",
+            "name": "Character Analysis Presentation",
+            "category": "Literary Analysis",
+            "overview": "Students create presentations analyzing characters from their favorite stories, explaining motives and making connections.",
+            "skills": [
+              "Critical Thinking: Analyzing and evaluating entertainment content",
+              "Communication: Expressing and justifying opinions clearly"
+            ],
+            "technology": [
+              "Blog platforms",
+              "Video review software",
+              "Digital presentation tools"
+            ]
+          },
+          {
+            "id": "grade8_scenario3_project3",
+            "name": "Recommendation Video",
+            "category": "Persuasive Communication",
+            "overview": "Students create videos recommending books or movies to classmates using persuasive language and clear explanations.",
+            "skills": [
+              "Critical Thinking: Analyzing and evaluating entertainment content",
+              "Communication: Expressing and justifying opinions clearly"
+            ],
+            "technology": [
+              "Blog platforms",
+              "Video review software",
+              "Digital presentation tools"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "Sustainable Living",
+      "themes": [
+        "In the Past, People Didn't Recycle as Much as They Do Now",
+        "You Can Save Water By..."
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can analyze simple information and questions about familiar topics when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Infer implicit information when listening to current events",
+            "Interactive: Respond to questions in class discussions"
+          ],
+          "learning_outcomes": [
+            "Can infer implicit information from audio about environmental topics",
+            "Can respond to questions about sustainability practices in class discussions",
+            "Can listen for specific details about environmental changes"
+          ]
+        },
+        "reading": {
+          "general_standard": "Can analyze a variety of short texts.",
+          "specific_standards": [
+            "Reading: Analyze informational texts for specific purposes",
+            "Reading: Interpret characters' motives in short stories",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by pronouncing the past tense verbs ending '-ed'"
+          ],
+          "learning_outcomes": [
+            "Can analyze informational texts about environmental issues",
+            "Can interpret motives in stories about sustainability",
+            "Can accurately pronounce past tense verbs ending in '-ed'"
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can engage in simple discussions by asking and responding to questions, exchanging information, and providing brief explanations about familiar topics.",
+          "specific_standards": [
+            "Productive: Present findings from a group discussion",
+            "Interactive: Engage in problem-solving conversations"
+          ],
+          "learning_outcomes": [
+            "Can present findings about sustainable practices",
+            "Can engage in problem-solving discussions about environmental issues",
+            "Can suggest ways to reduce waste and save resources"
+          ]
+        },
+        "writing": {
+          "general_standard": "Can collaboratively create short texts, such as diary entries, creative pieces, and class reports, demonstrating growing coherence.",
+          "specific_standards": [
+            "Productive: Write a short report on a class activity",
+            "Interactive: Edit classmates' narratives for clarity and coherence"
+          ],
+          "learning_outcomes": [
+            "Can write a short report on environmental practices",
+            "Can write instructions for sustainable living",
+            "Can edit peers' writing about environmental topics"
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can mediate peer understanding by summarizing information, interpreting visuals, and explaining ideas with examples.",
+          "specific_standards": [
+            "Concept: Explain abstract concepts using simple analogies",
+            "Concept: Interpret graphical data for class discussions"
+          ],
+          "learning_outcomes": [
+            "Can explain environmental concepts using simple analogies",
+            "Can interpret graphs about pollution or recycling",
+            "Can help peers understand sustainability data"
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Past simple for comparing past and present practices",
+            "Imperative for instructions",
+            "Modals for suggestions (should, can, could)"
+          ],
+          "vocabulary": {
+            "nouns": [
+              "environment",
+              "recycling",
+              "pollution",
+              "water",
+              "energy",
+              "waste",
+              "conservation",
+              "resources",
+              "climate",
+              "sustainability"
+            ],
+            "verbs": [
+              "recycle",
+              "reduce",
+              "save",
+              "conserve",
+              "protect",
+              "pollute",
+              "waste",
+              "reuse"
+            ],
+            "adjectives": [
+              "sustainable",
+              "renewable",
+              "harmful",
+              "eco-friendly",
+              "wasteful"
+            ],
+            "adverbs": [
+              "efficiently",
+              "responsibly"
+            ]
+          },
+          "pronunciation": "Practice pronunciation of past tense verbs ending '-ed' (/t/, /d/, /ɪd/ sounds)"
+        },
+        "pragmatic": {
+          "functions": "Making suggestions. Comparing past and present. Giving instructions.",
+          "examples": [
+            "You can save water by turning off the tap.",
+            "In the past, people didn't recycle as much.",
+            "We should use less plastic."
+          ]
+        },
+        "sociolinguistic": "Discuss environmental responsibility and engage in collaborative problem-solving about sustainability."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade8_scenario4_project1",
+            "name": "Sustainability Campaign",
+            "category": "Environmental Advocacy",
+            "overview": "Students create a campaign promoting sustainable practices using imperatives and modals for suggestions.",
+            "skills": [
+              "Environmental Awareness: Understanding and promoting sustainable practices",
+              "Problem-Solving: Finding solutions to environmental challenges"
+            ],
+            "technology": [
+              "Infographic creation tools",
+              "Video editing software",
+              "Social media platforms"
+            ]
+          },
+          {
+            "id": "grade8_scenario4_project2",
+            "name": "Before and After Comparison",
+            "category": "Historical Analysis",
+            "overview": "Students create presentations comparing environmental practices from the past to the present using past simple.",
+            "skills": [
+              "Environmental Awareness: Understanding and promoting sustainable practices",
+              "Problem-Solving: Finding solutions to environmental challenges"
+            ],
+            "technology": [
+              "Infographic creation tools",
+              "Video editing software",
+              "Social media platforms"
+            ]
+          },
+          {
+            "id": "grade8_scenario4_project3",
+            "name": "Eco-Tips Guide",
+            "category": "Instructional Writing",
+            "overview": "Students create a guide with practical tips for sustainable living using imperatives and clear instructions.",
+            "skills": [
+              "Environmental Awareness: Understanding and promoting sustainable practices",
+              "Problem-Solving: Finding solutions to environmental challenges"
+            ],
+            "technology": [
+              "Infographic creation tools",
+              "Video editing software",
+              "Social media platforms"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "Career Goals",
+      "themes": [
+        "I Want to Be a Doctor Because...",
+        "To Become a Doctor, First I Will Need To..."
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can analyze simple information and questions about familiar topics when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Get the gist of dialogues in social settings",
+            "Interactive: Participate in group problem-solving sessions"
+          ],
+          "learning_outcomes": [
+            "Can get the gist of dialogues about career choices",
+            "Can participate in discussions about future professions",
+            "Can understand key information about career requirements"
+          ]
+        },
+        "reading": {
+          "general_standard": "Can analyze a variety of short texts.",
+          "specific_standards": [
+            "Reading: Analyze the structure of various texts",
+            "Reading: Summarize the main points of various non-fiction texts",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by practicing minimal pair sounds"
+          ],
+          "learning_outcomes": [
+            "Can analyze texts about different careers",
+            "Can summarize information about job requirements",
+            "Can accurately produce minimal pair sounds"
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can engage in simple discussions by asking and responding to questions, exchanging information, and providing brief explanations about familiar topics.",
+          "specific_standards": [
+            "Productive: Create a short narrative based on a personal experience",
+            "Interactive: Respond to classmates' presentations"
+          ],
+          "learning_outcomes": [
+            "Can describe career aspirations and reasons",
+            "Can explain steps needed to achieve career goals",
+            "Can respond to questions about future plans"
+          ]
+        },
+        "writing": {
+          "general_standard": "Can collaboratively create short texts, such as diary entries, creative pieces, and class reports, demonstrating growing coherence.",
+          "specific_standards": [
+            "Productive: Create a short narrative based on a personal experience",
+            "Interactive: Provide feedback on short texts during a peer review session"
+          ],
+          "learning_outcomes": [
+            "Can write about career goals and aspirations",
+            "Can write a plan outlining steps to achieve a career",
+            "Can provide feedback on peers' career plans"
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can mediate peer understanding by summarizing information, interpreting visuals, and explaining ideas with examples.",
+          "specific_standards": [
+            "Communication: Facilitate a discussion on team roles in group work",
+            "Concept: Aid in interpreting differences in communication"
+          ],
+          "learning_outcomes": [
+            "Can facilitate discussions about career options",
+            "Can help peers understand different career paths",
+            "Can interpret career-related information for classmates"
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Future tense with 'will' and 'going to'",
+            "Infinitives of purpose (to + verb)",
+            "Modals for necessity (need to, have to, must)"
+          ],
+          "vocabulary": {
+            "nouns": [
+              "career",
+              "profession",
+              "doctor",
+              "engineer",
+              "teacher",
+              "nurse",
+              "goal",
+              "ambition",
+              "requirement",
+              "education",
+              "training",
+              "qualification"
+            ],
+            "verbs": [
+              "become",
+              "achieve",
+              "study",
+              "train",
+              "work",
+              "prepare",
+              "plan"
+            ],
+            "adjectives": [
+              "professional",
+              "qualified",
+              "dedicated",
+              "skilled",
+              "experienced"
+            ],
+            "phrases": [
+              "I want to be...",
+              "I will need to...",
+              "My goal is to..."
+            ]
+          },
+          "pronunciation": "Practice stress patterns in multi-syllable career words and modal verbs"
+        },
+        "pragmatic": {
+          "functions": "Expressing future plans. Explaining reasons. Describing requirements.",
+          "examples": [
+            "I want to be a doctor because I like helping people.",
+            "To become a doctor, first I will need to study medicine.",
+            "My goal is to work in a hospital."
+          ]
+        },
+        "sociolinguistic": "Discuss career aspirations respectfully and support peers' goals regardless of chosen profession."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade8_scenario5_project1",
+            "name": "Career Roadmap",
+            "category": "Future Planning",
+            "overview": "Students create a visual roadmap showing steps to achieve their career goals using future tense and infinitives of purpose.",
+            "skills": [
+              "Goal Setting: Planning and articulating future aspirations",
+              "Research: Investigating career requirements and pathways"
+            ],
+            "technology": [
+              "Mind mapping software",
+              "Presentation tools",
+              "Video interview platforms"
+            ]
+          },
+          {
+            "id": "grade8_scenario5_project2",
+            "name": "Career Interview Project",
+            "category": "Research and Communication",
+            "overview": "Students interview professionals about their careers and create presentations about what they learned.",
+            "skills": [
+              "Goal Setting: Planning and articulating future aspirations",
+              "Research: Investigating career requirements and pathways"
+            ],
+            "technology": [
+              "Mind mapping software",
+              "Presentation tools",
+              "Video interview platforms"
+            ]
+          },
+          {
+            "id": "grade8_scenario5_project3",
+            "name": "My Future Self Video",
+            "category": "Creative Visualization",
+            "overview": "Students create videos imagining themselves in their future careers, explaining their journey and achievements.",
+            "skills": [
+              "Goal Setting: Planning and articulating future aspirations",
+              "Research: Investigating career requirements and pathways"
+            ],
+            "technology": [
+              "Mind mapping software",
+              "Presentation tools",
+              "Video interview platforms"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "Learning from Our Mistakes",
+      "themes": [
+        "What Can I Learn from This Experience?",
+        "Next Time, I Will Study Harder to Avoid..."
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can analyze simple information and questions about familiar topics when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Identify the main ideas of spoken news about familiar topics",
+            "Interactive: Contribute to simple discussions on a variety of issues"
+          ],
+          "learning_outcomes": [
+            "Can identify main ideas in discussions about learning experiences",
+            "Can contribute to discussions about personal challenges",
+            "Can understand stories about overcoming difficulties"
+          ]
+        },
+        "reading": {
+          "general_standard": "Can analyze a variety of short texts.",
+          "specific_standards": [
+            "Reading: Develop arguments based on one or more texts studied",
+            "Reading: Identify the main ideas of persuasive texts and their arguments",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by practicing minimal pair sounds"
+          ],
+          "learning_outcomes": [
+            "Can read and understand texts about learning from mistakes",
+            "Can identify arguments in texts about personal growth",
+            "Can accurately produce minimal pair sounds"
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can engage in simple discussions by asking and responding to questions, exchanging information, and providing brief explanations about familiar topics.",
+          "specific_standards": [
+            "Productive: Explain a recent learning experience",
+            "Interactive: Engage in questions and answers about future goals"
+          ],
+          "learning_outcomes": [
+            "Can explain what was learned from a mistake",
+            "Can discuss how to improve in the future",
+            "Can share personal experiences of overcoming challenges"
+          ]
+        },
+        "writing": {
+          "general_standard": "Can collaboratively create short texts, such as diary entries, creative pieces, and class reports, demonstrating growing coherence.",
+          "specific_standards": [
+            "Productive: Write a diary entry about a significant event",
+            "Interactive: Collaborate in writing, with guidance, on a shared text for a group project"
+          ],
+          "learning_outcomes": [
+            "Can write about a learning experience",
+            "Can write a reflection on mistakes and improvements",
+            "Can collaborate on writing about group challenges"
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can mediate peer understanding by summarizing information, interpreting visuals, and explaining ideas with examples.",
+          "specific_standards": [
+            "Concept: Explain abstract concepts using simple analogies",
+            "Concept: Aid in interpreting differences in communication"
+          ],
+          "learning_outcomes": [
+            "Can help peers understand the value of mistakes",
+            "Can explain growth mindset concepts simply",
+            "Can mediate discussions about learning challenges"
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Past simple for describing experiences",
+            "Future tense for plans and resolutions",
+            "Modal verbs for advice (should, could, might)"
+          ],
+          "vocabulary": {
+            "nouns": [
+              "mistake",
+              "experience",
+              "lesson",
+              "challenge",
+              "improvement",
+              "growth",
+              "success",
+              "failure",
+              "reflection"
+            ],
+            "verbs": [
+              "learn",
+              "improve",
+              "try",
+              "fail",
+              "succeed",
+              "reflect",
+              "overcome",
+              "avoid"
+            ],
+            "adjectives": [
+              "difficult",
+              "challenging",
+              "valuable",
+              "important",
+              "better"
+            ],
+            "phrases": [
+              "I learned that...",
+              "Next time I will...",
+              "What can I learn from..."
+            ]
+          },
+          "pronunciation": "Practice minimal pair sounds in common reflection vocabulary"
+        },
+        "pragmatic": {
+          "functions": "Reflecting on experiences. Making future plans. Giving and receiving advice.",
+          "examples": [
+            "What can I learn from this experience?",
+            "Next time, I will study harder to avoid mistakes.",
+            "I should have asked for help."
+          ]
+        },
+        "sociolinguistic": "Create a supportive environment for discussing mistakes and encourage growth mindset."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade8_scenario6_project1",
+            "name": "Learning Journey Blog",
+            "category": "Reflective Writing",
+            "overview": "Students create blog posts reflecting on challenges they've faced and what they learned from them.",
+            "skills": [
+              "Self-Reflection: Analyzing personal experiences and growth",
+              "Resilience: Understanding the value of mistakes in learning"
+            ],
+            "technology": [
+              "Blog platforms",
+              "Digital journal apps",
+              "Video reflection tools"
+            ]
+          },
+          {
+            "id": "grade8_scenario6_project2",
+            "name": "Mistake-to-Success Story",
+            "category": "Narrative Development",
+            "overview": "Students write or present stories about how a mistake led to learning and improvement.",
+            "skills": [
+              "Self-Reflection: Analyzing personal experiences and growth",
+              "Resilience: Understanding the value of mistakes in learning"
+            ],
+            "technology": [
+              "Blog platforms",
+              "Digital journal apps",
+              "Video reflection tools"
+            ]
+          },
+          {
+            "id": "grade8_scenario6_project3",
+            "name": "Growth Mindset Presentation",
+            "category": "Educational Advocacy",
+            "overview": "Students create presentations about the importance of learning from mistakes and developing a growth mindset.",
+            "skills": [
+              "Self-Reflection: Analyzing personal experiences and growth",
+              "Resilience: Understanding the value of mistakes in learning"
+            ],
+            "technology": [
+              "Blog platforms",
+              "Digital journal apps",
+              "Video reflection tools"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "A Day Without Technology",
+      "themes": [
+        "Pros and Cons",
+        "Tech-Free or Tech Bound?"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can analyze simple information and questions about familiar topics when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Show comprehension of extended instructions on familiar topics",
+            "Interactive: Interpret peer feedback in collaborative projects"
+          ],
+          "learning_outcomes": [
+            "Can understand discussions about technology use",
+            "Can follow arguments about pros and cons of technology",
+            "Can interpret feedback about digital habits"
+          ]
+        },
+        "reading": {
+          "general_standard": "Can analyze a variety of short texts.",
+          "specific_standards": [
+            "Reading: Comprehend descriptions in simple texts",
+            "Reading: Analyze informational texts for specific purposes",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by pronouncing the past tense verbs ending '-ed'"
+          ],
+          "learning_outcomes": [
+            "Can read and analyze texts about technology use",
+            "Can understand arguments for and against technology",
+            "Can pronounce past tense verbs accurately"
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can engage in simple discussions by asking and responding to questions, exchanging information, and providing brief explanations about familiar topics.",
+          "specific_standards": [
+            "Productive: Explain daily habits and routines",
+            "Interactive: Respond to classmates' presentations"
+          ],
+          "learning_outcomes": [
+            "Can describe a day without technology",
+            "Can discuss pros and cons of digital devices",
+            "Can compare tech-filled vs tech-free activities"
+          ]
+        },
+        "writing": {
+          "general_standard": "Can collaboratively create short texts, such as diary entries, creative pieces, and class reports, demonstrating growing coherence.",
+          "specific_standards": [
+            "Productive: Write a diary entry about a significant event",
+            "Interactive: Provide feedback on short texts during a peer review session"
+          ],
+          "learning_outcomes": [
+            "Can write about experiences without technology",
+            "Can write arguments about technology use",
+            "Can provide feedback on peers' technology reflections"
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can mediate peer understanding by summarizing information, interpreting visuals, and explaining ideas with examples.",
+          "specific_standards": [
+            "Text: Summarize audio and video content for study notes",
+            "Communication: Clarify misunderstood social cues in peer interactions"
+          ],
+          "learning_outcomes": [
+            "Can summarize different viewpoints on technology",
+            "Can help peers understand balanced technology use",
+            "Can clarify arguments in technology debates"
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Comparative structures for contrasts",
+            "Modal verbs for possibility and ability",
+            "Conditionals for hypothetical situations"
+          ],
+          "vocabulary": {
+            "nouns": [
+              "technology",
+              "device",
+              "smartphone",
+              "computer",
+              "internet",
+              "screen time",
+              "connection",
+              "communication"
+            ],
+            "verbs": [
+              "use",
+              "depend",
+              "connect",
+              "disconnect",
+              "balance",
+              "limit"
+            ],
+            "adjectives": [
+              "digital",
+              "connected",
+              "disconnected",
+              "productive",
+              "distracted",
+              "balanced"
+            ],
+            "phrases": [
+              "pros and cons",
+              "tech-free",
+              "tech bound"
+            ]
+          },
+          "pronunciation": "Practice pronunciation of past tense verbs and technology vocabulary"
+        },
+        "pragmatic": {
+          "functions": "Comparing and contrasting. Expressing opinions. Discussing advantages and disadvantages.",
+          "examples": [
+            "One advantage of technology is...",
+            "On the other hand, without technology we can...",
+            "I think we depend too much on our phones."
+          ]
+        },
+        "sociolinguistic": "Engage in balanced discussions about technology use and respect different viewpoints on digital habits."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade8_scenario7_project1",
+            "name": "Tech-Free Challenge Journal",
+            "category": "Experiential Learning",
+            "overview": "Students spend a day without technology and journal about their experience, noting challenges and benefits.",
+            "skills": [
+              "Critical Thinking: Analyzing technology's role in daily life",
+              "Self-Awareness: Recognizing personal technology habits"
+            ],
+            "technology": [
+              "Digital journaling apps (used after the challenge)",
+              "Video documentary tools",
+              "Survey platforms"
+            ]
+          },
+          {
+            "id": "grade8_scenario7_project2",
+            "name": "Pros and Cons Debate",
+            "category": "Persuasive Communication",
+            "overview": "Students participate in a structured debate about technology use, presenting both advantages and disadvantages.",
+            "skills": [
+              "Critical Thinking: Analyzing technology's role in daily life",
+              "Self-Awareness: Recognizing personal technology habits"
+            ],
+            "technology": [
+              "Digital journaling apps (used after the challenge)",
+              "Video documentary tools",
+              "Survey platforms"
+            ]
+          },
+          {
+            "id": "grade8_scenario7_project3",
+            "name": "Digital Balance Campaign",
+            "category": "Social Advocacy",
+            "overview": "Students create campaigns promoting balanced technology use for their school community.",
+            "skills": [
+              "Critical Thinking: Analyzing technology's role in daily life",
+              "Self-Awareness: Recognizing personal technology habits"
+            ],
+            "technology": [
+              "Digital journaling apps (used after the challenge)",
+              "Video documentary tools",
+              "Survey platforms"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario": "Planning for My Future Education",
+      "themes": [
+        "I Expect My Future to Be...",
+        "My Personal Goals for the Future Include..."
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can analyze simple information and questions about familiar topics when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Follow audio narratives",
+            "Interactive: Engage in role-play exercises to resolve conflicts"
+          ],
+          "learning_outcomes": [
+            "Can follow narratives about educational plans",
+            "Can engage in discussions about future education",
+            "Can understand information about educational opportunities"
+          ]
+        },
+        "reading": {
+          "general_standard": "Can analyze a variety of short texts.",
+          "specific_standards": [
+            "Reading: Analyze the structure of various texts",
+            "Reading: Interpret characters' motives in short stories",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by practicing minimal pair sounds"
+          ],
+          "learning_outcomes": [
+            "Can analyze texts about educational pathways",
+            "Can understand requirements for different educational programs",
+            "Can accurately produce minimal pair sounds"
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can engage in simple discussions by asking and responding to questions, exchanging information, and providing brief explanations about familiar topics.",
+          "specific_standards": [
+            "Productive: Explain a recent learning experience",
+            "Interactive: Engage in discussions about academic and future professional interests"
+          ],
+          "learning_outcomes": [
+            "Can explain educational goals and expectations",
+            "Can discuss plans for future studies",
+            "Can ask and answer questions about educational choices"
+          ]
+        },
+        "writing": {
+          "general_standard": "Can collaboratively create short texts, such as diary entries, creative pieces, and class reports, demonstrating growing coherence.",
+          "specific_standards": [
+            "Productive: Write a diary entry about a significant event",
+            "Interactive: Collaborate in writing, with guidance, on a shared text for a group project"
+          ],
+          "learning_outcomes": [
+            "Can write about future educational plans",
+            "Can create a personal education plan",
+            "Can collaborate on writing about educational goals"
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can mediate peer understanding by summarizing information, interpreting visuals, and explaining ideas with examples.",
+          "specific_standards": [
+            "Concept: Explain abstract concepts using simple analogies",
+            "Concept: Aid in interpreting differences in communication"
+          ],
+          "learning_outcomes": [
+            "Can help peers understand educational options",
+            "Can explain different pathways to success",
+            "Can mediate discussions about educational planning"
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Future tense for predictions and plans",
+            "Present simple for stating goals",
+            "Modal verbs for expectations (will, expect to, hope to)"
+          ],
+          "vocabulary": {
+            "nouns": [
+              "future",
+              "education",
+              "university",
+              "college",
+              "degree",
+              "diploma",
+              "scholarship",
+              "goal",
+              "expectation",
+              "plan"
+            ],
+            "verbs": [
+              "expect",
+              "plan",
+              "hope",
+              "study",
+              "achieve",
+              "prepare",
+              "apply"
+            ],
+            "adjectives": [
+              "future",
+              "educational",
+              "academic",
+              "successful",
+              "prepared"
+            ],
+            "phrases": [
+              "I expect...",
+              "My goal is...",
+              "I plan to..."
+            ]
+          },
+          "pronunciation": "Practice stress patterns in educational vocabulary and future tense structures"
+        },
+        "pragmatic": {
+          "functions": "Expressing expectations. Describing future plans. Discussing goals.",
+          "examples": [
+            "I expect my future to be successful.",
+            "My personal goals include studying at university.",
+            "I plan to become an engineer."
+          ]
+        },
+        "sociolinguistic": "Discuss educational plans respectfully and support diverse educational pathways and goals."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade8_scenario8_project1",
+            "name": "My Education Plan Portfolio",
+            "category": "Strategic Planning",
+            "overview": "Students create comprehensive portfolios outlining their educational goals, steps to achieve them, and expected outcomes.",
+            "skills": [
+              "Strategic Planning: Mapping out educational pathways",
+              "Goal Articulation: Clearly expressing future aspirations"
+            ],
+            "technology": [
+              "Portfolio creation tools",
+              "Timeline visualization software",
+              "Presentation platforms"
+            ]
+          },
+          {
+            "id": "grade8_scenario8_project2",
+            "name": "Future Self Interview",
+            "category": "Creative Visualization",
+            "overview": "Students create videos interviewing their 'future selves' about their educational journey and achievements.",
+            "skills": [
+              "Strategic Planning: Mapping out educational pathways",
+              "Goal Articulation: Clearly expressing future aspirations"
+            ],
+            "technology": [
+              "Portfolio creation tools",
+              "Timeline visualization software",
+              "Presentation platforms"
+            ]
+          },
+          {
+            "id": "grade8_scenario8_project3",
+            "name": "Education Fair Presentation",
+            "category": "Information Sharing",
+            "overview": "Students research and present information about different educational opportunities and pathways.",
+            "skills": [
+              "Strategic Planning: Mapping out educational pathways",
+              "Goal Articulation: Clearly expressing future aspirations"
+            ],
+            "technology": [
+              "Portfolio creation tools",
+              "Timeline visualization software",
+              "Presentation platforms"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

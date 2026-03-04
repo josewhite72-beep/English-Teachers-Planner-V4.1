@@ -1,0 +1,1134 @@
+{
+  "grade": "7",
+  "proficiency_level": "A2.2",
+  "description": "High Beginner - A2.2",
+  "general_standards": {
+    "listening": "Can extract both the main ideas and specific details in information heard from descriptions and narratives when spoken slowly and clearly.",
+    "reading": "Can engage in intensive and extensive reading of short texts to extract information and details.",
+    "speaking": "Can describe basic information and engage in simple discussions with peers.",
+    "writing": "Can compose short, purpose-driven texts, such as summaries, descriptive paragraphs, and project reports, demonstrating growing independence in structure and clarity.",
+    "mediation": "Can facilitate communication with peers through simplified language, clarification, aiding understanding in group interactions, and interpretation of cultural differences in communication."
+  },
+  "scenarios": [
+    {
+      "scenario_number": 1,
+      "scenario_name": "Our New Classmates",
+      "category": "Fundamental",
+      "theme_category": "Expressing Ourselves and Connecting with Others",
+      "themes": [
+        "Where are you from?",
+        "What was Your Previous School Like?"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can extract both the main ideas and specific details in information heard from descriptions and narratives when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Identify specific information in descriptions and narratives.",
+            "Interactive: Respond appropriately to spoken questions in familiar settings."
+          ],
+          "learning_outcomes": [
+            "Can identify specific details in conversations about classmates' backgrounds and school experiences (e.g., \"I'm from Chiriquí, and my old school had a big garden.\" \"In my previous school, classes started at 7 a.m.\").",
+            "Can recognize key information in discussions about school schedules and community activities (e.g., \"In my new school, I study in the afternoon, but before I had morning classes.\" \"My new school organizes a book fair every September where students can buy and exchange books.\").",
+            "Can respond to simple questions about classmates' previous schools and new routines (e.g., \"Where did you go to school before?\" \"I studied in San Miguelito.\" \"Do you like the afternoon schedule?\" \"Yes, because I have mornings free for doing homework.\")."
+          ]
+        },
+        "reading": {
+          "general_standard": "Can engage in intensive and extensive reading of short texts to extract information and details.",
+          "specific_standards": [
+            "Reading: Show comprehension of the main plot and characters in short stories.",
+            "Reading: Follow instructions for academic tasks or projects.",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by reading base words and inflectional endings (-s, -es, -ed, -ing)."
+          ],
+          "learning_outcomes": [
+            "Can identify the main plot and characters in short stories about changing schools and making new friends (e.g., \"In the story, Gianluigi and Emma felt nervous about their first day at a new school, but they made new friends during lunch.\").",
+            "Can follow written instructions to complete school-related tasks or projects (e.g., \"Step 1: Interview a classmate about their previous school. Step 2: Write three sentences comparing your schools.\").",
+            "Can recognize base words and inflectional endings (-s, -es, -ed, -ing) in texts about classmates and school activities (e.g., \"Giacomo talks to his classmates every day.\" \"Giuseppe played soccer after school.\" \"Giulietta is studying for the test.\")."
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can describe basic information in simple discussions with peers.",
+          "specific_standards": [
+            "Productive: Explain a useful skill.",
+            "Interactive: Talk about preferences and familiar topics in a guided class discussion."
+          ],
+          "learning_outcomes": [
+            "Can explain a useful skill learned at school or in the community (e.g., \"I learned how to play the drum in music class.\" \"Liam taught me how to solve math problems faster.\").",
+            "Can talk about preferences when discussing school activities and routines (e.g., \"I prefer morning classes because I have more energy.\" \"I like math more than science because I enjoy solving problems.\").",
+            "Can participate in guided discussions to compare school experiences with classmates (e.g., \"In my previous school, we had longer breaks.\" \"My new school has a bigger library than my old one.\")."
+          ]
+        },
+        "writing": {
+          "general_standard": "Can compose short, purpose-driven texts, such as summaries, descriptive paragraphs, and project reports, demonstrating growing independence in structure and clarity.",
+          "specific_standards": [
+            "Productive: Write a personal diary entry about a recent event.",
+            "Interactive: Reply to a message written on paper, in a text app, or in an email."
+          ],
+          "learning_outcomes": [
+            "Can write a personal diary entry about a recent event at school or in the community (e.g., \"Today, I joined a new class. I felt nervous at first, but then I met Juan Manuel, and we became friends.\").",
+            "Can reply to a simple message from a classmate about school activities (e.g., \"Hi Tammy! Yes, I will bring my notebook for the science project tomorrow. See you in class!\").",
+            "Can describe a recent move from one school to another in a short email to a friend (e.g., \"Hello, Bill! This is Juan Carlos. Recently, I moved to a new school in Chiriquí. It is bigger than my old school in Puerto Armuelles. It is more modern, quieter, and cleaner. I will make new friends here!\")."
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can facilitate communication with peers through simplified language, clarification, aiding understanding in group interactions, and interpretation of cultural differences in communication.",
+          "specific_standards": [
+            "Text: Simplify messages for peers.",
+            "Text: Summarize a classmate's presentation for a teacher."
+          ],
+          "learning_outcomes": [
+            "Can simplify messages for peers about school events or activities (e.g., \"Victoria said the event will take place at my previous school.\" \"The activity is to learn more about our new classmate Adrian.\").",
+            "Can summarize a classmate's presentation for a teacher (e.g., \"Oscar talked about his old school. He said it had a big playground and that he loved math class.\").",
+            "Can explain classroom rules to a new student using simple language (e.g., \"We can't use our phones during class, but Teacher Angie said we can use them at lunch.\")."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Present and Past Simple for habits and descriptions (e.g., \"Adriana used to walk to go to her old school, but now she takes the bus.\")",
+            "Comparatives and superlatives (e.g., \"This school is bigger than my old one.\" \"Sofía is the fastest runner in our class.\")",
+            "Future tense in affirmative and interrogative sentences (e.g., \"We will have a contest next month in Oscar's old school.\" \"Will we have new classmates next year?\")"
+          ],
+          "vocabulary": {
+            "nouns": "classmate, school, community, subject, classroom, schedule, recess, cafeteria, playground, friend, teacher, project, uniform, library, activity, weekend, countryside, hometown, birthplace",
+            "verbs": "study, read, write, play, learn, join, compare, describe, walk, talk, listen, ask, answer, share, bring, participate, explain, prepare, practice, move from, used to, come from",
+            "adjectives": "new, friendly, nervous, excited, big, small, clean, noisy, quiet, interesting, boring, colorful, old, young, tall, short, helpful, kind, creative, previous, modern",
+            "question_words": "who, what, where, when, why, how",
+            "adverbs_of_frequency": "always, usually, often, sometimes, rarely, never"
+          },
+          "pronunciation": "Practice the endings of plurals and third person singular verbs with /s/, /z/, and /ɪz/ sounds (e.g., \"books\" /s/, \"friends\" /z/, \"watches\" /ɪz/).",
+          "phonemic_awareness": "Identify the sounds of the endings for third-person singular verbs and plurals with /s/ (e.g., \"talks,\" \"walks\"), /z/ (e.g., \"reads,\" \"plays\"), and /ɪz/ (e.g., \"teaches,\" \"washes\")"
+        },
+        "pragmatic": [
+          "Responding to questions about classmates and schools (e.g., \"Where are you from?\" \"I'm from Santiago.\" \"What was your previous school like?\" \"It was small but had a big library.\")",
+          "Participating in guided discussions about preferences and routines (e.g., \"I like my new school because the classes are fun.\" \"In my old school, we had music classes every Friday.\")",
+          "Comparing schools, classmates, or communities using comparatives and superlatives (e.g., \"My new school is bigger than my old one.\" \"She is the most talkative person in our class.\")"
+        ],
+        "sociolinguistic": "Present personal and classmate information in group discussions using appropriate language. Use formal and polite language in classroom and school settings."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade7_scenario1_project1",
+            "name": "Our New Classmates Video",
+            "category": "Video Creation",
+            "overview": "Students create short video interviews introducing their new classmates, using the present simple for descriptions and comparatives/superlatives to highlight differences and similarities (e.g., \"Liam comes from a bigger school than ours, and he loves science classes.\" \"Giulietta is from Italy, and she speaks three languages.\").",
+            "skills": [
+              "Collaboration and Communication: Working together to create interviews, digital posters, and news bulletins.",
+              "Critical Thinking and Comparison: By analyzing and comparing schools, classmates, and community features, students develop critical thinking skills."
+            ],
+            "technology": [
+              "Video Creation: Use video editing tools to produce community news reports and interviews."
+            ]
+          },
+          {
+            "id": "grade7_scenario1_project2",
+            "name": "My Previous School vs. My New School",
+            "category": "Digital Design",
+            "overview": "In groups, students design a digital poster comparing their previous school to their current one, using comparatives and superlatives (e.g., \"My old school was smaller, but the playground here is bigger.\").",
+            "skills": [
+              "Collaboration and Communication: Working together to create interviews, digital posters, and news bulletins.",
+              "Critical Thinking and Comparison: By analyzing and comparing schools, classmates, and community features, students develop critical thinking skills."
+            ],
+            "technology": [
+              "Digital Design: Utilize design software to create digital posters and Wall of Fame displays."
+            ]
+          },
+          {
+            "id": "grade7_scenario1_project3",
+            "name": "Classroom News Bulletin",
+            "category": "Media Creation",
+            "overview": "Students create a classroom news bulletin featuring school events, using the future tense to discuss upcoming activities and present simple to describe regular routines.",
+            "skills": [
+              "Collaboration and Communication: Working together to create interviews, digital posters, and news bulletins.",
+              "Critical Thinking and Comparison: By analyzing and comparing schools, classmates, and community features, students develop critical thinking skills."
+            ],
+            "technology": [
+              "Video Creation: Use video editing tools to produce community news reports and interviews.",
+              "Digital Design: Utilize design software to create digital posters and Wall of Fame displays."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario_number": 2,
+      "scenario_name": "Panama's Wildlife",
+      "category": "Fundamental",
+      "theme_category": "Nature and Wellness",
+      "themes": [
+        "The Habitat of Wildlife",
+        "The Daily Habits of Animals"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can extract both the main ideas and specific details in information heard from descriptions and narratives when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Identify specific information in descriptions and narratives.",
+            "Interactive: Engage in discussions about personal and school experiences based on texts heard."
+          ],
+          "learning_outcomes": [
+            "Can identify details from spoken narratives about animal habitats (e.g., \"Which animal is faster, the jaguar or the deer?\" \"The deer is faster.\").",
+            "Can listen to descriptions of wildlife and respond to questions (e.g., \"What animals live in Panama?\").",
+            "Can listen to descriptions of personal and school experiences involving animals and engage in discussions by sharing opinions and asking follow-up questions (e.g., \"During our school trip, we saw a sloth hanging from a tree.\" \"What did you see during the trip?\")."
+          ]
+        },
+        "reading": {
+          "general_standard": "Can engage in intensive and extensive reading of short texts to extract information and details.",
+          "specific_standards": [
+            "Reading: Interpret charts, graphs, and diagrams.",
+            "Reading: Respond to questions based on class readings.",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by applying knowledge of basic syllabification rules when decoding two-syllable or three-syllable or compound words."
+          ],
+          "learning_outcomes": [
+            "Can interpret a chart showing the habitats of local animals and describe key information (e.g., \"This chart shows that jaguars live in Darién National Park and are considered endangered. They need large forested areas to survive.\").",
+            "Can respond to questions based on readings about wildlife (e.g., \"What do sloths eat?\").",
+            "Can recognize common compound words and segment them accurately into syllables (e.g., \"wildlife\" into \"wild-life\")."
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can describe basic information in simple discussions with peers.",
+          "specific_standards": [
+            "Productive: Explain how to play a common game.",
+            "Interactive: Exchange simple ideas about current events in group discussions."
+          ],
+          "learning_outcomes": [
+            "Can explain the rules of a typical game related to wildlife or nature themes (e.g., \"I will describe the animal. You guess.\").",
+            "Can describe and ask questions about current changes in animal behavior in a group discussion (e.g., \"Jaguars now hunt closer to rivers because the prey moves there to find water.\").",
+            "Can exchange ideas about current news related to wildlife or habitats in a group discussion (e.g., \"There is news about volunteers protecting sea turtle nests in Veraguas.\")."
+          ]
+        },
+        "writing": {
+          "general_standard": "Can compose short, purpose-driven texts, such as summaries, descriptive paragraphs, and project reports, demonstrating growing independence in structure and clarity.",
+          "specific_standards": [
+            "Productive: Write instructions for a simple game or craft.",
+            "Interactive: Write simple comments on a peer's short text."
+          ],
+          "learning_outcomes": [
+            "Can write instructions for a wildlife guessing game (e.g., \"Choose an animal card and describe its habitat.\").",
+            "Can provide steps for a nature craft related to animals (e.g., \"Cut out shapes to make a sloth.\").",
+            "Can write supportive comments on a peer's description of wildlife (e.g., \"I like your information about the jaguar.\")."
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can facilitate communication with peers through simplified language, clarification, aiding understanding in group interactions, and interpretation of cultural differences in communication.",
+          "specific_standards": [
+            "Text: Contextualize basic classroom instructions supported with visual aids.",
+            "Communication: Facilitate discussions on classroom rules."
+          ],
+          "learning_outcomes": [
+            "Can contextualize classroom instructions using visual aids (e.g., shows a picture of a jaguar for the instruction, \"Choose your favorite animal.\").",
+            "Can facilitate a discussion on classroom rules by using simple gestures (e.g., making a \"quiet\" gesture for \"no talking\").",
+            "Can support instructions with visual aids to help peers understand (e.g., points to a picture and says, \"This is the jaguar's habitat. You have to write about it.\")."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Comparative and superlative adjectives (e.g., \"The harpy eagle is stronger than the hawk.\" \"What bird is the fastest in Panama?\" \"The peregrine falcon is the fastest.\").",
+            "There is/there are to describe habitats (e.g., \"There are many endangered animals in Panama.\")",
+            "Present simple to describe habits (e.g., \"The sloth moves slowly.\")"
+          ],
+          "vocabulary": {
+            "nouns": "habitat, wildlife, jaguar, forest, predator, prey, species, adaptation, jungle, biodiversity",
+            "verbs": "protect, live, grow, hunt, survive, adapt, migrate, observe, conserve",
+            "adjectives": "endangered, nocturnal, wild, diverse, camouflaged, resilient",
+            "demonstratives": "this, that",
+            "prepositions": "in, on",
+            "adverbs": "naturally, here, there, quickly"
+          },
+          "pronunciation": "Practice pronunciation of long and short vowel sounds in key vocabulary (e.g., long vowels: (/sneɪk/) \"snake,\" (/ˈiːɡəl/) \"eagle\" and short vowels: (/frɒɡ/) \"frog,\" (/bæt/) \"bat\")",
+          "phonemic_awareness": "Practice syllable division in compound nouns (e.g., \"wildlife\" into \"wild-life\")."
+        },
+        "pragmatic": [
+          "Discussing habitats: \"Jaguars live in the forest.\"",
+          "Using comparatives: \"The eagle is larger than the parrot.\""
+        ],
+        "sociolinguistic": "Facilitate group discussions about environmental topics and follow instructions in collaborative activities (e.g., \"Cut out shapes to make a sloth.\")."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade7_scenario2_project1",
+            "name": "Wildlife Documentary Storyboard",
+            "category": "Video Creation",
+            "overview": "Students create a mini wildlife documentary storyboard, using present simple, comparative, and superlative adjectives to describe Panama's animals (e.g., \"The sloth hangs from a branch, and the jaguar hides behind some trees.\" \"The jaguar is faster than the sloth.\").",
+            "skills": [
+              "Observation: Describing wildlife using comparatives and habitat-related language.",
+              "Research: Presenting factual information visually and orally."
+            ],
+            "technology": [
+              "Use video editing software for documentaries, virtual tour tools, and infographic creation software."
+            ]
+          },
+          {
+            "id": "grade7_scenario2_project2",
+            "name": "Wildlife Habitat Tour Map",
+            "category": "Digital Design",
+            "overview": "Students design a tour map of a local wildlife habitat, using \"there is\" or \"there are\" to describe the environment.",
+            "skills": [
+              "Observation: Describing wildlife using comparatives and habitat-related language.",
+              "Research: Presenting factual information visually and orally."
+            ],
+            "technology": [
+              "Use video editing software for documentaries, virtual tour tools, and infographic creation software."
+            ]
+          },
+          {
+            "id": "grade7_scenario2_project3",
+            "name": "Animal Adaptation Infographic",
+            "category": "Research & Presentation",
+            "overview": "Students research animals, their habitats, and unique characteristics to create an infographic explaining how animals survive in their habitat using comparative forms (e.g., \"The harpy eagle is stronger than most birds.\").",
+            "skills": [
+              "Observation: Describing wildlife using comparatives and habitat-related language.",
+              "Research: Presenting factual information visually and orally."
+            ],
+            "technology": [
+              "Use video editing software for documentaries, virtual tour tools, and infographic creation software."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario_number": 3,
+      "scenario_name": "Legends of Panama",
+      "category": "Fundamental",
+      "theme_category": "Family and Society",
+      "themes": [
+        "My Favorite Legend",
+        "Once upon a Time…"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can extract both the main ideas and specific details in information heard from descriptions and narratives when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Identify main ideas and supporting details in spoken texts.",
+            "Interactive: Ensure mutual understanding in group interactions through clarification and confirmation."
+          ],
+          "learning_outcomes": [
+            "Can identify key elements in spoken legends (e.g., \"Who is the hero in the story?\").",
+            "Can clarify and respond to questions about the order of events to support group interactions (e.g., \"What happened first?\").",
+            "Can summarize a story's events during discussions (e.g., \"The hero saved the village.\")."
+          ]
+        },
+        "reading": {
+          "general_standard": "Can engage in intensive and extensive reading of short texts to extract information and details.",
+          "specific_standards": [
+            "Reading: Show comprehension of the main plot and characters in short stories.",
+            "Reading: Extract key facts and details from informational texts.",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by reading base words and inflectional endings (-s, -es, -ed, -ing)."
+          ],
+          "learning_outcomes": [
+            "Can show comprehension of the main plot and characters of simple legends (e.g., \"The hero was fighting the monster when the village was attacked.\").",
+            "Can extract key facts from texts about Panamanian legends (e.g., \"The legend of La India Dormida takes place in El Valle de Antón.\").",
+            "Can read words with past tense (-ed) /t/, /d/, or /ɪd/ and recognize their pronunciation (e.g., emphasis goes in the pronunciation of /ɪd/ in \"waited\" in the sentence, \"The villagers waited for the hero.\")."
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can describe basic information in simple discussions with peers.",
+          "specific_standards": [
+            "Productive: Present their views on simple issues.",
+            "Interactive: Respond to classmates' presentations."
+          ],
+          "learning_outcomes": [
+            "Can present views on topics within the legend (e.g., \"The hero was brave because he helped others.\").",
+            "Can respond to classmates' ideas about Panamanian legends and ask follow-up questions (e.g., \"I agree with you. La Tulivieja was terrifying. What would you have done if you had heard her crying by the river at night?\").",
+            "Can describe short stories or legends to peers (e.g., \"There once was a clever rabbit.\")."
+          ]
+        },
+        "writing": {
+          "general_standard": "Can compose short, purpose-driven texts, such as summaries, descriptive paragraphs, and project reports, demonstrating growing independence in structure and clarity.",
+          "specific_standards": [
+            "Productive: Create a short narrative based on a picture.",
+            "Interactive: Collaborate on a group project report."
+          ],
+          "learning_outcomes": [
+            "Can write a short narrative inspired by a picture of a Panamanian legend (e.g., \"Once upon a time, La India Dormida watched over the valley. After the battle, the villagers remembered her sacrifice.\").",
+            "Can share ideas for a group project on legends in Panama (e.g., \"Let's include the legend of El Gallo Vicente.\").",
+            "Can contribute sentences for a group report on a Panamanian legend (e.g., \"Our report is about the legend of La India Dormida.\")."
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can facilitate communication with peers through simplified language, clarification, aiding understanding in group interactions, and interpretation of cultural differences in communication.",
+          "specific_standards": [
+            "Text: Summarize a classmate's presentation for a teacher.",
+            "Communication: Assist in resolving misunderstandings among peers."
+          ],
+          "learning_outcomes": [
+            "Can summarize a classmate's presentation for the teacher, using key points (e.g., \"He told a story about a hero who was fighting a monster.\").",
+            "Can assist in resolving misunderstandings among peers by using simple gestures (e.g., says, \"The hero is brave.\" and shows a strong pose).",
+            "Can help clarify for peers the main idea of a legend (e.g., says, \"This story is about bravery.\" and gives a thumbs-up)."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Past continuous (e.g., was fighting)",
+            "Adverbs of time (e.g., yesterday, last month, last week)",
+            "Past simple to narrate events (e.g., celebrated, ended)"
+          ],
+          "vocabulary": {
+            "nouns": "legend, monster, hero, treasure, story, village, town, myth, dialogue, creature, ghost, witch, spirit, river, mountain",
+            "verbs": "fight, save, rescue, defend, explore, encounter, narrate, venture, appear, disappear, transform, follow",
+            "adjectives": "brave, strong, old, ancient, hidden, exciting, mysterious, kind, evil",
+            "adverbs": "bravely, mysteriously, silently, loudly, often, at night",
+            "sequencers": "once upon a time, after, before, during",
+            "time_markers": "suddenly, one day, long ago, in the end"
+          },
+          "pronunciation": "Practice pronunciation of inflectional endings -ed, -ing (e.g., celebrated, fighting)",
+          "phonemic_awareness": "Read words with past tense -ed, /t/, /d/, or /ɪd/, and recognize their pronunciation (e.g., (/ɪd/) in, \"The villagers waited for the king.\")"
+        },
+        "pragmatic": [
+          "Telling a story: \"Once upon a time, the hero saved the village.\"",
+          "Sequencing events: \"First, the hero saw the witch. Then, he fought with her.\""
+        ],
+        "sociolinguistic": "Clarify details in group discussions and present short stories or legends to peers (e.g., \"The man was fighting the monster when the village was attacked.\")."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade7_scenario3_project1",
+            "name": "Comic Strip Panamanian Legend",
+            "category": "Creative Writing",
+            "overview": "Students create a comic strip-style version of a Panamanian legend, using past simple and past continuous to narrate events (e.g., \"Whenever the hero fought the monster, the river rose.\").",
+            "skills": [
+              "Storytelling: Using narrative style to describe events.",
+              "Creativity: Bringing legends to life through animation, digital books, or audio formats."
+            ],
+            "technology": [
+              "Use animation software, digital storybook tools, and podcast recording/editing tools."
+            ]
+          },
+          {
+            "id": "grade7_scenario3_project2",
+            "name": "Legendary Storybook",
+            "category": "Digital Design",
+            "overview": "Students design a storybook of their favorite Panamanian legend, using adverbs of sequence (e.g., \"First, the man was walking; then, he saw the monster\").",
+            "skills": [
+              "Storytelling: Using narrative style to describe events.",
+              "Creativity: Bringing legends to life through animation, digital books, or audio formats."
+            ],
+            "technology": [
+              "Use animation software, digital storybook tools, and podcast recording/editing tools."
+            ]
+          },
+          {
+            "id": "grade7_scenario3_project3",
+            "name": "Storytelling Role Play Video",
+            "category": "Video Creation",
+            "overview": "Students write a role-play about their favorite legend. Then, they work together in groups to perform and record a video of the role-play, using the past simple and the past continuous to tell the story and include effects for a dramatic impact.",
+            "skills": [
+              "Storytelling: Using narrative style to describe events.",
+              "Creativity: Bringing legends to life through animation, digital books, or audio formats."
+            ],
+            "technology": [
+              "Use animation software, digital storybook tools, and podcast recording/editing tools."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario_number": 4,
+      "scenario_name": "The Importance of Water",
+      "category": "Fundamental",
+      "theme_category": "Being Local and Global Citizens",
+      "themes": [
+        "How We Use Water Everyday",
+        "Clean Water Is Important Because…"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can extract both the main ideas and specific details in information heard from descriptions and narratives when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Comprehend multi-step instructions for academic tasks.",
+            "Interactive: Respond to questions and requests in a school setting."
+          ],
+          "learning_outcomes": [
+            "Can follow multi-step instructions about water usage in a school setting (e.g., \"Please turn off the tap.\").",
+            "Can respond to questions about water conservation (e.g., \"Why is it important to save water?\" \"If we don't save water, we will face water shortages.\").",
+            "Can identify details from a spoken explanation of the importance of water (e.g., \"What do we use water for?\" \"For cooking, drinking, and agriculture.\")."
+          ]
+        },
+        "reading": {
+          "general_standard": "Can engage in intensive and extensive reading of short texts to extract information and details.",
+          "specific_standards": [
+            "Reading: Follow instructions for academic tasks or projects.",
+            "Reading: Extract key facts and details from informational texts.",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by applying knowledge of basic syllabification rules when decoding two-syllable, three-syllable, or compound words."
+          ],
+          "learning_outcomes": [
+            "Can follow instructions related to water conservation (e.g., \"We need to save water every day.\").",
+            "Can extract key details from texts about the importance of water (e.g., \"If we don't keep water clean, people will get sick. Clean water is important for health.\").",
+            "Can demonstrate phonemic awareness by applying basic syllabification rules when decoding two-syllable, three-syllable, or compound words (e.g., \"forecast,\" \"important\")."
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can describe basic information in simple discussions with peers.",
+          "specific_standards": [
+            "Interactive: Discuss personal future plans.",
+            "Productive: Develop simple arguments based on texts studied."
+          ],
+          "learning_outcomes": [
+            "Can discuss personal future plans to help save water (e.g., \"I will use clean water for cooking.\").",
+            "Can develop simple arguments about the importance of water conservation (e.g., \"Water is an important resource in Panama. If we protect our rivers and streams, we will have fresh water for a longer time.\").",
+            "Can express ideas about water-related projects in class discussions (e.g., \"Our ideas to save water are: 1. Turn off the tap. 2. Collect rainwater...\")."
+          ]
+        },
+        "writing": {
+          "general_standard": "Can compose short, purpose-driven texts, such as summaries, descriptive paragraphs, and project reports, demonstrating growing independence in structure and clarity.",
+          "specific_standards": [
+            "Productive: Summarize a short story or text.",
+            "Interactive: Participate in collaborative story-writing with peers."
+          ],
+          "learning_outcomes": [
+            "Can summarize the main points of a text on water importance (e.g., \"Water is essential for people's health and plants because it helps them grow and stay alive.\").",
+            "Can contribute sentences in a collaborative story about water conservation (e.g., \"The family saved water every day.\").",
+            "Can collaborate in a group to write ideas on water usage and conservation (e.g., \"We use water for cooking and cleaning.\")."
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can facilitate communication with peers through simplified language, clarification, aiding understanding in group interactions, and interpretation of cultural differences in communication.",
+          "specific_standards": [
+            "Concept: Guide peers through setting up a classroom activity.",
+            "Concept: Assist in explaining the rules of a classroom game."
+          ],
+          "learning_outcomes": [
+            "Can guide peers through setting up a classroom activity about water conservation (e.g., \"First, place the poster about saving water on the wall. Then, arrange the chairs for the group discussion.\").",
+            "Can assist in explaining the rules of a classroom game focused on water usage (e.g., \"In this game, you have to match pictures of water-saving actions with their descriptions. The team with the most matches wins.\").",
+            "Can help classmates understand steps for a science experiment on water filtration (e.g., \"First, pour the dirty water into the filter. Then, watch how the clean water comes out from the bottom.\")."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "First conditional (e.g., \"If we don't save water, we will face water shortages.\")",
+            "For + verb + ing to express the purpose of an action (e.g., \"We use water for drinking, cooking, and cleaning.\")",
+            "Subject + verb + complement + because + cause (e.g., \"We save water because it is a limited resource.\")"
+          ],
+          "vocabulary": {
+            "nouns": "water, resource, forecast, cloud, flood, drought, shortage, tap, filter, sanitation, rainwater, drop, filtration",
+            "verbs": "save, drink, waste, conserve, rise, fall, turn off, use, leak, collect, limit, purify",
+            "adjectives": "potable, clear, essential, humid, limited, important, polluted, available, drinkable",
+            "prepositions": "over, from, without, for, in, through",
+            "adverbs": "daily, carefully, wisely, slowly, completely",
+            "quantifiers": "some, a lot of",
+            "conjunction": "because"
+          },
+          "pronunciation": "Practice pronunciation of stress patterns for compound words (e.g., stress goes on the first syllable of \"forecast\")",
+          "phonemic_awareness": "Use of basic syllabification rules when decoding two-syllable, three-syllable, or compound words (e.g., \"forecast\" and \"important\")"
+        },
+        "pragmatic": [
+          "Expressing cause-effect: \"If we waste water, there will be less for everyone.\"",
+          "Expressing the purpose of an action: \"We use water for cooking and drinking.\""
+        ],
+        "sociolinguistic": "In classroom group discussions, discuss and propose solutions to environmental issues such as water conservation (e.g., \"We could save water by turning off taps while washing hands.\")."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade7_scenario4_project1",
+            "name": "Water Conservation Public Service Announcement (PSA)",
+            "category": "Video Creation",
+            "overview": "Students create a public service announcement about water conservation, using the first conditional to explain consequences (e.g., \"If we don't save water, we will run out.\").",
+            "skills": [
+              "Environmental Awareness: Using language to discuss water conservation issues and solutions.",
+              "Communication: Presenting ideas through Public Service Announcements (PSAs), apps, and debates."
+            ],
+            "technology": [
+              "Use video editing tools, app design software, and digital debate platforms."
+            ]
+          },
+          {
+            "id": "grade7_scenario4_project2",
+            "name": "Water Usage Tracker Chart",
+            "category": "App Design",
+            "overview": "Students design a simple app to track their home water usage. They use quantifiers and describe the purpose by adding \"for\" after the quantifiers (e.g., \"We use some water for cooking and a lot for taking showers.\").",
+            "skills": [
+              "Environmental Awareness: Using language to discuss water conservation issues and solutions.",
+              "Communication: Presenting ideas through Public Service Announcements (PSAs), apps, and debates."
+            ],
+            "technology": [
+              "Use video editing tools, app design software, and digital debate platforms."
+            ]
+          },
+          {
+            "id": "grade7_scenario4_project3",
+            "name": "Water Conservation Debate",
+            "category": "Debate",
+            "overview": "Students organize a class debate on water conservation, using imperatives to give instructions (e.g., \"Turn off the tap.\") and the first conditional to express consequences.",
+            "skills": [
+              "Environmental Awareness: Using language to discuss water conservation issues and solutions.",
+              "Communication: Presenting ideas through Public Service Announcements (PSAs), apps, and debates."
+            ],
+            "technology": [
+              "Use video editing tools, app design software, and digital debate platforms."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario_number": 5,
+      "scenario_name": "The Town Square",
+      "category": "Fundamental",
+      "theme_category": "Family and Society",
+      "themes": [
+        "Here Is a Map of the Town.",
+        "Look at the Traditional and Modern Building Materials."
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can extract both the main ideas and specific details in information heard from descriptions and narratives when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Identify specific information in descriptions and narratives.",
+            "Interactive: Respond flexibly to changes in group discussions."
+          ],
+          "learning_outcomes": [
+            "Can distinguish between key facts and minor details in spoken narratives about the town (e.g., \"The town square has a fountain.\").",
+            "Can follow spoken directions to locate places on a map (e.g., \"Where is the library?\").",
+            "Can adapt to changes in group discussions about map directions by clarifying and confirming details with peers (e.g., \"I thought the library was next to the school. Can you show me again on the map?\")."
+          ]
+        },
+        "reading": {
+          "general_standard": "Can engage in intensive and extensive reading of short texts to extract information and details.",
+          "specific_standards": [
+            "Reading: Interpret charts, graphs, and diagrams.",
+            "Reading: Summarize sections of texts in written form.",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by applying knowledge of basic syllabification rules when decoding two-syllable, three-syllable, or compound words."
+          ],
+          "learning_outcomes": [
+            "Can interpret a diagram showing the layout of the town by extracting key information from a text (e.g., \"The school is next to the market.\").",
+            "Can summarize written instructions about traditional building techniques (e.g., \"First, we collect the palm leaf. Second, we dry the leaves.\").",
+            "Can identify syllable division and apply appropriate stress patterns in two-syllable words, three-syllable words, and compound nouns (e.g., \"monument,\" \"streetlamp,\" \"tradition\")."
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can describe basic information in simple discussions with peers.",
+          "specific_standards": [
+            "Productive: Describe changes in places.",
+            "Interactive: Talk about preferences and familiar topics in a guided class discussion."
+          ],
+          "learning_outcomes": [
+            "Can describe and compare changes in local places on a map (e.g., \"The market used to be small, but now it is larger.\").",
+            "Can discuss preferences for places in the town square (e.g., \"I like La Fondita de Lucia. It has good Panamanian food. What do you think?\").",
+            "Can ask and answer questions about location preferences (e.g., \"Where is the library? Do you like it there?\")."
+          ]
+        },
+        "writing": {
+          "general_standard": "Can compose short, purpose-driven texts, such as summaries, descriptive paragraphs, and project reports, demonstrating growing independence in structure and clarity.",
+          "specific_standards": [
+            "Productive: Write descriptive reviews about content or products.",
+            "Interactive: Write information for a presentation with peers in a coherent manner."
+          ],
+          "learning_outcomes": [
+            "Can describe with peers features of the town square for a class presentation (e.g., \"Next to the market is the Town Council.\").",
+            "Can write a short descriptive review of a town square attraction, highlighting personal impressions and details (e.g., \"The town square was lively and colorful. The market is next to the tall building in the middle of the town, and I enjoyed trying the local food.\").",
+            "Can help organize information about the town square for a presentation by describing its key features and surroundings (e.g., \"The town square has a central plaza with a fountain, and there are shops and restaurants around it.\")."
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can facilitate communication with peers through simplified language, clarification, aiding understanding in group interactions, and interpretation of cultural differences in communication.",
+          "specific_standards": [
+            "Communication: Interpret cultural differences in communication.",
+            "Concept: Clarify misunderstandings in group discussions."
+          ],
+          "learning_outcomes": [
+            "Can interpret cultural differences by using simple examples and gestures (e.g., says, \"In Panama, people use palm leaves to make roofs.\" and gestures to a roof or points out a window).",
+            "Can clarify misunderstandings in group discussions by pointing to visuals (e.g., pointing to the map and saying, \"The park is here, not there.\").",
+            "Can resolve misunderstandings about locations using simple phrases (e.g., saying, \"This is the library.\" and pointing it on a map)."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Imperatives and sequencing words for indicating the order of actions (e.g., \"First, we collect the palm leaves. Second, we dry the leaves.\")",
+            "There is/there are to describe locations (e.g., \"There is a bank next to the police station.\")",
+            "WH-questions for asking about places (e.g., \"Where is the hospital?\" \"It is in front of the art gallery.\")"
+          ],
+          "vocabulary": {
+            "nouns": "town square, map, statue, monument, plaza, intersection, fountain, street, building, roof, tradition, park, library, market, school, crosswalk, traffic light, sidewalk, town hall, pedestrian bridge",
+            "verbs": "locate, visit, walk, turn, cross, gather, pass, follow, point, describe",
+            "adjectives": "historic, modern, busy, quiet, traditional, spacious, small, tall, crowded",
+            "demonstratives": "this, that, these, those",
+            "prepositions_of_place": "near, between, across from, beside, next to, behind, in front of, under, over, on, at, on the corner of",
+            "adverbs": "here, there, nearby, around, ahead, straight"
+          },
+          "pronunciation": "Practice with consonant clusters that begin with /s/ (e.g., /s/ in \"street,\" emphasizing the pronunciation of /s/ at the beginning of the word.)",
+          "phonemic_awareness": "Practice syllable division and stress in two-syllable words, three-syllable words, and compound nouns (e.g., \"monument,\" \"streetlamp,\" \"tradition\")"
+        },
+        "pragmatic": [
+          "Asking about locations: \"Where is the school?\"",
+          "Describing locations: \"The park is next to the library.\""
+        ],
+        "sociolinguistic": "Collaboratively, in small groups, explain directions and describe map details (e.g., \"To get to the park, follow this road up to the intersection.\")."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade7_scenario5_project1",
+            "name": "Town Photo Tour",
+            "category": "Photography",
+            "overview": "Students take pictures around town or town squares and organize them into a photo tour, using prepositions of place (e.g., \"The school is next to the market.\") and \"there is/there are\" to describe its features. Photos of the central area of the school can also be used for the photo tour.",
+            "skills": [
+              "Spatial Awareness: Describing the locations of places in town.",
+              "Creativity: Creating virtual or physical representations of town squares."
+            ],
+            "technology": [
+              "Use virtual tour platforms, digital map design tools, and 3D modeling software."
+            ]
+          },
+          {
+            "id": "grade7_scenario5_project2",
+            "name": "Community Landmark Collage",
+            "category": "Art & Design",
+            "overview": "Students create a collage of local landmarks by drawing or using magazine cutouts. They arrange the images using imperatives and sequencing words (e.g., \"First, draw the park; then, add the school.\"), and describe the locations with there is/there are and prepositions of place (e.g., \"There is a library next to the park.\").",
+            "skills": [
+              "Spatial Awareness: Describing the locations of places in town.",
+              "Creativity: Creating virtual or physical representations of town squares."
+            ],
+            "technology": [
+              "Use virtual tour platforms, digital map design tools, and 3D modeling software."
+            ]
+          },
+          {
+            "id": "grade7_scenario5_project3",
+            "name": "Interactive Town Square Model",
+            "category": "3D Modeling",
+            "overview": "Students build an interactive model of a town square (digital or with cardboard and other materials) and use prepositions and descriptive language to explain its features (e.g., \"The statue is between the fountain and the park.\").",
+            "skills": [
+              "Spatial Awareness: Describing the locations of places in town.",
+              "Creativity: Creating virtual or physical representations of town squares."
+            ],
+            "technology": [
+              "Use virtual tour platforms, digital map design tools, and 3D modeling software."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario_number": 6,
+      "scenario_name": "Arts and Crafts",
+      "category": "Fundamental",
+      "theme_category": "Expressing Ourselves and Connecting with Others",
+      "themes": [
+        "This Is a Historical Building.",
+        "This Is a Local Artist."
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can extract both the main ideas and specific details in information heard from descriptions and narratives when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Comprehend multi-step instructions for academic tasks.",
+            "Interactive: Respond to questions and requests in a school setting."
+          ],
+          "learning_outcomes": [
+            "Can show comprehension of descriptions inspired by local artists or related to their work to complete an arts and crafts project (e.g., \"Prepare materials for a painting inspired by Olga Sinclair's colorful murals.\").",
+            "Can respond to questions and requests related to arts and crafts in the school setting (e.g., \"Who is your favorite artist?\" \"What are some of their works?\").",
+            "Can summarize a peer's description of an artwork (e.g., \"It is a painting that depicts Panamanian rural life.\")."
+          ]
+        },
+        "reading": {
+          "general_standard": "Can engage in intensive and extensive reading of short texts to extract information and details.",
+          "specific_standards": [
+            "Reading: Analyze simple editorials or opinion pieces.",
+            "Reading: Create visual presentations summarizing informational texts.",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by applying knowledge of affixes to base words in context."
+          ],
+          "learning_outcomes": [
+            "Can analyze simple editorials or opinion pieces related to arts and crafts, identifying key themes and viewpoints (e.g., \"What is the cultural significance of this piece of art?\").",
+            "Can create a drawing or a model of a famous historical building based on a text description (e.g., \"The Biomuseo is a colorful building with a unique design by Frank Gehry.\").",
+            "Can decode and accurately pronounce words by applying knowledge of affixes to base words in context, such as past tense verbs and gerunds, enhancing phonemic awareness (e.g., played, playing)."
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can describe basic information in simple discussions with peers.",
+          "specific_standards": [
+            "Productive: Describe a favorite hobby.",
+            "Interactive: Role-play everyday situations."
+          ],
+          "learning_outcomes": [
+            "Can describe a favorite craft or art activity (e.g., \"My favorite craft is making baskets. First, you prepare the materials and soak the fibers.\").",
+            "Can role-play conversations about buying art (e.g., \"I'd like to buy this tagua carving. How much does it cost?\").",
+            "Can discuss local art in a conversation with peers (e.g., \"This artist has created beautiful sculptures.\")."
+          ]
+        },
+        "writing": {
+          "general_standard": "Can compose short, purpose-driven texts, such as summaries, descriptive paragraphs, and project reports, demonstrating growing independence in structure and clarity.",
+          "specific_standards": [
+            "Productive: Write emails, letters, or texts describing past events.",
+            "Interactive: Write a class project proposal with guidance."
+          ],
+          "learning_outcomes": [
+            "Can write a letter describing a visit to a local artist (e.g., \"Yesterday, we visited an artist who makes molas.\").",
+            "Can write brief messages about past art or craft events (e.g., \"Last week, our class made baskets.\").",
+            "Can draft a proposal for a project on local art with support (e.g., \"We want to study Guna Yala art.\")."
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can facilitate communication with peers through simplified language, clarification, aiding understanding in group interactions, and interpretation of cultural differences in communication.",
+          "specific_standards": [
+            "Concept: Assist in explaining the rules of a classroom game.",
+            "Concept: Guide peers through setting up a classroom activity."
+          ],
+          "learning_outcomes": [
+            "Can assist in explaining the rules of an art-related game with basic actions (e.g., gesturing \"Draw something blue.\").",
+            "Can guide peers through setting up a classroom activity by demonstrating steps (e.g., showing how to fold paper for \"First, fold the paper.\").",
+            "Can provide support by explaining each part of a craft activity (e.g., points to the markers and says, \"Now add colors here.\")."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Present perfect (e.g., \"This artist has created beautiful sculptures.\")",
+            "Present and past simple to describe life and achievements (e.g., \"Yesterday, we visited an artist who makes molas.\")",
+            "Imperatives to explain how to create something (e.g., \"My favorite craft is making baskets. First, you prepare the materials and soak the fibers.\")"
+          ],
+          "vocabulary": {
+            "nouns": "artist, craft, basket, sculpture, gallery, studio, exhibition, canvas, building, mural, mola, tagua carving",
+            "verbs": "create, paint, sculpt, design, carve, display",
+            "adjectives": "creative, artistic, handmade, colorful, abstract, bold, vibrant, minimalistic, timeless, unique, detailed",
+            "prepositions": "with, from, by",
+            "adverbs": "skillfully, originally"
+          },
+          "pronunciation": "Syllable stress in art-related vocabulary (sculpture (/ˈskʌlp.tʃər/, stress on the first syllable; design (/dɪˈzaɪn/), stress on the second syllable)",
+          "phonemic_awareness": "Identification and articulation of inflectional endings (-ed, -ing in past tense verbs and gerunds)"
+        },
+        "pragmatic": [
+          "Describing creations: \"The building is a two-story structure, with a rectangular design and white stone facades.\"",
+          "Describing achievements of artists: \"This artist has created beautiful sculptures.\"",
+          "Describing how to create something: \"First, you prepare the materials and soak the fibers.\""
+        ],
+        "sociolinguistic": "Propose and develop steps for art projects in class while engaging in feedback exchanges (e.g., \"Start the mola by drawing geometric shapes, then cut out the fabric.\")."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade7_scenario6_project1",
+            "name": "Digital Art Exhibition",
+            "category": "Digital Design",
+            "overview": "Students curate a digital exhibition of local artists, using the present perfect to describe their achievements (e.g., \"The artist has created many famous pieces.\"), and the present simple or past simple tense to describe their lives.",
+            "skills": [
+              "Art Appreciation: Using descriptive language to talk about artists and crafts.",
+              "Creativity: Designing digital exhibits or tutorials."
+            ],
+            "technology": [
+              "Use video recording/editing tools and digital design platforms for exhibits and presentations."
+            ]
+          },
+          {
+            "id": "grade7_scenario6_project2",
+            "name": "Art History Presentation",
+            "category": "Research & Presentation",
+            "overview": "Students research a famous artist or craftsman from Panama and present their life and achievements using the present perfect and adjectives (e.g., \"She has designed many famous molas.\").",
+            "skills": [
+              "Art Appreciation: Using descriptive language to talk about artists and crafts.",
+              "Creativity: Designing digital exhibits or tutorials."
+            ],
+            "technology": [
+              "Use video recording/editing tools and digital design platforms for exhibits and presentations."
+            ]
+          },
+          {
+            "id": "grade7_scenario6_project3",
+            "name": "Historic Building Video",
+            "category": "Video Creation",
+            "overview": "Students create a video about a historical building in their community, using imperatives, present simple, and descriptive adjectives to describe its location, features, and significance (e.g., \"This building has beautiful stone walls.\").",
+            "skills": [
+              "Art Appreciation: Using descriptive language to talk about artists and crafts.",
+              "Creativity: Designing digital exhibits or tutorials."
+            ],
+            "technology": [
+              "Use video recording/editing tools and digital design platforms for exhibits and presentations."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario_number": 7,
+      "scenario_name": "The Healing Plants of Panama",
+      "category": "Optional",
+      "theme_category": "Nature and Wellness",
+      "themes": [
+        "The Soothing Guanábana",
+        "Sábila Is Helpful for Burns."
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can extract both the main ideas and specific details in information heard from descriptions and narratives when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Follow extended speech on familiar topics.",
+            "Interactive: Ensure mutual understanding in group interactions through clarification and confirmation."
+          ],
+          "learning_outcomes": [
+            "Can follow spoken explanations about herbal remedies (e.g., \"How do we prepare it?\").",
+            "Can clarify understanding of instructions about plant uses (e.g., \"Can you repeat how to use the plant?\").",
+            "Can interpret peer feedback on how to use healing plants by summarizing key points (e.g., \"Juan Carlos said that guanábana (soursop) helps with digestion.\")."
+          ]
+        },
+        "reading": {
+          "general_standard": "Can engage in intensive and extensive reading of short texts to extract information and details.",
+          "specific_standards": [
+            "Reading: Analyze simple editorials or opinion pieces.",
+            "Reading: Respond to questions based on class readings.",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by applying knowledge of basic syllabification rules when decoding two-syllable, three-syllable, or compound words."
+          ],
+          "learning_outcomes": [
+            "Can analyze information about healing plants in Panama (e.g., \"The text describes the most common healing plants of Panama.\").",
+            "Can respond to questions about the types and benefits of plants in class discussions (e.g., \"What is mint for?\" \"It is good for the stomach.\").",
+            "Can apply basic syllabification rules to decode and accurately pronounce two-syllable, three-syllable, or compound words, enhancing phonemic awareness (e.g., \"treatment,\" \"therapeutic\")."
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can describe basic information in simple discussions with peers.",
+          "specific_standards": [
+            "Productive: Present basic information about personal and community topics.",
+            "Interactive: Exchange simple ideas in group discussions about current events."
+          ],
+          "learning_outcomes": [
+            "Can present basic information on a plant's uses (e.g., \"Guanábana (soursop) is used to treat infections.\").",
+            "Can exchange information about medicinal plants used in Panamanian home remedies (e.g., \"My grandfather Bill uses ginger tea for colds. What does your family use?\").",
+            "Can ask and answer questions about plant benefits (e.g., \"What is sábila (aloe vera) used for?\")."
+          ]
+        },
+        "writing": {
+          "general_standard": "Can compose short, purpose-driven texts, such as summaries, descriptive paragraphs, and project reports, demonstrating growing independence in structure and clarity.",
+          "specific_standards": [
+            "Productive: Compose a simple thank-you letter with support.",
+            "Interactive: Reply to a message written on paper, in a text app, or in an email."
+          ],
+          "learning_outcomes": [
+            "Can write a thank-you letter to someone who shared plant remedies (e.g., \"Thank you for teaching us about guanábana (soursop).\").",
+            "Can respond to a text message about plant uses in a familiar way (e.g., \"Sara will remember to use sábila (aloe vera) for burns.\").",
+            "Can reply with simple feedback to a message about medicinal plants (e.g., \"Thank you for the information on sábila (aloe vera).\")."
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can facilitate communication with peers through simplified language, clarification, aiding understanding in group interactions, and interpretation of cultural differences in communication.",
+          "specific_standards": [
+            "Concept: Clarify misunderstandings in group discussions.",
+            "Communication: Interpret cultural differences in communication."
+          ],
+          "learning_outcomes": [
+            "Can clarify misunderstandings in group discussions by pointing to visual aids (e.g., points to a picture of sábila (aloe vera) and says, \"This is for burns.\").",
+            "Can interpret cultural differences in communication by explaining remedies and using culturally relevant expressions or gestures (e.g., says, \"This is used to heal.\" while pointing to a leaf and using the Panamanian expression dale to indicate agreement or encouragement).",
+            "Can explain simple plant remedies for peers, using visuals (e.g., points to a leaf and says, \"This helps skin.\")."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Infinitive of purpose: used to + infinitive verb (e.g., \"Hojas de menta (mint leaves) are used to relieve headaches.\")",
+            "Should/shouldn't for giving advice (e.g., \"You should use sábila (aloe vera) for burns.\")",
+            "Present simple for facts (e.g., \"The leaves of hierba de limón (lemongrass) are good for colds.\")"
+          ],
+          "vocabulary": {
+            "nouns": "plant, leaf, root, remedy, ginger, infections, treatment, herb, application, soursop, aloe vera, lemongrass, mint leaves",
+            "verbs": "treat, heal, soothe, apply, grow, boil, prepare",
+            "adjectives": "useful, medicinal, natural, therapeutic",
+            "prepositions": "for, with",
+            "adverbs": "traditionally, safely"
+          },
+          "pronunciation": "Practice pronunciation of compound nouns (e.g., \"herbal garden, stress the first syllable\")",
+          "phonemic_awareness": "Application of syllable division rules when forming and decoding two-syllable, three-syllable, or compound words (e.g., words such as \"treatment\" and \"therapeutic\")."
+        },
+        "pragmatic": [
+          "Giving advice on usage: \"You should use sábila (aloe vera) for burns.\"",
+          "Stating purpose: \"Guanábana (soursop) is used to treat infections.\""
+        ],
+        "sociolinguistic": "Present and exchange simple health-related advice and remedies in discussions or role-play scenarios."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade7_scenario7_project1",
+            "name": "Healing Plant Guide",
+            "category": "Digital Design",
+            "overview": "Students create a guide of Panama's healing plants, using the infinitive of purpose (e.g., \"Guanábana (soursop) is used to treat infections.\"), and \"should/shouldn't\" to give advice (e.g., \"You should use sábila (aloe vera) for burns.\").",
+            "skills": [
+              "Health Knowledge: Using advice structures to describe plant remedies.",
+              "Communication: Presenting information about healing plants in multiple formats."
+            ],
+            "technology": [
+              "Use app design tools, video editing tools, and digital guide creation software."
+            ]
+          },
+          {
+            "id": "grade7_scenario7_project2",
+            "name": "Healing Plant Remedies",
+            "category": "Presentation",
+            "overview": "Students design a simple presentation listing common healing plants and their uses, incorporating advice structures (e.g., \"You should try this for colds.\").",
+            "skills": [
+              "Health Knowledge: Using advice structures to describe plant remedies.",
+              "Communication: Presenting information about healing plants in multiple formats."
+            ],
+            "technology": [
+              "Use app design tools, video editing tools, and digital guide creation software."
+            ]
+          },
+          {
+            "id": "grade7_scenario7_project3",
+            "name": "Plant Remedy Commercial",
+            "category": "Video Creation",
+            "overview": "Students create a short commercial advertising the benefits of a healing plant. They use the simple present for facts and should/shouldn't for advice.",
+            "skills": [
+              "Health Knowledge: Using advice structures to describe plant remedies.",
+              "Communication: Presenting information about healing plants in multiple formats."
+            ],
+            "technology": [
+              "Use app design tools, video editing tools, and digital guide creation software."
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "scenario_number": 8,
+      "scenario_name": "Famous Panamanians",
+      "category": "Optional",
+      "theme_category": "Family and Society",
+      "themes": [
+        "I Love These Entertainers.",
+        "My Favorite Athletes!"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "general_standard": "Can extract both the main ideas and specific details in information heard from descriptions and narratives when spoken slowly and clearly.",
+          "specific_standards": [
+            "Receptive: Comprehend multi-step instructions for academic tasks.",
+            "Interactive: Respond appropriately to spoken questions in familiar settings."
+          ],
+          "learning_outcomes": [
+            "Can comprehend multi-step instructions related to presentations about famous Panamanians (e.g., \"First, research the achievements of a famous Panamanian. Next, create a slide with their most important accomplishment. Finally, rehearse your presentation.\").",
+            "Can respond to spoken questions about famous Panamanians (e.g., \"Who is the most famous athlete?\").",
+            "Can summarize information from discussions on public figures and share key takeaways (e.g., \"She has won many awards, including Athlete of the Year.\")."
+          ]
+        },
+        "reading": {
+          "general_standard": "Can engage in intensive and extensive reading of short texts to extract information and details.",
+          "specific_standards": [
+            "Reading: Show comprehension of the main plot and characters in short stories.",
+            "Reading: Summarize sections of texts in written form.",
+            "Phonemic Awareness: Demonstrate knowledge of phonemic awareness by reading base words and inflectional endings (-s, -es, -ed, -ing)."
+          ],
+          "learning_outcomes": [
+            "Can show comprehension of the plot in a short story (e.g., \"This is Adalberto Carrasquilla. He is one of the best soccer players in Panama.\").",
+            "Can summarize and extract key details from a text about the achievements of famous people (e.g., \"She is Atheyna Bylon. She is a famous boxer and an Olympic medalist.\").",
+            "Can read sentences fluently by recognizing and pronouncing base words with inflectional endings (-ed, -ing), demonstrating phonemic awareness (e.g., \"He improved his own marks.\")."
+          ]
+        },
+        "speaking": {
+          "general_standard": "Can describe basic information in simple discussions with peers.",
+          "specific_standards": [
+            "Productive: Propose collaboratively the steps to develop a simple project.",
+            "Interactive: Negotiate the organization of a project or presentation."
+          ],
+          "learning_outcomes": [
+            "Can discuss and propose steps to create a project about famous people (e.g., \"We can make a poster about Hillary Heron.\").",
+            "Can negotiate the organization of a simple project (e.g., \"Let's write down different tasks for the poster project, and then we can choose the ones we want to do.\").",
+            "Can describe basic resources for a group project (e.g., \"You can use an online biography tool to find more details about Erika Ender's music career.\" \"You can use a dictionary app to find definitions.\")."
+          ]
+        },
+        "writing": {
+          "general_standard": "Can compose short, purpose-driven texts, such as summaries, descriptive paragraphs, and project reports, demonstrating growing independence in structure and clarity.",
+          "specific_standards": [
+            "Productive: Write instructions for a simple game or craft.",
+            "Interactive: Write simple comments on a peer's short text."
+          ],
+          "learning_outcomes": [
+            "Can write clear instructions for a game about identifying famous Panamanians and their achievements, including opening and closing steps (e.g., \"Step 1: Each player draws a card. Step 2: Give clues about the figure's achievements. Step 3: Reveal the correct answer.\").",
+            "Can write brief, supportive comments on a peer's text about a famous Panamanian (e.g., \"Roberto Durán is considered one of the greatest boxers in the world.\" \"I enjoyed reading about Roberto Durán.\").",
+            "Can provide feedback on a classmate's description of a notable figure (e.g., \"I didn't know Mariano Rivera won so many awards!\")."
+          ]
+        },
+        "mediation": {
+          "general_standard": "Can facilitate communication with peers through simplified language, clarification, aiding understanding in group interactions, and interpretation of cultural differences in communication.",
+          "specific_standards": [
+            "Text: Simplify messages for peers.",
+            "Concept: Clarify misunderstandings in group discussions."
+          ],
+          "learning_outcomes": [
+            "Can simplify messages for peers by using gestures and actions to convey meaning (e.g., says, \"He's a singer.\" and pretends to hold a microphone and sing to represent the singer Sech).",
+            "Can clarify misunderstandings in group discussions with simple gestures (e.g., mimics jumping moves and says \"Irving Saladino was a long jumper.\").",
+            "Can use visual aids to simplify achievements of a famous Panamanian (e.g., points to medals and says, \"He won many awards.\")."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "grammatical_features": [
+            "Present continuous for future events (e.g., \"She is training for a new tournament.\")",
+            "Comparatives and superlatives (e.g., \"Roberto Durán is better known than other boxers. Roberto Duran is considered one of the greatest boxers in the world.\")",
+            "Past simple for achievements (e.g., \"Atheyna Bylon won a medal in the Olympic Games.\")"
+          ],
+          "vocabulary": {
+            "nouns": "entertainer, athlete, achievement, award, singer, actor, recognition, competition, performance, fan",
+            "verbs": "win, achieve, inspire, train, perform, compete",
+            "adjectives": "famous, popular, talented, skilled, specialized",
+            "comparative": "more",
+            "superlative": "best"
+          },
+          "pronunciation": "Practice pronunciation of -ing verb endings and -ed in past tense (e.g., \"watching,\" \"performed\")",
+          "phonemic_awareness": "Practice reading inflectional endings (ed, -ing) in sentences (e.g., \"He improved his own marks.\")"
+        },
+        "pragmatic": [
+          "Describing achievements: \"Mariano Rivera won many awards.\"",
+          "Comparing figures: \"Sech is more popular than other singers.\""
+        ],
+        "sociolinguistic": "Describing achievements of celebrities and developing reports on notable figures (e.g., \"She is Atheyna Bylon. She is a famous boxer and an Olympic medalist.\")."
+      },
+      "assessment_ideas": {
+        "projects": [
+          {
+            "id": "grade7_scenario8_project1",
+            "name": "Famous Panamanians Project",
+            "category": "Digital Design",
+            "overview": "Students create a poster or web page showcasing famous Panamanians. They use the present continuous tense to describe their ongoing activities (e.g., \"Sech is releasing a new song.\"), and past simple to highlight their achievements (e.g., \"Mariano Rivera won many awards.\").",
+            "skills": [
+              "Communication: Describing the ongoing and past achievements of famous Panamanians.",
+              "Creativity: Presenting information through digital mediums like webpages and vlogs."
+            ],
+            "technology": [
+              "Use web design tools, infographic software, and video editing tools."
+            ]
+          },
+          {
+            "id": "grade7_scenario8_project2",
+            "name": "Biography Timeline",
+            "category": "Research & Presentation",
+            "overview": "Students research a famous Panamanian and create a summary of her/his life and achievements using comparatives (e.g., \"He is more famous than most athletes.\").",
+            "skills": [
+              "Communication: Describing the ongoing and past achievements of famous Panamanians.",
+              "Creativity: Presenting information through digital mediums like webpages and vlogs."
+            ],
+            "technology": [
+              "Use web design tools, infographic software, and video editing tools."
+            ]
+          },
+          {
+            "id": "grade7_scenario8_project3",
+            "name": "Panamanian Influencer Review",
+            "category": "Video Creation",
+            "overview": "Students create a short essay or video reviewing the work of a famous Panamanian influencer. They use the present continuous tense and comparatives to describe their influence (e.g., \"She is more popular now than she was last year.\").",
+            "skills": [
+              "Communication: Describing the ongoing and past achievements of famous Panamanians.",
+              "Creativity: Presenting information through digital mediums like webpages and vlogs."
+            ],
+            "technology": [
+              "Use web design tools, infographic software, and video editing tools."
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
