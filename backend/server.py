@@ -177,12 +177,12 @@ async def get_themes(grade: str, scenario: str):
     try:
         data = load_grade_data(grade)
         
-        # Find the scenario
+        # Find the scenario - check multiple possible field names
         scenario_data = None
         if isinstance(data, list):
-            scenario_data = next((s for s in data if s.get('scenario', s.get('title', '')) == scenario), None)
+            scenario_data = next((s for s in data if s.get('scenario', s.get('title', s.get('scenario_name', ''))) == scenario), None)
         elif isinstance(data, dict) and 'scenarios' in data:
-            scenario_data = next((s for s in data['scenarios'] if s.get('scenario', s.get('title', '')) == scenario), None)
+            scenario_data = next((s for s in data['scenarios'] if s.get('scenario', s.get('title', s.get('scenario_name', ''))) == scenario), None)
             
         if not scenario_data:
             return {"themes": []}
