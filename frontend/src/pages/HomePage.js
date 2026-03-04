@@ -51,9 +51,24 @@ export default function HomePage() {
     setWeekTo,
   } = usePlanner();
 
-  const [grades] = useState(['pre_k', 'K', '1', '2', '3', '4', '5', '6']);
+  const [grades, setGrades] = useState([]);
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(false);
+
+  // Load grades from API on mount
+  useEffect(() => {
+    const fetchGrades = async () => {
+      try {
+        const response = await axios.get(`${API}/grades`);
+        setGrades(response.data.grades || []);
+      } catch (error) {
+        console.error('Error fetching grades:', error);
+        // Fallback to default grades
+        setGrades(['pre_k', 'K', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']);
+      }
+    };
+    fetchGrades();
+  }, []);
 
   const translations = {
     es: {
