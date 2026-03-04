@@ -232,8 +232,23 @@ def find_projects_for_scenario(projects_data: dict, scenario: str) -> list:
 async def get_official_projects(grade: str, scenario: str):
     """Get official projects for a grade and scenario"""
     try:
+        # First try to load from separate projects file (Grades Pre-K to 6)
         projects_data = load_projects_official(grade)
         scenario_projects = find_projects_for_scenario(projects_data, scenario)
+        
+        # If no projects found in separate file, check inside curriculum (Grades 7-12)
+        if not scenario_projects:
+            grade_data = load_grade_data(grade)
+            scenario_data = None
+            
+            if isinstance(grade_data, list):
+                scenario_data = next((s for s in grade_data if s.get('scenario', s.get('title', s.get('scenario_name', ''))) == scenario), None)
+            elif isinstance(grade_data, dict) and 'scenarios' in grade_data:
+                scenario_data = next((s for s in grade_data['scenarios'] if s.get('scenario', s.get('title', s.get('scenario_name', ''))) == scenario), None)
+            
+            if scenario_data and 'projects' in scenario_data:
+                scenario_projects = scenario_data['projects']
+        
         return {"projects": scenario_projects}
     except Exception as e:
         logger.error(f"Error loading official projects: {e}")
