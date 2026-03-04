@@ -272,12 +272,12 @@ async def generate_planner(request: PlannerRequest):
         # Load grade data for standards (always needed)
         grade_data = load_grade_data(request.grade)
         
-        # Find scenario data
+        # Find scenario data - check multiple possible field names
         scenario_data = None
         if isinstance(grade_data, list):
-            scenario_data = next((s for s in grade_data if s.get('scenario', s.get('title', '')) == request.scenario), None)
+            scenario_data = next((s for s in grade_data if s.get('scenario', s.get('title', s.get('scenario_name', ''))) == request.scenario), None)
         elif isinstance(grade_data, dict) and 'scenarios' in grade_data:
-            scenario_data = next((s for s in grade_data['scenarios'] if s.get('scenario', s.get('title', '')) == request.scenario), None)
+            scenario_data = next((s for s in grade_data['scenarios'] if s.get('scenario', s.get('title', s.get('scenario_name', ''))) == request.scenario), None)
         
         # Extract standards and competences from curriculum
         curriculum_standards = scenario_data.get('standards_and_learning_outcomes', {}) if scenario_data else {}
