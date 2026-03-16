@@ -75,20 +75,22 @@ export const localApi = {
   /**
    * Get official projects for a grade and scenario
    */
-  getProjects: async (grade, scenario) => {
+  getProjects: async (grade, scenarioTitle) => {
     try {
-      // Intentar cargar proyectos oficiales
+      // Cargar proyectos oficiales
       const projectsData = await fetchJSON(`projects/official/${grade}.json`);
-      const projects = projectsData.projects || [];
       
-      // Filtrar por scenario si es necesario
-      const filteredProjects = projects.filter(p => 
-        !p.scenario || p.scenario === scenario
-      );
+      // La estructura es projects_by_scenario
+      const projectsByScenario = projectsData.projects_by_scenario || {};
       
-      return { projects: filteredProjects };
+      // Obtener proyectos del scenario específico
+      const scenarioProjects = projectsByScenario[scenarioTitle] || [];
+      
+      console.log(`Projects for ${scenarioTitle}:`, scenarioProjects);
+      
+      return { projects: scenarioProjects };
     } catch (error) {
-      console.error(`Error loading projects for ${grade}/${scenario}:`, error);
+      console.error(`Error loading projects for ${grade}/${scenarioTitle}:`, error);
       return { projects: [] };
     }
   },
@@ -149,7 +151,9 @@ export const localApi = {
       if (project_id && project_id !== 'none') {
         try {
           const projectsResponse = await fetchJSON(`projects/official/${grade}.json`);
-          projectData = projectsResponse.projects?.find(p => p.id === project_id);
+          const projectsByScenario = projectsResponse.projects_by_scenario || {};
+          const scenarioProjects = projectsByScenario[scenarioTitle] || [];
+          projectData = scenarioProjects.find(p => p.id === project_id);
         } catch (e) {
           console.warn('Project not found:', project_id);
         }
@@ -241,13 +245,17 @@ function generateActivities(planType, scenario, language) {
     {
       name: 'Actividad de Introducción',
       duration: '15 min',
-      description: `Introducir vocabulario clave: ${vocabulary.slice(0, 5).join(', ')}`,
+      description: vocabulary.length > 0 
+        ? `Introducir vocabulario clave: ${vocabulary.slice(0, 5).join(', ')}`
+        : 'Introducir el tema principal y activar conocimientos previos',
       type: 'warm_up'
     },
     {
       name: 'Actividad Principal',
       duration: '25 min',
-      description: `Practicar estructuras gramaticales: ${grammar.slice(0, 2).join(', ')}`,
+      description: grammar.length > 0
+        ? `Practicar estructuras gramaticales: ${grammar.slice(0, 2).join(', ')}`
+        : 'Desarrollar las habilidades principales del tema',
       type: 'main'
     },
     {
@@ -260,13 +268,17 @@ function generateActivities(planType, scenario, language) {
     {
       name: 'Introduction Activity',
       duration: '15 min',
-      description: `Introduce key vocabulary: ${vocabulary.slice(0, 5).join(', ')}`,
+      description: vocabulary.length > 0
+        ? `Introduce key vocabulary: ${vocabulary.slice(0, 5).join(', ')}`
+        : 'Introduce the main topic and activate prior knowledge',
       type: 'warm_up'
     },
     {
       name: 'Main Activity',
       duration: '25 min',
-      description: `Practice grammar structures: ${grammar.slice(0, 2).join(', ')}`,
+      description: grammar.length > 0
+        ? `Practice grammar structures: ${grammar.slice(0, 2).join(', ')}`
+        : 'Develop the main skills of the topic',
       type: 'main'
     },
     {
@@ -326,3 +338,4 @@ function generateResources(scenario, language) {
 }
 
 export default localApi;
+          
