@@ -41,7 +41,8 @@ export const localApi = {
   getScenarios: async (grade) => {
     try {
       const gradeData = await fetchJSON(`grades/${grade}.json`);
-      const scenarios = Object.keys(gradeData.scenarios || {});
+      // Los scenarios son un array de objetos con "title"
+      const scenarios = (gradeData.scenarios || []).map(s => s.title);
       return { scenarios };
     } catch (error) {
       console.error(`Error loading scenarios for grade ${grade}:`, error);
@@ -52,19 +53,21 @@ export const localApi = {
   /**
    * Get themes for a specific grade and scenario
    */
-  getThemes: async (grade, scenario) => {
+  getThemes: async (grade, scenarioTitle) => {
     try {
       const gradeData = await fetchJSON(`grades/${grade}.json`);
-      const scenarioData = gradeData.scenarios?.[scenario];
+      // Buscar el scenario por título
+      const scenario = (gradeData.scenarios || []).find(s => s.title === scenarioTitle);
       
-      if (!scenarioData) {
+      if (!scenario) {
         return { themes: [] };
       }
 
-      const themes = Object.keys(scenarioData.themes || {});
+      // Los themes son un array de strings
+      const themes = scenario.themes || [];
       return { themes };
     } catch (error) {
-      console.error(`Error loading themes for ${grade}/${scenario}:`, error);
+      console.error(`Error loading themes for ${grade}/${scenarioTitle}:`, error);
       return { themes: [] };
     }
   },
@@ -96,8 +99,8 @@ export const localApi = {
   generatePlanner: async (params) => {
     const {
       grade,
-      scenario,
-      theme,
+      scenario: scenarioTitle,
+      theme: themeTitle,
       plan_type = 'standard',
       official_format = false,
       project_id = null,
@@ -112,11 +115,17 @@ export const localApi = {
     try {
       // Cargar los datos del grado
       const gradeData = await fetchJSON(`grades/${grade}.json`);
-      const scenarioData = gradeData.scenarios?.[scenario];
-      const themeData = scenarioData?.themes?.[theme];
+      
+      // Buscar el scenario por título
+      const scenario = (gradeData.scenarios || []).find(s => s.title === scenarioTitle);
+      
+      if (!scenario) {
+        throw new Error('Scenario not found');
+      }
 
-      if (!themeData) {
-        throw new Error('Theme data not found');
+      // Verificar que el theme existe
+      if (!scenario.themes.includes(themeTitle)) {
+        throw new Error('Theme not found');
       }
 
       // Cargar scope & sequence
@@ -137,7 +146,7 @@ export const localApi = {
 
       // Cargar proyecto si se seleccionó uno
       let projectData = null;
-      if (project_id) {
+      if (project_id && project_id !== 'none') {
         try {
           const projectsResponse = await fetchJSON(`projects/official/${grade}.json`);
           projectData = projectsResponse.projects?.find(p => p.id === project_id);
@@ -150,8 +159,8 @@ export const localApi = {
       const planner = {
         metadata: {
           grade,
-          scenario,
-          theme,
+          scenario: scenarioTitle,
+          theme: themeTitle,
           plan_type,
           official_format,
           language,
@@ -165,21 +174,29 @@ export const localApi = {
         },
         
         curriculum_data: {
-          scenario_title: scenario,
-          theme_title: theme,
-          standards: themeData.standards || [],
-          indicators: themeData.indicators || [],
-          conceptual_contents: themeData.conceptual_contents || [],
-          procedural_contents: themeData.procedural_contents || [],
-          attitudinal_contents: themeData.attitudinal_contents || [],
+          scenario_title: scenarioTitle,
+          theme_title: themeTitle,
+          proficiency_level: gradeData.proficiency_level || 'A1',
+          
+          // Standards and Learning Outcomes
+          standards: scenario.standards_and_learning_outcomes || {},
+          
+          // Communicative Competences
+          communicative_competences: scenario.communicative_competences || {},
+          
+          // Assessment Ideas
+          assessment_ideas: scenario.assessment_ideas || [],
+          
           ...(institutionalStandards && { institutional_standards: institutionalStandards })
         },
 
         lesson_plan: {
-          title: `${scenario} - ${theme}`,
-          objective: themeData.indicators?.[0] || 'Develop language skills',
+          title: `${scenarioTitle} - ${themeTitle}`,
           
-          activities: generateActivities(plan_type, themeData, language),
+          objective: scenario.standards_and_learning_outcomes?.speaking?.productive || 
+                    'Develop language and communication skills',
+          
+          activities: generateActivities(plan_type, scenario, language),
           
           assessment: {
             formative: language === 'es' 
@@ -187,10 +204,11 @@ export const localApi = {
               : 'Continuous observation during activities',
             summative: language === 'es'
               ? 'Evaluación final del proyecto o presentación'
-              : 'Final project or presentation assessment'
+              : 'Final project or presentation assessment',
+            ideas: scenario.assessment_ideas || []
           },
 
-          resources: generateResources(language),
+          resources: generateResources(scenario, language),
 
           differentiation: {
             support: language === 'es'
@@ -214,43 +232,47 @@ export const localApi = {
 /**
  * Helper: Generate activities based on plan type
  */
-function generateActivities(planType, themeData, language) {
+function generateActivities(planType, scenario, language) {
+  const competences = scenario.communicative_competences || {};
+  const vocabulary = competences.linguistic?.vocabulary || [];
+  const grammar = competences.linguistic?.grammar || [];
+  
   const baseActivities = language === 'es' ? [
     {
       name: 'Actividad de Introducción',
       duration: '15 min',
-      description: 'Introducir el tema principal y activar conocimientos previos',
+      description: `Introducir vocabulario clave: ${vocabulary.slice(0, 5).join(', ')}`,
       type: 'warm_up'
     },
     {
       name: 'Actividad Principal',
       duration: '25 min',
-      description: 'Desarrollar las habilidades principales del tema',
+      description: `Practicar estructuras gramaticales: ${grammar.slice(0, 2).join(', ')}`,
       type: 'main'
     },
     {
       name: 'Práctica Guiada',
       duration: '15 min',
-      description: 'Práctica con apoyo del docente',
+      description: 'Aplicar el vocabulario y gramática en contexto comunicativo',
       type: 'practice'
     }
   ] : [
     {
       name: 'Introduction Activity',
       duration: '15 min',
-      description: 'Introduce the main topic and activate prior knowledge',
+      description: `Introduce key vocabulary: ${vocabulary.slice(0, 5).join(', ')}`,
       type: 'warm_up'
     },
     {
       name: 'Main Activity',
       duration: '25 min',
-      description: 'Develop the main skills of the topic',
+      description: `Practice grammar structures: ${grammar.slice(0, 2).join(', ')}`,
       type: 'main'
     },
     {
       name: 'Guided Practice',
       duration: '15 min',
-      description: 'Practice with teacher support',
+      description: 'Apply vocabulary and grammar in communicative context',
       type: 'practice'
     }
   ];
@@ -260,12 +282,12 @@ function generateActivities(planType, themeData, language) {
       language === 'es' ? {
         name: 'Actividad de Extensión',
         duration: '20 min',
-        description: 'Actividad adicional para profundizar el aprendizaje',
+        description: 'Proyecto creativo aplicando lo aprendido',
         type: 'extension'
       } : {
         name: 'Extension Activity',
         duration: '20 min',
-        description: 'Additional activity to deepen learning',
+        description: 'Creative project applying what was learned',
         type: 'extension'
       }
     );
@@ -277,18 +299,30 @@ function generateActivities(planType, themeData, language) {
 /**
  * Helper: Generate resources list
  */
-function generateResources(language) {
-  return language === 'es' ? [
+function generateResources(scenario, language) {
+  const vocabulary = scenario.communicative_competences?.linguistic?.vocabulary || [];
+  
+  const baseResources = language === 'es' ? [
     'Pizarra y marcadores',
-    'Materiales visuales',
+    'Tarjetas con vocabulario',
     'Hojas de trabajo',
-    'Recursos digitales (opcional)'
+    'Recursos visuales (imágenes, carteles)'
   ] : [
     'Whiteboard and markers',
-    'Visual materials',
+    'Vocabulary flashcards',
     'Worksheets',
-    'Digital resources (optional)'
+    'Visual resources (images, posters)'
   ];
+  
+  if (vocabulary.length > 0) {
+    baseResources.push(
+      language === 'es' 
+        ? `Material didáctico: ${vocabulary.slice(0, 10).join(', ')}`
+        : `Teaching materials: ${vocabulary.slice(0, 10).join(', ')}`
+    );
+  }
+  
+  return baseResources;
 }
 
 export default localApi;
