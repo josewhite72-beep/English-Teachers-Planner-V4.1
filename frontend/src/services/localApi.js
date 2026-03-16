@@ -1,6 +1,6 @@
 /**
- * Local API Service - Versión HÍBRIDA optimizada
- * Combina: corrección de projects_by_scenario + case-insensitive matching + error handling robusto
+ * Local API Service - Versión FINAL
+ * Genera estructura compatible con PreviewPage.js
  * Los datos se cargan desde /public/data/
  */
 
@@ -105,7 +105,7 @@ export const localApi = {
         return { projects: [] };
       }
       
-      // La estructura es projects_by_scenario (corregido)
+      // La estructura es projects_by_scenario
       const projectsByScenario = projectsData.projects_by_scenario || {};
       
       // Obtener proyectos del scenario específico
@@ -121,7 +121,7 @@ export const localApi = {
   },
 
   /**
-   * Generate a planner (retorna datos completos del curriculum)
+   * Generate a planner - Estructura compatible con PreviewPage.js
    */
   generatePlanner: async (params) => {
     const {
@@ -164,22 +164,6 @@ export const localApi = {
         return null;
       }
 
-      // Cargar scope & sequence
-      let scopeSequence = {};
-      try {
-        scopeSequence = await fetchJSON('scope_sequence.json');
-      } catch (e) {
-        console.warn('Scope sequence not found');
-      }
-
-      // Cargar estándares institucionales si existen
-      let institutionalStandards = null;
-      try {
-        institutionalStandards = await fetchJSON(`institutional_standards/${grade}.json`);
-      } catch (e) {
-        console.warn('Institutional standards not found for grade', grade);
-      }
-
       // Cargar proyecto si se seleccionó uno
       let projectData = null;
       if (project_id && project_id !== 'none') {
@@ -199,211 +183,284 @@ export const localApi = {
         }
       }
 
-      // Generar el planner basado en los datos
+      // GENERAR ESTRUCTURA COMPATIBLE CON PREVIEWPAGE.JS
       const planner = {
-        metadata: {
-          grade,
-          scenario: scenarioTitle,
-          theme: themeTitle,
-          plan_type,
-          official_format,
-          language,
-          generated_at: new Date().toISOString(),
-          ...(teacher_name && { teacher_name }),
-          ...(trimester && { trimester }),
-          ...(weekly_hours && { weekly_hours }),
-          ...(week_from && { week_from }),
-          ...(week_to && { week_to }),
-          ...(projectData && { project: projectData })
-        },
-        
-        curriculum_data: {
-          scenario_title: scenarioTitle,
-          theme_title: themeTitle,
-          proficiency_level: gradeData.proficiency_level || 'A1',
-          
-          // Standards and Learning Outcomes
-          standards: scenario.standards_and_learning_outcomes ?? {},
-          
-          // Communicative Competences
-          communicative_competences: scenario.communicative_competences ?? {},
-          
-          // Assessment Ideas
-          assessment_ideas: scenario.assessment_ideas ?? [],
-          
-          ...(institutionalStandards && { institutional_standards: institutionalStandards })
-        },
+        // Metadata básica
+        grade,
+        scenario: scenarioTitle,
+        theme: themeTitle,
+        language,
+        plan_type,
+        official_format,
+        generated_at: new Date().toISOString(),
+        ...(projectData && { project: projectData }),
 
-        lesson_plan: {
-          title: `${scenarioTitle} - ${themeTitle}`,
-          
-          objective: scenario.standards_and_learning_outcomes?.speaking?.productive || 
-                    projectData?.general_objective ||
-                    'Develop language and communication skills',
-          
-          activities: generateActivities(plan_type, scenario, projectData, language),
-          
-          assessment: {
-            formative: language === 'es' 
-              ? 'Observación continua durante las actividades'
-              : 'Continuous observation during activities',
-            summative: language === 'es'
-              ? 'Evaluación final del proyecto o presentación'
-              : 'Final project or presentation assessment',
-            ideas: scenario.assessment_ideas ?? []
+        // THEME PLANNER - Estructura exacta que PreviewPage.js espera
+        theme_planner: {
+          general_information: {
+            teachers: teacher_name || '',
+            grade: grade,
+            cefr_level: gradeData.proficiency_level || '',
+            trimester: trimester || '',
+            weekly_hours: weekly_hours || '',
+            week_range: week_from && week_to ? `From week ${week_from} to week ${week_to}` : '',
+            scenario: scenarioTitle,
+            theme: themeTitle
           },
 
-          resources: generateResources(scenario, projectData, language),
+          standards_and_learning_outcomes: scenario.standards_and_learning_outcomes || {},
 
-          differentiation: {
-            support: language === 'es'
-              ? 'Apoyo adicional para estudiantes que lo necesiten'
-              : 'Additional support for students who need it',
-            extension: language === 'es'
-              ? 'Actividades de extensión para estudiantes avanzados'
-              : 'Extension activities for advanced students'
+          communicative_competences: scenario.communicative_competences || {},
+
+          specific_objectives: {
+            listening: '',
+            reading: '',
+            speaking: '',
+            writing: '',
+            mediation: ''
+          },
+
+          materials_and_strategies: {
+            required_materials: generateMaterials(scenario, projectData),
+            differentiated_instruction: ''
+          },
+
+          learning_sequence: {
+            lesson_dates: ['', '', '', '', '']
           }
-        }
+        },
+
+        // LESSON PLANNERS - Array de 5 lecciones
+        lesson_planners: generateLessonPlanners(
+          grade,
+          scenarioTitle,
+          themeTitle,
+          scenario,
+          projectData,
+          language
+        )
       };
 
+      console.log('✅ Planner generated successfully');
       return planner;
+
     } catch (error) {
-      console.error('Error generating planner:', error);
+      console.error('❌ Error generating planner:', error);
       return null;
     }
   }
 };
 
 /**
- * Helper: Generate activities based on plan type
+ * Helper: Generar 5 lesson planners (1 por skill)
  */
-function generateActivities(planType, scenario, projectData, language) {
-  const competences = scenario.communicative_competences || {};
-  const vocabulary = competences.linguistic?.vocabulary || [];
-  const grammar = competences.linguistic?.grammar || [];
-  
-  const baseActivities = language === 'es' ? [
-    {
-      name: 'Actividad de Introducción',
-      duration: '15 min',
-      description: vocabulary.length > 0 
-        ? `Introducir vocabulario clave: ${vocabulary.slice(0, 5).join(', ')}`
-        : 'Introducir el tema principal y activar conocimientos previos',
-      type: 'warm_up'
-    },
-    {
-      name: 'Actividad Principal',
-      duration: '25 min',
-      description: grammar.length > 0
-        ? `Practicar estructuras gramaticales: ${grammar.slice(0, 2).join(', ')}`
-        : 'Desarrollar las habilidades principales del tema',
-      type: 'main'
-    },
-    {
-      name: 'Práctica Guiada',
-      duration: '15 min',
-      description: 'Aplicar el vocabulario y gramática en contexto comunicativo',
-      type: 'practice'
-    }
-  ] : [
-    {
-      name: 'Introduction Activity',
-      duration: '15 min',
-      description: vocabulary.length > 0
-        ? `Introduce key vocabulary: ${vocabulary.slice(0, 5).join(', ')}`
-        : 'Introduce the main topic and activate prior knowledge',
-      type: 'warm_up'
-    },
-    {
-      name: 'Main Activity',
-      duration: '25 min',
-      description: grammar.length > 0
-        ? `Practice grammar structures: ${grammar.slice(0, 2).join(', ')}`
-        : 'Develop the main skills of the topic',
-      type: 'main'
-    },
-    {
-      name: 'Guided Practice',
-      duration: '15 min',
-      description: 'Apply vocabulary and grammar in communicative context',
-      type: 'practice'
-    }
+function generateLessonPlanners(grade, scenario, theme, scenarioData, projectData, language) {
+  const skills = [
+    { skill: 'Listening', number: 1 },
+    { skill: 'Reading', number: 2 },
+    { skill: 'Speaking', number: 3 },
+    { skill: 'Writing', number: 4 },
+    { skill: 'Mediation', number: 5 }
   ];
 
-  // Si hay proyecto, agregar actividad de proyecto
-  if (projectData) {
-    baseActivities.push(
-      language === 'es' ? {
-        name: 'Proyecto: ' + projectData.name,
-        duration: projectData.duration || '30 min',
-        description: projectData.overview || '',
-        type: 'project'
-      } : {
-        name: 'Project: ' + projectData.name,
-        duration: projectData.duration || '30 min',
-        description: projectData.overview || '',
-        type: 'project'
-      }
-    );
-  }
+  return skills.map(({ skill, number }) => {
+    const skillKey = skill.toLowerCase();
+    const standardsData = scenarioData.standards_and_learning_outcomes?.[skillKey];
 
-  // Si es enriched, agregar extensión
-  if (planType === 'enriched') {
-    baseActivities.push(
-      language === 'es' ? {
-        name: 'Actividad de Extensión',
-        duration: '20 min',
-        description: 'Proyecto creativo aplicando lo aprendido',
-        type: 'extension'
-      } : {
-        name: 'Extension Activity',
-        duration: '20 min',
-        description: 'Creative project applying what was learned',
-        type: 'extension'
-      }
-    );
-  }
+    return {
+      lesson_number: number,
+      skill_focus: skill,
+      scenario: scenario,
+      theme: theme,
+      date: '',
+      time: '45-60 minutes',
+      specific_objective: '',
+      learning_outcome: '',
+      
+      lesson_stages: [
+        {
+          stage: 'Warm-up / Pre-task',
+          activities: [
+            generateStageActivity(skill, 'warm-up', scenarioData, language)
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Presentation',
+          activities: [
+            generateStageActivity(skill, 'presentation', scenarioData, language)
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Preparation',
+          activities: [
+            generateStageActivity(skill, 'preparation', scenarioData, language)
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Performance',
+          activities: [
+            generateStageActivity(skill, 'performance', scenarioData, language)
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Assessment',
+          activities: [
+            generateStageActivity(skill, 'assessment', scenarioData, language)
+          ],
+          estimated_time: '5 min'
+        },
+        {
+          stage: 'Reflection',
+          activities: [
+            generateStageActivity(skill, 'reflection', scenarioData, language)
+          ],
+          estimated_time: '5 min'
+        }
+      ],
 
-  return baseActivities;
+      comments: {
+        homework: '',
+        formative_assessment: '',
+        teacher_comments: ''
+      }
+    };
+  });
 }
 
 /**
- * Helper: Generate resources list
+ * Helper: Generar actividad para cada stage
  */
-function generateResources(scenario, projectData, language) {
-  const vocabulary = scenario.communicative_competences?.linguistic?.vocabulary || [];
-  
-  const baseResources = language === 'es' ? [
-    'Pizarra y marcadores',
-    'Tarjetas con vocabulario',
-    'Hojas de trabajo',
-    'Recursos visuales (imágenes, carteles)'
-  ] : [
-    'Whiteboard and markers',
-    'Vocabulary flashcards',
-    'Worksheets',
-    'Visual resources (images, posters)'
-  ];
-  
-  // Agregar vocabulario específico
-  if (vocabulary.length > 0) {
-    baseResources.push(
-      language === 'es' 
-        ? `Material didáctico: ${vocabulary.slice(0, 10).join(', ')}`
-        : `Teaching materials: ${vocabulary.slice(0, 10).join(', ')}`
-    );
+function generateStageActivity(skill, stage, scenarioData, language) {
+  const competences = scenarioData.communicative_competences || {};
+  const vocabulary = competences.linguistic?.vocabulary || [];
+  const grammar = competences.linguistic?.grammar || [];
+
+  const vocabSample = Array.isArray(vocabulary) ? vocabulary.slice(0, 3).join(', ') : '';
+  const grammarSample = Array.isArray(grammar) ? grammar.slice(0, 1).join(', ') : '';
+
+  const templates = {
+    es: {
+      'warm-up': {
+        Listening: `Actividad de calentamiento para escuchar vocabulario clave${vocabSample ? ': ' + vocabSample : ''}`,
+        Reading: `Activar conocimientos previos sobre el tema de lectura`,
+        Speaking: `Práctica oral informal para introducir el tema`,
+        Writing: `Lluvia de ideas sobre qué escribir`,
+        Mediation: `Introducir el proyecto y formar equipos`
+      },
+      'presentation': {
+        Listening: `Presentar audio/diálogo con vocabulario y estructuras clave`,
+        Reading: `Presentar el texto y hacer predicciones`,
+        Speaking: `Modelar diálogos y expresiones útiles`,
+        Writing: `Mostrar ejemplos de escritura del tipo requerido`,
+        Mediation: `Explicar las instrucciones y rúbrica del proyecto`
+      },
+      'preparation': {
+        Listening: `Escuchar de nuevo y completar ejercicios de comprensión`,
+        Reading: `Leer el texto y responder preguntas de comprensión`,
+        Speaking: `Practicar en parejas con apoyo del docente`,
+        Writing: `Crear borradores con apoyo`,
+        Mediation: `Planificar el proyecto en equipos`
+      },
+      'performance': {
+        Listening: `Demostrar comprensión auditiva de forma independiente`,
+        Reading: `Completar tareas de lectura independiente`,
+        Speaking: `Presentaciones o conversaciones sin apoyo`,
+        Writing: `Producir el escrito final`,
+        Mediation: `Ejecutar y presentar el proyecto`
+      },
+      'assessment': {
+        Listening: `Evaluar la comprensión auditiva lograda`,
+        Reading: `Evaluar la comprensión lectora`,
+        Speaking: `Evaluar la producción oral`,
+        Writing: `Evaluar el producto escrito`,
+        Mediation: `Evaluar el proyecto con rúbrica`
+      },
+      'reflection': {
+        Listening: `Reflexionar sobre qué escucharon y aprendieron`,
+        Reading: `Reflexionar sobre la lectura`,
+        Speaking: `Autoevaluación de la expresión oral`,
+        Writing: `Revisar y reflexionar sobre el escrito`,
+        Mediation: `Reflexión grupal sobre el proyecto`
+      }
+    },
+    en: {
+      'warm-up': {
+        Listening: `Warm-up activity to introduce listening vocabulary${vocabSample ? ': ' + vocabSample : ''}`,
+        Reading: `Activate prior knowledge about the reading topic`,
+        Speaking: `Informal speaking practice to introduce the theme`,
+        Writing: `Brainstorm writing ideas`,
+        Mediation: `Introduce the project and form teams`
+      },
+      'presentation': {
+        Listening: `Present audio/dialogue with key vocabulary and structures`,
+        Reading: `Present the text and make predictions`,
+        Speaking: `Model dialogues and useful expressions`,
+        Writing: `Show examples of the required writing type`,
+        Mediation: `Explain project instructions and rubric`
+      },
+      'preparation': {
+        Listening: `Listen again and complete comprehension exercises`,
+        Reading: `Read the text and answer comprehension questions`,
+        Speaking: `Practice in pairs with teacher support`,
+        Writing: `Create drafts with support`,
+        Mediation: `Plan the project in teams`
+      },
+      'performance': {
+        Listening: `Demonstrate listening comprehension independently`,
+        Reading: `Complete independent reading tasks`,
+        Speaking: `Presentations or conversations without support`,
+        Writing: `Produce the final written piece`,
+        Mediation: `Execute and present the project`
+      },
+      'assessment': {
+        Listening: `Assess listening comprehension achieved`,
+        Reading: `Assess reading comprehension`,
+        Speaking: `Assess oral production`,
+        Writing: `Assess the written product`,
+        Mediation: `Assess the project with rubric`
+      },
+      'reflection': {
+        Listening: `Reflect on what they listened to and learned`,
+        Reading: `Reflect on the reading`,
+        Speaking: `Self-assessment of oral expression`,
+        Writing: `Review and reflect on the writing`,
+        Mediation: `Group reflection on the project`
+      }
+    }
+  };
+
+  const langTemplates = templates[language] || templates.en;
+  return langTemplates[stage]?.[skill] || `Activity for ${skill} - ${stage}`;
+}
+
+/**
+ * Helper: Generar lista de materiales
+ */
+function generateMaterials(scenarioData, projectData) {
+  const materials = [];
+
+  // Materiales básicos
+  materials.push('Whiteboard and markers');
+  materials.push('Vocabulary flashcards');
+  materials.push('Worksheets');
+  materials.push('Audio/visual resources');
+
+  // Agregar vocabulario específico del scenario
+  const vocabulary = scenarioData.communicative_competences?.linguistic?.vocabulary;
+  if (Array.isArray(vocabulary) && vocabulary.length > 0) {
+    materials.push(`Vocabulary materials: ${vocabulary.slice(0, 5).join(', ')}`);
   }
-  
+
   // Agregar materiales del proyecto si existe
   if (projectData?.materials) {
-    baseResources.push(
-      ...(projectData.materials.map(m => 
-        language === 'es' ? m : m
-      ))
-    );
+    materials.push(...projectData.materials.slice(0, 3));
   }
-  
-  return baseResources;
+
+  return materials;
 }
 
 export default localApi;
