@@ -1,5 +1,6 @@
 /**
- * Local API Service - Reemplaza llamadas al backend con datos estáticos
+ * Local API Service - Versión HÍBRIDA optimizada
+ * Combina: corrección de projects_by_scenario + case-insensitive matching + error handling robusto
  * Los datos se cargan desde /public/data/
  */
 
@@ -17,8 +18,19 @@ const fetchJSON = async (path) => {
     return await response.json();
   } catch (error) {
     console.error(`Error loading ${path}:`, error);
-    throw error;
+    return null;
   }
+};
+
+/**
+ * Helper: Buscar scenario con comparación case-insensitive y trim
+ */
+const findScenario = (scenarios, scenarioTitle) => {
+  if (!scenarios || !scenarioTitle) return null;
+  
+  return scenarios.find(
+    (s) => s.title?.trim().toLowerCase() === scenarioTitle.trim().toLowerCase()
+  );
 };
 
 /**
@@ -29,7 +41,6 @@ export const localApi = {
    * Get all available grades
    */
   getGrades: async () => {
-    // Los grados están disponibles como archivos JSON en /data/grades/
     return {
       grades: ['pre_k', 'K', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
     };
@@ -41,7 +52,12 @@ export const localApi = {
   getScenarios: async (grade) => {
     try {
       const gradeData = await fetchJSON(`grades/${grade}.json`);
-      // Los scenarios son un array de objetos con "title"
+      
+      if (!gradeData) {
+        console.warn(`Grade data not found for: ${grade}`);
+        return { scenarios: [] };
+      }
+      
       const scenarios = (gradeData.scenarios || []).map(s => s.title);
       return { scenarios };
     } catch (error) {
@@ -56,14 +72,19 @@ export const localApi = {
   getThemes: async (grade, scenarioTitle) => {
     try {
       const gradeData = await fetchJSON(`grades/${grade}.json`);
-      // Buscar el scenario por título
-      const scenario = (gradeData.scenarios || []).find(s => s.title === scenarioTitle);
+      
+      if (!gradeData) {
+        console.warn(`Grade data not found for: ${grade}`);
+        return { themes: [] };
+      }
+      
+      const scenario = findScenario(gradeData.scenarios, scenarioTitle);
       
       if (!scenario) {
+        console.warn(`Scenario not found: ${scenarioTitle} in grade ${grade}`);
         return { themes: [] };
       }
 
-      // Los themes son un array de strings
       const themes = scenario.themes || [];
       return { themes };
     } catch (error) {
@@ -77,16 +98,20 @@ export const localApi = {
    */
   getProjects: async (grade, scenarioTitle) => {
     try {
-      // Cargar proyectos oficiales
       const projectsData = await fetchJSON(`projects/official/${grade}.json`);
       
-      // La estructura es projects_by_scenario
+      if (!projectsData) {
+        console.warn(`Projects data not found for grade: ${grade}`);
+        return { projects: [] };
+      }
+      
+      // La estructura es projects_by_scenario (corregido)
       const projectsByScenario = projectsData.projects_by_scenario || {};
       
       // Obtener proyectos del scenario específico
       const scenarioProjects = projectsByScenario[scenarioTitle] || [];
       
-      console.log(`Projects for ${scenarioTitle}:`, scenarioProjects);
+      console.log(`Projects loaded for "${scenarioTitle}":`, scenarioProjects.length);
       
       return { projects: scenarioProjects };
     } catch (error) {
@@ -96,7 +121,7 @@ export const localApi = {
   },
 
   /**
-   * Generate a planner (mock generation - returns a template)
+   * Generate a planner (retorna datos completos del curriculum)
    */
   generatePlanner: async (params) => {
     const {
@@ -118,16 +143,25 @@ export const localApi = {
       // Cargar los datos del grado
       const gradeData = await fetchJSON(`grades/${grade}.json`);
       
-      // Buscar el scenario por título
-      const scenario = (gradeData.scenarios || []).find(s => s.title === scenarioTitle);
+      if (!gradeData) {
+        console.error(`Grade data not found: ${grade}`);
+        return null;
+      }
+      
+      // Buscar el scenario por título (case-insensitive)
+      const scenario = findScenario(gradeData.scenarios, scenarioTitle);
       
       if (!scenario) {
-        throw new Error('Scenario not found');
+        console.error(`Scenario not found: "${scenarioTitle}" in grade ${grade}`);
+        console.log('Available scenarios:', gradeData.scenarios?.map(s => s.title));
+        return null;
       }
 
       // Verificar que el theme existe
       if (!scenario.themes.includes(themeTitle)) {
-        throw new Error('Theme not found');
+        console.error(`Theme not found: "${themeTitle}" in scenario "${scenarioTitle}"`);
+        console.log('Available themes:', scenario.themes);
+        return null;
       }
 
       // Cargar scope & sequence
@@ -151,11 +185,17 @@ export const localApi = {
       if (project_id && project_id !== 'none') {
         try {
           const projectsResponse = await fetchJSON(`projects/official/${grade}.json`);
-          const projectsByScenario = projectsResponse.projects_by_scenario || {};
-          const scenarioProjects = projectsByScenario[scenarioTitle] || [];
-          projectData = scenarioProjects.find(p => p.id === project_id);
+          if (projectsResponse) {
+            const projectsByScenario = projectsResponse.projects_by_scenario || {};
+            const scenarioProjects = projectsByScenario[scenarioTitle] || [];
+            projectData = scenarioProjects.find(p => p.id === project_id);
+            
+            if (!projectData) {
+              console.warn(`Project not found: ${project_id}`);
+            }
+          }
         } catch (e) {
-          console.warn('Project not found:', project_id);
+          console.warn('Error loading project:', project_id, e);
         }
       }
 
@@ -183,13 +223,13 @@ export const localApi = {
           proficiency_level: gradeData.proficiency_level || 'A1',
           
           // Standards and Learning Outcomes
-          standards: scenario.standards_and_learning_outcomes || {},
+          standards: scenario.standards_and_learning_outcomes ?? {},
           
           // Communicative Competences
-          communicative_competences: scenario.communicative_competences || {},
+          communicative_competences: scenario.communicative_competences ?? {},
           
           // Assessment Ideas
-          assessment_ideas: scenario.assessment_ideas || [],
+          assessment_ideas: scenario.assessment_ideas ?? [],
           
           ...(institutionalStandards && { institutional_standards: institutionalStandards })
         },
@@ -198,9 +238,10 @@ export const localApi = {
           title: `${scenarioTitle} - ${themeTitle}`,
           
           objective: scenario.standards_and_learning_outcomes?.speaking?.productive || 
+                    projectData?.general_objective ||
                     'Develop language and communication skills',
           
-          activities: generateActivities(plan_type, scenario, language),
+          activities: generateActivities(plan_type, scenario, projectData, language),
           
           assessment: {
             formative: language === 'es' 
@@ -209,10 +250,10 @@ export const localApi = {
             summative: language === 'es'
               ? 'Evaluación final del proyecto o presentación'
               : 'Final project or presentation assessment',
-            ideas: scenario.assessment_ideas || []
+            ideas: scenario.assessment_ideas ?? []
           },
 
-          resources: generateResources(scenario, language),
+          resources: generateResources(scenario, projectData, language),
 
           differentiation: {
             support: language === 'es'
@@ -228,7 +269,7 @@ export const localApi = {
       return planner;
     } catch (error) {
       console.error('Error generating planner:', error);
-      throw error;
+      return null;
     }
   }
 };
@@ -236,7 +277,7 @@ export const localApi = {
 /**
  * Helper: Generate activities based on plan type
  */
-function generateActivities(planType, scenario, language) {
+function generateActivities(planType, scenario, projectData, language) {
   const competences = scenario.communicative_competences || {};
   const vocabulary = competences.linguistic?.vocabulary || [];
   const grammar = competences.linguistic?.grammar || [];
@@ -289,6 +330,24 @@ function generateActivities(planType, scenario, language) {
     }
   ];
 
+  // Si hay proyecto, agregar actividad de proyecto
+  if (projectData) {
+    baseActivities.push(
+      language === 'es' ? {
+        name: 'Proyecto: ' + projectData.name,
+        duration: projectData.duration || '30 min',
+        description: projectData.overview || '',
+        type: 'project'
+      } : {
+        name: 'Project: ' + projectData.name,
+        duration: projectData.duration || '30 min',
+        description: projectData.overview || '',
+        type: 'project'
+      }
+    );
+  }
+
+  // Si es enriched, agregar extensión
   if (planType === 'enriched') {
     baseActivities.push(
       language === 'es' ? {
@@ -311,7 +370,7 @@ function generateActivities(planType, scenario, language) {
 /**
  * Helper: Generate resources list
  */
-function generateResources(scenario, language) {
+function generateResources(scenario, projectData, language) {
   const vocabulary = scenario.communicative_competences?.linguistic?.vocabulary || [];
   
   const baseResources = language === 'es' ? [
@@ -326,6 +385,7 @@ function generateResources(scenario, language) {
     'Visual resources (images, posters)'
   ];
   
+  // Agregar vocabulario específico
   if (vocabulary.length > 0) {
     baseResources.push(
       language === 'es' 
@@ -334,8 +394,16 @@ function generateResources(scenario, language) {
     );
   }
   
+  // Agregar materiales del proyecto si existe
+  if (projectData?.materials) {
+    baseResources.push(
+      ...(projectData.materials.map(m => 
+        language === 'es' ? m : m
+      ))
+    );
+  }
+  
   return baseResources;
 }
 
 export default localApi;
-          
