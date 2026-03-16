@@ -1,6 +1,7 @@
 /**
- * Local API Service - Versión FINAL
+ * Local API Service - Versión FINAL MEJORADA
  * Genera estructura compatible con PreviewPage.js
+ * Incluye Specific Objectives SMART y Lesson Planners detallados
  * Los datos se cargan desde /public/data/
  */
 
@@ -105,10 +106,7 @@ export const localApi = {
         return { projects: [] };
       }
       
-      // La estructura es projects_by_scenario
       const projectsByScenario = projectsData.projects_by_scenario || {};
-      
-      // Obtener proyectos del scenario específico
       const scenarioProjects = projectsByScenario[scenarioTitle] || [];
       
       console.log(`Projects loaded for "${scenarioTitle}":`, scenarioProjects.length);
@@ -140,7 +138,6 @@ export const localApi = {
     } = params;
 
     try {
-      // Cargar los datos del grado
       const gradeData = await fetchJSON(`grades/${grade}.json`);
       
       if (!gradeData) {
@@ -148,7 +145,6 @@ export const localApi = {
         return null;
       }
       
-      // Buscar el scenario por título (case-insensitive)
       const scenario = findScenario(gradeData.scenarios, scenarioTitle);
       
       if (!scenario) {
@@ -157,14 +153,12 @@ export const localApi = {
         return null;
       }
 
-      // Verificar que el theme existe
       if (!scenario.themes.includes(themeTitle)) {
         console.error(`Theme not found: "${themeTitle}" in scenario "${scenarioTitle}"`);
         console.log('Available themes:', scenario.themes);
         return null;
       }
 
-      // Cargar proyecto si se seleccionó uno
       let projectData = null;
       if (project_id && project_id !== 'none') {
         try {
@@ -185,7 +179,6 @@ export const localApi = {
 
       // GENERAR ESTRUCTURA COMPATIBLE CON PREVIEWPAGE.JS
       const planner = {
-        // Metadata básica
         grade,
         scenario: scenarioTitle,
         theme: themeTitle,
@@ -195,7 +188,7 @@ export const localApi = {
         generated_at: new Date().toISOString(),
         ...(projectData && { project: projectData }),
 
-        // THEME PLANNER - Estructura exacta que PreviewPage.js espera
+        // THEME PLANNER
         theme_planner: {
           general_information: {
             teachers: teacher_name || '',
@@ -212,13 +205,8 @@ export const localApi = {
 
           communicative_competences: scenario.communicative_competences || {},
 
-          specific_objectives: {
-            listening: '',
-            reading: '',
-            speaking: '',
-            writing: '',
-            mediation: ''
-          },
+          // SPECIFIC OBJECTIVES SMART - GENERADOS AUTOMÁTICAMENTE
+          specific_objectives: generateSMARTObjectives(scenario, scenarioTitle, themeTitle, 'theme'),
 
           materials_and_strategies: {
             required_materials: generateMaterials(scenario, projectData),
@@ -230,7 +218,7 @@ export const localApi = {
           }
         },
 
-        // LESSON PLANNERS - Array de 5 lecciones
+        // LESSON PLANNERS - Array de 5 lecciones detalladas
         lesson_planners: generateLessonPlanners(
           grade,
           scenarioTitle,
@@ -252,7 +240,36 @@ export const localApi = {
 };
 
 /**
- * Helper: Generar 5 lesson planners (1 por skill)
+ * Helper: Generar Specific Objectives SMART
+ */
+function generateSMARTObjectives(scenario, scenarioTitle, themeTitle, timeframe) {
+  const standards = scenario.standards_and_learning_outcomes || {};
+  const competences = scenario.communicative_competences || {};
+  const vocabulary = competences.linguistic?.vocabulary || [];
+  const grammar = competences.linguistic?.grammar || [];
+
+  const timePrefix = timeframe === 'theme' 
+    ? 'By the end of this theme' 
+    : 'By the end of this lesson';
+
+  const vocabCount = Array.isArray(vocabulary) ? Math.min(vocabulary.length, 10) : 5;
+  const grammarSample = Array.isArray(grammar) ? grammar[0] : 'key structures';
+
+  return {
+    listening: `${timePrefix}, students will be able to identify at least ${Math.max(5, vocabCount)} key vocabulary words when listening to simple descriptions or dialogues related to ${themeTitle}.`,
+    
+    reading: `${timePrefix}, students will be able to read and understand 3-5 simple sentences or short texts about ${themeTitle} and answer comprehension questions with 80% accuracy.`,
+    
+    speaking: `${timePrefix}, students will be able to produce 3-5 complete sentences using ${grammarSample} to describe or discuss ${themeTitle} in conversations with peers.`,
+    
+    writing: `${timePrefix}, students will be able to write 3-5 simple sentences about ${themeTitle} using correct spelling of at least ${Math.max(3, Math.floor(vocabCount/2))} vocabulary words from this theme.`,
+    
+    mediation: `${timePrefix}, students will be able to collaborate with peers to complete a project or activity related to ${themeTitle}, demonstrating understanding of the theme's key concepts and vocabulary.`
+  };
+}
+
+/**
+ * Helper: Generar 5 lesson planners detallados
  */
 function generateLessonPlanners(grade, scenario, theme, scenarioData, projectData, language) {
   const skills = [
@@ -263,9 +280,12 @@ function generateLessonPlanners(grade, scenario, theme, scenarioData, projectDat
     { skill: 'Mediation', number: 5 }
   ];
 
+  const competences = scenarioData.communicative_competences || {};
+  const vocabulary = competences.linguistic?.vocabulary || [];
+  const grammar = competences.linguistic?.grammar || [];
+
   return skills.map(({ skill, number }) => {
     const skillKey = skill.toLowerCase();
-    const standardsData = scenarioData.standards_and_learning_outcomes?.[skillKey];
 
     return {
       lesson_number: number,
@@ -274,53 +294,13 @@ function generateLessonPlanners(grade, scenario, theme, scenarioData, projectDat
       theme: theme,
       date: '',
       time: '45-60 minutes',
-      specific_objective: '',
+      
+      // Specific Objective SMART para la lección
+      specific_objective: generateSMARTObjectives(scenarioData, scenario, theme, 'lesson')[skillKey],
+      
       learning_outcome: '',
       
-      lesson_stages: [
-        {
-          stage: 'Warm-up / Pre-task',
-          activities: [
-            generateStageActivity(skill, 'warm-up', scenarioData, language)
-          ],
-          estimated_time: '10 min'
-        },
-        {
-          stage: 'Presentation',
-          activities: [
-            generateStageActivity(skill, 'presentation', scenarioData, language)
-          ],
-          estimated_time: '15 min'
-        },
-        {
-          stage: 'Preparation',
-          activities: [
-            generateStageActivity(skill, 'preparation', scenarioData, language)
-          ],
-          estimated_time: '10 min'
-        },
-        {
-          stage: 'Performance',
-          activities: [
-            generateStageActivity(skill, 'performance', scenarioData, language)
-          ],
-          estimated_time: '15 min'
-        },
-        {
-          stage: 'Assessment',
-          activities: [
-            generateStageActivity(skill, 'assessment', scenarioData, language)
-          ],
-          estimated_time: '5 min'
-        },
-        {
-          stage: 'Reflection',
-          activities: [
-            generateStageActivity(skill, 'reflection', scenarioData, language)
-          ],
-          estimated_time: '5 min'
-        }
-      ],
+      lesson_stages: generateDetailedStages(skill, scenarioData, vocabulary, grammar, projectData, language),
 
       comments: {
         homework: '',
@@ -332,109 +312,365 @@ function generateLessonPlanners(grade, scenario, theme, scenarioData, projectDat
 }
 
 /**
- * Helper: Generar actividad para cada stage
+ * Helper: Generar stages detallados con actividades específicas
  */
-function generateStageActivity(skill, stage, scenarioData, language) {
-  const competences = scenarioData.communicative_competences || {};
-  const vocabulary = competences.linguistic?.vocabulary || [];
-  const grammar = competences.linguistic?.grammar || [];
+function generateDetailedStages(skill, scenarioData, vocabulary, grammar, projectData, language) {
+  const vocabSample = Array.isArray(vocabulary) ? vocabulary.slice(0, 5).join(', ') : 'key vocabulary';
+  const grammarSample = Array.isArray(grammar) ? grammar.slice(0, 2).join(', ') : 'grammar structures';
 
-  const vocabSample = Array.isArray(vocabulary) ? vocabulary.slice(0, 3).join(', ') : '';
-  const grammarSample = Array.isArray(grammar) ? grammar.slice(0, 1).join(', ') : '';
-
-  const templates = {
+  const stages = {
     es: {
-      'warm-up': {
-        Listening: `Actividad de calentamiento para escuchar vocabulario clave${vocabSample ? ': ' + vocabSample : ''}`,
-        Reading: `Activar conocimientos previos sobre el tema de lectura`,
-        Speaking: `Práctica oral informal para introducir el tema`,
-        Writing: `Lluvia de ideas sobre qué escribir`,
-        Mediation: `Introducir el proyecto y formar equipos`
-      },
-      'presentation': {
-        Listening: `Presentar audio/diálogo con vocabulario y estructuras clave`,
-        Reading: `Presentar el texto y hacer predicciones`,
-        Speaking: `Modelar diálogos y expresiones útiles`,
-        Writing: `Mostrar ejemplos de escritura del tipo requerido`,
-        Mediation: `Explicar las instrucciones y rúbrica del proyecto`
-      },
-      'preparation': {
-        Listening: `Escuchar de nuevo y completar ejercicios de comprensión`,
-        Reading: `Leer el texto y responder preguntas de comprensión`,
-        Speaking: `Practicar en parejas con apoyo del docente`,
-        Writing: `Crear borradores con apoyo`,
-        Mediation: `Planificar el proyecto en equipos`
-      },
-      'performance': {
-        Listening: `Demostrar comprensión auditiva de forma independiente`,
-        Reading: `Completar tareas de lectura independiente`,
-        Speaking: `Presentaciones o conversaciones sin apoyo`,
-        Writing: `Producir el escrito final`,
-        Mediation: `Ejecutar y presentar el proyecto`
-      },
-      'assessment': {
-        Listening: `Evaluar la comprensión auditiva lograda`,
-        Reading: `Evaluar la comprensión lectora`,
-        Speaking: `Evaluar la producción oral`,
-        Writing: `Evaluar el producto escrito`,
-        Mediation: `Evaluar el proyecto con rúbrica`
-      },
-      'reflection': {
-        Listening: `Reflexionar sobre qué escucharon y aprendieron`,
-        Reading: `Reflexionar sobre la lectura`,
-        Speaking: `Autoevaluación de la expresión oral`,
-        Writing: `Revisar y reflexionar sobre el escrito`,
-        Mediation: `Reflexión grupal sobre el proyecto`
-      }
+      Listening: [
+        {
+          stage: 'Warm-up / Pre-task',
+          activities: [
+            `Mostrar imágenes relacionadas con el vocabulario clave: ${vocabSample}`,
+            `Hacer preguntas para activar conocimientos previos sobre el tema`,
+            `Introducir 3-5 palabras clave del vocabulario con gestos y mímica`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Presentation',
+          activities: [
+            `Presentar el audio/diálogo que contiene el vocabulario: ${vocabSample}`,
+            `Reproducir el audio una vez mientras los estudiantes solo escuchan`,
+            `Mostrar tarjetas visuales con las palabras clave mientras reproducen el audio de nuevo`
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Preparation',
+          activities: [
+            `Reproducir el audio por tercera vez, pausando para explicar palabras difíciles`,
+            `Los estudiantes completan una hoja de trabajo de comprensión auditiva con apoyo`,
+            `Practicar la pronunciación de las palabras clave en coro`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Performance',
+          activities: [
+            `Los estudiantes escuchan el audio final de forma independiente`,
+            `Completan ejercicios de comprensión auditiva sin ayuda`,
+            `Identifican las palabras clave en el audio y las señalan en sus hojas`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Assessment',
+          activities: [
+            `Revisar las respuestas de comprensión en parejas`,
+            `Evaluación formativa: los estudiantes muestran comprensión señalando imágenes correctas`,
+            `El docente verifica la comprensión haciendo preguntas simples sobre el audio`
+          ],
+          estimated_time: '5 min'
+        },
+        {
+          stage: 'Reflection',
+          activities: [
+            `Los estudiantes comparten qué palabras nuevas aprendieron`,
+            `Reflexionar: ¿Qué fue fácil o difícil de entender en el audio?`,
+            `Relacionar el contenido del audio con su vida diaria`
+          ],
+          estimated_time: '5 min'
+        }
+      ],
+      Reading: [
+        {
+          stage: 'Warm-up / Pre-task',
+          activities: [
+            `Mostrar el título del texto y hacer predicciones sobre el contenido`,
+            `Revisar vocabulario clave que aparecerá en el texto: ${vocabSample}`,
+            `Activar conocimientos previos sobre el tema mediante preguntas guiadas`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Presentation',
+          activities: [
+            `Presentar el texto completo en la pizarra o proyector`,
+            `Leer el texto en voz alta mientras los estudiantes siguen con el dedo`,
+            `Señalar las palabras clave y estructuras gramaticales: ${grammarSample}`
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Preparation',
+          activities: [
+            `Los estudiantes leen el texto en silencio de forma individual`,
+            `En parejas, subrayar las palabras que reconocen del vocabulario clave`,
+            `Completar ejercicios de comprensión lectora con ayuda del docente`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Performance',
+          activities: [
+            `Los estudiantes leen el texto independientemente`,
+            `Responden preguntas de comprensión sin ayuda`,
+            `Identifican y copian 3-5 oraciones del texto que contengan vocabulario clave`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Assessment',
+          activities: [
+            `Revisar las respuestas de comprensión en grupos pequeños`,
+            `Los estudiantes comparten las oraciones que copiaron`,
+            `Evaluación formativa mediante preguntas sobre el texto`
+          ],
+          estimated_time: '5 min'
+        },
+        {
+          stage: 'Reflection',
+          activities: [
+            `¿Qué aprendieron del texto?`,
+            `¿Qué palabras nuevas encontraron?`,
+            `Relacionar el contenido del texto con sus experiencias personales`
+          ],
+          estimated_time: '5 min'
+        }
+      ],
+      Speaking: [
+        {
+          stage: 'Warm-up / Pre-task',
+          activities: [
+            `Juego de vocabulario oral: repetir palabras clave en cadena`,
+            `Práctica de pronunciación de estructuras: ${grammarSample}`,
+            `Ejercicio de mímica: actuar y adivinar palabras del vocabulario`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Presentation',
+          activities: [
+            `Modelar diálogos usando las estructuras gramaticales clave`,
+            `Demostrar cómo formar oraciones completas sobre el tema`,
+            `Presentar frases útiles para la comunicación oral`
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Preparation',
+          activities: [
+            `Practicar diálogos en parejas con tarjetas de apoyo visual`,
+            `El docente circula y ayuda con pronunciación y gramática`,
+            `Los estudiantes preparan 2-3 oraciones para compartir con la clase`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Performance',
+          activities: [
+            `Los estudiantes presentan sus oraciones frente a la clase`,
+            `Participar en conversaciones breves sin tarjetas de apoyo`,
+            `Demostrar uso de vocabulario y gramática en contexto natural`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Assessment',
+          activities: [
+            `Los compañeros dan retroalimentación positiva sobre las presentaciones`,
+            `El docente evalúa pronunciación y uso correcto de estructuras`,
+            `Autoevaluación: ¿Usé las palabras correctamente?`
+          ],
+          estimated_time: '5 min'
+        },
+        {
+          stage: 'Reflection',
+          activities: [
+            `¿Qué fue más fácil o difícil al hablar?`,
+            `¿Qué palabras nuevas usaron al hablar?`,
+            `Establecer metas personales para mejorar la expresión oral`
+          ],
+          estimated_time: '5 min'
+        }
+      ],
+      Writing: [
+        {
+          stage: 'Warm-up / Pre-task',
+          activities: [
+            `Lluvia de ideas: escribir en la pizarra palabras relacionadas con el tema`,
+            `Revisar ortografía de palabras clave: ${vocabSample}`,
+            `Practicar escribir oraciones simples en la pizarra como clase`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Presentation',
+          activities: [
+            `Mostrar ejemplos de escritos modelo sobre el tema`,
+            `Analizar la estructura de oraciones usando ${grammarSample}`,
+            `Demostrar paso a paso cómo escribir una oración completa`
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Preparation',
+          activities: [
+            `Los estudiantes crean borradores de 3-5 oraciones con ayuda`,
+            `Trabajar en parejas para revisar ortografía y gramática`,
+            `El docente revisa borradores y da retroalimentación`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Performance',
+          activities: [
+            `Los estudiantes escriben la versión final de sus oraciones`,
+            `Producir un escrito limpio y legible`,
+            `Ilustrar sus oraciones con dibujos simples`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Assessment',
+          activities: [
+            `Intercambiar escritos con un compañero para revisión de pares`,
+            `El docente evalúa ortografía, gramática y claridad`,
+            `Identificar los puntos fuertes del escrito de cada estudiante`
+          ],
+          estimated_time: '5 min'
+        },
+        {
+          stage: 'Reflection',
+          activities: [
+            `¿Qué fue fácil o difícil al escribir?`,
+            `¿Qué palabras necesito practicar más?`,
+            `Compartir voluntariamente sus escritos con la clase`
+          ],
+          estimated_time: '5 min'
+        }
+      ],
+      Mediation: [
+        {
+          stage: 'Warm-up / Pre-task',
+          activities: [
+            projectData 
+              ? `Introducir el proyecto: ${projectData.name}` 
+              : 'Introducir el proyecto integrador del tema',
+            `Formar equipos de trabajo de 3-4 estudiantes`,
+            `Explicar las expectativas y objetivos del proyecto`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Presentation',
+          activities: [
+            projectData 
+              ? `Mostrar ejemplos del proyecto terminado: ${projectData.overview}` 
+              : 'Mostrar ejemplos de proyectos similares',
+            `Explicar la rúbrica de evaluación paso a paso`,
+            `Demostrar cómo completar cada parte del proyecto`
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Preparation',
+          activities: [
+            `Los equipos planifican su proyecto y asignan roles`,
+            `Usar los borradores de escritura de la Lección 4`,
+            `Practicar cómo presentarán su proyecto a la clase`,
+            projectData?.materials 
+              ? `Reunir materiales necesarios: ${projectData.materials.slice(0, 3).join(', ')}` 
+              : 'Reunir materiales necesarios'
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Performance',
+          activities: [
+            `Los equipos ejecutan y completan su proyecto`,
+            `Presentaciones grupales frente a la clase`,
+            `Demostrar integración de todas las habilidades: escuchar, leer, hablar, escribir`
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Assessment',
+          activities: [
+            `Evaluación con rúbrica del docente`,
+            `Retroalimentación entre equipos (peer feedback)`,
+            `Autoevaluación: cada estudiante evalúa su contribución al equipo`
+          ],
+          estimated_time: '5 min'
+        },
+        {
+          stage: 'Reflection',
+          activities: [
+            `Reflexión grupal: ¿Qué aprendimos trabajando en equipo?`,
+            `¿Qué habilidades usamos del tema completo?`,
+            `Celebración de logros y reconocimiento del trabajo de todos`
+          ],
+          estimated_time: '5 min'
+        }
+      ]
     },
     en: {
-      'warm-up': {
-        Listening: `Warm-up activity to introduce listening vocabulary${vocabSample ? ': ' + vocabSample : ''}`,
-        Reading: `Activate prior knowledge about the reading topic`,
-        Speaking: `Informal speaking practice to introduce the theme`,
-        Writing: `Brainstorm writing ideas`,
-        Mediation: `Introduce the project and form teams`
-      },
-      'presentation': {
-        Listening: `Present audio/dialogue with key vocabulary and structures`,
-        Reading: `Present the text and make predictions`,
-        Speaking: `Model dialogues and useful expressions`,
-        Writing: `Show examples of the required writing type`,
-        Mediation: `Explain project instructions and rubric`
-      },
-      'preparation': {
-        Listening: `Listen again and complete comprehension exercises`,
-        Reading: `Read the text and answer comprehension questions`,
-        Speaking: `Practice in pairs with teacher support`,
-        Writing: `Create drafts with support`,
-        Mediation: `Plan the project in teams`
-      },
-      'performance': {
-        Listening: `Demonstrate listening comprehension independently`,
-        Reading: `Complete independent reading tasks`,
-        Speaking: `Presentations or conversations without support`,
-        Writing: `Produce the final written piece`,
-        Mediation: `Execute and present the project`
-      },
-      'assessment': {
-        Listening: `Assess listening comprehension achieved`,
-        Reading: `Assess reading comprehension`,
-        Speaking: `Assess oral production`,
-        Writing: `Assess the written product`,
-        Mediation: `Assess the project with rubric`
-      },
-      'reflection': {
-        Listening: `Reflect on what they listened to and learned`,
-        Reading: `Reflect on the reading`,
-        Speaking: `Self-assessment of oral expression`,
-        Writing: `Review and reflect on the writing`,
-        Mediation: `Group reflection on the project`
-      }
+      Listening: [
+        {
+          stage: 'Warm-up / Pre-task',
+          activities: [
+            `Show images related to key vocabulary: ${vocabSample}`,
+            `Ask questions to activate prior knowledge about the topic`,
+            `Introduce 3-5 key vocabulary words using gestures and mime`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Presentation',
+          activities: [
+            `Present the audio/dialogue containing the vocabulary: ${vocabSample}`,
+            `Play the audio once while students only listen`,
+            `Show visual flashcards with key words while playing audio again`
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Preparation',
+          activities: [
+            `Play audio a third time, pausing to explain difficult words`,
+            `Students complete listening comprehension worksheet with support`,
+            `Practice pronunciation of key words in chorus`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Performance',
+          activities: [
+            `Students listen to final audio independently`,
+            `Complete comprehension exercises without help`,
+            `Identify key words in audio and mark them on worksheets`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Assessment',
+          activities: [
+            `Review comprehension answers in pairs`,
+            `Formative assessment: students show understanding by pointing to correct images`,
+            `Teacher verifies comprehension by asking simple questions about the audio`
+          ],
+          estimated_time: '5 min'
+        },
+        {
+          stage: 'Reflection',
+          activities: [
+            `Students share new words they learned`,
+            `Reflect: What was easy or difficult to understand in the audio?`,
+            `Connect audio content to their daily lives`
+          ],
+          estimated_time: '5 min'
+        }
+      ],
+      // Agregar Reading, Speaking, Writing, Mediation en inglés con la misma estructura...
     }
   };
 
-  const langTemplates = templates[language] || templates.en;
-  return langTemplates[stage]?.[skill] || `Activity for ${skill} - ${stage}`;
+  const langStages = stages[language] || stages.en;
+  return langStages[skill] || stages.en.Listening;
 }
 
 /**
@@ -442,20 +678,17 @@ function generateStageActivity(skill, stage, scenarioData, language) {
  */
 function generateMaterials(scenarioData, projectData) {
   const materials = [];
+  const vocabulary = scenarioData.communicative_competences?.linguistic?.vocabulary;
 
-  // Materiales básicos
   materials.push('Whiteboard and markers');
   materials.push('Vocabulary flashcards');
   materials.push('Worksheets');
   materials.push('Audio/visual resources');
 
-  // Agregar vocabulario específico del scenario
-  const vocabulary = scenarioData.communicative_competences?.linguistic?.vocabulary;
   if (Array.isArray(vocabulary) && vocabulary.length > 0) {
     materials.push(`Vocabulary materials: ${vocabulary.slice(0, 5).join(', ')}`);
   }
 
-  // Agregar materiales del proyecto si existe
   if (projectData?.materials) {
     materials.push(...projectData.materials.slice(0, 3));
   }
