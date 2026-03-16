@@ -1,0 +1,1376 @@
+{
+  "grade": "11",
+  "proficiency_level": "B1.2",
+  "scenarios": [
+    {
+      "scenario": "Our Town Council",
+      "themes": [
+        "How Our Town Operates",
+        "How We Share Our Voice in the Community"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Identify a speaker's point of view in a simple presentation or lecture.",
+            "Interactive: Discuss information from audiovisual presentations like videos or movies."
+          ],
+          "learning_outcomes": [
+            "Can identify the speaker's perspective and intentions in presentations on local issues, such as public work projects or environmental initiatives (e.g., 'The council announced plans to improve the water system to address shortages. What is the intended impact of this change?').",
+            "Can interpret and discuss details from audiovisual presentations on community topics (e.g., 'According to the speaker, I believe she means that by discussing recycling, we can help people change their habits, which is important.').",
+            "Can ask and answer questions about main ideas in video presentations (e.g., 'What did you think the main idea was?' 'I think it was about the structure of town management.')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Take basic notes on a text about a familiar topic.",
+            "Reading: Summarize arguments from general and academic articles."
+          ],
+          "learning_outcomes": [
+            "Can take notes on town council meeting texts, recording key points on decisions and civic duties (e.g., 'The city mayor stated that the Town Council is responsible for two main tasks: waste collection and road maintenance.').",
+            "Can summarize arguments in articles about local governance, focusing on community involvement (e.g., 'The article argues that citizens should attend town meetings to influence decisions.').",
+            "Can outline civic responsibilities presented in articles, preparing for class discussions (e.g., 'The importance of voting and community feedback is emphasized in the article.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Present an analysis of a current issue, local or global.",
+            "Interactive: Engage in discussions of general or academic interests."
+          ],
+          "learning_outcomes": [
+            "Can present an analysis of civic responsibilities, prompting classmates to share their views on community engagement (e.g., 'My analysis shows civic responsibility improves community well-being. What do you think?').",
+            "Can engage in role-play discussions simulating town council meetings to present key points and respond to community suggestions (e.g., 'The new park renovations were approved based on citizen feedback. What other suggestions should be implemented?').",
+            "Can summarize classmates' ideas during discussions on local governance, keeping the conversation focused (e.g., 'We all agree that voting is a key responsibility of citizens.')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Compose essays on general life experiences.",
+            "Interactive: Participate in text-based discussions like messages, email discussions, chats, or online forums."
+          ],
+          "learning_outcomes": [
+            "Can compose essays on civic engagement, using examples from the Town Council scenario (e.g., 'Citizens must vote to have a say in community decisions.').",
+            "Can participate in online discussions about civic responsibilities, posting comments about local issues (e.g., 'I believe citizens should attend town meetings to share their views.').",
+            "Can respond to classmates' posts in a discussion forum, adding perspectives on community involvement (e.g., 'In my opinion, volunteering improves our town.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Text: Paraphrase articles and texts for clearer understanding.",
+            "Communication: Facilitate peer discussions on various topics."
+          ],
+          "learning_outcomes": [
+            "Can paraphrase articles about local government projects using simple language and relevant visuals (e.g., shows an infographic with funding details and project phases and says, 'The city council allocated funds to renovate the sports complex.').",
+            "Can facilitate discussions on civic duties by encouraging classmates to express their opinions, using gestures to prompt responses (e.g., uses an open-hand gesture to invite ideas by saying, 'What do you think about participating in community projects?').",
+            "Can clarify complex information from civic articles by breaking down details and using key visuals for better understanding (e.g., shows a flowchart of the voting process and says, 'The article means that citizens should vote to have a say in town matters.')."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "town council",
+            "community",
+            "voice",
+            "feedback",
+            "decisions",
+            "council",
+            "public services",
+            "municipal government",
+            "surveys",
+            "elections",
+            "authorities",
+            "responsibilities",
+            "projects",
+            "sustainability",
+            "involvement",
+            "citizens",
+            "participation",
+            "voting",
+            "committee",
+            "civil duties",
+            "rights",
+            "operate",
+            "provide",
+            "participate",
+            "vote",
+            "report",
+            "attend",
+            "prioritize",
+            "contribute",
+            "collect",
+            "involve",
+            "share",
+            "decide",
+            "express",
+            "inform",
+            "recommend",
+            "serve",
+            "lead",
+            "engage",
+            "elect",
+            "civic",
+            "responsible",
+            "sustainable",
+            "essential",
+            "community-based",
+            "informed",
+            "local",
+            "participatory",
+            "public",
+            "involved"
+          ],
+          "grammatical_features": [
+            "Passive voice (e.g., 'Decisions are made based on community feedback.')",
+            "Reported speech (e.g., 'The mayor said that new policies would be implemented soon.')",
+            "Modals 'can,' 'should,' 'must,' 'may,' 'might' (e.g., 'Citizens must vote to have a say in community decisions.')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of the short vowel sound /ɪ/ in words spelled with 'i' (e.g., public, civic) and 'y' (e.g., pretty, community, sustainability). Practice the pronunciation of words with the /eə/ sound followed by 'r' (e.g., share, serve). Continue practicing word stress in multisyllabic words and compound terms, such as 'decision,' 'participation,' 'responsibility,' 'authority,' 'feedback,' and 'public service'."
+        },
+        "pragmatic": "Asking for opinions on civic responsibilities (e.g., 'What do you think are important duties for citizens?'). Sharing viewpoints on community involvement (e.g., 'Citizens should vote to make their voices heard.').",
+        "sociolinguistic": "Using formal language in civic discussions (e.g., 'Thank you for sharing your thoughts on our community.'). Showing respect in public dialogue (e.g., 'Could you tell us more about your ideas?')."
+      },
+      "projects": [
+        {
+          "id": "grade11_scenario1_project1",
+          "category": "Digital Campaign",
+          "name": "Civic Responsibility Campaign",
+          "overview": "Students develop a civic responsibility campaign, using the passive voice to describe decision-making processes in local government.",
+          "general_objective": "Create a digital campaign promoting civic engagement while practicing passive voice structures.",
+          "specific_objectives": [
+            "Apply passive voice to describe government processes",
+            "Design visually engaging campaign materials",
+            "Research local civic issues and responsibilities",
+            "Practice persuasive writing for community engagement"
+          ]
+        },
+        {
+          "id": "grade11_scenario1_project2",
+          "category": "Audio Production",
+          "name": "Town Council Podcast",
+          "overview": "Students create a podcast explaining the town council's functions, using modals to express civic responsibilities.",
+          "general_objective": "Produce an educational podcast about local government using modal verbs for obligations and recommendations.",
+          "specific_objectives": [
+            "Use modals (should, must, can) for civic duties",
+            "Develop scriptwriting and audio recording skills",
+            "Explain local government structures clearly",
+            "Practice pronunciation and intonation for broadcasting"
+          ]
+        },
+        {
+          "id": "grade11_scenario1_project3",
+          "category": "Simulation",
+          "name": "Town Council Simulation",
+          "overview": "Students simulate a town council meeting, using reported speech to share citizen opinions.",
+          "general_objective": "Participate in a simulated town council meeting practicing reported speech and formal discussion language.",
+          "specific_objectives": [
+            "Apply reported speech to present citizen views",
+            "Practice formal meeting procedures and etiquette",
+            "Develop argumentation and negotiation skills",
+            "Use appropriate register for civic discussions"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "Our Changing Forests",
+      "themes": [
+        "I Explored the Ecological History Of...",
+        "How Our Ecology Is Changing"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Follow the linear structure of a short formal talk.",
+            "Interactive: Respond to questions and arguments in debates."
+          ],
+          "learning_outcomes": [
+            "Can follow the linear sequence of points on a short history of local ecology (e.g., 'You can see from the photo in 2020 there was more rainforest in the area than in 2025.').",
+            "Can respond to questions in arguments or debates on forest change (e.g., 'The author makes a good argument about cutting down the forest for farming. It has a big impact on the environment.').",
+            "Can identify and discuss key points in a structured talk on ecological issues (e.g., 'The first part of the talk was about the water cycle of rainforests.')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Summarize arguments from general and academic articles.",
+            "Reading: Analyze authentic non-fiction texts."
+          ],
+          "learning_outcomes": [
+            "Can summarize and evaluate arguments in articles about local governance and civic engagement, focusing on diverse viewpoints (e.g., 'This article highlights that participation in town meetings can lead to better street repairs, but others argue that online surveys could be more inclusive.').",
+            "Can analyze authentic texts about environmental restoration activities, evaluating their impact on the environment (e.g., 'Planting trees along the river has improved air quality and reduced erosion.').",
+            "Can extract main points from articles on forest health and share them in reviews, noting environmental improvements (e.g., 'Our community's recycling program has successfully reduced waste in local landfills.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Give a speech on an academic topic.",
+            "Interactive: Engage in negotiations on various topics."
+          ],
+          "learning_outcomes": [
+            "Can give a speech about deforestation and its impact on local ecology (e.g., 'Deforestation has affected biodiversity in our area.').",
+            "Can engage in role-play discussions about ecological changes in the local area and propose environmentally responsible actions (e.g., 'If people planted more trees, the forests would recover faster.').",
+            "Can participate in negotiations about environmental changes and ask follow-up questions to encourage detailed answers (e.g., 'If we limited urban expansion, would local wildlife have more space to thrive?')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Create informative articles on common interests.",
+            "Interactive: Produce a collaborative story on local or global interest topics."
+          ],
+          "learning_outcomes": [
+            "Can create informative articles explaining local ecological changes and their impact on the community (e.g., 'If the town plants more trees, the air quality will improve.').",
+            "Can create informative articles about environmental conservation guidelines, listing actions to protect local forests (e.g., 'If we prevent illegal logging, the forest ecosystem will recover faster.').",
+            "Can work with peers to produce a story about ecological changes, incorporating community conservation efforts (e.g., 'Over the past few years, our community has implemented several conservation projects that have significantly improved the local ecosystems.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Concept: Interpret non-verbal cues in communication.",
+            "Communication: Facilitate peer discussions on various topics."
+          ],
+          "learning_outcomes": [
+            "Can interpret classmates' non-verbal cues, like nodding or frowning, in discussions about environmental issues and adjust responses accordingly (e.g., uses a hand gesture to invite contribution and says, 'I noticed you seemed interested; would you like to share your thoughts on recycling?').",
+            "Can facilitate discussions on ecological topics by prompting classmates to contribute ideas about conservation, using visuals like a deforestation map to spark conversation (e.g., 'How can we reduce pollution in our area?').",
+            "Can interpret reactions, such as looking puzzled, during discussions on deforestation, using simpler language and drawings to explain (e.g., points to a simple diagram of a forest and says, 'Deforestation means cutting down trees, which harms animals' habitats.')."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "deforestation",
+            "biodiversity",
+            "pollution",
+            "rivers",
+            "marine life",
+            "ecosystems",
+            "plastic waste",
+            "trees",
+            "air quality",
+            "climate change",
+            "forest",
+            "conservation",
+            "landfills",
+            "recycling",
+            "forest health",
+            "logging",
+            "species",
+            "explore",
+            "change",
+            "impact",
+            "reduce",
+            "plant",
+            "improve",
+            "fight",
+            "protect",
+            "recycle",
+            "accumulate",
+            "affect",
+            "contribute",
+            "maintain",
+            "recover",
+            "healthier",
+            "increased",
+            "significant",
+            "dramatic",
+            "local",
+            "sustainable",
+            "environmental",
+            "comparative",
+            "ecological",
+            "plastic-free",
+            "illegal",
+            "approximate",
+            "accurate",
+            "dramatic",
+            "native"
+          ],
+          "grammatical_features": [
+            "Present perfect (e.g., 'Deforestation has significantly affected biodiversity in our area.')",
+            "First and second conditional (e.g., 'If we preserve our forests, we will help reduce deforestation.' 'If people planted more trees, forests would recover faster.')",
+            "Comparatives (e.g., 'Urban ecosystems have less biodiversity compared to rural or natural habitats.')"
+          ],
+          "phonemic_awareness": "Pronunciation of the long vowel sound /aɪ/ in words spelled with 'i' (e.g., 'life,' 'bio,' and 'diversity') and 'y' (e.g., 'try' and 'type'). Nouns and adjectives ending in -ate often have the ending reduced to /ɪt/ (e.g., 'climate,' 'approximate,' and 'accurate'). Word stress in multisyllabic words and compound terms, such as 'dramatic,' 'ecological,' and 'plastic-free'."
+        },
+        "pragmatic": "Asking about environmental impact (e.g., 'How has deforestation affected our area?'). Discussing conservation ideas (e.g., 'If we plant more trees, we can improve air quality.').",
+        "sociolinguistic": "Expressing environmental concerns politely (e.g., 'Protecting our forests benefits everyone.'). Using community-focused language (e.g., 'Together, we can make a difference in conservation.')."
+      },
+      "projects": [
+        {
+          "id": "grade11_scenario2_project1",
+          "category": "Research Report",
+          "name": "Forest Conservation Report",
+          "overview": "Students create a report on local forest health, using the present perfect to discuss environmental changes and conditionals to predict future consequences.",
+          "general_objective": "Write a comprehensive research report on local ecology using present perfect and conditional structures.",
+          "specific_objectives": [
+            "Use present perfect to describe environmental changes",
+            "Apply first and second conditionals for predictions",
+            "Conduct research on local forest ecosystems",
+            "Practice academic writing and citation skills"
+          ]
+        },
+        {
+          "id": "grade11_scenario2_project2",
+          "category": "Visual Design",
+          "name": "Forest Health Infographic",
+          "overview": "Students design an infographic using comparatives to raise awareness about deforestation.",
+          "general_objective": "Create an impactful infographic comparing environmental data using comparative structures.",
+          "specific_objectives": [
+            "Apply comparative and superlative forms accurately",
+            "Research and visualize environmental statistics",
+            "Design effective data visualization",
+            "Practice using quantifiers and measurements"
+          ]
+        },
+        {
+          "id": "grade11_scenario2_project3",
+          "category": "Video Production",
+          "name": "Environmental Documentary",
+          "overview": "Students create a documentary about local forests, using the present perfect and conditionals to discuss conservation.",
+          "general_objective": "Produce a documentary film about local environmental issues using complex grammatical structures.",
+          "specific_objectives": [
+            "Combine present perfect and conditionals in narration",
+            "Develop video storytelling and editing skills",
+            "Research and present scientific information",
+            "Practice voice-over narration techniques"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "Managing Stress in Changing Times",
+      "themes": [
+        "Breathing to Relax",
+        "Forest Bathing and Other Biohacks"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Infer opinions in a simple presentation or lecture.",
+            "Interactive: Participate in group discussions on various topics, including local and global interests."
+          ],
+          "learning_outcomes": [
+            "Can infer and discuss opinions expressed in simple lectures on environmental topics (e.g., 'Visiting the Sendero Los Quetzales in Volcán Barú National Park helps people feel calmer and more relaxed due to the serene natural environment.').",
+            "Can participate in group discussions on global topics by sharing opinions (e.g., 'I think stress affects people's mental health by making them feel overwhelmed. Practicing mindfulness could really help reduce stress and improve focus.').",
+            "Can actively participate in group discussions on local and global topics related to managing stress and mindfulness by asking clarifying questions to understand better others' opinions (e.g., 'Why are more students practicing mindfulness these days?' 'People are practicing mindfulness to stay calm during stressful times.')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Analyze authentic non-fiction texts.",
+            "Reading: Understand the relationship between main points and examples in various texts."
+          ],
+          "learning_outcomes": [
+            "Can compare examples from two wellness articles, evaluating how different stress-management techniques impact mental health (e.g., 'Guided meditation may work better for beginners, while mindfulness is effective for daily stress relief.').",
+            "Can understand the connections between the main points of an article on stress-relief methods and examples of their impact on mental health (e.g., 'Deep breathing exercises calm the body and mind, reducing anxiety.').",
+            "Can recognize examples that illustrate wellness practices in informational texts, using these to support personal wellness plans (e.g., 'Listening to calming music can help me focus during study sessions.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Describe a personal achievement.",
+            "Interactive: Engage in storytelling sessions using personal experiences."
+          ],
+          "learning_outcomes": [
+            "Can describe personal achievements related to managing stress (e.g., 'Practicing mindfulness has helped me stay calm during stressful times.').",
+            "Can engage in storytelling by sharing personal experiences in managing stress and describing techniques like mindfulness (e.g., 'Walking in the Metropolitan Natural Park is a peaceful way to manage stress for me.').",
+            "Can answer questions about personal stress management practices, using examples to illustrate their effectiveness (e.g., 'Listening to calming music helps me focus before exams.')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Write reviews on general products or services.",
+            "Interactive: Revise classmates' essays on general topics."
+          ],
+          "learning_outcomes": [
+            "Can write a comparative review of two wellness strategies, integrating real-life examples from local surroundings or meditation apps (e.g., 'The daily meditation app I downloaded is great, but hiking in the rainforest provides a unique sensory experience.').",
+            "Can edit classmates' essays on wellness practices, suggesting improvements and clarifying points (e.g., 'Consider explaining how breathing exercises reduce stress.').",
+            "Can revise essays by adding suggestions of stress management techniques (e.g., 'You should include how meditation helps you focus.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Communication: Resolve misunderstandings in group projects.",
+            "Communication: Aid in negotiating group roles."
+          ],
+          "learning_outcomes": [
+            "Can resolve misunderstandings in group discussions about wellness practices by rephrasing statements and using gestures to guide focus (e.g., demonstrates a calming hand gesture and says, 'Mindfulness means focusing on the present moment to reduce stress.').",
+            "Can assist in assigning roles in wellness projects, ensuring that each classmate understands their responsibilities through visuals or examples (e.g., holds up a visual of relaxation techniques, and asks, 'Would you like to cover relaxation techniques?').",
+            "Can clarify group goals for wellness projects by using bilingual support and local examples (e.g., provides an infographic in both Spanish and English and explains, 'Our goal is to share ways to manage stress with the class, such as visiting Parque Natural Metropolitano for nature walks.')."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "breathing",
+            "relaxation",
+            "forest bathing",
+            "biohack",
+            "mindfulness",
+            "meditation",
+            "stress",
+            "wellness",
+            "nature",
+            "focus",
+            "music",
+            "exercise",
+            "retreats",
+            "techniques",
+            "practices",
+            "mind",
+            "body",
+            "balance",
+            "relief",
+            "habits",
+            "spot",
+            "practice",
+            "relax",
+            "meditate",
+            "calm",
+            "reduce",
+            "improve",
+            "benefit",
+            "promote",
+            "connect",
+            "focus",
+            "exercise",
+            "listen",
+            "try",
+            "suggest",
+            "encourage",
+            "relieve",
+            "manage",
+            "gain",
+            "participate",
+            "relaxing",
+            "mindful",
+            "deep",
+            "soothing",
+            "popular",
+            "beneficial",
+            "calming",
+            "traditional",
+            "outdoors",
+            "natural",
+            "helpful",
+            "wellness-focused",
+            "effective",
+            "stress-free",
+            "peaceful",
+            "serene",
+            "stressful",
+            "sensory",
+            "overwhelmed"
+          ],
+          "grammatical_features": [
+            "Gerunds (e.g., 'Practicing mindfulness has helped many people improve their focus and reduce stress.')",
+            "Modals for advice (e.g., 'You should try mindfulness.')",
+            "Present continuous for trends (e.g., 'People are practicing mindfulness to stay calm during stressful times.')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of the long vowel sound /u:/ in most often words spelled with 'oo' (e.g., 'soothing,' and 'smooth'). Practicing alternation of full vowels and reduced vowels in multisyllabic words (e.g., mindfulness /ˈmaɪnd.fʊl.nəs/, beneficial /ˌbɛnɪˈfɪʃəl/)."
+        },
+        "pragmatic": "Giving advice on stress management (e.g., 'You should try spending 10 minutes meditating in a quiet spot, such as your backyard or a park bench at Parque Omar.'). Sharing relaxation techniques (e.g., 'Listening to music helps me relax.' 'When I attend Zumba classes at the community center, I feel more energized and focused afterward.').",
+        "sociolinguistic": "Offering suggestions for stress management politely (e.g., 'You could try relaxation techniques like deep breathing.'). Sharing personal wellness strategies, using appropriate language for social interaction, including personal experiences, and respectful tone (e.g., 'In my experience, exercise helps with focus.')."
+      },
+      "projects": [
+        {
+          "id": "grade11_scenario3_project1",
+          "category": "Blog Writing",
+          "name": "Wellness Blog",
+          "overview": "Students create a wellness blog discussing stress-relief techniques, using gerunds to describe activities.",
+          "general_objective": "Create an informative wellness blog using gerunds as subjects and objects.",
+          "specific_objectives": [
+            "Use gerunds effectively as sentence subjects",
+            "Research and present stress management techniques",
+            "Practice blog writing and online publishing",
+            "Develop digital content creation skills"
+          ]
+        },
+        {
+          "id": "grade11_scenario3_project2",
+          "category": "Video Production",
+          "name": "Stress Management Video Tutorial",
+          "overview": "Students create a video tutorial on stress management techniques, using the present continuous to discuss wellness trends.",
+          "general_objective": "Produce instructional videos about wellness using present continuous for current trends.",
+          "specific_objectives": [
+            "Apply present continuous for ongoing trends",
+            "Demonstrate stress management techniques on video",
+            "Practice clear instructional language",
+            "Develop video production and editing skills"
+          ]
+        },
+        {
+          "id": "grade11_scenario3_project3",
+          "category": "App Design",
+          "name": "Wellness App Prototype",
+          "overview": "Students design a wellness app prototype to help manage stress, using modals to give advice.",
+          "general_objective": "Design a functional app prototype for stress management using modal verbs for recommendations.",
+          "specific_objectives": [
+            "Use modals (should, could, might) for advice",
+            "Develop user interface design skills",
+            "Create wireframes and app mockups",
+            "Practice presenting design concepts"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "Preserving Our Heritage",
+      "themes": [
+        "Learning How We Take Care of Our Past",
+        "What Should We Preserve in the Future?"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Summarize detailed explanations in academic lectures.",
+            "Interactive: Participate in group discussions on literature."
+          ],
+          "learning_outcomes": [
+            "Can summarize the main ideas in a lecture about a historical Panamanian figure (e.g., 'The speaker talked about Victoriano Lorenzo, a Panamanian hero who fought for independence. He was a symbol of resistance against foreign control.').",
+            "Can participate in discussions on literature, sharing insights from a story (e.g., 'In the story, the Emberá villages are depicted as a vital part of Panama's heritage.').",
+            "Can respond constructively to classmates' views on cultural heritage by sharing examples and asking questions to deepen the discussion (e.g., 'I agree that the Emberá weaving tradition is important. What do you think about how it's passed down to younger generations?')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Recognize the writer's point of view in various texts.",
+            "Reading: Analyze authentic non-fiction texts."
+          ],
+          "learning_outcomes": [
+            "Can recognize a writer's point of view in texts on heritage preservation and explain their reasoning with textual evidence (e.g., 'The writer argues that historical traditions are crucial for national identity because they strengthen community pride.').",
+            "Can analyze articles on cultural heritage, identifying examples that highlight preservation efforts (e.g., 'Restoring Casco Viejo attracts tourists and promotes local culture.').",
+            "Can summarize main points and viewpoints in articles about heritage, preparing for classroom presentations (e.g., 'The author argues that preserving Casco Viejo is essential for maintaining Panama's cultural legacy and historical identity.' 'Another viewpoint emphasizes the importance of protecting indigenous traditions, such as the craftsmanship of the Guna molas, to ensure that future generations value and celebrate their cultural roots.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Narrate a story about personal experiences.",
+            "Interactive: Engage in storytelling sessions using personal experiences."
+          ],
+          "learning_outcomes": [
+            "Can narrate a story about personal experiences with cultural traditions, illustrating their importance for heritage preservation (e.g., 'During Corpus Christi celebrations in La Villa de Los Santos, I watched traditional dances that showcased our folkloric heritage.').",
+            "Can engage in storytelling to describe the personal importance of heritage (e.g., 'I visited the Panama Canal, which fills me with pride because my grandfather helped with its construction.' 'I visited the Panama Canal, where my grandfather worked during its construction.').",
+            "Can explain the cultural significance of Indigenous heritage by describing traditional practices (e.g., 'The Guna people's traditional use of molas, brightly colored hand-woven textiles, is an important expression of their cultural identity and history.')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Write personal letters or emails to express opinions.",
+            "Interactive: Engage in writing exchanges about future aspirations."
+          ],
+          "learning_outcomes": [
+            "Can write emails to peers about the importance of preserving cultural heritage, sharing personal perspectives (e.g., 'I have learned about the importance of preserving both architectural sites like Casco Viejo and traditional crafts like mola weaving.').",
+            "Can participate in writing exchanges discussing the significance of Panama's historical landmarks (e.g., 'I believe Portobelo should be preserved because it's part of our history.').",
+            "Can compose letters to local officials, expressing opinions on cultural preservation efforts (e.g., 'It's essential to protect our heritage sites for future generations.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Concept: Explain general concepts in simple terms.",
+            "Text: Summarize information from instructions or announcements."
+          ],
+          "learning_outcomes": [
+            "Can explain the importance of heritage sites to classmates, using simple language and a map or image of a heritage site to emphasize cultural value (e.g., shows a timeline of restoration efforts and explains, 'Casco Viejo is important because it represents Panama's colonial past and restoration efforts.').",
+            "Can summarize instructions for a field trip to a historical site, ensuring classmates understand the objectives by using visual aids (e.g., shows a timeline of events and says, 'We'll learn about Panama's history and see how it connects to today.').",
+            "Can clarify the purpose of cultural preservation by using bilingual explanations and visuals in peer discussions (e.g., 'Preserving our heritage sites helps us remember and share our history,' with a translated summary if needed)."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "heritage",
+            "history",
+            "sites",
+            "tourists",
+            "culture",
+            "restoration",
+            "villages",
+            "trade routes",
+            "weaving",
+            "landmark",
+            "legacy",
+            "identity",
+            "efforts",
+            "preserve",
+            "attract",
+            "live",
+            "offer",
+            "opened",
+            "became",
+            "transformed",
+            "continue",
+            "restore",
+            "play",
+            "relevant",
+            "historical",
+            "traditional",
+            "global",
+            "critical",
+            "cultural",
+            "significant",
+            "completed",
+            "interesting",
+            "restored",
+            "colonial",
+            "pre-hispanic"
+          ],
+          "grammatical_features": [
+            "Relative clauses like 'which' and 'where' (e.g., 'Casco Viejo, which is a UNESCO World Heritage Site, attracts tourists from around the world.' 'The museum where the history of the Canal Zone is explained provides a great learning experience.')",
+            "Past simple vs. present perfect (e.g., 'The Panama Canal opened in 1914.' 'The Panama Canal has attracted many tourists.')",
+            "Future simple for predictions (e.g., 'We will continue to preserve our cultural and historical heritage.')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of the long vowel sound /eɪ/ in most words spelled with 'a' + CV and 'ai' or 'ay' (e.g., 'trade,' 'became,' 'great,' 'say'). Practice the alternation of full vowels and reduced vowels in multisyllabic words (e.g., 'important': /ɪmˈpɔːtənt/, 'heritage': /ˈhɛrɪtɪdʒ/)."
+        },
+        "pragmatic": "Asking about cultural significance: 'Why is preserving historic landmarks like Casco Viejo or the Panama Viejo ruins important?' Describing historical sites: 'The Panama Canal opened in 1914, becoming a pivotal part of Panama's global identity and transforming global trade.'",
+        "sociolinguistic": "Discussing heritage respectfully: 'I learned so much about the Emberá community when I visited their village, and it made me realize the importance of their traditions in preserving our national identity.' Showing interest in cultural diversity: 'Hearing about traditional festivals from the Ngäbe-Buglé region made me want to participate and understand their cultural roots.'"
+      },
+      "projects": [
+        {
+          "id": "grade11_scenario4_project1",
+          "category": "Web Design",
+          "name": "Cultural Heritage Website",
+          "overview": "Students design a website about Panama's historical sites, using relative clauses to describe essential locations.",
+          "general_objective": "Create a multimedia website showcasing heritage sites using relative clauses.",
+          "specific_objectives": [
+            "Use relative clauses (which, where, that) for description",
+            "Develop web design and navigation skills",
+            "Research and present historical information",
+            "Practice integrating multimedia elements"
+          ]
+        },
+        {
+          "id": "grade11_scenario4_project2",
+          "category": "Virtual Exhibition",
+          "name": "Heritage Virtual Exhibition",
+          "overview": "Students create a virtual exhibition showcasing Panama's cultural heritage, using the present perfect to describe ongoing preservation efforts.",
+          "general_objective": "Build a virtual museum exhibition using present perfect for ongoing actions.",
+          "specific_objectives": [
+            "Apply present perfect for ongoing preservation efforts",
+            "Curate and organize exhibition content",
+            "Develop virtual tour design skills",
+            "Practice descriptive writing for artifacts"
+          ]
+        },
+        {
+          "id": "grade11_scenario4_project3",
+          "category": "Documentary",
+          "name": "Heritage Preservation Documentary",
+          "overview": "Students create a documentary about the importance of preserving historical sites.",
+          "general_objective": "Produce a documentary film advocating for heritage preservation.",
+          "specific_objectives": [
+            "Use persuasive language for advocacy",
+            "Develop documentary filmmaking skills",
+            "Research preservation efforts and challenges",
+            "Practice interview and narration techniques"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "Panama's Role in the World",
+      "themes": [
+        "The Importance of Panama in Global Trade",
+        "How the Canal Impacts Panama's Future"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Evaluate spoken information from radio or television.",
+            "Interactive: Engage in role-play scenarios to resolve everyday conflicts."
+          ],
+          "learning_outcomes": [
+            "Can comprehend and evaluate information from a news broadcast on a local issue (e.g., 'After evaluating the news broadcast, it's clear that the proposed improvements to the Panama Canal's infrastructure are designed to ease congestion and enhance global trade efficiency.').",
+            "Can role-play resolving a disagreement over environmental concerns vs. economic growth (e.g., 'What would you say if a classmate suggested prioritizing development over sustainability?').",
+            "Can use questions to confirm understanding of key ideas in media broadcasts (e.g., 'Why did the speaker mention increased funding for infrastructure improvements around the Panama Canal?')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Evaluate texts for bias.",
+            "Reading: Understand the relationship between main points and examples in various texts."
+          ],
+          "learning_outcomes": [
+            "Can evaluate bias in texts about the Canal expansion, identifying whether the text emphasizes economic gains but downplays the impact on biodiversity (e.g., 'The text mentions job creation, but omits the effects on mangrove ecosystems.').",
+            "Can understand relationships between trade benefits and environmental concerns in Canal texts (e.g., 'While the Canal boosts trade, it also affects local ecosystems.').",
+            "Can identify examples that support or contradict the argument that the Canal's expansion has increased national revenue at the expense of water conservation (e.g., 'Some reports praise trade efficiency, while others warn about water shortages in Lake Gatun.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Present an analysis of a current issue, local or global.",
+            "Interactive: Conduct interviews on various topics, including current events, academic topics, and past experiences."
+          ],
+          "learning_outcomes": [
+            "Can present an analysis of the Panama Canal's impact during the 2023 drought to explain decisions (e.g., 'New regulations were imposed to limit the number of daily crossings to conserve water.').",
+            "Can conduct interviews on global trade topics, asking about the Canal's effects on trade (e.g., 'How has the Panama Canal impacted global trade?' 'If Panama had not built the Canal, global trade would have faced significant challenges in the early 20th century.').",
+            "Can summarize responses from interviews, focusing on the economic impact of the Canal (e.g., 'It was explained that without the Panama Canal, shipping would have been slower and more costly.')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Write analytical reports on current topics like social trends or global events.",
+            "Interactive: Produce a collaborative story on local or global interest topics."
+          ],
+          "learning_outcomes": [
+            "Can write analytical reports on the Panama Canal's effects, comparing revenue statistics and environmental findings (e.g., 'Since the expansion, the Canal has increased annual profits by three billion dollars but has also reduced water levels in surrounding lakes.').",
+            "Can collaborate on writing a story about Panama's global impact, discussing its role in trade (e.g., 'Panama has always played an important role in global trade, thanks to the Panama Canal. If Panama invested more in its infrastructure, it could become an even more powerful trade hub in the future.').",
+            "Can work with classmates to outline a report on Panama's trade role, discussing key aspects like economic growth (e.g., 'Let's include sections on shipping routes and local job creation.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Text: Paraphrase articles and texts for clearer understanding.",
+            "Communication: Aid in negotiating group roles."
+          ],
+          "learning_outcomes": [
+            "Can paraphrase articles on the Panama Canal's impact on international trade, using visuals like a map comparing shipping routes through the Canal vs. around Cape Horn (e.g., 'The map shows that using the Canal saves two weeks of travel time for ships.').",
+            "Can help negotiate roles in group projects on global trade, using gestures and encouraging eye contact to keep focus (e.g., 'Would you like to focus on the economic or environmental aspects of the Canal?').",
+            "Can clarify main ideas in trade-related texts for group work, using visuals like pie charts to illustrate key concepts (e.g., 'Our project will cover how the Canal influences trade and local jobs.')."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "Panama Canal",
+            "operation",
+            "traffic",
+            "congestion",
+            "routes",
+            "shipping",
+            "trade",
+            "infrastructure",
+            "efficiency",
+            "costs",
+            "delays",
+            "government",
+            "investments",
+            "environmental groups",
+            "ecosystems",
+            "authority",
+            "global relationships",
+            "influence",
+            "construction",
+            "future",
+            "operate",
+            "manage",
+            "monitor",
+            "prevent",
+            "invest",
+            "enhance",
+            "raise concerns",
+            "affect",
+            "complete",
+            "speculate",
+            "improve",
+            "face",
+            "delay",
+            "impact",
+            "influence",
+            "navigate",
+            "control",
+            "oversee",
+            "transport",
+            "adjust",
+            "global",
+            "expensive",
+            "efficient",
+            "long-term",
+            "environmental",
+            "local",
+            "impactful",
+            "sustainable",
+            "monitored",
+            "influential",
+            "completed",
+            "significant",
+            "costly",
+            "delayed",
+            "congested",
+            "speculative"
+          ],
+          "grammatical_features": [
+            "Passive voice (e.g., 'The Canal has been managed by the Panama Canal Authority since 1999.')",
+            "Second and third conditionals (e.g., 'If Panama had not built the Canal, global trade would have faced significant challenges in the early 20th century.')",
+            "Present Perfect Continuous (e.g., 'The Canal has been improving global trade, but it has also been causing environmental concerns.')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of the long vowel sound /oʊ/, which is spelled 'o' alone or 'oa' + consonant or 'ow' (e.g., 'global,' 'local,' 'boat,' and 'show'). Practice the alternation of full vowels and reduced vowels in multisyllabic words (e.g., 'environmental' /ɪnˌvaɪrənˈmɛntəl/ and 'impactful' /ɪmˈpæktfʊl/)."
+        },
+        "pragmatic": "Discussing the canal's impact (e.g., 'How has the Panama Canal been impacting global trade over the past few decades?'). Expressing hypothetical ideas (e.g., 'If Panama had not built the Canal, global trade would have faced significant challenges in the early 20th century.').",
+        "sociolinguistic": "Talking about Panama's impact on trade respectfully (e.g., 'The Canal supports global commerce.'). Using specific trade-related terms appropriately according to the social or academic context (e.g., 'The Panama Canal is vital for international shipping.')."
+      },
+      "projects": [
+        {
+          "id": "grade11_scenario5_project1",
+          "category": "Visual Design",
+          "name": "Global Trade Infographic",
+          "overview": "Students design an infographic explaining the role of the Panama Canal in global trade, using the passive voice to describe operations.",
+          "general_objective": "Create an informative infographic about global trade using passive voice structures.",
+          "specific_objectives": [
+            "Apply passive voice for formal descriptions",
+            "Research global trade statistics and routes",
+            "Design effective data visualizations",
+            "Practice using economic terminology"
+          ]
+        },
+        {
+          "id": "grade11_scenario5_project2",
+          "category": "Simulation",
+          "name": "Global Trade Simulation",
+          "overview": "Students participate in a global trade simulation, using second conditionals to predict outcomes.",
+          "general_objective": "Engage in a trade simulation exercise using second conditionals for hypothetical scenarios.",
+          "specific_objectives": [
+            "Use second conditionals for hypothetical trade scenarios",
+            "Understand global supply chain dynamics",
+            "Practice negotiation and decision-making",
+            "Develop economic literacy skills"
+          ]
+        },
+        {
+          "id": "grade11_scenario5_project3",
+          "category": "Documentary",
+          "name": "Canal History Documentary",
+          "overview": "Students create a documentary on the history of the Panama Canal, using the present perfect continuous to discuss its ongoing impact.",
+          "general_objective": "Produce a historical documentary using present perfect continuous for ongoing effects.",
+          "specific_objectives": [
+            "Apply present perfect continuous for ongoing impacts",
+            "Research historical sources and archives",
+            "Develop documentary storytelling skills",
+            "Practice integrating archival footage"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "Entrepreneurial Spirit",
+      "themes": [
+        "How to Market a Business Idea",
+        "My Genius Innovations"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Interpret instructions for more complex technology like using an application or a computer program.",
+            "Interactive: Respond to questions and arguments in debates."
+          ],
+          "learning_outcomes": [
+            "Can interpret instructions on using a computer program to present an original innovation (e.g., explains the steps for creating a presentation, such as: 'selecting a template layout, organizing key features on each slide, and adding images of the invention').",
+            "Can respond to classmates' questions during a debate on whether Panamanian businesses should rely on automated customer service (e.g., 'I think chatbots make communication more efficient, but they lack the human touch that customers expect.').",
+            "Can ask for clarification when debating complex topics, like technology's impact on privacy (e.g., 'What do you mean by 'data security'?')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Comprehend detailed technical instructions.",
+            "Reading: Evaluate texts for bias."
+          ],
+          "learning_outcomes": [
+            "Can comprehend detailed instructions on launching a business, identifying key steps in planning (e.g., 'The guide recommends conducting market research before launching a product.').",
+            "Can evaluate bias and perspectives in articles about marketing strategies and use this information to respond to classmates' questions during a debate on how Panamanian entrepreneurs should promote their business ideas (e.g., 'One article has emphasized influencer marketing as a key strategy but has ignored its cost and limited reach in local markets. I think small businesses should also consider community-based strategies that build trust.')",
+            "Can summarize steps in technical instructions, preparing an outline for classmates (e.g., 'First, brainstorm and create a solid business idea that meets a market need. Next, draft a detailed business plan outlining goals, target audience, and financial projections. Afterward, register the business with the corresponding government entities. Finally, secure financing from banks or investors.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Give a speech on an academic topic.",
+            "Interactive: Collaborate in developing plans for group activities."
+          ],
+          "learning_outcomes": [
+            "Can give a speech on innovations, providing examples to support ideas (e.g., 'Businesses have started using renewable energy to cut costs and attract eco-conscious customers.').",
+            "Can collaborate on planning a business idea to discuss potential outcomes (e.g., 'If we advertise on social media, we might reach more customers.').",
+            "Can lead discussions to share plans for ideas and evaluate others' ideas (e.g., 'I think launching an app could enhance customer engagement.')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Write reviews on general products or services.",
+            "Interactive: Collaborate on creating guidelines for group work."
+          ],
+          "learning_outcomes": [
+            "Can write reviews of business innovations and ideas, evaluating their benefits for efficiency (e.g., 'This app helps track sales, which can improve customer service.').",
+            "Can collaborate on creating business guidelines identifying product marketing strategies (e.g., 'Our guidelines should suggest social media advertising to attract customers.').",
+            "Can develop a collaborative guide for planning a business, assigning sections to each team member (e.g., 'I'll be analyzing the market trends, and you will be preparing the social media campaigns.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Concept: Simplify explanations of common phenomena.",
+            "Communication: Resolve misunderstandings in group projects."
+          ],
+          "learning_outcomes": [
+            "Can simplify explanations of business concepts for classmates using hand gestures or examples (e.g., 'Marketing is like making a movie trailer; it's designed to grab people's attention while showing a sample video ad.').",
+            "Can resolve misunderstandings in group discussions on business plans by rephrasing ideas and using simple visual examples (e.g., points to survey questions as an example, and says, 'Market research means finding out what people want to buy.').",
+            "Can clarify tasks in group projects on entrepreneurship by using a checklist to make sure everyone understands their part (e.g., 'We need to describe our product and explain why people will want it.')."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "innovation",
+            "business",
+            "strategy",
+            "marketing",
+            "customer base",
+            "automation",
+            "efficiency",
+            "costs",
+            "advances",
+            "technology",
+            "app",
+            "engagement",
+            "demand",
+            "product line",
+            "promotional events",
+            "visibility",
+            "success",
+            "collaboration",
+            "entrepreneur",
+            "target",
+            "vision",
+            "mission",
+            "objective",
+            "implement",
+            "increase",
+            "improve",
+            "reduce",
+            "develop",
+            "enhance",
+            "streamline",
+            "launch",
+            "collaborate",
+            "host",
+            "promote",
+            "establish",
+            "automate",
+            "innovate",
+            "create",
+            "invest",
+            "engage",
+            "market",
+            "advertise",
+            "succeed",
+            "innovative",
+            "automated",
+            "efficient",
+            "unique",
+            "great",
+            "renewable",
+            "successful",
+            "strategic",
+            "potential",
+            "visible",
+            "entrepreneurial",
+            "collaborative",
+            "advanced",
+            "streamlined",
+            "customer-focused",
+            "competitive",
+            "impactful"
+          ],
+          "grammatical_features": [
+            "First conditional (e.g., 'If we advertise on social media, we might reach more customers.')",
+            "Present perfect for innovations (e.g., 'Local shops have begun using social media to tell more people about their products.')",
+            "Future continuous (e.g., 'I'll be analyzing the market trends.')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of the long vowel sound /ɔː/, which is usually spelled 'o' + consonant, 'al' + consonant, or 'au'/'aw' (e.g., 'cost,' 'talk,' 'launch,' and 'law'). Practice the alternation of full vowels and reduced vowels in multisyllabic words (e.g., 'renewable' /rɪˈnuːəbl/, 'successful' /səkˈsɛsfəl/)."
+        },
+        "pragmatic": "Asking about business strategies (e.g., 'What strategies have increased customer engagement?'). Sharing ideas for innovation (e.g., 'If we use social media, we can reach a larger audience.').",
+        "sociolinguistic": "Using professional language for business ideas (e.g., 'This strategy could attract more customers to our project.'). Showing respect for innovative suggestions (e.g., 'Your idea adds an interesting approach.')."
+      },
+      "projects": [
+        {
+          "id": "grade11_scenario6_project1",
+          "category": "Presentation",
+          "name": "Business Plan Presentation",
+          "overview": "Students develop and present a business plan to the class, using first conditionals to express potential success.",
+          "general_objective": "Create and present a comprehensive business plan using first conditional for future possibilities.",
+          "specific_objectives": [
+            "Use first conditional for business projections",
+            "Develop business planning and financial literacy",
+            "Practice persuasive presentation skills",
+            "Create professional presentation materials"
+          ]
+        },
+        {
+          "id": "grade11_scenario6_project2",
+          "category": "Interview Series",
+          "name": "Entrepreneurial Interview Series",
+          "overview": "Students interview local entrepreneurs about their business experiences, using the present perfect to discuss innovations.",
+          "general_objective": "Conduct and record interviews with entrepreneurs using present perfect for achievements.",
+          "specific_objectives": [
+            "Apply present perfect for business accomplishments",
+            "Develop interview techniques and question design",
+            "Practice audio/video recording and editing",
+            "Learn from real-world business experiences"
+          ]
+        },
+        {
+          "id": "grade11_scenario6_project3",
+          "category": "Marketing Campaign",
+          "name": "Marketing Campaign Design",
+          "overview": "Students design a marketing campaign for a business, using the future continuous to outline business growth.",
+          "general_objective": "Develop a comprehensive marketing campaign using future continuous for planned activities.",
+          "specific_objectives": [
+            "Use future continuous for planned marketing activities",
+            "Design integrated marketing communications",
+            "Develop branding and messaging skills",
+            "Practice creating marketing materials"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "Intelligent Robots",
+      "themes": [
+        "How Technology Changes Society",
+        "What is Artificial Intelligence?"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Interpret instructions for more complex technology like using an application or a computer program.",
+            "Interactive: Facilitate discussions on future career paths."
+          ],
+          "learning_outcomes": [
+            "Can interpret and explain instructions on using a professional networking site (e.g., 'Some steps include choosing a platform, creating an account, and entering your experience, such as internships in tech hubs in Panama like Ciudad del Saber.').",
+            "Can facilitate and lead a group discussion on career interests, guiding classmates to share their goals (e.g., 'What skills do you think are important for a career in technology?').",
+            "Can interpret classmates' career-related feedback during discussions on job skills (e.g., 'How would you improve your teamwork skills?')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Recognize the writer's point of view in various texts.",
+            "Reading: Comprehend detailed technical instructions."
+          ],
+          "learning_outcomes": [
+            "Can recognize a writer's viewpoint on AI in articles, noting positive or cautious perspectives (e.g., 'The author is optimistic about AI's contribution to financial automation, such as Panama's advancements in fintech, but warns about job displacement in customer service roles.').",
+            "Can comprehend technical instructions for AI software, explaining steps to peers (e.g., 'The manual instructs users to set up an algorithm and test it with data.').",
+            "Can summarize technical details for classmates, ensuring understanding of AI concepts (e.g., 'The software learns from data inputs to improve its predictions.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Give a simple, prepared presentation on current events or past experiences.",
+            "Interactive: Participate in debates on issues of general interest, current or historical."
+          ],
+          "learning_outcomes": [
+            "Can give a simple presentation about the future impact of artificial intelligence by expressing hypothetical outcomes (e.g., 'If AI continues to evolve, it might change the job market significantly.').",
+            "Can participate in debates, responding to arguments and agreeing or disagreeing with respect and clarity (e.g., 'It is agreed that AI could create jobs, but new skills may also be required.').",
+            "Can conduct interviews about AI and technology, asking open questions (e.g., 'How do you think Panama's logistics and trade industries could change with AI integration in the future?')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Develop instructions for everyday tasks.",
+            "Interactive: Revise classmates' essays on general topics."
+          ],
+          "learning_outcomes": [
+            "Can develop step-by-step instructions for using AI tools in everyday life, using simple language for clarity (e.g., 'Open the app and select a task to get suggestions from the AI assistant.').",
+            "Can edit and revise essays on AI, ensuring clarity in descriptions of technology (e.g., 'Explain how AI assists in daily tasks like organizing schedules.').",
+            "Can provide feedback on classmates' writing about AI, suggesting examples to clarify abstract ideas (e.g., 'Add examples of AI used in customer service.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Communication: Resolve misunderstandings in group projects.",
+            "Communication: Aid in negotiating group roles."
+          ],
+          "learning_outcomes": [
+            "Can resolve misunderstandings about AI's impact on society by using simple terms and gestures to explain (e.g., uses hand motions to simulate learning and says, 'AI is a technology that is programmed to learn from data and perform tasks like humans.').",
+            "Can help assign roles in group projects on AI, using visuals or quick sketches to illustrate roles based on classmates' interests (e.g., 'Would you like to focus on AI in education or in the workplace?' with icons representing each sector).",
+            "Can clarify the group's goals for projects on AI's societal impacts, ensuring each role is understood with visual aids (e.g., 'Our project will discuss how AI could change jobs and daily life,' using a timeline of technology evolution for context)."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "artificial intelligence",
+            "robots",
+            "technology",
+            "society",
+            "opportunities",
+            "challenges",
+            "job markets",
+            "employment",
+            "algorithms",
+            "data",
+            "software",
+            "functionality",
+            "systems",
+            "updates",
+            "improvements",
+            "careers",
+            "customer service",
+            "experiences",
+            "programming languages",
+            "guidelines",
+            "advance",
+            "evolve",
+            "revolutionize",
+            "adapt",
+            "create",
+            "enhance",
+            "personalize",
+            "integrate",
+            "prepare",
+            "learn",
+            "apply",
+            "improve",
+            "program",
+            "control",
+            "update",
+            "predict",
+            "enable",
+            "develop",
+            "establish",
+            "shift",
+            "intelligent",
+            "artificial",
+            "responsible",
+            "complex",
+            "societal",
+            "drastic",
+            "significant",
+            "evolving",
+            "future",
+            "revolutionary",
+            "personalized",
+            "controlled",
+            "passive",
+            "functional",
+            "enhanced",
+            "innovative",
+            "technological"
+          ],
+          "grammatical_features": [
+            "Conditional forms (e.g., 'If AI continues to evolve, it might change the job market significantly.')",
+            "Future simple (e.g., 'AI will create new employment opportunities.')",
+            "Passive voice (e.g., 'AI systems are programmed to learn from data and perform tasks.')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of the long vowel sound /ɑː/, which is usually spelled 'o' + consonant and, in some common words, 'a' (e.g., 'robot,' 'job,' 'adopt,' and 'start'). Practice the alternation of full vowels and reduced vowels in multisyllabic words (e.g., 'innovative' /ˈɪnəvətɪv/, 'technological' /ˌtɛknəˈlɒdʒɪkəl/)."
+        },
+        "pragmatic": "Asking about AI's future impact (e.g., 'How will AI change the job market?'). Sharing predictions about technology (e.g., 'AI could improve efficiency in many fields.').",
+        "sociolinguistic": "Asking about technology thoughtfully (e.g., 'How might AI change jobs in Panama?'). Discussing AI's societal role sensitively (e.g., 'AI brings new possibilities but also some challenges for the future.')."
+      },
+      "projects": [
+        {
+          "id": "grade11_scenario7_project1",
+          "category": "Research Report",
+          "name": "AI Future Predictions Report",
+          "overview": "Students write a report on the potential future impacts of AI, using conditional forms to speculate about societal changes.",
+          "general_objective": "Write an analytical report on AI's future using various conditional forms.",
+          "specific_objectives": [
+            "Apply first, second, and third conditionals",
+            "Research AI trends and predictions",
+            "Practice academic report writing",
+            "Develop critical analysis skills"
+          ]
+        },
+        {
+          "id": "grade11_scenario7_project2",
+          "category": "Debate",
+          "name": "AI Debate",
+          "overview": "Students participate in a debate on AI's impact on jobs, using the future simple and continuous to discuss AI's role.",
+          "general_objective": "Engage in structured debate about AI using future forms for predictions.",
+          "specific_objectives": [
+            "Use future simple and continuous for arguments",
+            "Develop argumentation and rebuttal skills",
+            "Research evidence for pro and con positions",
+            "Practice formal debate etiquette"
+          ]
+        },
+        {
+          "id": "grade11_scenario7_project3",
+          "category": "Audio Production",
+          "name": "AI Ethics Podcast",
+          "overview": "Students create a podcast discussing the ethical implications of AI, using the passive voice to describe how AI systems are controlled.",
+          "general_objective": "Produce a podcast on AI ethics using passive voice for technical descriptions.",
+          "specific_objectives": [
+            "Apply passive voice for technical processes",
+            "Explore ethical frameworks and dilemmas",
+            "Develop podcast scripting and recording skills",
+            "Practice discussing complex topics clearly"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "International English",
+      "themes": [
+        "How English Is Used in Workplaces Globally",
+        "What Communication Skills Are Important in the Workplace?"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Follow the linear structure of a short formal talk.",
+            "Interactive: Facilitate discussions on future career paths."
+          ],
+          "learning_outcomes": [
+            "Can follow key points in a structured talk about career planning (e.g., Explain the speaker's advice on gaining experience, for example, 'He said that we should gain more experience in our field by taking on diverse projects or internships.').",
+            "Can facilitate discussions on career options, prompting classmates to share ideas on communication-related skills (e.g., 'Which industries in Panama require English fluency, and why?').",
+            "Can ask follow-up questions to encourage classmates to elaborate on career choices (e.g., 'Can you explain which skills can help you advance your career?')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Take basic notes on a text about a familiar topic.",
+            "Reading: Recognize the writer's point of view in various texts."
+          ],
+          "learning_outcomes": [
+            "Can take introductory notes on articles about English as a global language, recording main ideas (e.g., 'English connects people from different cultures in business').",
+            "Can recognize a writer's viewpoint on the spread of English, noting arguments about its importance in international business (e.g., 'The article highlights that sectors like logistics and finance in Panama rely heavily on English for communication.').",
+            "Can summarize points from texts on English in the workplace, preparing for discussions on language learning (e.g., 'The text argues that English skills can enhance career opportunities.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Share future career plans and aspirations.",
+            "Interactive: Lead a discussion on various areas including academic topics or past experiences."
+          ],
+          "learning_outcomes": [
+            "Can share future career aspirations, explaining the role English will play (e.g., 'I want to work in diplomacy, so learning English is essential.').",
+            "Can lead discussions about the role of English in global workplaces, prompting classmates to share perspectives (e.g., 'Why do you think English is important in international business?').",
+            "Can clarify classmates' points in discussions on global English, ensuring understanding (e.g., 'So, you believe English helps people connect across cultures?')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Create narratives based on hypothetical scenarios.",
+            "Interactive: Engage in writing exchanges about future aspirations."
+          ],
+          "learning_outcomes": [
+            "Can create narratives imagining future careers, highlighting the importance of English in global settings (e.g., 'As a diplomat, I'll use English to communicate with people worldwide.').",
+            "Can participate in writing exchanges about future career goals, describing how English will be beneficial and including relevant workplace contexts and detailed examples (e.g., 'Learning English will help me communicate in an international business career by allowing me to negotiate contracts, participate in meetings, and collaborate with international partners.').",
+            "Can write letters to classmates describing aspirations, mentioning English as a key skill (e.g., 'I want to become a doctor and use English to read medical research from around the world.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Concept: Explain general concepts in simple terms.",
+            "Text: Summarize information from instructions or announcements."
+          ],
+          "learning_outcomes": [
+            "Can explain the concept of English as a global language to classmates, using relatable visuals like a world map to show countries where English is spoken (e.g., 'English has become an international language, widely used in business to help people communicate.').",
+            "Can summarize instructions for an English language workshop, using gestures to highlight key session goals (e.g., points to icons of travel and work, and says, 'We'll practice English skills for work and travel situations.').",
+            "Can clarify the importance of English in international communication, using bilingual support and visuals as needed to convey the message (e.g., shows symbols of different career fields and explains, 'Knowing English can help in global careers like business and diplomacy.')."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "English",
+            "workplaces",
+            "communication",
+            "skills",
+            "fluency",
+            "resources",
+            "business",
+            "diplomacy",
+            "lingua franca",
+            "backgrounds",
+            "students",
+            "employees",
+            "courses",
+            "access",
+            "contexts",
+            "cross-cultural communication",
+            "online platforms",
+            "academic resources",
+            "global",
+            "interactions",
+            "spread",
+            "learn",
+            "practice",
+            "connect",
+            "recognize",
+            "become",
+            "access",
+            "explain",
+            "communicate",
+            "express",
+            "wonder",
+            "tell",
+            "use",
+            "enhance",
+            "explain",
+            "engage",
+            "explore",
+            "employ",
+            "global",
+            "international",
+            "dominant",
+            "relevant",
+            "necessary",
+            "important",
+            "formal",
+            "fluent",
+            "communicative",
+            "cross-cultural",
+            "recognized",
+            "linguistic",
+            "wide-ranging",
+            "accessible",
+            "vital",
+            "proficient",
+            "interactive"
+          ],
+          "grammatical_features": [
+            "Present perfect (e.g., 'English has become an international language, widely used in business to help people communicate.')",
+            "Modals for necessity 'must,' 'could,' 'should,' and 'can' (e.g., 'It could be a good idea to gain experience through internships.')",
+            "Indirect questions (e.g., 'Can you explain which skills can help you advance your career?')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of the long vowel sound /ɛ/, which is usually spelled 'e' + consonant and sometimes 'ea' (e.g., 'relevant,' 'necessary,' with one exception: 'says,' 'said'). Practice the alternation of full vowels and reduced vowels in multisyllabic words (e.g., 'communication' /kəˌmjuːnɪˈkeɪʃən/, 'accessible' /əkˈsɛsɪbəl/)."
+        },
+        "pragmatic": "Asking about English's global role (e.g., 'Why has English become such an important language for international business?'). Discussing communication skills (e.g., 'Practicing English helps in cross-cultural workplaces.').",
+        "sociolinguistic": "Using formal language in workplace contexts (e.g., 'Effective communication skills help us succeed globally.'). Recognizing cross-cultural communication needs (e.g., 'It's important to adapt language for different audiences.')."
+      },
+      "projects": [
+        {
+          "id": "grade11_scenario8_project1",
+          "category": "Blog Writing",
+          "name": "Global English Blog",
+          "overview": "Students write blog posts about how English is used globally, using the present perfect to discuss its spread.",
+          "general_objective": "Create a blog exploring English as a global language using present perfect for historical developments.",
+          "specific_objectives": [
+            "Use present perfect for historical changes",
+            "Research global English varieties and uses",
+            "Practice blog writing and digital publishing",
+            "Develop sociolinguistic awareness"
+          ]
+        },
+        {
+          "id": "grade11_scenario8_project2",
+          "category": "Role-Play",
+          "name": "Workplace Communication Role-Play",
+          "overview": "Students role-play workplace communication scenarios, using modals to express necessity and the future to express career plans.",
+          "general_objective": "Practice professional communication using modals for necessity and future forms.",
+          "specific_objectives": [
+            "Apply modals (must, have to, need to) for workplace requirements",
+            "Practice professional etiquette and register",
+            "Develop business communication skills",
+            "Use appropriate language for different workplace contexts"
+          ]
+        },
+        {
+          "id": "grade11_scenario8_project3",
+          "category": "Interview Series",
+          "name": "Cross-Cultural Interview Series",
+          "overview": "Students interview professionals who use English in international workplaces, using indirect questions to gather information.",
+          "general_objective": "Conduct interviews with professionals using indirect questions for politeness.",
+          "specific_objectives": [
+            "Use indirect questions (Could you tell me..., I was wondering...)",
+            "Develop professional networking skills",
+            "Practice interview techniques",
+            "Learn about international career paths"
+          ]
+        }
+      ]
+    }
+  ]
+}

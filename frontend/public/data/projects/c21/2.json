@@ -1,0 +1,180 @@
+{
+  "projects_by_scenario": {
+    "School Days": {
+      "Community & Cultural": [
+        {
+          "id": "community_map",
+          "name": "Community map"
+        },
+        {
+          "id": "festival_poster",
+          "name": "Festival poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "nature_report",
+          "name": "Nature report"
+        },
+        {
+          "id": "recycling_chart",
+          "name": "Recycling chart"
+        }
+      ]
+    },
+    "School Life Adventures": {
+      "Community & Cultural": [
+        {
+          "id": "community_map",
+          "name": "Community map"
+        },
+        {
+          "id": "festival_poster",
+          "name": "Festival poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "nature_report",
+          "name": "Nature report"
+        },
+        {
+          "id": "recycling_chart",
+          "name": "Recycling chart"
+        }
+      ]
+    },
+    "All About the Weather": {
+      "Community & Cultural": [
+        {
+          "id": "community_map",
+          "name": "Community map"
+        },
+        {
+          "id": "festival_poster",
+          "name": "Festival poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "nature_report",
+          "name": "Nature report"
+        },
+        {
+          "id": "recycling_chart",
+          "name": "Recycling chart"
+        }
+      ]
+    },
+    "All About My Body": {
+      "Community & Cultural": [
+        {
+          "id": "community_map",
+          "name": "Community map"
+        },
+        {
+          "id": "festival_poster",
+          "name": "Festival poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "nature_report",
+          "name": "Nature report"
+        },
+        {
+          "id": "recycling_chart",
+          "name": "Recycling chart"
+        }
+      ]
+    },
+    "Exploring My Community": {
+      "Community & Cultural": [
+        {
+          "id": "community_map",
+          "name": "Community map"
+        },
+        {
+          "id": "festival_poster",
+          "name": "Festival poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "nature_report",
+          "name": "Nature report"
+        },
+        {
+          "id": "recycling_chart",
+          "name": "Recycling chart"
+        }
+      ]
+    },
+    "Discovering Nature's Wonders": {
+      "Community & Cultural": [
+        {
+          "id": "community_map",
+          "name": "Community map"
+        },
+        {
+          "id": "festival_poster",
+          "name": "Festival poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "nature_report",
+          "name": "Nature report"
+        },
+        {
+          "id": "recycling_chart",
+          "name": "Recycling chart"
+        }
+      ]
+    },
+    "Fun Outdoors!": {
+      "Community & Cultural": [
+        {
+          "id": "community_map",
+          "name": "Community map"
+        },
+        {
+          "id": "festival_poster",
+          "name": "Festival poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "nature_report",
+          "name": "Nature report"
+        },
+        {
+          "id": "recycling_chart",
+          "name": "Recycling chart"
+        }
+      ]
+    },
+    "It's Festival Season.": {
+      "Community & Cultural": [
+        {
+          "id": "community_map",
+          "name": "Community map"
+        },
+        {
+          "id": "festival_poster",
+          "name": "Festival poster"
+        }
+      ],
+      "Environmental & Sustainability": [
+        {
+          "id": "nature_report",
+          "name": "Nature report"
+        },
+        {
+          "id": "recycling_chart",
+          "name": "Recycling chart"
+        }
+      ]
+    }
+  }
+}

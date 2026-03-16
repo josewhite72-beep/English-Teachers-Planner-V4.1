@@ -1,0 +1,52 @@
+{
+  "grade": 8,
+  "projects_by_scenario": {
+    "Cultural Connections": [
+      {"id":"G8_S1_P1","name":"Cultural Scrapbook","overview":"Students create a scrapbook showcasing local traditions."},
+      {"id":"G8_S1_P2","name":"Heritage Museum Tour","overview":"Students design a museum tour about cultural traditions."},
+      {"id":"G8_S1_P3","name":"Tradition Video Interviews","overview":"Students record interviews about cultural celebrations."}
+    ],
+
+    "The Power of Education": [
+      {"id":"G8_S2_P1","name":"Learning Journey Timeline","overview":"Students design a timeline showing learning goals."},
+      {"id":"G8_S2_P2","name":"Future Study Plan","overview":"Students present academic plans for future studies."},
+      {"id":"G8_S2_P3","name":"Education Debate","overview":"Students debate the importance of different subjects."}
+    ],
+
+    "My Favorite Book/Movie": [
+      {"id":"G8_S3_P1","name":"Movie Review Video","overview":"Students create a video reviewing a movie."},
+      {"id":"G8_S3_P2","name":"Book Recommendation Poster","overview":"Students recommend a book through visual posters."},
+      {"id":"G8_S3_P3","name":"Literature Discussion Panel","overview":"Students participate in a panel discussing books."}
+    ],
+
+    "Sustainable Living": [
+      {"id":"G8_S4_P1","name":"Eco Habits Campaign","overview":"Students promote sustainable daily habits."},
+      {"id":"G8_S4_P2","name":"Recycling Awareness Project","overview":"Students design a recycling awareness campaign."},
+      {"id":"G8_S4_P3","name":"Sustainable Lifestyle Blog","overview":"Students create blog entries on sustainable living."}
+    ],
+
+    "Career Goals": [
+      {"id":"G8_S5_P1","name":"Career Research Report","overview":"Students research careers and present findings."},
+      {"id":"G8_S5_P2","name":"Career Fair Presentation","overview":"Students simulate a career fair presentation."},
+      {"id":"G8_S5_P3","name":"Future Profession Interview","overview":"Students interview professionals about careers."}
+    ],
+
+    "Learning from Our Mistakes": [
+      {"id":"G8_S6_P1","name":"Personal Reflection Journal","overview":"Students write reflections about mistakes and lessons."},
+      {"id":"G8_S6_P2","name":"Problem Solving Workshop","overview":"Students design solutions to learning challenges."},
+      {"id":"G8_S6_P3","name":"Growth Mindset Campaign","overview":"Students create motivational campaigns."}
+    ],
+
+    "A Day Without Technology": [
+      {"id":"G8_S7_P1","name":"Tech-Free Challenge","overview":"Students document a day without technology."},
+      {"id":"G8_S7_P2","name":"Pros and Cons Debate","overview":"Students debate the benefits and disadvantages of technology."},
+      {"id":"G8_S7_P3","name":"Digital Balance Infographic","overview":"Students create infographics about healthy tech habits."}
+    ],
+
+    "Planning for My Future Education": [
+      {"id":"G8_S8_P1","name":"Future Vision Board","overview":"Students create visual boards about future goals."},
+      {"id":"G8_S8_P2","name":"Education Path Presentation","overview":"Students present possible education pathways."},
+      {"id":"G8_S8_P3","name":"Personal Goals Action Plan","overview":"Students design an action plan for achieving goals."}
+    ]
+  }
+}

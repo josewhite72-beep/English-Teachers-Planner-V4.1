@@ -1,0 +1,1394 @@
+{
+  "grade": "10",
+  "proficiency_level": "B1.1",
+  "scenarios": [
+    {
+      "scenario": "Let's Start a Club!",
+      "themes": [
+        "There Are So Many Types of Clubs!",
+        "Learning to Manage a Club"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Extract key factual information, such as dates, numbers, and quantities, from a presentation.",
+            "Interactive: Interpret and relay information in pair and group discussions."
+          ],
+          "learning_outcomes": [
+            "Can extract detailed factual information from conversations and presentations about club-related tasks, such as goals, timelines, and membership requirements (e.g., 'What are the club's main objectives?' 'When is the registration deadline?' 'How many members are needed for the environmental clean-up event?').",
+            "Can interpret and relay key details about different club activities from discussions based on a presentation or lecture (e.g., 'The types of clubs mentioned are the social, sports, and academic clubs.').",
+            "Can follow a presentation on club organization and answer specific questions (e.g., 'What date is the club fair?' 'The club fair is scheduled for next Thursday.')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Distinguish between facts and opinions in texts on everyday subjects.",
+            "Reading: Derive the meaning of simple unknown words from short texts."
+          ],
+          "learning_outcomes": [
+            "Can distinguish between facts and opinions in announcements, posters, or newsletters about school events (e.g., Fact: 'The music club practices every Thursday.' Opinion: 'The music club is the most fun because it's energetic.').",
+            "Can find the meaning of unknown words in a text about club activities (e.g., 'I think in this sentence, 'engage' means to participate actively.').",
+            "Can separate factual and opinion-based statements in a list of club benefits (e.g., Fact: 'It is beneficial to join social clubs.' Opinion: 'I believe joining a club improves your social skills.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Narrate a story or an experience in a structured way.",
+            "Interactive: Negotiate project roles and tasks within a group."
+          ],
+          "learning_outcomes": [
+            "Can narrate a personal experience related to a club activity by including key details and a clear sequence of events (e.g., 'Last year, I joined a sports club at school. First, I signed up during the club fair and then attended weekly practice sessions. During those meetings, I learned new skills and made new friends. Finally, we participated in a school tournament, and it was an unforgettable experience.').",
+            "Can negotiate project roles in a group discussion about starting a club by suggesting real club positions and responsibilities (e.g., 'Let's decide who will be the president to lead meetings, the secretary to take notes, and the treasurer to manage the club's budget.').",
+            "Can express a preference for a club role and explain reasons (e.g., 'I'd like to be the treasurer because I am good at math.')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Develop a notice that clearly conveys information.",
+            "Interactive: Participate in a written discussion on paper, through apps, online, or in a forum discussion."
+          ],
+          "learning_outcomes": [
+            "Can write a short notice to recruit club members that can be shared in any classroom (e.g., 'Join our art club! We meet weekly to create projects together.').",
+            "Can respond to a question in a forum about club preferences within classroom settings by providing meaningful reasons (e.g., 'I chose the environmental club because we can help reduce waste by organizing a school-wide recycling program.' 'I joined the debate club because it helps me improve my critical thinking and public speaking skills.').",
+            "Can write a brief post describing club goals and activities that can happen in flexible spaces (e.g., 'Our social club meets to share ideas and help each other.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Communication: Facilitate discussions on project goals and tasks.",
+            "Text: Clarify written instructions in collaborative projects."
+          ],
+          "learning_outcomes": [
+            "Can facilitate group discussions by encouraging participation, clarifying ideas, and summarizing goals (e.g., 'Let's brainstorm ideas for improving the club activities.' 'So far, we've agreed to organize a school clean-up day and a community reading event.').",
+            "Can clarify written instructions for organizing a club activity by providing a visual checklist (e.g., drawing steps on the board: 'Step 1: Find members; Step 2: Choose activities').",
+            "Can help group members understand club tasks by rephrasing instructions (e.g., 'Let's set up a meeting every week,' while pointing to a calendar.)."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "clubs",
+            "interests",
+            "sports",
+            "activities",
+            "goals",
+            "members",
+            "requirements",
+            "survey",
+            "structure",
+            "responsibilities",
+            "roles",
+            "meetings",
+            "team",
+            "project",
+            "event",
+            "community",
+            "feedback",
+            "suggestions",
+            "participation",
+            "leadership",
+            "manage",
+            "negotiate",
+            "plan",
+            "organize",
+            "create",
+            "engage",
+            "discuss",
+            "respond",
+            "coordinate",
+            "assign",
+            "delegate",
+            "evaluate",
+            "contribute",
+            "participate",
+            "schedule",
+            "arrange",
+            "support",
+            "facilitate",
+            "social",
+            "structured",
+            "organized",
+            "goal-oriented",
+            "collaborative",
+            "responsible",
+            "respectful",
+            "inclusive",
+            "team-based",
+            "supportive"
+          ],
+          "grammatical_features": [
+            "Simple present for describing things and preferences (e.g., 'There are many types of clubs.' 'I like this club because we can use any room to work together.')",
+            "Imperatives for instructions (e.g., 'Set goals,' 'Let's plan activities')",
+            "Simple past (e.g., 'Last year, I joined a sports club, and I made new friends.')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of contrastive sounds, focusing on single and double consonants (e.g., /pr/ in 'project' and /tr/ in 'treasure,' /p/ in 'participate' and /t/ in 'team'). Emphasize the stress on the third syllable from the end in verbs ending in -ate (e.g., 'delegate,' 'coordinate,' and 'negotiate'). Stress on imperatives for giving instructions (e.g., emphasize the imperative in 'set goals')."
+        },
+        "pragmatic": "Asking about club preferences (e.g., 'What type of club would you like to join?'). Narrating stories (e.g., 'Last year, I joined a sports club, and I made new friends.').",
+        "sociolinguistic": "Negotiate roles and responsibilities when planning a school or community club, responding clearly to feedback and suggestions (e.g., 'I would like to be the treasurer because I am good at math.')."
+      },
+      "projects": [
+        {
+          "id": "grade10_scenario1_project1",
+          "category": "Digital Creation",
+          "name": "Club Creation Plan",
+          "overview": "Students create a step-by-step guide to starting a school club, using the simple present tense and imperatives to give instructions.",
+          "general_objective": "Develop a comprehensive digital guide for creating and managing a school club while practicing instructional language and organizational skills.",
+          "specific_objectives": [
+            "Use simple present tense to describe club activities and requirements",
+            "Apply imperative forms to give clear instructions for club creation",
+            "Practice prepositions of place to describe club meeting locations",
+            "Develop digital literacy skills through guide creation"
+          ]
+        },
+        {
+          "id": "grade10_scenario1_project2",
+          "category": "Video Production",
+          "name": "Club Promotion Video",
+          "overview": "Students record a promotional video for their club, using prepositions to describe club locations and past simple to narrate an anecdote related to their experience as club members.",
+          "general_objective": "Create an engaging video advertisement for a school club that demonstrates spatial language and narrative skills.",
+          "specific_objectives": [
+            "Use prepositions of place to describe where club activities occur",
+            "Apply past simple tense to narrate personal club experiences",
+            "Develop presentation and public speaking skills",
+            "Practice video recording and basic editing techniques"
+          ]
+        },
+        {
+          "id": "grade10_scenario1_project3",
+          "category": "Planning & Organization",
+          "name": "Club Activity Schedule",
+          "overview": "Students design a monthly schedule for their club, using wh-questions to gather member preferences and plan activities.",
+          "general_objective": "Create a functional monthly schedule that incorporates member input and demonstrates question formation skills.",
+          "specific_objectives": [
+            "Formulate wh-questions to survey member preferences",
+            "Design an organized monthly activity calendar",
+            "Practice collaborative decision-making skills",
+            "Use time expressions and frequency adverbs appropriately"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "Advice for Success",
+      "themes": [
+        "Academic Achievement and Skill Development: How?",
+        "My Advice for a Ninth Grader"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Follow the main points in a simple audio recording aimed at a general audience.",
+            "Interactive: Organize information from group discussions."
+          ],
+          "learning_outcomes": [
+            "Can follow the main points in a simple audio recording about study tips and academic advice, identifying key strategies and examples (e.g., 'Lucia said that if I studied regularly, I would get better grades.' 'You should take breaks while studying to stay focused.').",
+            "Can identify specific details in a motivational talk on skill development, focusing on future advice (e.g., 'The speaker said that if you practice public speaking, you will gain more confidence.' 'You should set clear goals for the trimester.').",
+            "Can organize information from a group discussion on academic goals, summarizing advice given by peers (e.g., 'Kathy suggested that you could manage your time better, and Mariana added that if you joined a study group, you might improve your understanding.')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Analyze informational content for specific data.",
+            "Reading: Make basic inferences or predictions about a text content from headings, titles, or headlines."
+          ],
+          "learning_outcomes": [
+            "Can analyze informational texts about academic success to find specific study tips and strategies (e.g., 'The article says that we should create a study schedule to manage our time better.').",
+            "Can make predictions about a text's content based on its title or headings. (e.g., 'From the title 'Top 5 Study Tips for Success,' I think the article will suggest ideas like setting goals or taking breaks.').",
+            "Can infer the purpose of a section in a study guide by analyzing headings and key phrases. (e.g., 'The heading 'Time Management Strategies' suggests this section will explain how to organize study time effectively.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Present a summary of information depicted in a book or article.",
+            "Interactive: Participate in group discussions on current events."
+          ],
+          "learning_outcomes": [
+            "Can present a summary of academic advice from an article, highlighting key points and examples (e.g., 'The article explains that if you organize your notes, you will study more effectively. It also suggests taking regular breaks.').",
+            "Can participate in group discussions about study habits, sharing personal tips and advice (e.g., 'I think using flashcards really helps. Rubiela recommended that I should try them for vocabulary practice.').",
+            "Can express agreement or disagreement during discussions on academic success strategies, providing reasons for their opinions (e.g., 'I agree that setting goals is important because it helps me stay focused.' 'I don't think studying late at night is effective, since I get too tired.')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Write a review of a recent event, place, or product.",
+            "Interactive: Write collaborative stories or articles."
+          ],
+          "learning_outcomes": [
+            "Can write a review of a study app or tool, describing its features and usefulness for academic success (e.g., 'This app is great for organizing notes. It helps you stay focused and manage your time better.').",
+            "Can collaborate with classmates to write an article on effective study habits, sharing personal experiences and advice (e.g., 'Otto suggested that if I studied earlier, I wouldn't feel so rushed before exams. He recommends setting daily study goals to avoid last-minute cramming.').",
+            "Can write a short review of a recent school event, highlighting its impact on academic skills (e.g., 'The study skills workshop was helpful. We learned how to take better notes and manage time effectively.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Communication: Resolve conflicts in group settings.",
+            "Text: Summarize complex texts for peers."
+          ],
+          "learning_outcomes": [
+            "Can resolve simple conflicts in group study sessions by suggesting fair solutions and using clarifying language (e.g., says, 'Let's split the tasks evenly so everyone has a fair part. I'll take notes, and you can make the slides.').",
+            "Can summarize the main points of an academic article for peers, highlighting key advice and strategies (e.g., 'This article explains that setting study goals improves focus. Juan pointed out that reviewing notes daily helps retain information better.').",
+            "Can mediate disagreements in group projects by rephrasing ideas and ensuring everyone's opinions are heard (e.g., 'Mariana suggested that if we combine both ideas, we can create a stronger project. What does everyone think?')."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "achievement",
+            "skill",
+            "development",
+            "advice",
+            "study",
+            "goals",
+            "improvement",
+            "practice",
+            "focus",
+            "feedback",
+            "growth",
+            "strategy",
+            "effort",
+            "progress",
+            "plan",
+            "discipline",
+            "success",
+            "solution",
+            "potential",
+            "performance",
+            "time management",
+            "learning style",
+            "motivation",
+            "improve",
+            "study",
+            "practice",
+            "organize",
+            "focus",
+            "advise",
+            "achieve",
+            "develop",
+            "facilitate",
+            "encourage",
+            "guide",
+            "reflect",
+            "evaluate",
+            "recommend",
+            "suggest",
+            "implement",
+            "plan",
+            "track",
+            "discuss",
+            "procrastinate",
+            "review",
+            "revise",
+            "brainstorm",
+            "organized",
+            "focused",
+            "improved",
+            "developmental",
+            "achievable",
+            "goal-oriented",
+            "actionable",
+            "skillful",
+            "reflective",
+            "disciplined",
+            "motivated",
+            "consistent",
+            "successful",
+            "proactive"
+          ],
+          "grammatical_features": [
+            "Second conditional for giving advice (e.g., 'If I studied harder, I would get better grades.' 'If I practiced English more, I would improve my speaking skills.' 'If I were more organized, I would achieve my academic goals.')",
+            "Modals for giving advice (e.g., 'You should complete your assignments on time to succeed academically.' 'You must focus on your goals to improve your grades.' 'You can improve your English by practicing every day.')",
+            "Future simple for first conditional (e.g., 'If you focus on your studies, you will achieve your academic goals.' 'If you participate in class more, you will become more confident.')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of contrastive sounds found in academic and advice-related vocabulary, focusing on single and double consonants (e.g., /gr/ in 'growth' and /kr/ in 'create,' /g/ in 'good,' and /k/ in 'could'). Focus on stress patterns for two-syllable nouns and verbs with identical spelling, especially those used in academic contexts (e.g., 'progress,' PROgress, as a noun, meaning improvement, versus proGRESS, as a verb, meaning to advance)."
+        },
+        "pragmatic": "Asking for academic advice politely using appropriate question structures and modals (e.g., 'What study strategies do you recommend to improve my grades?'). Giving study tips to peers using modals for advice and the second conditional for hypothetical situations (e.g., 'You should create a study schedule to stay on track.').",
+        "sociolinguistic": "Facilitating peer group discussions on academic success strategies by using inclusive and encouraging language (e.g., 'Let's share study techniques that have worked for us.'). Providing clear, actionable advice to support peers in academic skill development (e.g., 'You should try using a planner to keep track of deadlines.')."
+      },
+      "projects": [
+        {
+          "id": "grade10_scenario2_project1",
+          "category": "Audio Production",
+          "name": "Academic Advice Podcast",
+          "overview": "Students record a short podcast giving study tips to 9th graders, using the second conditional to provide hypothetical advice.",
+          "general_objective": "Produce an educational podcast that provides academic guidance while practicing conditional structures.",
+          "specific_objectives": [
+            "Apply second conditional to give hypothetical study advice",
+            "Practice pronunciation and intonation for audio recording",
+            "Develop scriptwriting skills for educational content",
+            "Use modals appropriately for recommendations"
+          ]
+        },
+        {
+          "id": "grade10_scenario2_project2",
+          "category": "Digital Design",
+          "name": "Study Tips Digital Guide",
+          "overview": "Students create a digital guide with learning strategies, using modals for advice and organizing information clearly.",
+          "general_objective": "Design a visually appealing digital resource that presents effective study strategies using appropriate modal verbs.",
+          "specific_objectives": [
+            "Use modals (should, must, can) to give study advice",
+            "Organize information using digital design tools",
+            "Create clear, actionable study recommendations",
+            "Practice visual communication and layout design"
+          ]
+        },
+        {
+          "id": "grade10_scenario2_project3",
+          "category": "Self-Reflection",
+          "name": "Study Habit Challenge",
+          "overview": "Students track and reflect on a two-week study habit challenge, using the future simple to set goals and predict outcomes.",
+          "general_objective": "Monitor personal study habits over time and reflect on improvements using future tense predictions.",
+          "specific_objectives": [
+            "Apply future simple to set academic goals",
+            "Track daily study habits using a digital or paper journal",
+            "Reflect on progress and challenges in written form",
+            "Develop self-management and time management skills"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "Study Habits for Success",
+      "themes": [
+        "Learning to Manage Time",
+        "How I Learned to Focus"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Identify the main ideas of a complex dialogue in media, provided there is an opportunity for clarification and repetition.",
+            "Interactive: Identify the main ideas of feedback provided to solve problems in group settings."
+          ],
+          "learning_outcomes": [
+            "Can follow a complex dialogue in a podcast about time management strategies, identify key points, and evaluate their usefulness (e.g., 'The speaker recommended avoiding distractions by studying in a quiet space. How effective is this for your environment?').",
+            "Can listen to a peer's summary of study habits and identify main ideas (e.g., 'He said the best way is to break down big tasks into smaller, more manageable ones.').",
+            "Can determine the key advice from feedback on study routines (e.g., 'It's important to have a set routine, like studying at the same time each day.')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Evaluate arguments in opinion pieces.",
+            "Reading: Make basic inferences or predictions about a text content from headings, titles, or headlines."
+          ],
+          "learning_outcomes": [
+            "Can evaluate and reflect on arguments in study habits articles and make connections to personal academic experiences (e.g., 'The article suggests using checklists. I've tried this strategy, and it has helped me stay organized.').",
+            "Can make inferences about the main focus of a section based on its title and supporting text (e.g., 'The section titled 'Boost Your Focus' likely discusses concentration techniques such as minimizing distractions and using a timer during study sessions.').",
+            "Can predict the type of advice provided in a section on time management by examining headings and context clues (e.g., 'The heading 'Tips for Daily Progress' suggests that the section will include steps for creating a daily routine and using calendars or to-do lists.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Describe familiar processes or events.",
+            "Interactive: Paraphrase a simple statement on familiar topics during discussions."
+          ],
+          "learning_outcomes": [
+            "Can describe a personal study routine, outlining steps in logical order and giving specific examples (e.g., 'First, I organize my notes by subject. Then, I review my math exercises. Finally, I test myself with flashcards.').",
+            "Can paraphrase feedback on study habits during a discussion (e.g., 'So you're saying that I have changed my study habits?').",
+            "Can suggest study habit improvements based on past experiences and provide reasons for their effectiveness (e.g., 'I used to forget assignments, so I started using a planner. Now, I submit my work on time and feel less stressed.')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Compose a detailed personal narrative.",
+            "Interactive: Compile feedback for collaborative writing in a structured manner."
+          ],
+          "learning_outcomes": [
+            "Can write a detailed narrative about a personal study experience, including reflections on what worked and what could be improved (e.g., 'Last month, I realized I was falling behind in math. I started setting reminders to review my notes every day after dinner. Now, I feel more confident when solving equations.').",
+            "Can contribute to a collaborative guide on study strategies by organizing peer feedback and adding recommendations (e.g., 'Peers have suggested writing down homework in an agenda to avoid missing deadlines. Others have recommended setting phone reminders.').",
+            "Can compile and paraphrase feedback on study habits during peer review sessions and organize it into a report (e.g., 'The feedback suggests that making a study schedule and using color-coded notes improves time management.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Communication: Assist in negotiations between student groups.",
+            "Concept: Interpret graphical data for classroom use."
+          ],
+          "learning_outcomes": [
+            "Can assist groups in negotiating study-related tasks by rephrasing ideas simply (e.g., asks, 'Can we all agree on study times?' while showing two options: 'morning or afternoon' on the board).",
+            "Can interpret basic charts or schedules related to study habits by highlighting key times (e.g., explaining a sample study schedule, pointing to '3-4 p.m.,' for after-school study time).",
+            "Can clarify group tasks by explaining simple data from a graph, like a bar chart on 'study hours per week' (e.g., 'More time in English can help.')."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "study",
+            "habits",
+            "focus",
+            "time",
+            "goals",
+            "grades",
+            "progress",
+            "learning",
+            "achievements",
+            "skills",
+            "routines",
+            "assignments",
+            "strategies",
+            "productivity",
+            "improvement",
+            "management",
+            "results",
+            "effort",
+            "success",
+            "inspiration",
+            "manage",
+            "procrastinate",
+            "improve",
+            "develop",
+            "reflect",
+            "suggest",
+            "set (goals)",
+            "practice",
+            "study",
+            "focus",
+            "achieve",
+            "organize",
+            "complete",
+            "work on",
+            "discuss",
+            "inspire",
+            "evaluate",
+            "prioritize",
+            "accomplish",
+            "effective",
+            "frequent",
+            "productive",
+            "focused",
+            "essential",
+            "improved",
+            "organized",
+            "consistent",
+            "always",
+            "sometimes",
+            "every day",
+            "when",
+            "where",
+            "how",
+            "after",
+            "before",
+            "on",
+            "at",
+            "might",
+            "could",
+            "should"
+          ],
+          "grammatical_features": [
+            "Present perfect for achievements (e.g., 'I have developed better habits.')",
+            "Past simple for reflecting (e.g., 'I used to procrastinate.')",
+            "WH-questions (e.g., 'What have you done to change your study routine?')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of contrastive sounds, focusing on single and double consonants (e.g., /sk/ in 'skill' and /st/ in 'study,' /s/ in 'success,' and /t/ in 'type'). Practice the pronunciation of -ed endings for past tenses and past participles (e.g., /d/ in 'improved,' /t/ in 'accomplished,' and /ɪd/ in 'suggested'). Stress the main verb in forms such as: have developed."
+        },
+        "pragmatic": "Expressing achievements in changing habits (e.g., 'I have reorganized my study schedule and improved my grades.'). Expressing past habits (e.g., 'I used to procrastinate, but now I manage my time better.').",
+        "sociolinguistic": "Organize group projects that promote collaborative discussions on effective study strategies, emphasizing how language is used to negotiate plans and share experiences, while providing concrete examples of time management techniques adapted to the group's cultural and social norms (e.g., 'Let's create a study schedule where we review one subject per day and take 10-minute breaks after 40 minutes of studying.' 'We should use the Pomodoro technique, where we study for 25 minutes, then take a 5-minute break. This helps us stay focused without feeling overwhelmed.')."
+      },
+      "projects": [
+        {
+          "id": "grade10_scenario3_project1",
+          "category": "Visual Design",
+          "name": "Time Management Poster",
+          "overview": "Students create a poster outlining effective time management strategies, using the present perfect to reflect on achievements.",
+          "general_objective": "Design an informative poster that presents time management techniques while practicing present perfect tense.",
+          "specific_objectives": [
+            "Use present perfect to describe personal achievements",
+            "Design visually appealing informational posters",
+            "Research and present effective time management strategies",
+            "Practice using frequency adverbs appropriately"
+          ]
+        },
+        {
+          "id": "grade10_scenario3_project2",
+          "category": "Digital Tracking",
+          "name": "Study Habit Tracker",
+          "overview": "Students design a digital habit tracker to improve their study routines, using frequency adverbs to track progress.",
+          "general_objective": "Create a functional digital tool for monitoring study habits while practicing frequency expressions.",
+          "specific_objectives": [
+            "Apply frequency adverbs to describe study routines",
+            "Design user-friendly tracking interfaces",
+            "Analyze personal study patterns over time",
+            "Use present perfect to reflect on improvements"
+          ]
+        },
+        {
+          "id": "grade10_scenario3_project3",
+          "category": "Discussion Facilitation",
+          "name": "Study Group Discussion",
+          "overview": "Students lead a group discussion on effective study habits, using the present perfect and 'used to' to compare strategies.",
+          "general_objective": "Facilitate a peer discussion that explores different study approaches using comparative language structures.",
+          "specific_objectives": [
+            "Use present perfect and 'used to' to compare past and present habits",
+            "Lead group discussions using effective facilitation techniques",
+            "Practice active listening and note-taking skills",
+            "Synthesize group findings into a summary report"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "Learning to Research History",
+      "themes": [
+        "I Learned About the History of Panama",
+        "So Many Different Historical Events to Learn!"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Identify a simple chronological sequence in a recorded narrative or dialogue.",
+            "Interactive: Respond to and clarify multipart questions."
+          ],
+          "learning_outcomes": [
+            "Can identify chronological events in a historical narrative or recorded interview about Panama (e.g., 'What happened after the Torrijos-Carter Treaties were signed?').",
+            "Can answer multipart questions about a podcast on key historical events with clarification as needed (e.g., 'Who signed the Torrijos-Carter Treaties, and what were the outcomes?').",
+            "Can listen to a historical podcast or documentary clip and list in order key events related to Panama's history (e.g., 'First, the treaty was negotiated, then Panama regained control of the canal in 1999.')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Analyze informational content for specific data.",
+            "Reading: Summarize narratives of significant events, recent or historical."
+          ],
+          "learning_outcomes": [
+            "Can identify key details and perspectives in a text about Panama's history (e.g., 'What year did Panama declare independence, and how is this event described in different texts?').",
+            "Can compare the main events of Panama's history as presented in two different narratives (e.g., 'How does this source describe the canal's construction compared to a second source?').",
+            "Can evaluate a historical timeline by explaining the significance of specific events in context (e.g., 'Why was the completion of the Panama Canal in 1914 a pivotal event in global trade?')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Present personal opinions on a variety of topics.",
+            "Interactive: Exchange beliefs, opinions, agreements, and disagreements politely."
+          ],
+          "learning_outcomes": [
+            "Can present and discuss in a polite manner a personal opinion on Panama's history (e.g., 'Historians say the canal transformed Panama's economy.' 'I agree with that.').",
+            "Can exchange opinions by supporting arguments with facts and responding to peers (e.g., 'I believe the Panama Canal was crucial for global trade because it shortened maritime routes. What do you think about its environmental impact?').",
+            "Can agree or disagree with peers on historical topics (e.g., 'I agree that independence shaped Panama's identity.')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Write short, simple essays with basic structure on familiar topics.",
+            "Interactive: Provide feedback on peers' essays, including suggested edits."
+          ],
+          "learning_outcomes": [
+            "Can write a short essay summarizing a historical event and reflecting on its impact (e.g., 'Panama separated from Colombia in 1903, which allowed the country to shape its national identity and control its own policies.').",
+            "Can edit a peer's essay for clarity and organization (e.g., 'Try starting with the most important event.').",
+            "Can provide feedback on a classmate's essay about Panama's history (e.g., 'You might add more details about the date.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Concept: Explain cultural concepts or idioms to others.",
+            "Text: Summarize complex texts for peers."
+          ],
+          "learning_outcomes": [
+            "Can explain basic historical and cultural concepts, using visuals and simple definitions (e.g., 'Independence means freedom from another country,' while showing a timeline on the board).",
+            "Can summarize key points from a history text by listing dates and events on the board (e.g., '1903: Separation of Panama from Colombia' and '1914: Canal Completed').",
+            "Can help others understand historical terms with gestures and pointing (e.g., 'colony' as 'when another country is in control,' with a map)."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "history",
+            "Panama",
+            "independence",
+            "separation",
+            "canal",
+            "significance",
+            "report",
+            "construction",
+            "economy",
+            "diversity",
+            "events",
+            "culture",
+            "period",
+            "identity",
+            "routes",
+            "engineering",
+            "marvel",
+            "revolution",
+            "transformation",
+            "legacy",
+            "heritage",
+            "declared",
+            "learned",
+            "shaped",
+            "reported",
+            "completed",
+            "began",
+            "transferred",
+            "transformed",
+            "compare",
+            "describe",
+            "research",
+            "reflect",
+            "summarize",
+            "analyze",
+            "understand",
+            "explain",
+            "explore",
+            "gain",
+            "historical",
+            "relevant",
+            "colonial",
+            "diverse",
+            "significant",
+            "rich",
+            "complex",
+            "independent",
+            "cultural",
+            "revolutionary",
+            "accomplished"
+          ],
+          "grammatical_features": [
+            "Past simple for historical events (e.g., 'Panama declared independence.')",
+            "Reported speech (e.g., 'Historians say the canal transformed Panama's economy.')",
+            "Passive voice for describing events (e.g., 'The canal was completed in 1914.')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of contrastive sounds, focusing on single consonants (e.g., /s/ in 'say' and /z/ in 'was,' /ð/ in 'they' and /θ/ in 'think'). Stress for two-syllable nouns and verbs with the same spelling (e.g., 'research' with the noun stress on the first syllable, and 'research' with a verb stress that goes on the second syllable). Practice pronunciation of -ed endings for past tenses and past participles (e.g., /d/ in 'improved,' /t/ in 'accomplished,' and /ɪd/ in 'suggested')."
+        },
+        "pragmatic": "Asking about important historical events (e.g., 'When did Panama separate from Colombia?' or 'What impact did the construction of the Panama Canal have on the country's economy?'). Sharing opinions and asking for clarification on historical facts (e.g., 'Do you think the construction of the canal helped Panama's economy immediately?' or 'Why do you believe independence shaped Panama's national identity?').",
+        "sociolinguistic": "Engage in group discussions to summarize Panama's historical events, contributing to an insightful analysis (e.g., 'Panama's separation from Colombia in 1903 was a turning point because it led to the canal's construction, which boosted global trade.' 'The U.S. involvement in the canal's construction caused political tensions for years.')."
+      },
+      "projects": [
+        {
+          "id": "grade10_scenario4_project1",
+          "category": "Visual Design",
+          "name": "Panama History Infographic",
+          "overview": "Students create an infographic summarizing key events in Panama's history, using the past simple tense to describe historical facts.",
+          "general_objective": "Design an educational infographic that presents Panama's historical timeline using accurate past tense narration.",
+          "specific_objectives": [
+            "Apply past simple to describe historical events accurately",
+            "Research and select key historical facts about Panama",
+            "Create visually engaging timeline presentations",
+            "Practice information design and visual hierarchy"
+          ]
+        },
+        {
+          "id": "grade10_scenario4_project2",
+          "category": "Audio Production",
+          "name": "Historical Event Podcast",
+          "overview": "Students record a podcast on the impact of a historical event, using reported speech to discuss historians' views.",
+          "general_objective": "Produce an audio documentary that presents historical analysis using reported speech structures.",
+          "specific_objectives": [
+            "Use reported speech to present historians' perspectives",
+            "Research and analyze historical sources",
+            "Practice audio recording and editing techniques",
+            "Develop narrative skills for historical storytelling"
+          ]
+        },
+        {
+          "id": "grade10_scenario4_project3",
+          "category": "Timeline Creation",
+          "name": "Timeline Creation",
+          "overview": "Students design a timeline of significant historical events in Panama, using the passive voice to describe actions.",
+          "general_objective": "Create a comprehensive historical timeline that demonstrates understanding of passive voice in historical narration.",
+          "specific_objectives": [
+            "Apply passive voice to describe historical actions and events",
+            "Organize chronological information clearly",
+            "Select and prioritize significant historical events",
+            "Practice academic writing for historical contexts"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "Planning for a Friend's Visit",
+      "themes": [
+        "Interesting Things to See",
+        "Unique Facts About My Area"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Analyze the tone and implied meaning in discussions.",
+            "Interactive: Respond appropriately when participating in discussions on familiar topics."
+          ],
+          "learning_outcomes": [
+            "Can recognize tone and implied meaning in conversations about visitor safety by identifying key concerns and suggested precautions (e.g., 'They said Panama is generally safe, but emphasized being cautious in crowded areas, which suggests concern about pickpocketing.').",
+            "Can identify key attractions from a conversation about a city tour (e.g., 'They said the Panama Canal, the Contemporary Art Museum, and the local beaches are good places to see!').",
+            "Can interpret implied suggestions and respond appropriately when discussing travel plans (e.g., 'The guide suggested taking a bus because it makes it easy to get around in the city.')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Distinguish between facts and opinions in texts on everyday subjects.",
+            "Reading: Analyze the similarities and differences between two texts."
+          ],
+          "learning_outcomes": [
+            "Can distinguish between factual information and opinions in a travel guide and explain how these impact visitor perceptions (e.g., 'The guide says Panama hats are popular souvenirs, but this might be an opinion to promote local businesses.').",
+            "Can compare two guides on Panama City attractions (e.g., 'Both guides say you have to try the restaurants. The local food is amazing.').",
+            "Can analyze opinion differences between two restaurant reviews (e.g., 'One reviewer loved the food, but didn't like the decorations. The other reviewer loved everything about the restaurant.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Present personal opinions on a variety of topics.",
+            "Interactive: Engage in problem-solving discussions."
+          ],
+          "learning_outcomes": [
+            "Can express personal opinions about places to visit by interpreting suggestions and explaining implied meanings (e.g., 'I think when someone says, 'It's popular with tourists,' they really mean it might be overcrowded or too commercial.').",
+            "Can solve problems related to directions and locations in the city (e.g., 'To get to the museum, go straight down this street, take the second left, and it will be on your right.').",
+            "Can participate in a discussion about planning activities for a friend's visit by asking and answering questions to build a detailed itinerary (e.g., 'What time does the museum open?' 'After the museum, we can visit the seafood market. What do you think?')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Create instructions for a task in personal life.",
+            "Interactive: Compile feedback for collaborative writing in a structured manner."
+          ],
+          "learning_outcomes": [
+            "Can write instructions for visiting a local attraction (e.g., 'To reach the museum, walk two blocks from the bus station').",
+            "Can compile and organize peer suggestions into a cohesive guide for must-see locations, adding personal insights and recommendations (e.g., 'Several classmates recommended Casco Viejo for its historical significance, and I agree because its restored buildings offer a glimpse into Panama's past.').",
+            "Can provide a written response to a friend's question about the best places to visit (e.g., 'In the past, I visited the old town, and it was an unforgettable experience. I know that today, there are more restaurants and walking areas, making it even more enjoyable for visitors.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Text: Mediate information from notices or announcements for broader understanding.",
+            "Concept: Interpret graphical data for classroom use."
+          ],
+          "learning_outcomes": [
+            "Can explain basic information from local area notices or events, using gestures and visuals (e.g., 'The museum is open on weekends,' while pointing to weekend days on a calendar).",
+            "Can interpret visitor information charts for peers and explain the significance of highlighted points (e.g., 'This map shows the museum and beach locations. Visiting the museum first makes sense because it's closer to the bus stop.').",
+            "Can summarize key details of an announcement by repeating main ideas (e.g., 'The event starts at 3 p.m.' while pointing to the time on a digital clock display)."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "visit",
+            "area",
+            "location",
+            "attraction",
+            "plan",
+            "direction",
+            "market",
+            "museum",
+            "restaurant",
+            "beach",
+            "town",
+            "history",
+            "blocks",
+            "cathedral",
+            "accommodations",
+            "landmark",
+            "guide",
+            "itinerary",
+            "precaution",
+            "safety",
+            "transportation",
+            "see",
+            "visit",
+            "plan",
+            "stay",
+            "explore",
+            "showcase",
+            "witness",
+            "connect",
+            "miss",
+            "recommend",
+            "give",
+            "explain",
+            "guide",
+            "describe",
+            "enjoy",
+            "navigate",
+            "direct",
+            "advise",
+            "arrange",
+            "breathtaking",
+            "tranquil",
+            "interesting",
+            "unique",
+            "wonderful",
+            "must-see",
+            "local",
+            "national",
+            "famous",
+            "close",
+            "available",
+            "safe",
+            "go straight",
+            "turn right",
+            "turn left",
+            "across from",
+            "next to",
+            "between",
+            "behind",
+            "opposite",
+            "in front of"
+          ],
+          "grammatical_features": [
+            "Past simple and present perfect for contrasting actions over time (e.g., 'Casco Viejo was once a neglected area, but after its restoration, it has become a popular destination for tourists.')",
+            "Future with 'will' and 'going to' to express future intentions (e.g., 'I will book a tour of the city for us, and we're going to try that new restaurant by the waterfront.')",
+            "Reported speech (e.g., 'They said that the best seafood is found in the seafood market.')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of contrastive sounds, focusing on single and double consonants (e.g., /st/ in 'stay' and /ɪks/ in 'explain,' /tʃ/ in 'chance' and /ʃ/ in 'showcase'). Practice pronouncing the disappearing or reduced syllables after a stressed syllable (e.g., 'interesting' (/ˈɪn.trə.stɪŋ/) and 'restaurant' (/ˈrɛs.trɒnt/)."
+        },
+        "pragmatic": "Asking for recommendations on local attractions (e.g., 'What places should my friend visit?'). Describing popular landmarks (e.g., 'The museum showcases our cultural heritage.').",
+        "sociolinguistic": "Participate in group planning for events or trips, offering directions and suggestions clearly, ensuring everyone understands (e.g., 'Let's plan the trip so we visit the Panama Canal in the morning and have lunch at the fish market. After that, we can walk through Casco Viejo.' 'We should meet at the park entrance at 9 a.m. From there, we'll take the first bus to the museum.')."
+      },
+      "projects": [
+        {
+          "id": "grade10_scenario5_project1",
+          "category": "Brochure Design",
+          "name": "City Tour Brochure",
+          "overview": "Students design a brochure for a tour of their city, connecting the past and present perfect to describe locations and attractions.",
+          "general_objective": "Create a professional tourism brochure that showcases local attractions using appropriate tense contrasts.",
+          "specific_objectives": [
+            "Use past simple and present perfect to describe places",
+            "Design appealing tourist materials with visual elements",
+            "Research and present local attractions and landmarks",
+            "Practice descriptive writing for tourism contexts"
+          ]
+        },
+        {
+          "id": "grade10_scenario5_project2",
+          "category": "Video Production",
+          "name": "Directions Video Tutorial",
+          "overview": "Students create a video giving directions to popular landmarks, incorporating the future with 'will' and 'going to' and specific directions.",
+          "general_objective": "Produce a clear video tutorial that demonstrates giving directions using future forms and spatial language.",
+          "specific_objectives": [
+            "Apply 'will' and 'going to' for future intentions",
+            "Use prepositions and directional language accurately",
+            "Practice clear pronunciation for instructional videos",
+            "Develop video production and editing skills"
+          ]
+        },
+        {
+          "id": "grade10_scenario5_project3",
+          "category": "Presentation",
+          "name": "Itinerary Planning Presentation",
+          "overview": "Students create a presentation outlining a visit itinerary, using reported speech to share recommendations and plans.",
+          "general_objective": "Develop a comprehensive presentation that plans a visit using reported speech for recommendations.",
+          "specific_objectives": [
+            "Use reported speech to share travel recommendations",
+            "Organize a logical and appealing visit itinerary",
+            "Practice presentation skills and visual design",
+            "Incorporate local cultural knowledge into planning"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "The Past and Future of Fashion",
+      "themes": [
+        "How History Is Fashionable",
+        "What Is Sustainable Fashion?"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Show comprehension of extended speeches on familiar topics.",
+            "Interactive: Organize information from group discussions."
+          ],
+          "learning_outcomes": [
+            "Can summarize the main points from a talk on sustainable fashion trends (e.g., 'The main points were on using organic cotton and recycled fabrics as eco-friendly materials in fashion.').",
+            "Can organize key ideas from a group discussion about current and past fashion trends by taking notes and summarizing (e.g., 'In the 1970s, bright colors and patterns were popular, while today's fashion emphasizes neutral tones and sustainability.').",
+            "Can understand and relay ideas from an extended speech on fashion industry changes (e.g., 'Fashion will have to become more sustainable and focus on using recyclable materials')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Derive the meaning of simple unknown words from short texts.",
+            "Reading: Summarize narratives of significant events, recent or historical."
+          ],
+          "learning_outcomes": [
+            "Can infer the meaning of unknown words in a fashion trend article by using context clues and comparing terms (e.g., 'The word 'vintage' in this article refers to old-fashioned clothing styles that were popular in previous decades.').",
+            "Can summarize main points in a text about past fashion trends (e.g., 'Describe two major styles from a fashion trends article, such as shoulder pads and bold colors from the 1980s.' 'Identify key features of 1990s streetwear, like baggy jeans and graphic t-shirts.').",
+            "Can determine the meaning of new terms in a piece about eco-friendly materials (e.g., 'Tagua is an example of eco-friendly material. It is the seed of a tree that can be used to make jewelry.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Inform others about environmental or community issues.",
+            "Interactive: Engage in discussions on global topics like environmental awareness."
+          ],
+          "learning_outcomes": [
+            "Can inform peers about the impact of certain fashion practices (e.g., 'Vintage clothes reduce waste because they are reused.').",
+            "Can engage in a discussion to explain how sustainable fashion benefits the environment (e.g., 'Recycled fabrics will help conserve water and energy in the production process.').",
+            "Can discuss sustainable fashion trends and give opinions (e.g., 'I believe more brands will prioritize sustainable materials in their designs to reduce environmental impact.')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Develop an argumentative paragraph on a familiar topic or issue.",
+            "Interactive: Collaborate on a group argumentative paper."
+          ],
+          "learning_outcomes": [
+            "Can write an argumentative essay on sustainable fashion practices, providing supporting evidence (e.g., 'Eco-friendly fabrics, like organic cotton and bamboo, help reduce water usage and chemical pollution.').",
+            "Can contribute to a group paper on sustainable fashion trends (e.g., 'By 2018, some fashion companies had already implemented recycling programs to reduce waste in their production processes.').",
+            "Can help organize group ideas on why retro fashion is popular (e.g., 'They have unique styles and are affordable.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Text: Summarize complex texts for peers.",
+            "Communication: Resolve conflicts in group settings."
+          ],
+          "learning_outcomes": [
+            "Can summarize points from a fashion article by listing keywords (e.g., 'eco-friendly' and 'vintage' on a board as examples of trends).",
+            "Can resolve group disagreements on fashion ideas by guiding the discussion with simple language (e.g., 'Can we choose one trend, like eco-fashion?' while showing a picture of eco-friendly materials).",
+            "Can explain fashion terms, using visuals and simple phrases in group discussions (e.g., 'Sustainable means making choices that reduce environmental impact,' while holding up eco-friendly fabric samples)."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "fashion",
+            "trend",
+            "vintage",
+            "retro",
+            "collection",
+            "style",
+            "materials",
+            "sustainability",
+            "launch",
+            "show",
+            "industry",
+            "brands",
+            "designs",
+            "runway",
+            "environment",
+            "prediction",
+            "history",
+            "personality",
+            "future",
+            "evolve",
+            "predict",
+            "launch",
+            "adopt",
+            "reflect",
+            "discuss",
+            "shop",
+            "design",
+            "notice",
+            "gain",
+            "create",
+            "follow",
+            "introduce",
+            "showcase",
+            "wear",
+            "prefer",
+            "inspire",
+            "change",
+            "return",
+            "recycle",
+            "sustainable",
+            "fashionable",
+            "trendy",
+            "eco-friendly",
+            "vintage",
+            "retro",
+            "stylish",
+            "innovative",
+            "unique",
+            "recycled"
+          ],
+          "grammatical_features": [
+            "Past continuous with present simple to compare trends (e.g., 'In the early 2000s, people were wearing low-rise jeans. Today, both flared and ripped jeans are in style.')",
+            "Past perfect for completed actions (e.g., 'In the last decades, people had adopted more casual fashion styles, leaving the formal trends behind.')",
+            "Future simple for predictions (e.g., 'Fashion trends will continue to evolve.')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of contrastive sounds, focusing on single consonants (e.g., /v/ in 'vintage' and /w/ in 'wear'). Practice stress in multisyllabic words and compounds (e.g., 'fashionable,' 'sustainability,' 'eco-friendly,' and 'runway')."
+        },
+        "pragmatic": "Asking about fashion trends (e.g., 'How have fashion trends evolved from the past to today?'). Discussing eco-friendly fashion choices (e.g., 'By using eco-friendly fabrics, fashion brands can reduce their carbon footprint, helping to protect the environment.').",
+        "sociolinguistic": "Organizing discussions about the future of fashion by focusing on how language reflects people's values and attitudes toward sustainability, and providing examples of sustainable practices and eco-friendly materials (e.g., 'Some people say, 'fast fashion is cheap and convenient,' while others describe it as 'harmful and wasteful,' showing how language reflects different values about sustainability.')."
+      },
+      "projects": [
+        {
+          "id": "grade10_scenario6_project1",
+          "category": "Blog Writing",
+          "name": "Fashion Trend Blog",
+          "overview": "Students write a blog post about current and past fashion trends, using the past continuous tense to describe trends.",
+          "general_objective": "Create an engaging blog that explores fashion history using past continuous for ongoing past trends.",
+          "specific_objectives": [
+            "Apply past continuous to describe past fashion trends",
+            "Research and compare fashion across different eras",
+            "Practice blog writing and digital publishing",
+            "Use descriptive language for fashion and style"
+          ]
+        },
+        {
+          "id": "grade10_scenario6_project2",
+          "category": "Visual Design",
+          "name": "Fashion Prediction Infographic",
+          "overview": "Students design an infographic predicting future fashion trends, using the future simple tense to make predictions.",
+          "general_objective": "Design a forward-looking infographic that presents fashion predictions using future simple tense.",
+          "specific_objectives": [
+            "Use future simple to make fashion predictions",
+            "Analyze current trends to forecast future directions",
+            "Create visually compelling infographic designs",
+            "Practice evidence-based prediction writing"
+          ]
+        },
+        {
+          "id": "grade10_scenario6_project3",
+          "category": "Poster Design",
+          "name": "Sustainable Fashion Poster",
+          "overview": "Students create a poster promoting sustainable fashion, using the past perfect tense to explain past achievements.",
+          "general_objective": "Create an advocacy poster for sustainable fashion using past perfect to show completed actions.",
+          "specific_objectives": [
+            "Apply past perfect to describe completed sustainability efforts",
+            "Research sustainable fashion practices and materials",
+            "Design persuasive environmental advocacy materials",
+            "Practice using eco-friendly vocabulary appropriately"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "Dream Jobs",
+      "themes": [
+        "What Are the Jobs of the Future?",
+        "What Skills Do I Need for a Future Career?"
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Follow detailed oral instructions in class.",
+            "Interactive: Interpret and relay information in pair and group discussions."
+          ],
+          "learning_outcomes": [
+            "Can follow instructions from a career planning workshop (e.g., 'I should study computer science and learn programming languages.').",
+            "Can interpret key details in a class discussion about future jobs and relay that information accurately during pair or group work (e.g., 'They said that jobs in AI will need skills like data analysis and programming.').",
+            "Can identify key points from a group discussion on career goals, taking notes and summarizing information (e.g., 'What career paths might emerge due to automation, and what skills are required?')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Evaluate arguments in opinion pieces.",
+            "Reading: Analyze the similarities and differences between two texts."
+          ],
+          "learning_outcomes": [
+            "Can evaluate the strength of career predictions in an article, identifying key points and supporting arguments (e.g., 'I agree with the argument that there is a growing need for data scientists and software engineers due to technological advancements.').",
+            "Can compare perspectives in two texts about future careers by highlighting differences in predictions and evidence (e.g., 'One article supports remote work due to flexibility, while the other highlights challenges related to productivity.').",
+            "Can assess arguments in a text about AI's impact on careers (e.g., 'I think the article presents a strong case that AI will replace repetitive tasks.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Explain future career or educational plans.",
+            "Interactive: Participate in role-plays about job interviews."
+          ],
+          "learning_outcomes": [
+            "Can explain to peers the required skills for a future job (e.g., 'You need to be good at math to work in engineering.').",
+            "Can participate in a role-play to practice for a job interview, asking and answering detailed questions about strengths, goals, and required skills (e.g., 'What is your greatest strength?' 'I am a quick learner, and I enjoy working with technology.').",
+            "Can share future educational plans and reasons (e.g., 'I will study engineering to work on technology projects.')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Compose a detailed personal narrative.",
+            "Interactive: Write collaborative stories or articles."
+          ],
+          "learning_outcomes": [
+            "Can compose a detailed essay explaining why they chose a dream job, developing ideas across an introduction, body paragraphs, and a conclusion (e.g., 'I chose engineering because I enjoy solving problems. I also like working on projects that require creativity. In the future, I hope to contribute to sustainable building projects.').",
+            "Can write a story with peers about a future job (e.g., 'In the future, I will be working in technology.').",
+            "Can collaboratively write a description of skills needed for future careers (e.g., 'New jobs will require creativity and problem-solving.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Communication: Assist in negotiations between student groups.",
+            "Text: Mediate information from notices or announcements for broader understanding."
+          ],
+          "learning_outcomes": [
+            "Can assist groups negotiating job ideas by simplifying phrases (e.g., 'Can we pick one dream job to research?' while showing job options like 'doctor, teacher, artist' on a chart).",
+            "Can mediate information from job announcements with visuals (e.g., pointing to job descriptions like 'Skills needed: computer skills' in a flyer).",
+            "Can explain terms from job notices, using examples (e.g., 'Requires teamwork' by saying, 'You work with others,' and pointing to a teamwork image)."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "jobs",
+            "skills",
+            "future",
+            "demand",
+            "advancement",
+            "automation",
+            "remote work",
+            "market",
+            "career",
+            "prediction",
+            "technology",
+            "opportunities",
+            "industries",
+            "AI (artificial intelligence)",
+            "fields",
+            "employment",
+            "innovation",
+            "workforce",
+            "adaptability",
+            "education",
+            "industries",
+            "disappear",
+            "evolve",
+            "work",
+            "adapt",
+            "acquire",
+            "require",
+            "advance",
+            "change",
+            "predict",
+            "automate",
+            "replace",
+            "develop",
+            "demand",
+            "learn",
+            "prepare",
+            "innovate",
+            "foresee",
+            "anticipate",
+            "grow",
+            "future",
+            "relevant",
+            "technological",
+            "automated",
+            "remote",
+            "in-demand",
+            "adaptable",
+            "advanced",
+            "evolving",
+            "innovative"
+          ],
+          "grammatical_features": [
+            "Future simple to predict jobs (e.g., 'Many new jobs will emerge.')",
+            "Future continuous for long-term goals (e.g., 'In ten years, people will be working...')",
+            "Modals for possibilities (e.g., 'Jobs may require...')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of contrastive sounds, focusing on single consonants (e.g., /dʒ/ in 'change' and /ʒ/ in 'vision'). Practice stress in multisyllabic words and compounds (e.g., 'automation,' 'advancement,' 'adaptability,' 'employment,' 'artificial intelligence,' and 'remote work')."
+        },
+        "pragmatic": "Asking about future career paths (e.g., 'What careers do you think will be in demand?'). Explaining personal career goals (e.g., 'I will be an engineer and will work on innovative projects.').",
+        "sociolinguistic": "Participate in group discussions about future careers by giving advice that reflects an awareness of social context, such as adapting tone, formality, and language choices based on the audience, and by providing insights into the skills needed for evolving job markets."
+      },
+      "projects": [
+        {
+          "id": "grade10_scenario7_project1",
+          "category": "Poster Design",
+          "name": "Future Job Poster",
+          "overview": "Students create a poster showcasing future jobs, using the future simple tense to describe trends.",
+          "general_objective": "Design an informative poster about emerging careers using future simple for predictions.",
+          "specific_objectives": [
+            "Use future simple to describe job market trends",
+            "Research emerging career fields and required skills",
+            "Create visually appealing career exploration materials",
+            "Practice vocabulary related to future of work"
+          ]
+        },
+        {
+          "id": "grade10_scenario7_project2",
+          "category": "Video Production",
+          "name": "Career Interview Video",
+          "overview": "Students record an interview with a professional about the future of work, using modals to discuss job possibilities.",
+          "general_objective": "Produce a video interview exploring career futures using modals for possibility and prediction.",
+          "specific_objectives": [
+            "Apply modals (may, might, could) to discuss possibilities",
+            "Develop interview questions and techniques",
+            "Practice video recording and editing skills",
+            "Analyze professional insights about career trends"
+          ]
+        },
+        {
+          "id": "grade10_scenario7_project3",
+          "category": "Presentation",
+          "name": "AI Career Analysis Presentation",
+          "overview": "Students present an analysis of how AI might impact future careers, using the future simple and future continuous.",
+          "general_objective": "Deliver a presentation analyzing AI's impact on employment using appropriate future forms.",
+          "specific_objectives": [
+            "Use future simple and future continuous for predictions",
+            "Research AI's impact on various industries",
+            "Develop analytical and critical thinking skills",
+            "Practice academic presentation techniques"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario": "Our Time Capsule",
+      "themes": [
+        "How I Am Preparing for the Next Five Years",
+        "In Ten Years, I Will..."
+      ],
+      "standards_and_learning_outcomes": {
+        "listening": {
+          "specific": [
+            "Receptive: Show comprehension of everyday conversations, with some repetition of particular words and phrases.",
+            "Interactive: Respond appropriately when participating in discussions on familiar topics."
+          ],
+          "learning_outcomes": [
+            "Can identify and summarize key points from a conversation about career plans, including relevant advice (e.g., 'The speaker plans to pursue software development and will take an internship with a local Panamanian tech company.').",
+            "Can respond appropriately in a discussion about future goals and summarize peers' plans (e.g., 'Carlos said that he is interested in studying marine biology.').",
+            "Can comprehend and summarize ideas in a conversation about career advice (e.g., 'The podcast suggested that you should reach out to local organizations to meet mentors in areas you are interested in for work.')."
+          ]
+        },
+        "reading": {
+          "specific": [
+            "Reading: Analyze the similarities and differences between two texts.",
+            "Reading: Distinguish between facts and opinions in texts on everyday subjects."
+          ],
+          "learning_outcomes": [
+            "Can analyze similarities and differences in articles on skill development (e.g., 'Both articles mention communication and critical thinking.').",
+            "Can distinguish between factual information and opinions in two articles about future careers, with examples related to Panama (e.g., 'The first article states that coding jobs are growing globally, while the second article argues that Panama needs to increase training for tech roles.').",
+            "Can compare views in two texts about career paths for students (e.g., 'I think this article about talking to family members about how they learned their skills is better advice than just reading about jobs on the internet.')."
+          ]
+        },
+        "speaking": {
+          "specific": [
+            "Productive: Explain how to use common technological devices and applications.",
+            "Interactive: Exchange opinions about the results of surveys and investigations."
+          ],
+          "learning_outcomes": [
+            "Can explain to classmates how to use a device to record goals for a time capsule (e.g., 'Press this button to start recording.').",
+            "Can exchange ideas about future goals and skills for career planning (e.g., 'I think critical thinking will be important for my career.').",
+            "Can discuss future career trends by sharing survey results and personal views related to Panama (e.g., 'According to our class survey, many students want to pursue careers in tourism and eco-friendly innovation, which reflects Panama's focus on environmental conservation.')."
+          ]
+        },
+        "writing": {
+          "specific": [
+            "Productive: Write simple, informal emails/letters.",
+            "Interactive: Participate in a written discussion on paper, through apps, online, or in a forum discussion."
+          ],
+          "learning_outcomes": [
+            "Can write a letter to their future self, describing detailed career goals and the steps needed to achieve them (e.g., 'In five years, I will be pursuing a degree in marine biology at the University of Panama, supported by an internship at a conservation organization.').",
+            "Can participate in a written discussion about time capsule items (e.g., 'The teacher said that we should include photos of our class in the project.').",
+            "Can write a brief note explaining a personal item for the time capsule (e.g., 'I have chosen this book because it will help me grow.')."
+          ]
+        },
+        "mediation": {
+          "specific": [
+            "Communication: Facilitate discussions on project goals and tasks.",
+            "Text: Clarify written instructions in collaborative projects."
+          ],
+          "learning_outcomes": [
+            "Can facilitate a discussion on future goals for the time capsule using gestures (e.g., 'What should we put in our time capsule?' while showing pictures of items like photos and letters.).",
+            "Can clarify project instructions by listing steps on the board (e.g., 'Step 1: Choose items; Step 2: Write descriptions').",
+            "Can help classmates understand project instructions by rephrasing in simple terms or using the native language when needed (e.g., 'Everyone must bring a personal object for the project,' while pointing to the list of items)."
+          ]
+        }
+      },
+      "communicative_competences": {
+        "linguistic": {
+          "vocabulary": [
+            "career",
+            "future",
+            "goals",
+            "possibilities",
+            "advice",
+            "education",
+            "training",
+            "technology",
+            "engineering",
+            "medicine",
+            "software developer",
+            "data analyst",
+            "internship",
+            "experience",
+            "skills",
+            "leadership",
+            "problem-solving",
+            "critical thinking",
+            "community service",
+            "opportunities",
+            "pursue",
+            "accomplish",
+            "reflect",
+            "suggest",
+            "recommend",
+            "develop",
+            "research",
+            "enhance",
+            "explore",
+            "volunteer",
+            "consider",
+            "gain",
+            "prepare",
+            "plan",
+            "train",
+            "learn",
+            "study",
+            "achieve",
+            "succeed",
+            "work",
+            "future-oriented",
+            "accomplished",
+            "skilled",
+            "practical",
+            "critical",
+            "adaptable",
+            "successful",
+            "educational",
+            "high-demand",
+            "relevant",
+            "will",
+            "would",
+            "might",
+            "can",
+            "could",
+            "what",
+            "how",
+            "why"
+          ],
+          "grammatical_features": [
+            "Modals for career possibilities (e.g., 'I might pursue...')",
+            "Future continuous for ongoing plans (e.g., 'I will be working as...')",
+            "Reported speech to share advice (e.g., 'My teacher said that I should...')"
+          ],
+          "phonemic_awareness": "Practice the pronunciation of the long vowel /i/ in different types of spelling (e.g., -ie in 'achieve' and 'believe,' -ee in 'volunteer' and 'engineering,' and -ea in 'leadership'). Practice stress in multisyllabic words and compounds (e.g., 'leadership,' 'problem-solving,' 'critical thinking,' 'community service,' and 'high demand')."
+        },
+        "pragmatic": "Asking peers about future goals for the time capsule (e.g., 'What would you like to achieve in five years?'). Explaining item choices for the capsule (e.g., 'I am including a photo of my robotics project because it represents my goal to become an electronic engineer in the future.').",
+        "sociolinguistic": "Organize class discussions about personal goals for the future, assigning roles to peers (e.g., 'Let's have a recorder to write down everyone's goals and a presenter to summarize our discussion.')."
+      },
+      "projects": [
+        {
+          "id": "grade10_scenario8_project1",
+          "category": "Visual Design",
+          "name": "Career Planning Infographic",
+          "overview": "Students design an infographic outlining their career goals, using modals to express possibilities.",
+          "general_objective": "Create a personal career planning visual using modals to express future possibilities.",
+          "specific_objectives": [
+            "Use modals (might, could, may) for future possibilities",
+            "Articulate personal career goals and pathways",
+            "Design professional self-promotion materials",
+            "Practice goal-setting and planning vocabulary"
+          ]
+        },
+        {
+          "id": "grade10_scenario8_project2",
+          "category": "Video Production",
+          "name": "Time Capsule Video",
+          "overview": "Students record a video about their aspirations, using the future continuous to describe plans.",
+          "general_objective": "Produce a personal video message for the future using future continuous for ongoing plans.",
+          "specific_objectives": [
+            "Apply future continuous to describe future activities",
+            "Reflect on personal growth and future aspirations",
+            "Practice video storytelling and recording techniques",
+            "Develop skills in self-reflection and expression"
+          ]
+        },
+        {
+          "id": "grade10_scenario8_project3",
+          "category": "Blog Writing",
+          "name": "Reflection Blog",
+          "overview": "Students write a blog reflecting on the advice they've received about career planning, using reported speech.",
+          "general_objective": "Write a reflective blog post that synthesizes career advice using reported speech.",
+          "specific_objectives": [
+            "Use reported speech to share advice from others",
+            "Reflect on and evaluate received guidance",
+            "Practice blog writing and online publishing",
+            "Develop critical thinking about career planning"
+          ]
+        }
+      ]
+    }
+  ]
+}

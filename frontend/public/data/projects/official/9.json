@@ -1,0 +1,52 @@
+{
+  "grade": 9,
+  "projects_by_scenario": {
+    "A Guide to Panama": [
+      {"id":"G9_S1_P1","name":"Digital Tourist Guide","overview":"Students design an interactive guide showcasing Panama's historical sites."},
+      {"id":"G9_S1_P2","name":"Historical Site Video Documentary","overview":"Students create a documentary about a historical site."},
+      {"id":"G9_S1_P3","name":"Virtual Reality History Tour","overview":"Students design a VR tour of Panama's historical sites."}
+    ],
+
+    "Technology in Education": [
+      {"id":"G9_S2_P1","name":"Educational App Review","overview":"Students evaluate learning apps and present recommendations."},
+      {"id":"G9_S2_P2","name":"Technology Debate","overview":"Students debate advantages and disadvantages of technology in school."},
+      {"id":"G9_S2_P3","name":"Digital Learning Guide","overview":"Students design a guide explaining effective technology use."}
+    ],
+
+    "Renewable Energy in Panama": [
+      {"id":"G9_S3_P1","name":"Renewable Energy Infographic","overview":"Students design infographics about renewable energy sources."},
+      {"id":"G9_S3_P2","name":"Energy Awareness Campaign","overview":"Students create campaigns promoting renewable energy."},
+      {"id":"G9_S3_P3","name":"Green Energy Proposal","overview":"Students propose renewable solutions for their community."}
+    ],
+
+    "Our Indigenous Heritage": [
+      {"id":"G9_S4_P1","name":"Indigenous Culture Documentary","overview":"Students create documentaries about indigenous cultures."},
+      {"id":"G9_S4_P2","name":"Cultural Heritage Exhibition","overview":"Students design an exhibition about indigenous heritage."},
+      {"id":"G9_S4_P3","name":"Community Research Report","overview":"Students research indigenous communities."}
+    ],
+
+    "Transportation in Panama": [
+      {"id":"G9_S5_P1","name":"Public Transport Study","overview":"Students analyze transportation systems."},
+      {"id":"G9_S5_P2","name":"Road Safety Campaign","overview":"Students design campaigns promoting road safety."},
+      {"id":"G9_S5_P3","name":"Future Transport Proposal","overview":"Students propose new transportation solutions."}
+    ],
+
+    "Wellness: A Way of Life": [
+      {"id":"G9_S6_P1","name":"Fitness Awareness Campaign","overview":"Students promote physical health and exercise."},
+      {"id":"G9_S6_P2","name":"Mindfulness Workshop","overview":"Students lead activities about mindfulness."},
+      {"id":"G9_S6_P3","name":"Healthy Lifestyle Guide","overview":"Students design guides for healthy habits."}
+    ],
+
+    "We Are What We Eat": [
+      {"id":"G9_S7_P1","name":"Healthy Recipe Book","overview":"Students create a book of healthy recipes."},
+      {"id":"G9_S7_P2","name":"Nutrition Awareness Campaign","overview":"Students promote healthy eating."},
+      {"id":"G9_S7_P3","name":"Balanced Diet Presentation","overview":"Students present balanced diet plans."}
+    ],
+
+    "Our Wonderful Ocean": [
+      {"id":"G9_S8_P1","name":"Ocean Conservation Campaign","overview":"Students design campaigns to protect the ocean."},
+      {"id":"G9_S8_P2","name":"Marine Life Documentary","overview":"Students produce documentaries about marine animals."},
+      {"id":"G9_S8_P3","name":"Ocean Ecosystem Infographic","overview":"Students create infographics explaining marine ecosystems."}
+    ]
+  }
+}

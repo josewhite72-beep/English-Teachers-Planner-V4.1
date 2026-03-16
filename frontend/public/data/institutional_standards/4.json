@@ -1,0 +1,45 @@
+{
+  "grade": "4",
+  "proficiency_level": "A1.2",
+  "institutional_standards_by_skill": {
+    "listening": "Students can extract general and specific information from short oral texts about daily events if spoken slowly and clearly. They can identify the main points of talks on familiar matters and respond to questions about familiar topics.",
+    "reading": "Students can extract general and specific information from short texts when they are supported with pictures. They can outline key information in simple factual texts on familiar subjects, follow written instructions for classroom projects, and blend spoken onsets and rhymes to decode words.",
+    "speaking": "Students can describe basic events, personal experiences, feelings, and opinions. They can describe a current personal experience in detail in a logical sequence, explain how to perform a simple task, express opinions about familiar topics, and sustain conversations on a variety of topics.",
+    "writing": "Students can write short texts on familiar topics, such as messages, instructions, or summaries, with clear organization and basic detail. They can write simple sentences, create short texts based on prompts, develop drafts of class projects, and edit classmates' written work.",
+    "mediation": "Students can facilitate the communication process for peers, such as turn-taking. They can interpret simple school notices, simplify textbook content, explain main ideas of class readings, assist classmates in understanding homework, and link concepts to everyday scenarios."
+  },
+  "institutional_standards_by_scenario": {
+    "scenario_1": {
+      "title": "A Walk in the Neighborhood",
+      "standards": "Students identify the main points of talks about favorite places, respond to questions about familiar locations, and describe places using superlatives and “because.” They write simple sentences like “The park is fun” and help classmates express opinions about neighborhood places using gestures."
+    },
+    "scenario_2": {
+      "title": "Helping in the Garden",
+      "standards": "Students follow simple stories about gardening, describe plant growth steps using sequencing words, and explain how to care for plants (“You dig a hole, plant the seed, and water the plant”). They write role plays about garden tasks and simplify gardening instructions for peers using gestures or drawings."
+    },
+    "scenario_3": {
+      "title": "Shopping at the Market",
+      "standards": "Students comprehend basic facts about prices and quantities, ask “How much is the pineapple?”, and describe needs using numbers (“I need five yucas”). They write short shopping lists or findings from group research and use objects to explain prices and math concepts to classmates."
+    },
+    "scenario_4": {
+      "title": "Visiting the Panama Canal",
+      "standards": "Students extract specific information about the Canal, describe current events (“Vessels are crossing the Canal now”), and compare things using comparatives and superlatives (“That vessel is bigger”). They create posters with present tenses and comparatives and assist peers by pointing to visuals or mimicking vessel movements."
+    },
+    "scenario_5": {
+      "title": "A Trip to the Beach",
+      "standards": "Students follow simple technology instructions, describe beach trip routines (“I always pack lunch”), and sustain conversations about packing and activities. They write instructions for trips (“Pack a towel and sunscreen”) and facilitate peer discussions by asking questions or using checklists."
+    },
+    "scenario_6": {
+      "title": "It's the Rainy Season",
+      "standards": "Students identify settings and characters in weather stories, talk about rainy day needs (“I need an umbrella”), and narrate current events (“It is raining today”). They write short messages about the weather and relay teacher instructions using basic gestures (“Draw clouds”)."
+    },
+    "scenario_7": {
+      "title": "The Beautiful Mola",
+      "standards": "Students identify settings in mola stories, express opinions (“I like this mola because it has many shapes”), and sustain conversations about cultural art. They compose simple letters about molas and explain main ideas to absent peers by pointing to colors and shapes."
+    },
+    "scenario_8": {
+      "title": "Our Traditional Style of Dress",
+      "standards": "Students extract information about time, quantity, and location in cultural contexts, describe traditional clothing (“She is wearing a pollera”), and collaborate on presentations about dress significance. They write simple descriptions of clothing (“The pollera is beautiful”) and link historical use to current celebrations using visuals."
+    }
+  }
+}

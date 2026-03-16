@@ -1,0 +1,258 @@
+{
+  "Pre-K": {
+    "Meeting New Friends": [
+      "Meeting My Friends",
+      "Saying Please and Thank You"
+    ],
+    "Exploring Our Classroom": [
+      "Things in My Classroom",
+      "Colors in My Classroom"
+    ],
+    "Me and My Family": [
+      "This Is Me!",
+      "My Family"
+    ],
+    "Let’s Eat!": [
+      "I Love Fruit!",
+      "I Eat Vegetables!"
+    ],
+    "Numbers Around Me": [
+      "Let’s Count to Five!",
+      "How Many?"
+    ],
+    "Fun with Letters": [
+      "The A-B-Cs",
+      "Apple, Banana, Coconut"
+    ],
+    "Inside My School!": [
+      "My Teacher!",
+      "Time for Recess!"
+    ],
+    "Panama’s Plants and Animals": [
+      "It’s a Plant",
+      "It’s an Animal"
+    ]
+  },
+  "K": {
+    "It’s a School Day!": [
+      "Let’s Listen!",
+      "Stand Up!"
+    ],
+    "Our Routines": [
+      "First, I Sit Down",
+      "Pick It Up!"
+    ],
+    "Hold Up Ten Fingers!": [
+      "I Can Count!",
+      "All the Pencils!"
+    ],
+    "Where Is It?": [
+      "Where Is Your Book?",
+      "Go to the Window"
+    ],
+    "What’s That Sound?": [
+      "The Cat Says Meow",
+      "That’s a Rooster!"
+    ],
+    "Let’s Dance!": [
+      "Move Around",
+      "One Step In, Two Steps Out!"
+    ],
+    "I’m Happy": [
+      "I’m Excited",
+      "How Are You?"
+    ],
+    "I Like School!": [
+      "I Like Games!",
+      "I Like Math!"
+    ]
+  },
+  "1": {
+    "All Week Long!": [
+      "Today Is Tuesday!",
+      "It’s the Weekend"
+    ],
+    "Nice Weather Today!": [
+      "It’s Sunny!",
+      "It’s Raining"
+    ],
+    "Colors in Our World": [
+      "That’s a Purple Flower",
+      "It’s an Orange Cat"
+    ],
+    "My Family and I": [
+      "It’s My Family!",
+      "She Is My Mom"
+    ],
+    "Colors of Things That Go": [
+      "That’s a Blue Bus",
+      "That’s a Red Bike"
+    ],
+    "Shapes Around Us": [
+      "I See a Rectangle",
+      "That Is a Circle"
+    ],
+    "Shapes on Our Plates": [
+      "It’s a Square Cracker",
+      "It’s a Round Orange"
+    ],
+    "It’s Our Garden": [
+      "The Pink Flowers",
+      "A Tall Tree"
+    ]
+  },
+  "2": {
+    "School Days": [
+      "Yesterday Was Wednesday",
+      "Today Is Friday"
+    ],
+    "School Life Adventures": [
+      "That’s a Big Book",
+      "That’s a Small Brown Bag"
+    ],
+    "All About the Weather": [
+      "A Perfect Day",
+      "Dress for the Weather"
+    ],
+    "All About My Body": [
+      "Head to Toes",
+      "Hats and Shoes"
+    ],
+    "Exploring My Community": [
+      "It’s the Park",
+      "It’s the Market"
+    ],
+    "Discovering Nature’s Wonders": [
+      "It’s the Rainforest",
+      "It’s a Slow, Furry Sloth"
+    ],
+    "Fun Outdoors!": [
+      "I Love to Run",
+      "I Like to Swim"
+    ],
+    "It’s Festival Season": [
+      "Look at the Fireworks",
+      "Food I Eat During a Celebration"
+    ]
+  },
+  "3": {
+    "Places I Can Go": [
+      "I’m at School",
+      "I’m at the Market"
+    ],
+    "A Polite Request": [
+      "Can I Have a Pencil?",
+      "Sorry, I Can’t Help You"
+    ],
+    "Shopping at the Market": [
+      "How Much Is the Pineapple?",
+      "I Need Five Yucas"
+    ],
+    "Let’s Go Shopping!": [
+      "One, Two, Three Bananas",
+      "I Want Five Pineapples"
+    ],
+    "Time for Exercise": [
+      "I Like Walking in the Afternoon",
+      "We Can Swim"
+    ],
+    "Recycling for Our World": [
+      "We Recycle Plastic Bottles",
+      "Composting Is Easy"
+    ],
+    "Our Traditional Style of Dress": [
+      "She Is Wearing a Pollera",
+      "Let’s Dress for a Dance"
+    ]
+  },
+  "4": {
+    "Following Instructions at School": [
+      "First, I Cut the Paper",
+      "Let’s Make a Poster"
+    ],
+    "Helping in the Garden": [
+      "The Tomatoes Grow Quickly",
+      "These Plants Are from Panama"
+    ],
+    "A Trip to the Beach": [
+      "Let’s Pack for a Trip",
+      "I Always Pack Lunch"
+    ],
+    "The Beautiful Mola": [
+      "A Mola Has Many Colors",
+      "I Can Make a Mola"
+    ],
+    "Morning, Noon, and Night": [
+      "Let’s Get Cool in the Shade",
+      "Turn Off the Lights, Please"
+    ],
+    "Our Weather Report": [
+      "Today’s Weather Will Be Sunny",
+      "How Will the Weather Change Tomorrow?"
+    ],
+    "Planning Meals for My Family": [
+      "Fruits and Vegetables Are Good for You",
+      "Panama Has Delicious Food"
+    ]
+  },
+  "5": {
+    "Our Community News": [
+      "Reporting from the School",
+      "Our Community Is Famous For"
+    ],
+    "Taking Care of Our Classroom": [
+      "We Are Sweeping the Floors",
+      "Let’s Arrange the Chairs"
+    ],
+    "In the Library": [
+      "I Need a Lot of Books",
+      "How Do I Find a Book?"
+    ],
+    "Our Classroom News": [
+      "I Will Write the Article",
+      "We Need Pictures"
+    ],
+    "Our Amazing Community": [
+      "This Is My Amazing Community",
+      "This School Has Been Here a Long Time"
+    ],
+    "Arts and Crafts": [
+      "This Is a Historical Building",
+      "This Is a Local Artist"
+    ],
+    "The Talents Around Us": [
+      "I Love These Entertainers",
+      "My Favorite Athletes"
+    ]
+  },
+  "6": {
+    "Our New Classmates": [
+      "Where Are You From?",
+      "What Was Your Previous School Like?"
+    ],
+    "Cultural Connections": [
+      "I Celebrate This Tradition Because",
+      "In This Region, They Have a Custom Of"
+    ],
+    "Legends of Panama": [
+      "My Favorite Legend",
+      "Once Upon a Time"
+    ],
+    "Visiting the Panama Canal": [
+      "The Vessels Are Big Because",
+      "A Vessel Is Crossing"
+    ],
+    "Career Goals": [
+      "I Want to Be a Doctor Because",
+      "To Become a Doctor, First I Will Need To"
+    ],
+    "Transportation in Panama": [
+      "The Benefits of Public Transportation",
+      "Rules of the Road"
+    ],
+    "Our Wonderful Ocean": [
+      "The Animals in Our Waters",
+      "Plants That Live in the Ocean"
+    ]
+  }
+}

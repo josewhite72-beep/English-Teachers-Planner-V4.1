@@ -1,0 +1,52 @@
+{
+  "projects_by_scenario": {
+    "Scenario 1: All Week Long!": {
+      "School & Academic": [
+        { "id": "mini_book", "name": "Mini-book" },
+        { "id": "visual_organizer", "name": "Visual organizer" }
+      ],
+      "Environmental & Sustainability": [
+        { "id": "weather_chart", "name": "Weather chart" }
+      ]
+    },
+    "Scenario 2: Nice Weather Today!": {
+      "Environmental & Sustainability": [
+        { "id": "weather_chart", "name": "Weather chart" },
+        { "id": "garden_poster", "name": "Garden poster" }
+      ],
+      "School & Academic": [
+        { "id": "mini_dictionary_weather", "name": "Mini dictionary (Weather)" }
+      ]
+    },
+    "Scenario 3: My Family and Friends": {
+      "School & Academic": [
+        { "id": "family_tree", "name": "Family tree" }
+      ]
+    },
+    "Scenario 4: Around My School": {
+      "School & Academic": [
+        { "id": "classroom_map", "name": "Classroom map" }
+      ]
+    },
+    "Scenario 5: Healthy Habits": {
+      "Health & Wellbeing": [
+        { "id": "daily_routine_poster", "name": "Daily routine poster" }
+      ]
+    },
+    "Scenario 6: Shapes Around Us": {
+      "STEM & Creativity": [
+        { "id": "shape_hunt", "name": "Shape hunt activity" }
+      ]
+    },
+    "Scenario 7: Let's Have Fun Together": {
+      "Civic & Social Responsibility": [
+        { "id": "teamwork_poster", "name": "Teamwork poster" }
+      ]
+    },
+    "Scenario 8: Our Community": {
+      "Tourism & Local Promotion": [
+        { "id": "community_map", "name": "Community map" }
+      ]
+    }
+  }
+}

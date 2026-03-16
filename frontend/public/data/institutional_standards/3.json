@@ -1,0 +1,45 @@
+{
+  "grade": "3",
+  "proficiency_level": "A1.1",
+  "institutional_standards_by_skill": {
+    "listening": "Students can recognize sounds, syllables, familiar words, phrases, simple instructions, and the main points of simple conversations when spoken slowly and clearly. They can demonstrate comprehension of simple spoken instructions and identify the main ideas in short spoken passages.",
+    "reading": "Students can get the gist and main ideas of short texts if there are pictures. They can outline the meaning of simple paragraphs, follow written instructions for making or doing something simple, and identify key details in a story.",
+    "speaking": "Students can describe personal experiences and basic things using simple words and phrases. They can describe routines, explain simple rules, share stories, express preferences, and participate in simple dialogues on familiar topics.",
+    "writing": "Students can write simple texts coherently, such as captions, instructions, or short notes, using familiar words. They can compose short texts using simple phrases and sentences, write instructions, respond to questions in writing, and create descriptive captions for images.",
+    "mediation": "Students can use compensation strategies such as interpretation, simplified language, gestures, and pictures to communicate ideas. They can interpret short messages, simplify instructions for peers, explain keywords from readings, assist others in following directions, and relate concepts to everyday scenarios."
+  },
+  "institutional_standards_by_scenario": {
+    "scenario_1": {
+      "title": "Places I Can Go",
+      "standards": "Students demonstrate comprehension of simple spoken instructions about locations. They identify the main points in conversations about places like school or the market. They describe routines using location phrases, write simple sentences like “I’m at school,” and assist peers by pointing to or naming familiar places."
+    },
+    "scenario_2": {
+      "title": "A Polite Request",
+      "standards": "Students respond to basic questions about familiar stories involving polite language. They summarize spoken stories about requests or offers of help. They explain simple game rules politely, write instructions using “please” and “can I,” and relay simplified polite phrases to peers."
+    },
+    "scenario_3": {
+      "title": "Discovering Our Classroom",
+      "standards": "Students follow oral directions for simple games involving classroom objects. They present responses about object locations like “The book is on the table.” They share simple stories about classroom items, compose short texts describing objects, and explain keywords using gestures or visuals."
+    },
+    "scenario_4": {
+      "title": "This Beautiful Day",
+      "standards": "Students recognize familiar sounds from audio sources related to weather. They engage in role-plays based on weather scenarios. They describe personal experiences with weather and feelings, create captions like “It’s sunny,” and interpret simple weather messages using gestures or drawings."
+    },
+    "scenario_5": {
+      "title": "Let's Go Shopping!",
+      "standards": "Students identify the main idea from short spoken passages about buying items. They participate in call-and-response shopping activities. They talk about everyday objects and how they are used, express preferences like “I like apples,” and compose short shopping lists using numbers and simple sentences."
+    },
+    "scenario_6": {
+      "title": "I Can Connect with Nature!",
+      "standards": "Students respond to basic questions about nature stories. They engage in role-plays set outdoors. They describe routines like “I go outside in the afternoon,” develop responses about what they can or cannot do in nature, and assist peers in following directions during outdoor-themed tasks."
+    },
+    "scenario_7": {
+      "title": "It's Time to Eat",
+      "standards": "Students demonstrate comprehension of phrases with names and dates in simple food-related recordings. They present responses about food preferences. They describe food items using basic words, compose short texts like “I like sancocho,” and simplify food-related instructions for peers."
+    },
+    "scenario_8": {
+      "title": "My Evening Routine",
+      "standards": "Students demonstrate comprehension of bedtime-related phrases in recordings. They perform tasks based on oral instructions about routines. They express likes and dislikes about evening activities, create captions like “Time to sleep,” and explain bedtime keywords using gestures or simple actions."
+    }
+  }
+}

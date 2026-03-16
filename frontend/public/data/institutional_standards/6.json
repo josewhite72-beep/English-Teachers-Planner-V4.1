@@ -1,0 +1,45 @@
+{
+  "grade": "6",
+  "proficiency_level": "A2.1",
+  "institutional_standards_by_skill": {
+    "listening": "Students can recognize the main ideas of longer conversational exchanges on familiar topics. They can identify specific details in spoken announcements, follow multi-step instructions for collaborative tasks, understand basic information in library or community-related audio, determine the gist of simple stories or reports, and interpret audio clips to support class discussions.",
+    "reading": "Students can identify specific information from fictional short texts and informational materials. They can locate details in catalogs or signs, follow written instructions for community-based or classroom tasks, identify the sequence of events in simple stories, extract data from charts or programs, and compare past and present descriptions in texts.",
+    "speaking": "Students can describe past events using simple past forms, give instructions using imperatives and modals, describe library resources and their uses, present news orally with clear sequencing, describe places using comparatives and superlatives, describe current and future weather conditions, explain simple environmental actions, and describe personal talents and future plans for events.",
+    "writing": "Students can write short news-style paragraphs with basic structure, create simple interpretations of common texts with visual aids, write short instructions for using resources or playing games, write short descriptive or persuasive paragraphs, write short weather forecasts using future tense, and write short event invitations or performance descriptions.",
+    "mediation": "Students can simplify event flyers or complex instructions for peers using visuals and keywords, use diagrams to explain concepts, assist classmates in organizing ideas or following procedures, summarize classmates’ ideas in simplified notes, link historical events to current features, and explain roles or event details using gestures and simple terms."
+  },
+  "institutional_standards_by_scenario": {
+    "scenario_1": {
+      "title": "Our Community News",
+      "standards": "Students report on school or community events using past tense and sequence words. They ask and answer questions about what happened, write short news paragraphs, and simplify announcements using visuals to highlight key details like time, place, and people involved."
+    },
+    "scenario_2": {
+      "title": "Keeping Our Communities Clean",
+      "standards": "Students give cleaning instructions using imperatives and modals like “should” or “must.” They participate in discussions about community actions, write simple plans for clean-up tasks, and use visual aids to clarify multi-step instructions for peers."
+    },
+    "scenario_3": {
+      "title": "Our Local Library",
+      "standards": "Students describe how to use library resources and give directions inside the library. They write short instructions for finding books, create labels for a simulated library, and explain library systems using diagrams and simple phrases."
+    },
+    "scenario_4": {
+      "title": "Our Classroom News",
+      "standards": "Students collaborate to write and edit a classroom newsletter. They assign writing roles, present news orally with clear sequencing, and summarize classmates’ ideas to create a cohesive final product that includes headlines, photos, and captions."
+    },
+    "scenario_5": {
+      "title": "Our Amazing Community",
+      "standards": "Students describe local landmarks using comparatives and superlatives. They write short descriptive paragraphs about places, share personal connections to community history, and link historical facts to current features in brochures or presentations."
+    },
+    "scenario_6": {
+      "title": "Our Weather Report",
+      "standards": "Students describe current and future weather using “will” and “going to.” They give advice based on forecasts, write daily weather logs, and simplify weather data using symbols, charts, or diagrams to explain conditions and predictions."
+    },
+    "scenario_7": {
+      "title": "Our Changing Forests",
+      "standards": "Students explain environmental actions using modals like “must” or “should.” They write short persuasive messages about conservation, create clear recycling instructions, and use visuals to show why forests and eco-habits matter."
+    },
+    "scenario_8": {
+      "title": "The Talents Around Us",
+      "standards": "Students describe their talents and future performance plans using “will.” They invite others to participate in cultural events like Fiestas Patrias, write event programs or invitations, and explain roles in performances using simple language and gestures."
+    }
+  }
+}

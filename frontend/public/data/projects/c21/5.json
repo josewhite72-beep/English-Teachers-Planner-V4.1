@@ -1,0 +1,180 @@
+{
+  "projects_by_scenario": {
+    "Following Instructions at School": {
+      "Technological & Digital": [
+        {
+          "id": "digital_news_slide",
+          "name": "Digital news slide"
+        },
+        {
+          "id": "audio_report",
+          "name": "Audio report"
+        }
+      ],
+      "Community & Cultural": [
+        {
+          "id": "community_interview",
+          "name": "Community interview"
+        },
+        {
+          "id": "arts_showcase",
+          "name": "Arts showcase"
+        }
+      ]
+    },
+    "Taking Care of Our Class": {
+      "Technological & Digital": [
+        {
+          "id": "digital_news_slide",
+          "name": "Digital news slide"
+        },
+        {
+          "id": "audio_report",
+          "name": "Audio report"
+        }
+      ],
+      "Community & Cultural": [
+        {
+          "id": "community_interview",
+          "name": "Community interview"
+        },
+        {
+          "id": "arts_showcase",
+          "name": "Arts showcase"
+        }
+      ]
+    },
+    "The Local Farm Stand": {
+      "Technological & Digital": [
+        {
+          "id": "digital_news_slide",
+          "name": "Digital news slide"
+        },
+        {
+          "id": "audio_report",
+          "name": "Audio report"
+        }
+      ],
+      "Community & Cultural": [
+        {
+          "id": "community_interview",
+          "name": "Community interview"
+        },
+        {
+          "id": "arts_showcase",
+          "name": "Arts showcase"
+        }
+      ]
+    },
+    "Helping Around the House": {
+      "Technological & Digital": [
+        {
+          "id": "digital_news_slide",
+          "name": "Digital news slide"
+        },
+        {
+          "id": "audio_report",
+          "name": "Audio report"
+        }
+      ],
+      "Community & Cultural": [
+        {
+          "id": "community_interview",
+          "name": "Community interview"
+        },
+        {
+          "id": "arts_showcase",
+          "name": "Arts showcase"
+        }
+      ]
+    },
+    "Time for Exercise": {
+      "Technological & Digital": [
+        {
+          "id": "digital_news_slide",
+          "name": "Digital news slide"
+        },
+        {
+          "id": "audio_report",
+          "name": "Audio report"
+        }
+      ],
+      "Community & Cultural": [
+        {
+          "id": "community_interview",
+          "name": "Community interview"
+        },
+        {
+          "id": "arts_showcase",
+          "name": "Arts showcase"
+        }
+      ]
+    },
+    "Recycling for Our World": {
+      "Technological & Digital": [
+        {
+          "id": "digital_news_slide",
+          "name": "Digital news slide"
+        },
+        {
+          "id": "audio_report",
+          "name": "Audio report"
+        }
+      ],
+      "Community & Cultural": [
+        {
+          "id": "community_interview",
+          "name": "Community interview"
+        },
+        {
+          "id": "arts_showcase",
+          "name": "Arts showcase"
+        }
+      ]
+    },
+    "Conservation Morning, Noon, and Night!": {
+      "Technological & Digital": [
+        {
+          "id": "digital_news_slide",
+          "name": "Digital news slide"
+        },
+        {
+          "id": "audio_report",
+          "name": "Audio report"
+        }
+      ],
+      "Community & Cultural": [
+        {
+          "id": "community_interview",
+          "name": "Community interview"
+        },
+        {
+          "id": "arts_showcase",
+          "name": "Arts showcase"
+        }
+      ]
+    },
+    "Planning Meals for My Family": {
+      "Technological & Digital": [
+        {
+          "id": "digital_news_slide",
+          "name": "Digital news slide"
+        },
+        {
+          "id": "audio_report",
+          "name": "Audio report"
+        }
+      ],
+      "Community & Cultural": [
+        {
+          "id": "community_interview",
+          "name": "Community interview"
+        },
+        {
+          "id": "arts_showcase",
+          "name": "Arts showcase"
+        }
+      ]
+    }
+  }
+}

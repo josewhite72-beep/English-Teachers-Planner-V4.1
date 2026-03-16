@@ -1,0 +1,64 @@
+{
+  "grade": 7,
+  "projects_by_scenario": {
+    "Our New Classmates": [
+      {
+        "id": "G7_S1_P1",
+        "name": "Our New Classmates Video",
+        "overview": "Students create short video interviews introducing their new classmates using present simple and comparatives."
+      },
+      {
+        "id": "G7_S1_P2",
+        "name": "My Previous School vs. My New School",
+        "overview": "Students design a digital poster comparing their previous school with their current school."
+      },
+      {
+        "id": "G7_S1_P3",
+        "name": "Classroom News Bulletin",
+        "overview": "Students create a classroom news bulletin reporting school events and routines."
+      }
+    ],
+
+    "Panama's Wildlife": [
+      {"id": "G7_S2_P1","name": "Panama Wildlife Documentary","overview": "Students create a documentary about animals and their habitats in Panama."},
+      {"id": "G7_S2_P2","name": "Animal Habitat Infographic","overview": "Students design an infographic explaining the habitats and habits of wildlife."},
+      {"id": "G7_S2_P3","name": "Wildlife Awareness Campaign","overview": "Students develop a campaign promoting wildlife protection."}
+    ],
+
+    "Legends of Panama": [
+      {"id": "G7_S3_P1","name": "Panamanian Legends Podcast","overview": "Students produce a podcast narrating and discussing local legends."},
+      {"id": "G7_S3_P2","name": "Illustrated Legends Book","overview": "Students create an illustrated book of Panamanian legends."},
+      {"id": "G7_S3_P3","name": "Legends Theater Performance","overview": "Students perform dramatizations of famous legends."}
+    ],
+
+    "The Importance of Water": [
+      {"id": "G7_S4_P1","name": "Water Conservation Campaign","overview": "Students design posters promoting responsible water use."},
+      {"id": "G7_S4_P2","name": "Water Usage Survey","overview": "Students collect and analyze water use data at home or school."},
+      {"id": "G7_S4_P3","name": "Clean Water Awareness Video","overview": "Students produce a video explaining why clean water is essential."}
+    ],
+
+    "The Town Square": [
+      {"id": "G7_S5_P1","name": "Town Map Project","overview": "Students design a map of a town square with landmarks."},
+      {"id": "G7_S5_P2","name": "Traditional vs Modern Buildings","overview": "Students compare building materials used in architecture."},
+      {"id": "G7_S5_P3","name": "Community Tour Guide","overview": "Students create a guide describing the town's important places."}
+    ],
+
+    "Arts and Crafts": [
+      {"id": "G7_S6_P1","name": "Local Artists Exhibition","overview": "Students organize an exhibition presenting local artists."},
+      {"id": "G7_S6_P2","name": "Traditional Crafts Workshop","overview": "Students demonstrate how traditional crafts are made."},
+      {"id": "G7_S6_P3","name": "Art Gallery Presentation","overview": "Students create a virtual gallery presenting artworks."}
+    ],
+
+    "The Healing Plants of Panama": [
+      {"id": "G7_S7_P1","name": "Healing Plants Guide","overview": "Students create a guide describing medicinal plants."},
+      {"id": "G7_S7_P2","name": "Traditional Medicine Interview","overview": "Students interview community members about healing plants."},
+      {"id": "G7_S7_P3","name": "Natural Remedies Presentation","overview": "Students present the benefits of natural plants."}
+    ],
+
+    "Famous Panamanians": [
+      {"id": "G7_S8_P1","name": "Biography Presentation","overview": "Students research and present biographies of famous Panamanians."},
+      {"id": "G7_S8_P2","name": "Panamanian Heroes Poster","overview": "Students design posters celebrating famous citizens."},
+      {"id": "G7_S8_P3","name": "Hall of Fame Exhibition","overview": "Students create a class exhibition about Panamanian achievers."}
+    ]
+  }
+}

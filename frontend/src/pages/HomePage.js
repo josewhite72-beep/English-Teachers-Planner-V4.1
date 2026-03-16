@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+// import axios from 'axios'; // Ya no se usa
 import { toast } from 'sonner';
 import { usePlanner } from '@/context/PlannerContext';
 import { Button } from '@/components/ui/button';
@@ -10,9 +10,11 @@ import { Switch } from '@/components/ui/switch';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { BookOpen, FileText, Globe, Sparkles, Moon, Sun, User, Calendar, Clock } from 'lucide-react';
+import localApi from '@/services/localApi';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+// NOTA: Usando API local con datos estáticos (GitHub Pages deployment)
+// const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+// const API = `${BACKEND_URL}/api`;
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -55,12 +57,12 @@ export default function HomePage() {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  // Load grades from API on mount
+  // Load grades from local API on mount
   useEffect(() => {
     const fetchGrades = async () => {
       try {
-        const response = await axios.get(`${API}/grades`);
-        setGrades(response.data.grades || []);
+        const response = await localApi.getGrades();
+        setGrades(response.grades || []);
       } catch (error) {
         console.error('Error fetching grades:', error);
         // Fallback to default grades
@@ -161,8 +163,8 @@ export default function HomePage() {
 
   const loadScenarios = async (grade) => {
     try {
-      const response = await axios.get(`${API}/grades/${grade}/scenarios`);
-      setScenarios(response.data.scenarios || []);
+      const response = await localApi.getScenarios(grade);
+      setScenarios(response.scenarios || []);
       setSelectedScenario('');
       setSelectedTheme('');
       setProjects([]);  // Reset projects when grade changes
@@ -175,8 +177,8 @@ export default function HomePage() {
 
   const loadThemes = async (grade, scenario) => {
     try {
-      const response = await axios.get(`${API}/grades/${grade}/scenarios/${encodeURIComponent(scenario)}/themes`);
-      setThemes(response.data.themes || []);
+      const response = await localApi.getThemes(grade, scenario);
+      setThemes(response.themes || []);
       setSelectedTheme('');
     } catch (error) {
       console.error('Error loading themes:', error);
@@ -187,9 +189,9 @@ export default function HomePage() {
   const loadProjects = async (grade, scenario) => {
     try {
       console.log('Loading projects for:', grade, scenario);
-      const response = await axios.get(`${API}/projects/official/${grade}/${encodeURIComponent(scenario)}`);
-      console.log('Projects loaded:', response.data.projects);
-      setProjects(response.data.projects || []);
+      const response = await localApi.getProjects(grade, scenario);
+      console.log('Projects loaded:', response.projects);
+      setProjects(response.projects || []);
     } catch (error) {
       console.error('Error loading projects:', error);
       setProjects([]);
@@ -204,7 +206,7 @@ export default function HomePage() {
 
     setLoading(true);
     try {
-      const response = await axios.post(`${API}/planner/generate`, {
+      const plannerData = await localApi.generatePlanner({
         grade: selectedGrade,
         scenario: selectedScenario,
         theme: selectedTheme,
@@ -220,7 +222,7 @@ export default function HomePage() {
         week_to: weekTo,
       });
 
-      setGeneratedPlanner(response.data);
+      setGeneratedPlanner(plannerData);
       toast.success('Planeamiento generado exitosamente');
       navigate('/preview');
     } catch (error) {
