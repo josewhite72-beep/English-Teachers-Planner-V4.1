@@ -1,6 +1,5 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import { toast } from 'sonner';
 import { usePlanner } from '@/context/PlannerContext';
 import { Button } from '@/components/ui/button';
@@ -11,9 +10,7 @@ import { Separator } from '@/components/ui/separator';
 import { Input } from '@/components/ui/input';
 import EditableTextarea from '@/components/EditableTextarea';
 import { ArrowLeft, FileText, Moon, Sun, Printer } from 'lucide-react';
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+import { exportPlannerToPDF } from '@/services/exportToPDF';
 
 export default function PreviewPage() {
   const navigate = useNavigate();
@@ -28,7 +25,7 @@ export default function PreviewPage() {
       back: 'Volver',
       themePlanner: 'Theme Planner',
       lessonPlanners: 'Lesson Planners',
-      exportDocx: 'Exportar Word',
+      exportDocx: 'Exportar PDF',
       edit: 'Editar',
       save: 'Guardar',
       cancel: 'Cancelar',
@@ -38,7 +35,7 @@ export default function PreviewPage() {
       back: 'Back',
       themePlanner: 'Theme Planner',
       lessonPlanners: 'Lesson Planners',
-      exportDocx: 'Export Word',
+      exportDocx: 'Export PDF',
       edit: 'Edit',
       save: 'Save',
       cancel: 'Cancel',
@@ -107,24 +104,14 @@ export default function PreviewPage() {
     setExporting(true);
     try {
       const dataToExport = editMode && editedPlanner ? editedPlanner : generatedPlanner;
-      const response = await axios.post(
-        `${API}/planner/export/docx`,
-        dataToExport,
-        { responseType: 'blob' }
-      );
-
-      const url = window.URL.createObjectURL(new Blob([response.data]));
-      const link = document.createElement('a');
-      link.href = url;
-      link.setAttribute('download', `lesson_planner_${dataToExport.grade}_${dataToExport.scenario}.docx`);
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-
-      toast.success('Documento exportado exitosamente');
+      
+      // Exportar a PDF (funciona en el navegador, sin backend)
+      exportPlannerToPDF(dataToExport);
+      
+      toast.success(language === 'es' ? 'PDF exportado exitosamente' : 'PDF exported successfully');
     } catch (error) {
-      console.error('Error exporting DOCX:', error);
-      toast.error('Error al exportar documento');
+      console.error('Error exporting PDF:', error);
+      toast.error(language === 'es' ? 'Error al exportar PDF' : 'Error exporting PDF');
     } finally {
       setExporting(false);
     }
@@ -762,7 +749,6 @@ export default function PreviewPage() {
               </CardContent>
             </Card>
           </TabsContent>
-
           {/* ============================================ */}
           {/* LESSON PLANNERS TAB - MEDUCA OFFICIAL FORMAT */}
           {/* ============================================ */}

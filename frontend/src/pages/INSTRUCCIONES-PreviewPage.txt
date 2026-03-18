@@ -1,0 +1,76 @@
+/**
+ * INSTRUCCIONES PARA MODIFICAR PreviewPage.js
+ * 
+ * PASO 1: Agregar el import al inicio del archivo (después de los otros imports)
+ */
+
+// AGREGAR ESTA LÍNEA después de la línea 13 (después de los imports de componentes):
+import { exportPlannerToWord } from '@/services/exportToWord';
+
+
+/**
+ * PASO 2: Reemplazar la función handleExportDocx completa
+ * 
+ * BUSCAR (líneas 118-139 aproximadamente):
+ */
+
+const handleExportDocx = async () => {
+  setExporting(true);
+  try {
+    const dataToExport = editMode && editedPlanner ? editedPlanner : generatedPlanner;
+    const response = await axios.post(
+      `${API}/planner/export/docx`,
+      dataToExport,
+      { responseType: 'blob' }
+    );
+
+    const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `lesson_planner_${dataToExport.grade}_${dataToExport.scenario}.docx`);
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    toast.success('Documento exportado exitosamente');
+  } catch (error) {
+    console.error('Error exporting DOCX:', error);
+    toast.error('Error al exportar documento');
+  } finally {
+    setExporting(false);
+  }
+};
+
+
+/**
+ * REEMPLAZAR CON ESTA NUEVA FUNCIÓN:
+ */
+
+const handleExportDocx = async () => {
+  setExporting(true);
+  try {
+    const dataToExport = editMode && editedPlanner ? editedPlanner : generatedPlanner;
+    
+    // Usar el servicio local de exportación (sin backend)
+    await exportPlannerToWord(dataToExport);
+    
+    toast.success(language === 'es' ? 'Documento exportado exitosamente' : 'Document exported successfully');
+  } catch (error) {
+    console.error('Error exporting DOCX:', error);
+    toast.error(language === 'es' ? 'Error al exportar documento' : 'Error exporting document');
+  } finally {
+    setExporting(false);
+  }
+};
+
+
+/**
+ * RESUMEN DE CAMBIOS:
+ * 
+ * 1. Importar: import { exportPlannerToWord } from '@/services/exportToWord';
+ * 2. Eliminar: todo el código de axios.post al backend
+ * 3. Agregar: await exportPlannerToWord(dataToExport);
+ * 4. Simplificar: manejo de errores y mensajes
+ * 
+ * ¡Eso es todo! No hay más cambios necesarios.
+ */
