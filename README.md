@@ -1,6 +1,6 @@
 # English Teachers Planner
 
-Aplicación web educativa para generar planeamientos de clases de inglés alineados al currículo MEDUCA de Panamá.
+Aplicación web educativa para generar planeamientos de clases de inglés alineados al nuevo currículo de inglés de MEDUCA de Panamá.
 
 ## 🎯 Características
 
