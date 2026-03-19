@@ -225,16 +225,15 @@ export default function PreviewPage() {
                     data-testid="edit-button"
                   >
                     {t.edit}
-                  </Button>
-                  <Button
-                    onClick={handleExportDocx}
-                    disabled={exporting}
-                    className="gap-2 bg-white text-blue-700 hover:bg-blue-50"
-                    data-testid="export-docx-button"
-                  >
-                    <FileText className="h-4 w-4" />
-                    {t.exportDocx}
-                  </Button>
+                  
+                      <Button
+  onClick={() => window.print()}
+  className="gap-2 bg-white text-blue-700 hover:bg-blue-50"
+  data-testid="export-pdf-button"
+>
+  <Printer className="h-4 w-4" />
+  {t.exportDocx}
+</Button>
                 </>
               )}
             </div>
