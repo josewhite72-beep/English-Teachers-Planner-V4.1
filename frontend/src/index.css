@@ -116,8 +116,11 @@ code {
 }
 @media print {
   header, .print\:hidden { display: none !important; }
+  [id^="lesson-content-"] { display: block !important; page-break-before: always; }
+  #theme-planner-content { display: block !important; }
+  #project-content { display: block !important; }
   @page { margin: 1.5cm; size: letter portrait; }
   body { background: white !important; color: black !important; }
   table { border-collapse: collapse; width: 100%; }
-  th, td { border: 1px solid #000 !important; padding: 6px 8px; }
+  th, td { border: 1px solid #333 !important; padding: 6px 8px; }
 }
