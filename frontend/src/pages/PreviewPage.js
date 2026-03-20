@@ -88,55 +88,31 @@ export default function PreviewPage() {
   };
 
   const handleExportPDF = () => {
-    const printWindow = window.open('', '_blank');
-    const styles = Array.from(document.styleSheets)
-      .map(sheet => {
-        try { return Array.from(sheet.cssRules).map(rule => rule.cssText).join('\n'); }
-        catch (e) { return ''; }
-      }).join('\n');
+    // Mostrar temporalmente todos los lessons ocultos
+    const hiddenLessons = document.querySelectorAll('[id^="lesson-content-"]');
+    hiddenLessons.forEach(el => {
+      el.classList.remove('hidden');
+      el.classList.add('block');
+    });
 
-    const themeContent = document.getElementById('theme-planner-content')?.innerHTML || '';
-    const projectContent = document.getElementById('project-content')?.innerHTML || '';
-    const lessonsHTML = lesson_planners?.map((_, idx) => {
-      const content = document.getElementById(`lesson-content-${idx}`)?.innerHTML || '';
-      return `<div class="page-break"></div>${content}`;
-    }).join('') || '';
+    // Mostrar project si existe
+    const projectEl = document.getElementById('project-content');
+    if (projectEl) projectEl.classList.remove('hidden');
 
-    printWindow.document.write(`
-      <!DOCTYPE html><html><head>
-      <meta charset="UTF-8">
-      <title>MEDUCA Planner - ${general_info.theme || 'Planner'}</title>
-      <style>
-        ${styles}
-        body { background: white; padding: 20px; font-family: Arial, sans-serif; font-size: 12px; }
-        @page { margin: 1.5cm; size: letter portrait; }
-        .page-break { page-break-before: always; margin-top: 20px; }
-        table { border-collapse: collapse; width: 100%; margin-bottom: 10px; }
-        th, td { border: 1px solid #333; padding: 6px 8px; vertical-align: top; font-size: 11px; }
-        th { background: #f0f0f0; font-weight: bold; }
-        h1, h2, h3 { color: #1a365d; }
-        .no-print, button, nav, header { display: none !important; }
-      </style>
-      </head><body>
-      <div id="meduca-header" style="text-align:center; margin-bottom:20px;">
-        <div style="display:flex; justify-content:center; align-items:center; gap:20px;">
-          <div style="font-size:10px;"><p style="font-weight:bold;">GOBIERNO NACIONAL</p><p>• CON PASO FIRME •</p></div>
-          <div style="border-left:1px solid #ccc; height:30px;"></div>
-          <div style="font-size:10px; text-align:left;">
-            <p style="font-weight:bold; color:#1a365d;">MINISTERIO DE EDUCACIÓN</p>
-            <p>Dirección Nacional de Currículo de Lengua Extranjera</p>
-          </div>
-        </div>
-      </div>
-      ${themeContent}
-      ${projectContent ? `<div class="page-break"></div>${projectContent}` : ''}
-      ${lessonsHTML}
-      </body></html>
-    `);
-    printWindow.document.close();
-    printWindow.focus();
-    setTimeout(() => { printWindow.print(); printWindow.close(); }, 800);
-    toast.success(language === 'es' ? 'Generando PDF completo...' : 'Generating complete PDF...');
+    setTimeout(() => {
+      window.print();
+      // Restaurar estado original después de imprimir
+      setTimeout(() => {
+        hiddenLessons.forEach((el, idx) => {
+          if (idx !== selectedLesson) {
+            el.classList.remove('block');
+            el.classList.add('hidden');
+          }
+        });
+      }, 1000);
+    }, 300);
+
+    toast.success(language === 'es' ? 'Selecciona "Guardar como PDF"' : 'Select "Save as PDF"');
   };
 
   const EditableField = ({ value, onChange, multiline = false, placeholder = '', className = '' }) => {
@@ -222,7 +198,6 @@ export default function PreviewPage() {
           </TabsList>
 
           <TabsContent value="theme" className="space-y-4">
-            {/* THEME PLANNER CONTENT */}
             <div id="theme-planner-content">
               <div className="bg-white dark:bg-slate-800 rounded-lg border-2 border-blue-800 px-6 py-3 text-center">
                 <h1 className="text-xl font-bold text-blue-800 dark:text-blue-300">
@@ -230,10 +205,9 @@ export default function PreviewPage() {
                 </h1>
               </div>
 
-              {/* SECTION 1 */}
               <Card className="border border-slate-300 dark:border-slate-600 shadow-sm mt-4">
                 <CardHeader className="py-3 bg-white dark:bg-slate-800">
-                  <CardTitle className="text-base font-bold text-slate-800 dark:text-slate-200">1. General Information:</CardTitle>
+                  <CardTitle className="text-base font-bold">1. General Information:</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <table className="w-full text-sm border-collapse">
@@ -280,15 +254,14 @@ export default function PreviewPage() {
                 </CardContent>
               </Card>
 
-              {/* SECTION 2 */}
               <Card className="border border-slate-300 dark:border-slate-600 shadow-sm mt-4">
                 <CardHeader className="py-3 bg-white dark:bg-slate-800">
-                  <CardTitle className="text-base font-bold text-slate-800 dark:text-slate-200">2. Specific Standards and Learning Outcomes:</CardTitle>
+                  <CardTitle className="text-base font-bold">2. Specific Standards and Learning Outcomes:</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <table className="w-full text-sm border-collapse">
                     <thead>
-                      <tr className="border-b border-dashed border-slate-300 bg-slate-50 dark:bg-slate-700">
+                      <tr className="border-b border-dashed border-slate-300 bg-slate-50">
                         <th className="p-3 border-r border-dashed border-slate-300 text-left font-semibold w-24">Skills:</th>
                         <th className="p-3 border-r border-dashed border-slate-300 text-left font-semibold">Specific Standards:</th>
                         <th className="p-3 text-left font-semibold">Learning Outcomes:</th>
@@ -309,10 +282,10 @@ export default function PreviewPage() {
                           <tr key={key} className="border-b border-dashed border-slate-300">
                             <td className="p-3 border-r border-dashed border-slate-300 font-semibold align-top">{label}</td>
                             <td className="p-3 border-r border-dashed border-slate-300 align-top">
-                              {standards.length>0?<ul className="list-disc list-inside space-y-1">{standards.map((s,i)=><li key={i} className="text-slate-700 dark:text-slate-300">{s}</li>)}</ul>:<span className="text-slate-400 italic">To be defined</span>}
+                              {standards.length>0?<ul className="list-disc list-inside space-y-1">{standards.map((s,i)=><li key={i} className="text-slate-700">{s}</li>)}</ul>:<span className="text-slate-400 italic">To be defined</span>}
                             </td>
                             <td className="p-3 align-top">
-                              {outcomes.length>0?<ul className="list-disc list-inside space-y-1">{outcomes.map((o,i)=><li key={i} className="text-slate-700 dark:text-slate-300">{o}</li>)}</ul>:<span className="text-slate-400 italic">To be defined</span>}
+                              {outcomes.length>0?<ul className="list-disc list-inside space-y-1">{outcomes.map((o,i)=><li key={i} className="text-slate-700">{o}</li>)}</ul>:<span className="text-slate-400 italic">To be defined</span>}
                             </td>
                           </tr>
                         );
@@ -322,15 +295,14 @@ export default function PreviewPage() {
                 </CardContent>
               </Card>
 
-              {/* SECTION 3 */}
               <Card className="border border-slate-300 dark:border-slate-600 shadow-sm mt-4">
                 <CardHeader className="py-3 bg-white dark:bg-slate-800">
-                  <CardTitle className="text-base font-bold text-slate-800 dark:text-slate-200">3. Communicative Competences</CardTitle>
+                  <CardTitle className="text-base font-bold">3. Communicative Competences</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <table className="w-full text-sm border-collapse">
                     <thead>
-                      <tr className="border-b border-dashed border-slate-300 bg-slate-50 dark:bg-slate-700">
+                      <tr className="border-b border-dashed border-slate-300 bg-slate-50">
                         <th className="p-3 border-r border-dashed border-slate-300 text-center font-semibold w-1/3">Linguistic Competence<br/><span className="font-normal">(Learn to Know)</span></th>
                         <th className="p-3 border-r border-dashed border-slate-300 text-center font-semibold w-1/3">Pragmatic Competence<br/><span className="font-normal">(Learn to Do)</span></th>
                         <th className="p-3 text-center font-semibold w-1/3">Sociolinguistic Competence<br/><span className="font-normal">(Learn to Be)</span></th>
@@ -340,16 +312,16 @@ export default function PreviewPage() {
                       <tr className="border-b border-dashed border-slate-300">
                         <td className="p-3 border-r border-dashed border-slate-300 align-top">
                           <div className="space-y-4">
-                            <div><p className="font-semibold mb-1">• Grammatical Features:</p><p className="text-slate-700 dark:text-slate-300 pl-4">{(()=>{const l=theme_planner?.communicative_competences?.linguistic;const g=l?.grammatical_features||l?.grammar;if(Array.isArray(g))return g.join(', ');return g||'______';})()}</p></div>
-                            <div><p className="font-semibold mb-1">• Vocabulary:</p><p className="text-slate-700 dark:text-slate-300 pl-4">{(()=>{const v=theme_planner?.communicative_competences?.linguistic?.vocabulary;if(Array.isArray(v))return v.slice(0,10).join(', ');if(typeof v==='object'&&v!==null)return Object.values(v).flat().slice(0,10).join(', ');return v||'______';})()}</p></div>
-                            <div><p className="font-semibold mb-1">• Pronunciation & Phonemic Awareness:</p><p className="text-slate-700 dark:text-slate-300 pl-4">{theme_planner?.communicative_competences?.linguistic?.phonemic_awareness||theme_planner?.communicative_competences?.linguistic?.pronunciation||'______'}</p></div>
+                            <div><p className="font-semibold mb-1">• Grammatical Features:</p><p className="text-slate-700 pl-4">{(()=>{const l=theme_planner?.communicative_competences?.linguistic;const g=l?.grammatical_features||l?.grammar;if(Array.isArray(g))return g.join(', ');return g||'______';})()}</p></div>
+                            <div><p className="font-semibold mb-1">• Vocabulary:</p><p className="text-slate-700 pl-4">{(()=>{const v=theme_planner?.communicative_competences?.linguistic?.vocabulary;if(Array.isArray(v))return v.slice(0,10).join(', ');if(typeof v==='object'&&v!==null)return Object.values(v).flat().slice(0,10).join(', ');return v||'______';})()}</p></div>
+                            <div><p className="font-semibold mb-1">• Pronunciation & Phonemic Awareness:</p><p className="text-slate-700 pl-4">{theme_planner?.communicative_competences?.linguistic?.phonemic_awareness||theme_planner?.communicative_competences?.linguistic?.pronunciation||'______'}</p></div>
                           </div>
                         </td>
                         <td className="p-3 border-r border-dashed border-slate-300 align-top">
-                          <p className="text-slate-700 dark:text-slate-300">{(()=>{const p=theme_planner?.communicative_competences?.pragmatic;if(Array.isArray(p))return p.join(', ');if(typeof p==='object')return p.functions||JSON.stringify(p);return p||'______';})()}</p>
+                          <p className="text-slate-700">{(()=>{const p=theme_planner?.communicative_competences?.pragmatic;if(Array.isArray(p))return p.join(', ');if(typeof p==='object')return p.functions||JSON.stringify(p);return p||'______';})()}</p>
                         </td>
                         <td className="p-3 align-top">
-                          <p className="text-slate-700 dark:text-slate-300">{(()=>{const s=theme_planner?.communicative_competences?.sociolinguistic;if(Array.isArray(s))return s.join(', ');return s||'______';})()}</p>
+                          <p className="text-slate-700">{(()=>{const s=theme_planner?.communicative_competences?.sociolinguistic;if(Array.isArray(s))return s.join(', ');return s||'______';})()}</p>
                         </td>
                       </tr>
                     </tbody>
@@ -357,10 +329,9 @@ export default function PreviewPage() {
                 </CardContent>
               </Card>
 
-              {/* SECTION 4 */}
               <Card className="border border-slate-300 dark:border-slate-600 shadow-sm mt-4">
                 <CardHeader className="py-3 bg-white dark:bg-slate-800">
-                  <CardTitle className="text-base font-bold text-slate-800 dark:text-slate-200">4. Specific Objectives</CardTitle>
+                  <CardTitle className="text-base font-bold">4. Specific Objectives</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <table className="w-full text-sm border-collapse">
@@ -372,7 +343,7 @@ export default function PreviewPage() {
                           <tr key={key} className="border-b border-dashed border-slate-300 last:border-b-0">
                             <td className="p-3 border-r border-dashed border-slate-300 font-semibold w-24 align-top">{skill}</td>
                             <td className="p-3 align-top">
-                              {editMode?<EditableTextarea value={objective||''} onChange={(v)=>handleUpdateField(`theme_planner.specific_objectives.${key}`,v)} className="w-full" rows={2}/>:<span className="text-slate-700 dark:text-slate-300">{objective||<span className="italic text-slate-400">To be completed</span>}</span>}
+                              {editMode?<EditableTextarea value={objective||''} onChange={(v)=>handleUpdateField(`theme_planner.specific_objectives.${key}`,v)} className="w-full" rows={2}/>:<span className="text-slate-700">{objective||<span className="italic text-slate-400">To be completed</span>}</span>}
                             </td>
                           </tr>
                         );
@@ -382,10 +353,9 @@ export default function PreviewPage() {
                 </CardContent>
               </Card>
 
-              {/* SECTION 5 */}
               <Card className="border border-slate-300 dark:border-slate-600 shadow-sm mt-4">
                 <CardHeader className="py-3 bg-white dark:bg-slate-800">
-                  <CardTitle className="text-base font-bold text-slate-800 dark:text-slate-200">5. Materials and Teaching Strategies</CardTitle>
+                  <CardTitle className="text-base font-bold">5. Materials and Teaching Strategies</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <table className="w-full text-sm border-collapse">
@@ -405,10 +375,9 @@ export default function PreviewPage() {
                 </CardContent>
               </Card>
 
-              {/* SECTION 6 */}
               <Card className="border border-slate-300 dark:border-slate-600 shadow-sm mt-4">
                 <CardHeader className="py-3 bg-white dark:bg-slate-800">
-                  <CardTitle className="text-base font-bold text-slate-800 dark:text-slate-200">6. Learning Sequence</CardTitle>
+                  <CardTitle className="text-base font-bold">6. Learning Sequence</CardTitle>
                 </CardHeader>
                 <CardContent className="p-0">
                   <table className="w-full text-sm border-collapse">
@@ -438,21 +407,19 @@ export default function PreviewPage() {
               </Card>
             </div>
 
-            {/* PROJECT CONTENT */}
             {generatedPlanner?.project && (
               <div id="project-content">
                 <Card className="border border-slate-300 dark:border-slate-600 shadow-sm mt-4">
                   <CardHeader className="py-3 bg-white dark:bg-slate-800">
-                    <CardTitle className="text-base font-bold text-slate-800 dark:text-slate-200">21st-Century Skills Project</CardTitle>
+                    <CardTitle className="text-base font-bold">21st-Century Skills Project</CardTitle>
                   </CardHeader>
                   <CardContent className="p-4">
-                    <div className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                    <div className="space-y-2 text-sm text-slate-700">
                       <p><strong>Name:</strong> {generatedPlanner.project.name}</p>
                       <p><strong>Category:</strong> {generatedPlanner.project.category}</p>
                       <p><strong>Overview:</strong> {generatedPlanner.project.overview}</p>
-                      {generatedPlanner.project.materials && (
-                        <div>
-                          <strong>Materials:</strong>
+                      {generatedPlanner.project.materials&&(
+                        <div><strong>Materials:</strong>
                           <ul className="list-disc list-inside pl-4 mt-1">
                             {generatedPlanner.project.materials.map((m,i)=><li key={i}>{m}</li>)}
                           </ul>
@@ -465,7 +432,6 @@ export default function PreviewPage() {
             )}
           </TabsContent>
 
-          {/* LESSON PLANNERS TAB */}
           <TabsContent value="lessons" className="space-y-4">
             <div className="flex gap-2 overflow-x-auto pb-2 print:hidden">
               {lesson_planners?.map((lesson,idx)=>(
@@ -476,8 +442,8 @@ export default function PreviewPage() {
               ))}
             </div>
 
-            {lesson_planners?.map((lesson, idx) => (
-              <div key={idx} id={`lesson-content-${idx}`} className={selectedLesson === idx ? 'block space-y-4' : 'hidden'}>
+            {lesson_planners?.map((lesson,idx)=>(
+              <div key={idx} id={`lesson-content-${idx}`} className={selectedLesson===idx?'block space-y-4':'hidden'}>
                 <div className="bg-white dark:bg-slate-800 rounded-lg border-2 border-blue-800 px-6 py-3 text-center">
                   <h1 className="text-xl font-bold text-blue-800 dark:text-blue-300">
                     Lesson Planner – Theme # {getScenarioNumber()} – Lesson # {lesson.lesson_number}
