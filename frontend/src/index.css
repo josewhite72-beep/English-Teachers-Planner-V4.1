@@ -114,3 +114,10 @@ code {
         border-bottom-color: inherit;
     }
 }
+@media print {
+  header, .print\:hidden { display: none !important; }
+  @page { margin: 1.5cm; size: letter portrait; }
+  body { background: white !important; color: black !important; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #000 !important; padding: 6px 8px; }
+}
