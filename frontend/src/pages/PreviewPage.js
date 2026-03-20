@@ -100,23 +100,11 @@ export default function PreviewPage() {
     setEditedPlanner(null);
   };
 
-  const handleExportDocx = async () => {
-    setExporting(true);
-    try {
-      const dataToExport = editMode && editedPlanner ? editedPlanner : generatedPlanner;
-      
-      // Exportar a PDF (funciona en el navegador, sin backend)
-      exportPlannerToPDF(dataToExport);
-      
-      toast.success(language === 'es' ? 'PDF exportado exitosamente' : 'PDF exported successfully');
-    } catch (error) {
-      console.error('Error exporting PDF:', error);
-      toast.error(language === 'es' ? 'Error al exportar PDF' : 'Error exporting PDF');
-    } finally {
-      setExporting(false);
-    }
-  };
-
+  const handleExportPDF = () => {
+  setTimeout(() => { window.print(); }, 100);
+  toast.success(language === 'es' ? 'Abriendo vista de impresión. Selecciona "Guardar como PDF"' : 'Opening print view. Select "Save as PDF"');
+};
+  
   // Editable field component
   const EditableField = ({ value, onChange, multiline = false, placeholder = '', className = '' }) => {
     if (!editMode) {
