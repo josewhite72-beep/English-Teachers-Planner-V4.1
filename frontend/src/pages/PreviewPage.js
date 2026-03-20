@@ -88,32 +88,9 @@ export default function PreviewPage() {
   };
 
   const handleExportPDF = () => {
-    // Mostrar temporalmente todos los lessons ocultos
-    const hiddenLessons = document.querySelectorAll('[id^="lesson-content-"]');
-    hiddenLessons.forEach(el => {
-      el.classList.remove('hidden');
-      el.classList.add('block');
-    });
-
-    // Mostrar project si existe
-    const projectEl = document.getElementById('project-content');
-    if (projectEl) projectEl.classList.remove('hidden');
-
-    setTimeout(() => {
-      window.print();
-      // Restaurar estado original después de imprimir
-      setTimeout(() => {
-        hiddenLessons.forEach((el, idx) => {
-          if (idx !== selectedLesson) {
-            el.classList.remove('block');
-            el.classList.add('hidden');
-          }
-        });
-      }, 1000);
-    }, 300);
-
-    toast.success(language === 'es' ? 'Selecciona "Guardar como PDF"' : 'Select "Save as PDF"');
-  };
+  window.print();
+  toast.success(language === 'es' ? 'Selecciona "Guardar como PDF"' : 'Select "Save as PDF"');
+};
 
   const EditableField = ({ value, onChange, multiline = false, placeholder = '', className = '' }) => {
     if (!editMode) {
