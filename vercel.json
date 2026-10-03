@@ -1,14 +1,11 @@
 {
-  "buildCommand": "cd frontend && npm install && npm run build",
+  "installCommand": "cd frontend && yarn install --frozen-lockfile",
+  "buildCommand": "cd frontend && yarn build",
   "outputDirectory": "frontend/build",
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/$1"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/frontend/$1"
+      "source": "/((?!api/|static/|data/|downloads/).*)",
+      "destination": "/index.html"
     }
   ]
 }

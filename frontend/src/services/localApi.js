@@ -30,8 +30,40 @@ const findScenario = (scenarios, scenarioTitle) => {
   if (!scenarios || !scenarioTitle) return null;
   
   return scenarios.find(
-    (s) => s.title?.trim().toLowerCase() === scenarioTitle.trim().toLowerCase()
+    (s) => getScenarioTitle(s).trim().toLowerCase() === scenarioTitle.trim().toLowerCase()
   );
+};
+
+/**
+ * Helper: Nombre del scenario sin importar el formato del JSON
+ * (Grades preK-6 usan "title"; Grade 7 y 9 usan "scenario_name"; 8, 10-12 usan "scenario")
+ */
+const getScenarioTitle = (s) => (s?.title || s?.scenario_name || s?.scenario || '').toString();
+
+/**
+ * Helper: Gramática como array ("grammar" o "grammatical_features")
+ */
+const getGrammarList = (linguistic) => {
+  const g = linguistic?.grammar || linguistic?.grammatical_features || [];
+  const list = Array.isArray(g) ? g : (typeof g === 'string' ? [g] : []);
+  // Quitar ejemplos largos "(e.g., ...)" para que los objetivos queden concisos
+  return list.map((x) => String(x).replace(/\s*\(e\.g\.[\s\S]*$/i, '').trim()).filter(Boolean);
+};
+
+/**
+ * Helper: Vocabulario como array (acepta array u objeto por categorías con strings separados por comas)
+ */
+const getVocabularyList = (linguistic) => {
+  const v = linguistic?.vocabulary;
+  if (Array.isArray(v)) return v;
+  if (v && typeof v === 'object') {
+    return Object.values(v)
+      .flatMap((x) => (Array.isArray(x) ? x : String(x).split(',')))
+      .map((w) => String(w).trim())
+      .filter(Boolean);
+  }
+  if (typeof v === 'string') return v.split(',').map((w) => w.trim()).filter(Boolean);
+  return [];
 };
 
 /**
@@ -59,7 +91,7 @@ export const localApi = {
         return { scenarios: [] };
       }
       
-      const scenarios = (gradeData.scenarios || []).map(s => s.title);
+      const scenarios = (gradeData.scenarios || []).map(getScenarioTitle).filter(Boolean);
       return { scenarios };
     } catch (error) {
       console.error(`Error loading scenarios for grade ${grade}:`, error);
@@ -149,11 +181,11 @@ export const localApi = {
       
       if (!scenario) {
         console.error(`Scenario not found: "${scenarioTitle}" in grade ${grade}`);
-        console.log('Available scenarios:', gradeData.scenarios?.map(s => s.title));
+        console.log('Available scenarios:', gradeData.scenarios?.map(getScenarioTitle));
         return null;
       }
 
-      if (!scenario.themes.includes(themeTitle)) {
+      if (!(scenario.themes || []).includes(themeTitle)) {
         console.error(`Theme not found: "${themeTitle}" in scenario "${scenarioTitle}"`);
         console.log('Available themes:', scenario.themes);
         return null;
@@ -245,15 +277,15 @@ export const localApi = {
 function generateSMARTObjectives(scenario, scenarioTitle, themeTitle, timeframe) {
   const standards = scenario.standards_and_learning_outcomes || {};
   const competences = scenario.communicative_competences || {};
-  const vocabulary = competences.linguistic?.vocabulary || [];
-  const grammar = competences.linguistic?.grammar || [];
+  const vocabulary = getVocabularyList(competences.linguistic);
+  const grammar = getGrammarList(competences.linguistic);
 
   const timePrefix = timeframe === 'theme' 
     ? 'By the end of this theme' 
     : 'By the end of this lesson';
 
   const vocabCount = Array.isArray(vocabulary) ? Math.min(vocabulary.length, 10) : 5;
-  const grammarSample = Array.isArray(grammar) ? grammar[0] : 'key structures';
+  const grammarSample = grammar.length ? grammar[0] : 'key structures';
 
   return {
     listening: `${timePrefix}, students will be able to identify at least ${Math.max(5, vocabCount)} key vocabulary words when listening to simple descriptions or dialogues related to ${themeTitle}.`,
@@ -281,8 +313,8 @@ function generateLessonPlanners(grade, scenario, theme, scenarioData, projectDat
   ];
 
   const competences = scenarioData.communicative_competences || {};
-  const vocabulary = competences.linguistic?.vocabulary || [];
-  const grammar = competences.linguistic?.grammar || [];
+  const vocabulary = getVocabularyList(competences.linguistic);
+  const grammar = getGrammarList(competences.linguistic);
 
   return skills.map(({ skill, number }) => {
     const skillKey = skill.toLowerCase();
@@ -315,8 +347,8 @@ function generateLessonPlanners(grade, scenario, theme, scenarioData, projectDat
  * Helper: Generar stages detallados con actividades específicas
  */
 function generateDetailedStages(skill, scenarioData, vocabulary, grammar, projectData, language) {
-  const vocabSample = Array.isArray(vocabulary) ? vocabulary.slice(0, 5).join(', ') : 'key vocabulary';
-  const grammarSample = Array.isArray(grammar) ? grammar.slice(0, 2).join(', ') : 'grammar structures';
+  const vocabSample = vocabulary.length ? vocabulary.slice(0, 5).join(', ') : 'key vocabulary';
+  const grammarSample = grammar.length ? grammar.slice(0, 2).join(', ') : 'grammar structures';
 
   const stages = {
     es: {
@@ -678,7 +710,7 @@ function generateDetailedStages(skill, scenarioData, vocabulary, grammar, projec
  */
 function generateMaterials(scenarioData, projectData) {
   const materials = [];
-  const vocabulary = scenarioData.communicative_competences?.linguistic?.vocabulary;
+  const vocabulary = getVocabularyList(scenarioData.communicative_competences?.linguistic);
 
   materials.push('Whiteboard and markers');
   materials.push('Vocabulary flashcards');
