@@ -116,6 +116,7 @@ code {
 }
 @media print {
   header, .print\:hidden { display: none !important; }
+  [data-sonner-toaster], [data-sonner-toast] { display: none !important; }
   [id^="lesson-content-"] { display: block !important; page-break-before: always; }
   #theme-planner-content { display: block !important; }
   #project-content { display: block !important; }

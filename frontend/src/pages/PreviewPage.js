@@ -88,9 +88,22 @@ export default function PreviewPage() {
   };
 
   const handleExportPDF = () => {
-  window.print();
-  toast.success(language === 'es' ? 'Selecciona "Guardar como PDF"' : 'Select "Save as PDF"');
-};
+    // Quitar avisos visibles para que no salgan impresos en el PDF
+    toast.dismiss();
+    // Nombre sugerido del PDF: grado, scenario y theme
+    const p = generatedPlanner || {};
+    const labels = { pre_k: 'Pre-K', K: 'K' };
+    const gradeName = labels[p.grade] || (p.grade ? `Grade ${p.grade}` : '');
+    const previousTitle = document.title;
+    document.title = ['Planner', gradeName, p.scenario, p.theme]
+      .filter(Boolean)
+      .join(' - ')
+      .replace(/[\\/:*?"<>|]/g, '');
+    setTimeout(() => {
+      window.print();
+      document.title = previousTitle;
+    }, 300);
+  };
 
   const EditableField = ({ value, onChange, multiline = false, placeholder = '', className = '' }) => {
     if (!editMode) {
