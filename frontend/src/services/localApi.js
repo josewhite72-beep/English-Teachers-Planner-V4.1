@@ -41,6 +41,39 @@ const findScenario = (scenarios, scenarioTitle) => {
 const getScenarioTitle = (s) => (s?.title || s?.scenario_name || s?.scenario || '').toString();
 
 /**
+ * Helper: Normalizar nombres para comparar (mayúsculas, apóstrofos curvos, punto final)
+ */
+const normalizeName = (str) =>
+  String(str || '')
+    .toLowerCase()
+    .replace(/[\u2018\u2019\u02BC`´]/g, "'")
+    .replace(/[\u201C\u201D]/g, '"')
+    .replace(/[.!?…\s]+$/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+/**
+ * Helper: Proyectos de un scenario aunque el nombre no sea idéntico
+ * (ej. "I'm Happy." vs "I'm Happy", "Nature’s" vs "Nature's",
+ *  "Taking Care of Our Class" vs "Taking Care of Our Classroom")
+ */
+const findScenarioProjects = (projectsByScenario, scenarioTitle) => {
+  if (!projectsByScenario || !scenarioTitle) return [];
+  if (projectsByScenario[scenarioTitle]) return projectsByScenario[scenarioTitle];
+  const target = normalizeName(scenarioTitle);
+  const keys = Object.keys(projectsByScenario);
+  let key = keys.find((k) => normalizeName(k) === target);
+  if (!key) {
+    const prefixMatches = keys.filter((k) => {
+      const n = normalizeName(k);
+      return n.startsWith(target) || target.startsWith(n);
+    });
+    if (prefixMatches.length === 1) key = prefixMatches[0];
+  }
+  return key ? projectsByScenario[key] || [] : [];
+};
+
+/**
  * Helper: Gramática como array ("grammar" o "grammatical_features")
  */
 const getGrammarList = (linguistic) => {
@@ -139,7 +172,7 @@ export const localApi = {
       }
       
       const projectsByScenario = projectsData.projects_by_scenario || {};
-      const scenarioProjects = projectsByScenario[scenarioTitle] || [];
+      const scenarioProjects = findScenarioProjects(projectsByScenario, scenarioTitle);
       
       console.log(`Projects loaded for "${scenarioTitle}":`, scenarioProjects.length);
       
@@ -197,7 +230,7 @@ export const localApi = {
           const projectsResponse = await fetchJSON(`projects/official/${grade}.json`);
           if (projectsResponse) {
             const projectsByScenario = projectsResponse.projects_by_scenario || {};
-            const scenarioProjects = projectsByScenario[scenarioTitle] || [];
+            const scenarioProjects = findScenarioProjects(projectsByScenario, scenarioTitle);
             projectData = scenarioProjects.find(p => p.id === project_id);
             
             if (!projectData) {
@@ -697,7 +730,237 @@ function generateDetailedStages(skill, scenarioData, vocabulary, grammar, projec
           estimated_time: '5 min'
         }
       ],
-      // Agregar Reading, Speaking, Writing, Mediation en inglés con la misma estructura...
+      Reading: [
+        {
+          stage: 'Warm-up / Pre-task',
+          activities: [
+            `Show the title of the text and have students predict its content`,
+            `Review key vocabulary that will appear in the text: ${vocabSample}`,
+            `Activate prior knowledge about the topic with guiding questions`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Presentation',
+          activities: [
+            `Present the full text on the board or projector`,
+            `Read the text aloud while students follow along with their finger`,
+            `Point out key words and grammar structures: ${grammarSample}`
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Preparation',
+          activities: [
+            `Students read the text silently on their own`,
+            `In pairs, underline the words they recognize from the key vocabulary`,
+            `Complete reading comprehension exercises with teacher support`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Performance',
+          activities: [
+            `Students read the text independently`,
+            `Answer comprehension questions without help`,
+            `Identify and copy 3-5 sentences from the text that contain key vocabulary`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Assessment',
+          activities: [
+            `Review comprehension answers in small groups`,
+            `Students share the sentences they copied`,
+            `Formative assessment through questions about the text`
+          ],
+          estimated_time: '5 min'
+        },
+        {
+          stage: 'Reflection',
+          activities: [
+            `What did you learn from the text?`,
+            `What new words did you find?`,
+            `Connect the content of the text to personal experiences`
+          ],
+          estimated_time: '5 min'
+        }
+      ],
+      Speaking: [
+        {
+          stage: 'Warm-up / Pre-task',
+          activities: [
+            `Oral vocabulary game: repeat key words in a chain`,
+            `Pronunciation practice of structures: ${grammarSample}`,
+            `Charades: act out and guess vocabulary words`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Presentation',
+          activities: [
+            `Model dialogues using the key grammar structures`,
+            `Demonstrate how to form complete sentences about the topic`,
+            `Present useful phrases for oral communication`
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Preparation',
+          activities: [
+            `Practice dialogues in pairs with visual support cards`,
+            `Teacher circulates and helps with pronunciation and grammar`,
+            `Students prepare 2-3 sentences to share with the class`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Performance',
+          activities: [
+            `Students present their sentences in front of the class`,
+            `Take part in short conversations without support cards`,
+            `Demonstrate use of vocabulary and grammar in a natural context`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Assessment',
+          activities: [
+            `Classmates give positive feedback on the presentations`,
+            `Teacher assesses pronunciation and correct use of structures`,
+            `Self-assessment: Did I use the words correctly?`
+          ],
+          estimated_time: '5 min'
+        },
+        {
+          stage: 'Reflection',
+          activities: [
+            `What was easier or more difficult when speaking?`,
+            `What new words did you use when speaking?`,
+            `Set personal goals to improve oral expression`
+          ],
+          estimated_time: '5 min'
+        }
+      ],
+      Writing: [
+        {
+          stage: 'Warm-up / Pre-task',
+          activities: [
+            `Brainstorm: write words related to the topic on the board`,
+            `Review the spelling of key words: ${vocabSample}`,
+            `Practice writing simple sentences on the board as a class`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Presentation',
+          activities: [
+            `Show model texts about the topic`,
+            `Analyze sentence structure using ${grammarSample}`,
+            `Demonstrate step by step how to write a complete sentence`
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Preparation',
+          activities: [
+            `Students draft 3-5 sentences with support`,
+            `Work in pairs to check spelling and grammar`,
+            `Teacher reviews drafts and gives feedback`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Performance',
+          activities: [
+            `Students write the final version of their sentences`,
+            `Produce a clean and legible piece of writing`,
+            `Illustrate their sentences with simple drawings`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Assessment',
+          activities: [
+            `Exchange writing with a classmate for peer review`,
+            `Teacher assesses spelling, grammar, and clarity`,
+            `Identify the strengths of each student's writing`
+          ],
+          estimated_time: '5 min'
+        },
+        {
+          stage: 'Reflection',
+          activities: [
+            `What was easy or difficult when writing?`,
+            `Which words do I need to practice more?`,
+            `Volunteers share their writing with the class`
+          ],
+          estimated_time: '5 min'
+        }
+      ],
+      Mediation: [
+        {
+          stage: 'Warm-up / Pre-task',
+          activities: [
+            projectData
+              ? `Introduce the project: ${projectData.name}`
+              : 'Introduce the theme\'s integrating project',
+            `Form work teams of 3-4 students`,
+            `Explain the expectations and goals of the project`
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Presentation',
+          activities: [
+            projectData
+              ? `Show examples of the finished project: ${projectData.overview}`
+              : 'Show examples of similar projects',
+            `Explain the assessment rubric step by step`,
+            `Demonstrate how to complete each part of the project`
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Preparation',
+          activities: [
+            `Teams plan their project and assign roles`,
+            `Use the writing drafts from Lesson 4`,
+            `Practice how they will present their project to the class`,
+            projectData?.materials
+              ? `Gather the necessary materials: ${projectData.materials.slice(0, 3).join(', ')}`
+              : 'Gather the necessary materials'
+          ],
+          estimated_time: '10 min'
+        },
+        {
+          stage: 'Performance',
+          activities: [
+            `Teams carry out and complete their project`,
+            `Group presentations in front of the class`,
+            `Demonstrate integration of all skills: listening, reading, speaking, writing`
+          ],
+          estimated_time: '15 min'
+        },
+        {
+          stage: 'Assessment',
+          activities: [
+            `Teacher assessment with the rubric`,
+            `Feedback between teams (peer feedback)`,
+            `Self-assessment: each student evaluates their contribution to the team`
+          ],
+          estimated_time: '5 min'
+        },
+        {
+          stage: 'Reflection',
+          activities: [
+            `Group reflection: What did we learn by working as a team?`,
+            `Which skills from the whole theme did we use?`,
+            `Celebrate achievements and recognize everyone's work`
+          ],
+          estimated_time: '5 min'
+        }
+      ]
     }
   };
 
